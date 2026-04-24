@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Next.js
+web/.next/
+web/out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Pipeline temp files
+pipeline/raw-feed.json
+
+# OS
+.DS_Store
