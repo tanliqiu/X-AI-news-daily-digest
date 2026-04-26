@@ -1,0 +1,65 @@
+{
+  "date": "2026-04-26",
+  "tldr": [
+    "DeepSeek-V4 Pro (1.6T-A49B) launches with 1M-token context and Huawei Ascend compatibility, but no longer leads benchmarks",
+    "GPT-5.5 and OpenAI Codex Superapp signal OpenAI's push to consolidate coding workflows into a single product surface",
+    "An amateur using ChatGPT solved a 60-year-old Erdős combinatorics problem, highlighting LLMs as practical math research tools"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Amateur armed with ChatGPT solves an Erdős problem",
+        "summary": "A non-professional mathematician used ChatGPT iteratively to crack a combinatorics problem open since the 1960s, demonstrating LLMs as viable research collaborators for formal problem-solving. For AI product builders, this is a concrete data point that LLM-assisted reasoning can produce novel, verifiable results beyond code generation. It raises practical questions about how to structure human-AI workflows for knowledge-intensive tasks.",
+        "url": "https://www.scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem/",
+        "source": "Hacker News",
+        "published": "2026-04-25T17:40:38.000Z"
+      },
+      {
+        "title": "DeepSeek-V4: a million-token context that agents can actually use",
+        "summary": "DeepSeek-V4 Pro (1.6T parameters, 49B active) ships with a genuine 1M-token context window and a smaller Flash variant (284B-A13B), both runnable on Huawei Ascend hardware. The model no longer tops benchmarks, but its context length and hardware flexibility make it a strong candidate for long-horizon agentic tasks where context management is the bottleneck. The Ascend compatibility opens a non-NVIDIA deployment path relevant to cost-sensitive or export-restricted environments.",
+        "url": "https://huggingface.co/blog/deepseekv4",
+        "source": "Hugging Face",
+        "published": "2026-04-24T00:00:00.000Z"
+      }
+    ],
+    "Tools": [
+      {
+        "title": "AI agents that argue with each other to improve decisions (HATS)",
+        "summary": "HATS is an open-source framework where multiple AI agents take adversarial roles—advocate, critic, devil's advocate—to stress-test decisions before committing to an answer. This adversarial multi-agent pattern is a practical mitigation for single-agent overconfidence and is directly applicable to high-stakes product workflows like code review, content moderation, or strategic planning. The lightweight GitHub release makes it easy to integrate into existing LLM pipelines.",
+        "url": "https://github.com/rockcat/HATS",
+        "source": "Hacker News",
+        "published": "2026-04-25T18:30:12.000Z"
+      },
+      {
+        "title": "Agents Aren't Coworkers, Embed Them in Your Software",
+        "summary": "Feldera's blog argues that treating AI agents as autonomous coworkers leads to fragile systems, and that embedding agents directly inside software as first-class components produces more reliable, auditable products. The post offers a concrete architectural alternative to \"agent-as-employee\" framing, with implications for how teams design state management, error handling, and control flow around LLM calls. Practical reading for engineers deciding where agent boundaries should sit in their stack.",
+        "url": "https://www.feldera.com/blog/ai-agents-arent-coworkers-embed-them-in-your-software",
+        "source": "Hacker News",
+        "published": "2026-04-25T23:53:40.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] GPT-5.5 and OpenAI Codex Superapp",
+        "summary": "OpenAI is reportedly releasing GPT-5.5 alongside a consolidated Codex \"superapp\" that merges coding assistant capabilities into a single product surface. For teams building on OpenAI APIs, this signals a potential shift in how coding-focused features are packaged and priced. Developers should monitor whether Codex Superapp affects API access patterns or introduces new agentic coding primitives.",
+        "url": "https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp",
+        "source": "Latent Space",
+        "published": "2026-04-24T04:40:43.000Z"
+      },
+      {
+        "title": "The AI industry is discovering that the public hates it",
+        "summary": "A widely-shared New Republic article synthesizes polling and cultural signals showing growing public backlash against AI products, citing concerns over job displacement, data practices, and perceived hype-to-value gaps. For AI product builders, this is an important market signal: trust and transparency are becoming table-stakes differentiators, not nice-to-haves. Teams shipping consumer-facing AI products should factor sentiment risk into roadmap and communications strategy.",
+        "url": "https://newrepublic.com/article/209163/ai-industry-discovering-public-backlash",
+        "source": "Hacker News",
+        "published": "2026-04-25T21:11:11.000Z"
+      },
+      {
+        "title": "Anthropic's Mythos frontier model and cybersecurity implications (Practical AI podcast)",
+        "summary": "The Practical AI Fully-Connected episode unpacks Anthropic's Mythos model with particular focus on its cybersecurity capabilities, ranging from incremental improvement to potentially disrupting the security tooling landscape. For practitioners building security-adjacent AI products, the discussion frames the risk/opportunity spectrum clearly. The episode also touches on neocloud infrastructure trends relevant to deployment decisions.",
+        "url": "https://share.transistor.fm/s/b11bd219",
+        "source": "Practical AI",
+        "published": "2026-04-23T09:00:00.000Z"
+      }
+    ]
+  }
+}
