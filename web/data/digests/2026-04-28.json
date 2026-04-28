@@ -1,0 +1,93 @@
+{
+  "date": "2026-04-28",
+  "tldr": [
+    "OpenAI is reportedly missing revenue and user targets ahead of its IPO, raising questions about sustainable growth in the consumer AI market",
+    "AutoPyVerifier introduces a method to auto-generate compact executable verifiers for LLM outputs, directly improving reliability of RL training and inference-time control",
+    "Anthropic restricts Claude Opus access on Pro plans, requiring users to enable 'extra usage' — a signal of compute cost pressures at the frontier model tier"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "AutoPyVerifier: Learning Compact Executable Verifiers for Large Language Model Outputs",
+        "summary": "AutoPyVerifier automatically learns compact Python-based verifiers from labeled LLM output examples, bridging the gap between flexible LLM-based judges and rigid deterministic checks. This is directly applicable to RLHF pipelines and agentic inference loops where reliable, auditable reward signals are needed without continuous LLM-as-judge costs. Teams building evaluation or training infrastructure should watch this approach for reducing verifier brittleness.",
+        "url": "https://arxiv.org/abs/2604.22937",
+        "source": "arXiv",
+        "published": "2026-04-28T04:00:00.000Z"
+      },
+      {
+        "title": "Uncertainty Quantification for LLM Function-Calling",
+        "summary": "This paper addresses the critical safety gap in agentic LLM deployments by introducing uncertainty quantification specifically for function-calling scenarios where incorrect or irreversible actions (e.g., deleting data, initiating transactions) carry real costs. Practical takeaway: integrating calibrated confidence estimates before executing tool calls can serve as a low-cost safety layer in production agent systems. This is increasingly important as agentic frameworks move toward autonomous multi-step execution.",
+        "url": "https://arxiv.org/abs/2604.22985",
+        "source": "arXiv",
+        "published": "2026-04-28T04:00:00.000Z"
+      },
+      {
+        "title": "TexOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction",
+        "summary": "TexOCR introduces a benchmark and large-scale training corpus for converting scientific PDF pages into compilable LaTeX, going beyond plain-text or Markdown extraction. This matters for document ingestion pipelines serving academic or technical domains where preserving mathematical notation and structural fidelity is essential. Developers building RAG or document processing products for science and engineering use cases will benefit from the new evaluation suite.",
+        "url": "https://arxiv.org/abs/2604.22880",
+        "source": "arXiv",
+        "published": "2026-04-28T04:00:00.000Z"
+      },
+      {
+        "title": "Evaluating Temporal Consistency in Multi-Turn Language Models",
+        "summary": "This paper identifies and formalizes 'temporal scope stability' — a model's ability to preserve, override, or transfer time-scoped factual context across conversation turns — and finds current LLMs struggle with it. For product builders, this highlights a concrete failure mode in multi-turn chatbots and assistants where users establish temporal context early and expect it to persist. The introduced benchmark can help teams select or fine-tune models for time-sensitive conversational applications.",
+        "url": "https://arxiv.org/abs/2604.23051",
+        "source": "arXiv",
+        "published": "2026-04-28T04:00:00.000Z"
+      }
+    ],
+    "Tools": [
+      {
+        "title": "AgentSwift – Open-source iOS Builder Agent",
+        "summary": "AgentSwift is an open-source agent designed to autonomously build iOS applications, representing a new category of code-generation agents targeting mobile development specifically. For consultants and product teams exploring AI-assisted mobile development, this provides a starting point for evaluating how far autonomous iOS scaffolding has progressed. Worth monitoring for integration into existing dev workflows where Swift expertise is a bottleneck.",
+        "url": "https://github.com/hpennington/agentswift",
+        "source": "Hacker News",
+        "published": "2026-04-28T01:14:31.000Z"
+      },
+      {
+        "title": "ContextWeaver: Selective and Dependency-Structured Memory Construction for LLM Agents",
+        "summary": "ContextWeaver proposes a memory system that tracks causal and logical dependencies between pieces of context, rather than relying on recency-based sliding windows or semantic similarity retrieval alone. This addresses a practical pain point in long-running agents where earlier structured information (e.g., constraints set in step 1) gets dropped before it's needed in step 20. Teams building multi-step agents on top of any LLM backend should consider this dependency-aware memory architecture.",
+        "url": "https://arxiv.org/abs/2604.23069",
+        "source": "arXiv",
+        "published": "2026-04-28T04:00:00.000Z"
+      },
+      {
+        "title": "How to build scalable web apps with OpenAI's Privacy Filter",
+        "summary": "This Hugging Face guide covers practical implementation of OpenAI's Privacy Filter API for building web applications that strip or mask PII before sending data to LLM endpoints. For teams building enterprise or regulated-market products, this is a concrete pattern for addressing data privacy compliance without building custom scrubbing pipelines from scratch. The scalability angle makes it relevant for high-throughput production deployments.",
+        "url": "https://huggingface.co/blog/openai-privacy-filter-web-apps",
+        "source": "Hugging Face",
+        "published": "2026-04-27T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI Misses Key Revenue and User Targets in High-Stakes Sprint Toward IPO",
+        "summary": "According to the WSJ, OpenAI has fallen short of internal revenue and user growth targets as it pushes toward a public offering, signaling that monetizing frontier AI at scale remains harder than the hype suggests. For AI product builders and buyers, this reinforces the importance of sustainable unit economics rather than assuming the market will expand automatically. It may also create downstream pressure on API pricing or product bundling strategies.",
+        "url": "https://www.wsj.com/tech/ai/openai-misses-key-revenue-user-targets-in-high-stakes-sprint-toward-ipo-94a95273",
+        "source": "Hacker News",
+        "published": "2026-04-28T01:34:12.000Z"
+      },
+      {
+        "title": "Claude Pro: Opus Model Will Only Be Available If Extra Usage Is Enabled",
+        "summary": "Anthropic is gating Claude Opus access behind an additional opt-in step for Pro subscribers, effectively rationing the most capable (and costly) model tier. This reflects ongoing compute cost pressures at the frontier and has direct implications for teams building on Claude's API who rely on Opus for quality-critical tasks. Builders should audit which workflows genuinely require Opus versus can be served by Sonnet or Haiku to manage both costs and availability risk.",
+        "url": "https://support.claude.com/en/articles/11940350-claude-code-model-configuration",
+        "source": "Hacker News",
+        "published": "2026-04-27T22:13:17.000Z"
+      },
+      {
+        "title": "Google DeepMind Announces Partnership with the Republic of Korea",
+        "summary": "Google DeepMind is partnering with the South Korean government to accelerate scientific breakthroughs using frontier AI models, marking another major national-level AI infrastructure deal. This continues the trend of governments securing preferential access to frontier AI capabilities, which has implications for competitive positioning of AI product companies operating in or entering Asian markets. Consultants advising on AI strategy for enterprise clients in Korea should note the potential for subsidized or preferred access to DeepMind tools.",
+        "url": "https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/",
+        "source": "Google DeepMind",
+        "published": "2026-04-27T07:00:06.000Z"
+      },
+      {
+        "title": "Physical AI that Moves the World — Applied Intuition (Latent Space Podcast)",
+        "summary": "Applied Intuition's CEO and CTO discuss deploying AI in highly adversarial physical environments including mining rigs, military drones, trucks, and warships — moving well beyond autonomous passenger vehicles. The conversation highlights the engineering challenges unique to physical AI deployments where safety margins, sensor fusion, and real-time constraints dwarf typical software AI concerns. Relevant for consultants evaluating opportunities in industrial or defense-adjacent AI product markets.",
+        "url": "https://www.latent.space/p/appliedintuition",
+        "source": "Latent Space",
+        "published": "2026-04-27T23:02:37.000Z"
+      }
+    ]
+  }
+}
