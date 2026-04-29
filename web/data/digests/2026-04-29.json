@@ -1,0 +1,86 @@
+{
+  "date": "2026-04-29",
+  "tldr": [
+    "OpenAI models are coming to Amazon Bedrock, marking a major distribution shift as two previously competing cloud/AI ecosystems formally integrate",
+    "A Claude Code regression causing subagent refusals due to repeated malware reminders is generating significant developer frustration, highlighting reliability risks in agentic pipelines",
+    "ChatGPT's ad attribution loop is now documented in detail, with concrete implications for AI product builders considering monetization and user trust tradeoffs"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models",
+        "summary": "This paper provides mechanistic evidence for why RL-based post-training generalizes beyond the training domain while SFT tends to cause capability forgetting. For practitioners fine-tuning LLMs, this offers concrete guidance on when to prefer RL over SFT, particularly for reasoning tasks requiring out-of-distribution generalization.",
+        "url": "https://arxiv.org/abs/2604.25011",
+        "source": "arXiv",
+        "published": "2026-04-29T04:00:00.000Z"
+      },
+      {
+        "title": "BenchGuard: Automated Auditing of LLM Agent Benchmarks",
+        "summary": "BenchGuard uses frontier LLMs to systematically audit agent benchmarks for broken specifications, implicit assumptions, and rigid evaluation scripts that falsely penalize valid agent behavior. This is directly relevant for teams building or evaluating agent systems, as it surfaces how benchmark failures—not model failures—may be distorting performance assessments.",
+        "url": "https://arxiv.org/abs/2604.24955",
+        "source": "arXiv",
+        "published": "2026-04-29T04:00:00.000Z"
+      },
+      {
+        "title": "Don't Stop Early: Scalable Enterprise Deep Research with Controlled Information Flow and Evidence-Aware Termination",
+        "summary": "This paper proposes an architecture for enterprise deep research agents that addresses common failure modes: uneven coverage, context explosion, and premature stopping. The evidence-aware termination mechanism and dependency-guided execution are practical patterns applicable to anyone building multi-step research or report-generation pipelines.",
+        "url": "https://arxiv.org/abs/2604.24978",
+        "source": "arXiv",
+        "published": "2026-04-29T04:00:00.000Z"
+      }
+    ],
+    "Tools": [
+      {
+        "title": "NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents",
+        "summary": "NVIDIA's Nemotron 3 Nano Omni is a compact multimodal model supporting long-context understanding across documents, audio, and video, designed for deployment in agentic workflows. Its 'nano' sizing makes it a practical candidate for on-device or cost-sensitive deployments where full frontier model APIs are prohibitive.",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence",
+        "source": "Hugging Face",
+        "published": "2026-04-28T15:58:57.000Z"
+      },
+      {
+        "title": "A Good AGENTS.md Is a Model Upgrade. A Bad One Is Worse Than No Docs at All",
+        "summary": "Augment Code outlines how AGENTS.md files—documentation read by coding agents at runtime—dramatically affect agent performance, with poorly written files actively degrading output compared to having none. This is a high-leverage, zero-cost optimization for any team deploying coding agents in a codebase.",
+        "url": "https://www.augmentcode.com/blog/how-to-write-good-agents-dot-md-files",
+        "source": "Hacker News",
+        "published": "2026-04-28T18:26:53.000Z"
+      },
+      {
+        "title": "How to Build Scalable Web Apps with OpenAI's Privacy Filter",
+        "summary": "This Hugging Face tutorial covers integrating OpenAI's Privacy Filter into web applications to redact or anonymize sensitive data before it reaches model APIs. For enterprise AI product builders navigating data governance requirements, this is a practical pattern for reducing compliance risk in LLM-powered apps.",
+        "url": "https://huggingface.co/blog/openai-privacy-filter-web-apps",
+        "source": "Hugging Face",
+        "published": "2026-04-27T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI Models Coming to Amazon Bedrock",
+        "summary": "OpenAI and AWS are integrating OpenAI's models into Amazon Bedrock, including managed agent support, as discussed by both CEOs. This significantly expands OpenAI's distribution through AWS's enterprise customer base and puts OpenAI models on equal footing with Anthropic and others already available on Bedrock—a major competitive and procurement shift for enterprise AI buyers.",
+        "url": "https://stratechery.com/2026/an-interview-with-openai-ceo-sam-altman-and-aws-ceo-matt-garman-about-bedrock-managed-agents/",
+        "source": "Hacker News",
+        "published": "2026-04-28T19:24:43.000Z"
+      },
+      {
+        "title": "How ChatGPT Serves Ads",
+        "summary": "A detailed breakdown of ChatGPT's ad attribution loop reveals how OpenAI is integrating sponsored content into responses and tracking downstream conversions. For AI product builders, this signals a new monetization model emerging in foundation model interfaces that will affect how users perceive and trust AI-generated recommendations.",
+        "url": "https://www.buchodi.com/how-chatgpt-serves-ads-heres-the-full-attribution-loop/",
+        "source": "Hacker News",
+        "published": "2026-04-28T23:54:14.000Z"
+      },
+      {
+        "title": "Claude Code Regression: Malware Reminder on Every Read Causes Subagent Refusals",
+        "summary": "A widely-reported regression in Claude Code is causing subagents to refuse tasks because a repeated malware warning injected into every file read is triggering safety refusals at scale. This is a high-impact reliability issue for teams running automated multi-agent coding pipelines on Claude, and underscores how prompt-level safety mechanisms can cascade unpredictably in agentic contexts.",
+        "url": "https://github.com/anthropics/claude-code/issues/49363",
+        "source": "Hacker News",
+        "published": "2026-04-28T23:59:57.000Z"
+      },
+      {
+        "title": "Anthropic Launches Claude for Creative Work",
+        "summary": "Anthropic announced a dedicated Claude offering targeting creative professionals, emphasizing long-form writing, storytelling, and creative collaboration use cases. This represents a deliberate market segmentation move, positioning Claude alongside—and potentially against—tools like Sudowrite and Jasper in the creative AI niche.",
+        "url": "https://www.anthropic.com/news/claude-for-creative-work",
+        "source": "Hacker News",
+        "published": "2026-04-28T23:46:56.000Z"
+      }
+    ]
+  }
+}
