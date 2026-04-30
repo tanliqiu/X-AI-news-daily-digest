@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { readFile, writeFile, mkdir } from 'fs/promises'
-import { existsSync } from 'fs'
+import { existsSync, readdirSync, readFileSync } from 'fs'
 import { join } from 'path'
 import { fileURLToPath } from 'url'
 import Anthropic from '@anthropic-ai/sdk'
@@ -40,6 +40,28 @@ Return ONLY valid JSON. No markdown fences, no preamble. Schema:
   }
 }`
 
+// Collect all URLs already featured in previous digests (last 30 days)
+function getPreviouslyShownUrls(outputDir, today) {
+  const shown = new Set()
+  if (!existsSync(outputDir)) return shown
+  const files = readdirSync(outputDir)
+    .filter((f) => f.endsWith('.json') && f.replace('.json', '') !== today)
+    .sort()
+    .reverse()
+    .slice(0, 30)
+  for (const file of files) {
+    try {
+      const digest = JSON.parse(readFileSync(join(outputDir, file), 'utf-8'))
+      for (const section of Object.values(digest.sections ?? {})) {
+        for (const item of section) {
+          if (item.url) shown.add(item.url)
+        }
+      }
+    } catch {}
+  }
+  return shown
+}
+
 async function main() {
   const client = new Anthropic()
 
@@ -56,7 +78,20 @@ async function main() {
     return
   }
 
-  console.log(`[prepare-digest] Processing ${feed.items.length} items with Claude...`)
+  // Filter out items whose URLs already appeared in a previous digest
+  const shownUrls = getPreviouslyShownUrls(OUTPUT_DIR, today)
+  const items = feed.items.filter((item) => !item.url || !shownUrls.has(item.url))
+  const dedupedCount = feed.items.length - items.length
+  if (dedupedCount > 0) {
+    console.log(`[prepare-digest] Removed ${dedupedCount} items already shown in previous digests`)
+  }
+
+  if (items.length === 0) {
+    console.log('[prepare-digest] No new items after cross-day dedup, skipping')
+    return
+  }
+
+  console.log(`[prepare-digest] Processing ${items.length} items with Claude...`)
 
   const response = await client.messages.create({
     model: 'claude-sonnet-4-6',
@@ -71,7 +106,7 @@ async function main() {
     messages: [
       {
         role: 'user',
-        content: `Date: ${today}\n\nItems:\n${JSON.stringify(feed.items, null, 2)}`,
+        content: `Date: ${today}\n\nItems:\n${JSON.stringify(items, null, 2)}`,
       },
     ],
   })

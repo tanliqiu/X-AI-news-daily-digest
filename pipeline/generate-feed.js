@@ -7,6 +7,7 @@ import { collectArxiv } from './collectors/arxiv.js'
 import { collectHackerNews } from './collectors/hackernews.js'
 import { collectBlogs } from './collectors/blogs.js'
 import { collectPodcasts } from './collectors/podcasts.js'
+import { collectFollowBuilders } from './collectors/followbuilders.js'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const STATE_PATH = join(__dirname, 'state.json')
@@ -37,19 +38,20 @@ async function main() {
 
   const state = await loadState()
 
-  const [papers, hnStories, articles, episodes] = await Promise.all([
+  const [papers, hnStories, articles, episodes, fbItems] = await Promise.all([
     collectArxiv(),
     collectHackerNews(),
     collectBlogs(),
     collectPodcasts(),
+    collectFollowBuilders(),
   ])
 
   console.log(
     `[generate-feed] Collected: ${papers.length} papers, ${hnStories.length} HN, ` +
-    `${articles.length} articles, ${episodes.length} podcast episodes`
+    `${articles.length} articles, ${episodes.length} podcast episodes, ${fbItems.length} follow-builders`
   )
 
-  const allItems = [...papers, ...hnStories, ...articles, ...episodes]
+  const allItems = [...papers, ...hnStories, ...articles, ...episodes, ...fbItems]
   const newItems = allItems.filter((item) => !state.seen[item.id])
 
   const now = new Date().toISOString()
