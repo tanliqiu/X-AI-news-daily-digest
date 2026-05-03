@@ -1,0 +1,65 @@
+{
+  "date": "2026-05-03",
+  "tldr": [
+    "Kimi K2.6, an open-weights Chinese model, outperformed Claude, GPT-5.5, and Gemini on a coding benchmark — signaling continued competitive pressure on frontier closed models",
+    "Anthropic published a postmortem on Claude Code quality regressions, tracing issues to three separate changes now resolved as of April 20 (v2.1.116)",
+    "Claude Managed Agents gains built-in persistent memory in public beta, with developer-accessible file-based storage for cross-session agent learning"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge",
+        "summary": "Moonshot AI's open-weights Kimi K2.6 model topped a competitive coding benchmark against the leading closed-source frontier models. For AI product builders, this reinforces that open-weights models are increasingly viable alternatives for code-heavy workloads, potentially reducing dependency on proprietary APIs and lowering inference costs.",
+        "url": "https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge/",
+        "source": "Hacker News",
+        "published": "2026-05-03T04:05:28.000Z"
+      },
+      {
+        "title": "OpenAI's o1 correctly diagnosed 67% of ER patients vs. 50-55% by triage doctors",
+        "summary": "A Harvard trial found o1 outperformed emergency triage doctors on diagnostic accuracy in an ER setting, correctly identifying conditions in 67% of cases versus 50–55% for human clinicians. This is a concrete signal for healthcare AI product teams that reasoning-focused models are approaching deployment-grade performance for high-stakes clinical triage workflows.",
+        "url": "https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses",
+        "source": "Hacker News",
+        "published": "2026-05-03T00:30:50.000Z"
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Built-in memory for Claude Managed Agents",
+        "summary": "Anthropic has launched persistent memory for Claude Managed Agents in public beta, enabling agents to retain and apply learnings across sessions. Memory is stored as exportable files accessible via the API, giving developers full control over what agents retain — a practical foundation for building stateful, personalized agentic products without custom memory infrastructure.",
+        "url": "https://claude.com/blog/claude-managed-agents-memory",
+        "source": "blog",
+        "published": "2026-04-23T00:00:00.000Z"
+      },
+      {
+        "title": "New connectors in Claude for everyday life",
+        "summary": "Anthropic's Claude connector directory has grown to over 200 integrations, now including consumer apps like AllTrails, Instacart, Audible, Tripadvisor, and TurboTax alongside existing work tools. For developers building on Claude, the expanding connector ecosystem reduces the need to custom-build integrations and opens up richer multi-domain agentic workflows for end users.",
+        "url": "https://claude.com/blog/connectors-for-everyday-life",
+        "source": "blog",
+        "published": "2026-04-23T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "An update on recent Claude Code quality reports",
+        "summary": "Anthropic published a detailed postmortem on Claude Code quality regressions reported over the past month, attributing the degradation to three separate changes affecting Claude Code, the Claude Agent SDK, and Claude Cowork — the API was unaffected. All issues were resolved as of April 20 (v2.1.116); the post-mortem signals Anthropic's commitment to transparency and provides developers a concrete checklist for version-pinning and regression monitoring in production deployments.",
+        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+        "source": "blog",
+        "published": "2026-05-03T07:49:16.000Z"
+      },
+      {
+        "title": "Baseten CEO Tuhin Srivastava on the AI Inference Crunch, Custom Models, and Building the Inference Cloud",
+        "summary": "Baseten CEO Tuhin Srivastava discusses the company's 30x growth in the past year — on track for over $1B revenue — driven by surging demand for AI inference capacity, custom model deployment, and multi-chip infrastructure. For teams evaluating inference providers, the episode offers a candid look at capacity constraints, open-source model hosting economics, and the direction of the inference cloud market.",
+        "url": "https://www.youtube.com/watch?v=XAbKflCncDo",
+        "source": "No Priors",
+        "published": "2026-05-01T19:34:00.000Z"
+      },
+      {
+        "title": "AI Engineer World's Fair — Call for Speakers: Autoresearch, Memory, World Models, Tokenmaxxing, Agentic Commerce, Vertical AI",
+        "summary": "The AI Engineer World's Fair has opened its call for speakers across a broad set of applied AI themes including agentic commerce, memory systems, world models, and vertical AI. Practitioners building in these areas have an opportunity to share applied work with a practitioner-focused audience; the topic list also serves as a useful signal of where AI engineering investment is concentrating in 2026.",
+        "url": "https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
+        "source": "Latent Space",
+        "published": "2026-05-02T07:21:55.000Z"
+      }
+    ]
+  }
+}
