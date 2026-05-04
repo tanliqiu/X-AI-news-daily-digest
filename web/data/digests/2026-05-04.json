@@ -1,0 +1,86 @@
+{
+  "date": "2026-05-04",
+  "tldr": [
+    "Anthropic introduces Managed Agents architecture that decouples reasoning from execution, enabling more scalable long-running agent workflows",
+    "DeepClaude open-source project combines DeepSeek V4 Pro reasoning with Claude Code's agent loop, gaining significant traction on HN",
+    "US Senate panel backs the GUARD Act requiring government ID upload for chatbot access, a major potential compliance burden for AI product builders"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Why Do LLMs Struggle in Strategic Play? Broken Links Between Observations, Beliefs, and Actions",
+        "summary": "The paper identifies two fundamental gaps in how LLMs handle incomplete-information games: failures to update beliefs correctly from observations, and failures to translate beliefs into rational actions. For builders deploying LLMs in negotiation, planning, or multi-agent scenarios, this highlights that current models may be unreliable in adversarial or incomplete-information settings without explicit scaffolding.",
+        "url": "https://arxiv.org/abs/2605.00226",
+        "source": "arXiv",
+        "published": "2026-05-04T04:00:00.000Z"
+      },
+      {
+        "title": "RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners",
+        "summary": "RSAT trains 1-8B parameter models to produce step-by-step table reasoning with cell-level citations using SFT plus GRPO reinforcement, achieving strong faithfulness scores. This is practically valuable for anyone building enterprise analytics or document-grounded QA products where auditability of small, deployable models is critical.",
+        "url": "https://arxiv.org/abs/2605.00199",
+        "source": "arXiv",
+        "published": "2026-05-04T04:00:00.000Z"
+      },
+      {
+        "title": "Putting HUMANS first: Efficient LAM Evaluation with Human Preference Alignment",
+        "summary": "The paper shows that subsets of just 50 examples (0.3% of full benchmark data) can reliably evaluate large audio models across 40 tasks when selected with the right methods. This dramatically reduces evaluation cost, which is relevant for teams iterating quickly on audio-capable model pipelines.",
+        "url": "https://arxiv.org/abs/2605.00022",
+        "source": "arXiv",
+        "published": "2026-05-04T04:00:00.000Z"
+      },
+      {
+        "title": "How Frontier LLMs Adapt to Neurodivergence Context: A Measurement Framework for Surface vs. Structural Change in System-Prompted Responses",
+        "summary": "NDBench evaluates whether frontier LLMs make meaningful structural adjustments versus superficial surface changes when given neurodivergence-specific system prompts across four ND profiles. Builders creating accessibility-focused or personalized AI applications should note that current models may not be reliably adapting outputs in substantive ways even when instructed to.",
+        "url": "https://arxiv.org/abs/2605.00113",
+        "source": "arXiv",
+        "published": "2026-05-04T04:00:00.000Z"
+      }
+    ],
+    "Tools": [
+      {
+        "title": "DeepClaude – Claude Code agent loop with DeepSeek V4 Pro",
+        "summary": "DeepClaude is an open-source project that wires DeepSeek V4 Pro's reasoning capabilities into Claude Code's agentic execution loop, offering a potentially cheaper alternative to running Claude end-to-end. With 415 points and 156 comments on HN, there is strong community interest in mixing frontier reasoning models with established agent scaffolds.",
+        "url": "https://github.com/aattaran/deepclaude",
+        "source": "Hacker News",
+        "published": "2026-05-03T22:13:20.000Z"
+      },
+      {
+        "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+        "summary": "Anthropic's engineering blog details their Managed Agents architecture, which separates the reasoning model (brain) from the tool-executing layer (hands) to improve scalability and adaptability as models improve. This design pattern is directly applicable for builders who want long-running agent harnesses that don't become stale as underlying model capabilities evolve.",
+        "url": "https://www.anthropic.com/engineering/managed-agents",
+        "source": "blog",
+        "published": "2026-05-04T08:18:42.174Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Every American interacting with chatbot would need to upload a government ID",
+        "summary": "A US Senate panel has backed the GUARD Act, which would require users to upload government-issued ID before accessing AI chatbots, ostensibly for age verification. If passed, this would impose significant identity verification infrastructure requirements on any consumer-facing AI product, with major implications for user acquisition, privacy, and compliance costs.",
+        "url": "https://reclaimthenet.org/senate-panel-backs-guard-act-ai-age-verification-bill",
+        "source": "Hacker News",
+        "published": "2026-05-03T23:22:11.000Z"
+      },
+      {
+        "title": "Agentic Coding Is a Trap",
+        "summary": "A widely-discussed essay arguing that agentic coding tools create productivity illusions by generating large volumes of low-quality code that developers must still review and debug, potentially increasing total workload. With 345 points and 248 comments on HN, the piece reflects growing practitioner skepticism about current agentic coding workflows that product teams should weigh against adoption decisions.",
+        "url": "https://larsfaye.com/articles/agentic-coding-is-a-trap",
+        "source": "Hacker News",
+        "published": "2026-05-03T22:52:07.000Z"
+      },
+      {
+        "title": "How Kepler built verifiable AI for financial services with Claude",
+        "summary": "Anthropic's blog details how Kepler deployed Claude in financial services with verifiable, auditable outputs to satisfy compliance requirements. The case study is a concrete example of how regulated industries can structure AI integrations to meet evidentiary standards, useful for teams targeting fintech or other compliance-heavy verticals.",
+        "url": "https://claude.com/blog/how-kepler-built-verifiable-ai-for-financial-services-with-claude",
+        "source": "Hacker News",
+        "published": "2026-05-03T18:14:56.000Z"
+      },
+      {
+        "title": "Sam Altman: Being smarter is still the most important thing",
+        "summary": "OpenAI CEO Sam Altman publicly noted that despite his instinct to prioritize cheaper and faster models, raw capability improvements remain the most impactful dimension. This signals that OpenAI's near-term roadmap will continue to prioritize capability scaling over cost reduction, relevant for teams making build-vs-buy decisions on frontier models.",
+        "url": "https://x.com/sama/status/2050671161915371998",
+        "source": "X (@sama)",
+        "published": "2026-05-02T20:17:59.000Z"
+      }
+    ]
+  }
+}
