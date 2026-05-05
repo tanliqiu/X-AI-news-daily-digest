@@ -9,16 +9,28 @@ export interface DigestItem {
   url: string
   source: string
   published: string
+  keywords?: string[]
+  authors?: { name: string; affiliation: string }[]
 }
 
 export interface Digest {
   date: string
   tldr: string[]
+  edition?: 'weekend'
+  dateRange?: string
   sections: {
     Research: DigestItem[]
     Tools: DigestItem[]
     'Industry News': DigestItem[]
   }
+}
+
+export interface DigestSummary {
+  date: string
+  edition?: 'weekend'
+  dateRange?: string
+  tldr: string[]
+  counts: { Research: number; Tools: number; 'Industry News': number }
 }
 
 export function getDigestDates(): string[] {
@@ -39,4 +51,25 @@ export function getDigest(date: string): Digest | null {
   } catch {
     return null
   }
+}
+
+export function getDigestSummaries(limit = 14): DigestSummary[] {
+  const dates = getDigestDates().slice(0, limit)
+  const summaries: DigestSummary[] = []
+  for (const date of dates) {
+    const digest = getDigest(date)
+    if (!digest) continue
+    summaries.push({
+      date,
+      edition: digest.edition,
+      dateRange: digest.dateRange,
+      tldr: digest.tldr ?? [],
+      counts: {
+        Research: digest.sections.Research?.length ?? 0,
+        Tools: digest.sections.Tools?.length ?? 0,
+        'Industry News': digest.sections['Industry News']?.length ?? 0,
+      },
+    })
+  }
+  return summaries
 }

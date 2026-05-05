@@ -27,16 +27,24 @@ Selection criteria:
 - Prefer items with concrete implications over speculative or hype-driven content
 - Podcast episodes should go in "Industry News" unless they cover a specific research finding
 
+For Research items only, add two extra fields:
+- "keywords": array of 1–3 tags chosen from: Evaluation, Security, Framework, Application, Alignment, Inference, Training, Multimodal, Reasoning, Agents, RAG, Benchmarks, Survey
+- "authors": pass through the authors array from the raw item (name + affiliation); if not available, omit the field
+
 Return ONLY valid JSON. No markdown fences, no preamble. Schema:
 {
   "date": "YYYY-MM-DD",
   "tldr": ["most important development today", "second development", "third development"],
   "sections": {
     "Research": [
+      {"title": "...", "summary": "...", "url": "...", "source": "...", "published": "ISO-8601", "keywords": ["Reasoning"], "authors": [{"name": "...", "affiliation": "..."}]}
+    ],
+    "Tools": [
       {"title": "...", "summary": "...", "url": "...", "source": "...", "published": "ISO-8601"}
     ],
-    "Tools": [...],
-    "Industry News": [...]
+    "Industry News": [
+      {"title": "...", "summary": "...", "url": "...", "source": "...", "published": "ISO-8601"}
+    ]
   }
 }`
 
@@ -72,6 +80,8 @@ async function main() {
 
   const feed = JSON.parse(await readFile(FEED_PATH, 'utf-8'))
   const today = new Date().toISOString().split('T')[0]
+  const isWeekend = feed.isWeekend === true
+  const dateRange = feed.dateRange ?? null
 
   if (!feed.items || feed.items.length === 0) {
     console.log('[prepare-digest] No new items, skipping')
@@ -93,6 +103,10 @@ async function main() {
 
   console.log(`[prepare-digest] Processing ${items.length} items with Claude...`)
 
+  const weekendNote = isWeekend && dateRange
+    ? `\n\nNote: This is a Monday weekend edition covering ${dateRange}. Include items from Friday through Monday.`
+    : ''
+
   const response = await client.messages.create({
     model: 'claude-sonnet-4-6',
     max_tokens: 4096,
@@ -106,7 +120,7 @@ async function main() {
     messages: [
       {
         role: 'user',
-        content: `Date: ${today}\n\nItems:\n${JSON.stringify(items, null, 2)}`,
+        content: `Date: ${today}${weekendNote}\n\nItems:\n${JSON.stringify(items, null, 2)}`,
       },
     ],
   })
@@ -121,6 +135,11 @@ async function main() {
     console.error('[prepare-digest] Failed to parse response as JSON:', err.message)
     console.error('First 300 chars:', text.slice(0, 300))
     process.exit(1)
+  }
+
+  if (isWeekend) {
+    digest.edition = 'weekend'
+    if (dateRange) digest.dateRange = dateRange
   }
 
   await mkdir(OUTPUT_DIR, { recursive: true })

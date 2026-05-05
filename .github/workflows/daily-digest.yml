@@ -2,7 +2,7 @@ name: Daily AI Digest
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # 6am UTC = 2am EST / 11pm PST
+    - cron: '0 6 * * 1-5'  # 6am UTC Mon–Fri only
   workflow_dispatch:        # allow manual trigger from GitHub UI
 
 permissions:
@@ -24,6 +24,9 @@ jobs:
       - name: Install pipeline dependencies
         run: npm install
         working-directory: pipeline
+
+      - name: Set day of week
+        run: echo "DAY_OF_WEEK=$(date +%u)" >> $GITHUB_ENV
 
       - name: Generate feed
         run: node generate-feed.js

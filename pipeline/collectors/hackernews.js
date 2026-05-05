@@ -1,4 +1,4 @@
-const LOOKBACK_HOURS = 168  // 7 days; HN index has some delay
+const DEFAULT_LOOKBACK_HOURS = 168  // 7 days; HN index has some delay
 const MIN_POINTS = 20
 const MAX_RESULTS = 8
 
@@ -8,8 +8,8 @@ const AI_KEYWORDS = [
   'anthropic', 'openai', 'mistral', 'deepmind', 'language model',
 ]
 
-export async function collectHackerNews() {
-  const since = Math.floor((Date.now() - LOOKBACK_HOURS * 60 * 60 * 1000) / 1000)
+export async function collectHackerNews(lookbackHours = DEFAULT_LOOKBACK_HOURS) {
+  const since = Math.floor((Date.now() - lookbackHours * 60 * 60 * 1000) / 1000)
 
   // Use search_by_date without a query param so Algolia sorts by date DESC.
   // The query param changes ranking and filters out recent items.

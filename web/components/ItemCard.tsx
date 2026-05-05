@@ -1,4 +1,5 @@
 import { DigestItem } from '@/lib/digests'
+import BookmarkButton from './BookmarkButton'
 
 const SOURCE_STYLES: Record<string, string> = {
   arXiv: 'bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300',
@@ -29,22 +30,34 @@ function relativeDay(published: string): string {
 
 interface Props {
   item: DigestItem
+  digestDate?: string
 }
 
-export default function ItemCard({ item }: Props) {
+export default function ItemCard({ item, digestDate }: Props) {
+  const displayedAuthors = item.authors?.slice(0, 3) ?? []
+  const hasMoreAuthors = (item.authors?.length ?? 0) > 3
+
   return (
     <article className="border-l-2 border-gray-100 dark:border-gray-800 pl-4">
-      <div className="flex items-center gap-2 mb-1.5">
-        <span
-          className={`text-xs px-2 py-0.5 rounded-full font-medium ${sourceStyle(item.source)}`}
-        >
-          {item.source}
-        </span>
-        {item.published && (
-          <span className="text-xs text-gray-400 dark:text-gray-500">
-            {relativeDay(item.published)}
+      <div className="flex items-start justify-between gap-2 mb-1.5">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span
+            className={`text-xs px-2 py-0.5 rounded-full font-medium ${sourceStyle(item.source)}`}
+          >
+            {item.source}
           </span>
-        )}
+          {item.published && (
+            <span className="text-xs text-gray-400 dark:text-gray-500">
+              {relativeDay(item.published)}
+            </span>
+          )}
+        </div>
+        <BookmarkButton
+          url={item.url}
+          title={item.title}
+          source={item.source}
+          digestDate={digestDate ?? ''}
+        />
       </div>
       <h3 className="text-sm font-semibold leading-snug mb-1">
         <a
@@ -56,9 +69,29 @@ export default function ItemCard({ item }: Props) {
           {item.title}
         </a>
       </h3>
+      {item.keywords && item.keywords.length > 0 && (
+        <div className="flex flex-wrap gap-1 mb-1.5">
+          {item.keywords.map((kw) => (
+            <span
+              key={kw}
+              className="text-xs px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 font-medium"
+            >
+              {kw}
+            </span>
+          ))}
+        </div>
+      )}
       {item.summary && (
         <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
           {item.summary}
+        </p>
+      )}
+      {displayedAuthors.length > 0 && (
+        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+          {displayedAuthors
+            .map((a) => (a.affiliation ? `${a.name} (${a.affiliation})` : a.name))
+            .join(', ')}
+          {hasMoreAuthors ? ' et al.' : ''}
         </p>
       )}
     </article>

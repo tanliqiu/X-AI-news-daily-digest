@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { getDigest, getDigestDates } from '@/lib/digests'
 import DigestHeader from '@/components/DigestHeader'
 import SectionBlock from '@/components/SectionBlock'
+import MarkAsRead from '@/components/MarkAsRead'
 
 export async function generateStaticParams() {
   return getDigestDates().map((date) => ({ date }))
@@ -35,17 +36,20 @@ export default async function DigestPage({
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-8">
+      <MarkAsRead date={date} />
       <DigestHeader
         date={date}
         tldr={digest.tldr}
         prevDate={prevDate}
         nextDate={nextDate}
+        edition={digest.edition}
+        dateRange={digest.dateRange}
       />
       <div className="mt-10 space-y-12">
         {sections.map(
           ({ key, items }) =>
             items.length > 0 && (
-              <SectionBlock key={key} title={key} items={items} />
+              <SectionBlock key={key} title={key} items={items} digestDate={date} />
             )
         )}
       </div>

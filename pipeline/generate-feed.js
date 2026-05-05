@@ -33,15 +33,30 @@ function pruneState(state) {
   return { seen: pruned }
 }
 
+function getWeekendDateRange(now) {
+  // Returns e.g. "Apr 25–28" covering Fri through Mon
+  const friday = new Date(now)
+  friday.setDate(friday.getDate() - 3)
+  const opts = { month: 'short', day: 'numeric' }
+  const fridayStr = friday.toLocaleDateString('en-US', opts)
+  const mondayStr = now.toLocaleDateString('en-US', { day: 'numeric' })
+  return `${fridayStr}–${mondayStr}`
+}
+
 async function main() {
   console.log('[generate-feed] Starting...')
+
+  const dayOfWeek = parseInt(process.env.DAY_OF_WEEK ?? '0', 10)
+  const isMonday = dayOfWeek === 1
+  // Monday: 96h covers Fri 6am → Mon 6am; HN stays at 168h (already wide)
+  const lookbackHours = isMonday ? 96 : undefined
 
   const state = await loadState()
 
   const [papers, hnStories, articles, episodes, fbItems] = await Promise.all([
-    collectArxiv(),
-    collectHackerNews(),
-    collectBlogs(),
+    collectArxiv(lookbackHours),
+    collectHackerNews(lookbackHours),
+    collectBlogs(lookbackHours),
     collectPodcasts(),
     collectFollowBuilders(),
   ])
@@ -54,9 +69,10 @@ async function main() {
   const allItems = [...papers, ...hnStories, ...articles, ...episodes, ...fbItems]
   const newItems = allItems.filter((item) => !state.seen[item.id])
 
-  const now = new Date().toISOString()
+  const now = new Date()
+  const nowIso = now.toISOString()
   for (const item of newItems) {
-    state.seen[item.id] = now
+    state.seen[item.id] = nowIso
   }
 
   const prunedState = pruneState(state)
@@ -64,9 +80,13 @@ async function main() {
 
   console.log(`[generate-feed] ${newItems.length} new items after deduplication`)
 
+  const meta = isMonday
+    ? { isWeekend: true, dateRange: getWeekendDateRange(now) }
+    : { isWeekend: false }
+
   await writeFile(
     OUTPUT_PATH,
-    JSON.stringify({ generatedAt: now, items: newItems }, null, 2)
+    JSON.stringify({ generatedAt: nowIso, ...meta, items: newItems }, null, 2)
   )
   console.log(`[generate-feed] Written to ${OUTPUT_PATH}`)
 }

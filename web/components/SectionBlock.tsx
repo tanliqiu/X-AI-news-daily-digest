@@ -10,9 +10,10 @@ const SECTION_STYLES: Record<string, string> = {
 interface Props {
   title: string
   items: DigestItem[]
+  digestDate?: string
 }
 
-export default function SectionBlock({ title, items }: Props) {
+export default function SectionBlock({ title, items, digestDate }: Props) {
   const color = SECTION_STYLES[title] ?? 'text-gray-600 dark:text-gray-400'
 
   return (
@@ -22,7 +23,7 @@ export default function SectionBlock({ title, items }: Props) {
       </h2>
       <div className="space-y-5">
         {items.map((item, i) => (
-          <ItemCard key={i} item={item} />
+          <ItemCard key={i} item={item} digestDate={digestDate} />
         ))}
       </div>
     </section>

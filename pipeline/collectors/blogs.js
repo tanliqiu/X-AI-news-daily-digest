@@ -1,6 +1,6 @@
 import { XMLParser } from 'fast-xml-parser'
 
-const LOOKBACK_HOURS = 72
+const DEFAULT_LOOKBACK_HOURS = 72
 const MAX_PER_SOURCE = 3
 
 // RSS/Atom feeds for AI company blogs and newsletters
@@ -35,7 +35,7 @@ function extractUrl(item) {
   return ''
 }
 
-export async function collectBlogs() {
+export async function collectBlogs(lookbackHours = DEFAULT_LOOKBACK_HOURS) {
   const parser = new XMLParser({
     ignoreAttributes: false,
     attributeNamePrefix: '@_',
@@ -44,7 +44,7 @@ export async function collectBlogs() {
     isArray: (name) => ['item', 'entry'].includes(name),
   })
 
-  const cutoff = new Date(Date.now() - LOOKBACK_HOURS * 60 * 60 * 1000)
+  const cutoff = new Date(Date.now() - lookbackHours * 60 * 60 * 1000)
   const allItems = []
 
   await Promise.all(

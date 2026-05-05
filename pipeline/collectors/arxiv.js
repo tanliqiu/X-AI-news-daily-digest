@@ -6,11 +6,10 @@ const FEEDS = [
   'https://export.arxiv.org/rss/cs.LG',
 ]
 
-// arXiv announces in daily batches; use 48h window to catch weekend batches
-const LOOKBACK_HOURS = 48
+const DEFAULT_LOOKBACK_HOURS = 48
 const MAX_PAPERS = 10
 
-export async function collectArxiv() {
+export async function collectArxiv(lookbackHours = DEFAULT_LOOKBACK_HOURS) {
   const parser = new XMLParser({
     ignoreAttributes: false,
     attributeNamePrefix: '@_',
@@ -18,7 +17,7 @@ export async function collectArxiv() {
     trimValues: true,
   })
 
-  const cutoff = new Date(Date.now() - LOOKBACK_HOURS * 60 * 60 * 1000)
+  const cutoff = new Date(Date.now() - lookbackHours * 60 * 60 * 1000)
   const allItems = []
   const seen = new Set()
 
@@ -71,5 +70,47 @@ export async function collectArxiv() {
     })
   )
 
-  return allItems.slice(0, MAX_PAPERS)
+  const papers = allItems.slice(0, MAX_PAPERS)
+  if (papers.length === 0) return papers
+
+  // Batch-fetch Atom API to get accurate author affiliations
+  try {
+    const idList = papers.map((p) => p.id).join(',')
+    const atomRes = await fetch(
+      `https://export.arxiv.org/api/query?id_list=${idList}&max_results=${MAX_PAPERS}`,
+      { headers: { 'User-Agent': 'AI-Digest-Bot/1.0' }, signal: AbortSignal.timeout(20000) }
+    )
+    if (atomRes.ok) {
+      const atomXml = await atomRes.text()
+      const atomParsed = new XMLParser({
+        ignoreAttributes: false,
+        attributeNamePrefix: '@_',
+        parseAttributeValue: true,
+        trimValues: true,
+        isArray: (name) => ['entry', 'author'].includes(name),
+      }).parse(atomXml)
+
+      const entries = atomParsed?.feed?.entry ?? []
+      const authorsByArxivId = new Map()
+      for (const entry of entries) {
+        const idUrl = typeof entry.id === 'string' ? entry.id : ''
+        const arxivId = idUrl.match(/arxiv\.org\/abs\/([^\s?#v]+)/)?.[1]
+        if (!arxivId) continue
+        const authors = (entry.author ?? []).map((a) => ({
+          name: typeof a.name === 'string' ? a.name.trim() : '',
+          affiliation: typeof a['arxiv:affiliation'] === 'string' ? a['arxiv:affiliation'].trim() : '',
+        })).filter((a) => a.name)
+        authorsByArxivId.set(arxivId, authors)
+      }
+
+      for (const paper of papers) {
+        const authors = authorsByArxivId.get(paper.id)
+        if (authors) paper.authors = authors
+      }
+    }
+  } catch (err) {
+    console.error(`[arxiv] Atom API fetch failed: ${err.message}`)
+  }
+
+  return papers
 }
