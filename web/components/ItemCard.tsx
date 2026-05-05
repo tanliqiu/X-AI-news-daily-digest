@@ -2,23 +2,20 @@ import { DigestItem } from '@/lib/digests'
 import BookmarkButton from './BookmarkButton'
 
 const SOURCE_STYLES: Record<string, string> = {
-  arXiv: 'bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300',
-  'Hacker News': 'bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300',
-  Anthropic: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300',
-  OpenAI: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300',
-  'Hugging Face': 'bg-yellow-50 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300',
-  'Google DeepMind': 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
-  'Meta AI': 'bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300',
-  Mistral: 'bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300',
-  'The Batch': 'bg-teal-50 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300',
-  'Import AI': 'bg-lime-50 text-lime-700 dark:bg-lime-900/30 dark:text-lime-300',
+  arXiv: 'bg-red-900/30 text-red-400',
+  'Hacker News': 'bg-orange-900/30 text-orange-400',
+  Anthropic: 'bg-violet-900/30 text-violet-400',
+  OpenAI: 'bg-emerald-900/30 text-emerald-400',
+  'Hugging Face': 'bg-yellow-900/30 text-yellow-400',
+  'Google DeepMind': 'bg-blue-900/30 text-blue-400',
+  'Meta AI': 'bg-sky-900/30 text-sky-400',
+  Mistral: 'bg-indigo-900/30 text-indigo-400',
+  'The Batch': 'bg-teal-900/30 text-teal-400',
+  'Import AI': 'bg-lime-900/30 text-lime-400',
 }
 
 function sourceStyle(source: string): string {
-  return (
-    SOURCE_STYLES[source] ??
-    'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
-  )
+  return SOURCE_STYLES[source] ?? 'bg-zinc-800 text-gray-400'
 }
 
 function relativeDay(published: string): string {
@@ -38,16 +35,14 @@ export default function ItemCard({ item, digestDate }: Props) {
   const hasMoreAuthors = (item.authors?.length ?? 0) > 3
 
   return (
-    <article className="border-l-2 border-gray-100 dark:border-gray-800 pl-4">
+    <article className="border-l-2 border-zinc-700 pl-4">
       <div className="flex items-start justify-between gap-2 mb-1.5">
         <div className="flex items-center gap-2 flex-wrap">
-          <span
-            className={`text-xs px-2 py-0.5 rounded-full font-medium ${sourceStyle(item.source)}`}
-          >
+          <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sourceStyle(item.source)}`}>
             {item.source}
           </span>
           {item.published && (
-            <span className="text-xs text-gray-400 dark:text-gray-500">
+            <span className="text-xs text-gray-600">
               {relativeDay(item.published)}
             </span>
           )}
@@ -59,7 +54,7 @@ export default function ItemCard({ item, digestDate }: Props) {
           digestDate={digestDate ?? ''}
         />
       </div>
-      <h3 className="text-sm font-semibold leading-snug mb-1">
+      <h3 className="text-sm font-semibold leading-snug mb-1 text-gray-100">
         <a
           href={item.url}
           target="_blank"
@@ -74,7 +69,7 @@ export default function ItemCard({ item, digestDate }: Props) {
           {item.keywords.map((kw) => (
             <span
               key={kw}
-              className="text-xs px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400 font-medium"
+              className="text-xs px-1.5 py-0.5 rounded bg-purple-900/30 text-purple-400 font-medium"
             >
               {kw}
             </span>
@@ -82,12 +77,12 @@ export default function ItemCard({ item, digestDate }: Props) {
         </div>
       )}
       {item.summary && (
-        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+        <p className="text-sm text-gray-500 leading-relaxed">
           {item.summary}
         </p>
       )}
       {displayedAuthors.length > 0 && (
-        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+        <p className="text-xs text-gray-600 mt-1">
           {displayedAuthors
             .map((a) => (a.affiliation ? `${a.name} (${a.affiliation})` : a.name))
             .join(', ')}

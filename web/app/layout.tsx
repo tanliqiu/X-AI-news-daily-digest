@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        <nav className="border-b border-gray-100 dark:border-gray-800">
-          <div className="max-w-2xl mx-auto px-4 h-10 flex items-center justify-between">
-            <Link href="/" className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
-              AI Daily Digest
+      <body className="antialiased min-h-screen" style={{ background: '#141414', color: '#e5e5e5' }}>
+        <nav className="fixed top-0 left-0 right-0 z-50 h-14 flex items-center px-8 bg-gradient-to-b from-black/80 to-transparent pointer-events-none">
+          <div className="flex items-center justify-between w-full pointer-events-auto">
+            <Link href="/" className="text-base font-bold tracking-wide text-white hover:text-gray-200 transition-colors">
+              AI DAILY DIGEST
             </Link>
-            <Link href="/bookmarks" className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+            <Link href="/bookmarks" className="text-sm text-gray-300 hover:text-white transition-colors">
               Bookmarks
             </Link>
           </div>

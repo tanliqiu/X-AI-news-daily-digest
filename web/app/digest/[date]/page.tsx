@@ -35,7 +35,7 @@ export default async function DigestPage({
   ]
 
   return (
-    <main className="max-w-2xl mx-auto px-4 py-8">
+    <main className="max-w-2xl mx-auto px-4 pt-20 pb-16">
       <MarkAsRead date={date} />
       <DigestHeader
         date={date}

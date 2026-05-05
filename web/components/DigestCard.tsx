@@ -6,56 +6,69 @@ interface Props {
   isRead: boolean
 }
 
+const SECTION_COLORS = {
+  Research: 'text-purple-400',
+  Tools: 'text-blue-400',
+  'Industry News': 'text-emerald-400',
+}
+
 export default function DigestCard({ summary, isRead }: Props) {
   const formatted = new Date(`${summary.date}T12:00:00`).toLocaleDateString('en-US', {
-    weekday: 'short',
     month: 'short',
     day: 'numeric',
   })
-  const displayDate =
-    summary.edition === 'weekend' && summary.dateRange ? summary.dateRange : formatted
-
-  const total =
-    summary.counts.Research + summary.counts.Tools + summary.counts['Industry News']
+  const weekday = new Date(`${summary.date}T12:00:00`).toLocaleDateString('en-US', { weekday: 'short' })
+  const displayDate = summary.edition === 'weekend' && summary.dateRange ? summary.dateRange : `${weekday}, ${formatted}`
 
   return (
-    <Link href={`/digest/${summary.date}`} className="block group">
-      <div className="flex items-start justify-between gap-4 py-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900/50 -mx-2 px-2 rounded transition-colors">
-        <div className="min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            {!isRead && (
-              <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" aria-label="Unread" />
-            )}
-            <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">
-              {displayDate}
-            </span>
+    <Link href={`/digest/${summary.date}`} className="block group flex-shrink-0 w-64">
+      <div
+        className="relative h-40 rounded-md overflow-hidden transition-transform duration-200 group-hover:scale-105 group-hover:z-10 cursor-pointer"
+        style={{ background: 'linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%)' }}
+      >
+        {/* Top row */}
+        <div className="absolute top-0 left-0 right-0 p-3 flex items-center justify-between">
+          <span className="text-xs font-semibold text-gray-400 tracking-wide">{displayDate}</span>
+          <div className="flex items-center gap-1.5">
             {summary.edition === 'weekend' && (
-              <span className="text-xs px-1.5 py-0.5 rounded-full font-medium bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+              <span className="text-xs px-1.5 py-0.5 rounded font-medium bg-amber-500/20 text-amber-400">
                 Weekend
               </span>
             )}
-          </div>
-          {summary.tldr[0] && (
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-snug line-clamp-2">
-              {summary.tldr[0]}
-            </p>
-          )}
-          <div className="flex gap-3 mt-2 text-xs text-gray-400 dark:text-gray-500">
-            {summary.counts.Research > 0 && (
-              <span>{summary.counts.Research} research</span>
+            {!isRead && (
+              <span className="w-2 h-2 rounded-full bg-blue-500" aria-label="Unread" />
             )}
-            {summary.counts.Tools > 0 && (
-              <span>{summary.counts.Tools} tools</span>
-            )}
-            {summary.counts['Industry News'] > 0 && (
-              <span>{summary.counts['Industry News']} news</span>
-            )}
-            {total === 0 && <span>No items</span>}
           </div>
         </div>
-        <span className="text-gray-300 dark:text-gray-600 group-hover:text-gray-500 dark:group-hover:text-gray-400 shrink-0 mt-1 transition-colors">
-          →
-        </span>
+
+        {/* TL;DR preview */}
+        <div className="absolute inset-0 flex items-center px-3 pt-8 pb-10">
+          <p className="text-sm text-gray-200 leading-snug line-clamp-3">
+            {summary.tldr[0] ?? 'No summary available'}
+          </p>
+        </div>
+
+        {/* Bottom: section counts */}
+        <div className="absolute bottom-0 left-0 right-0 px-3 pb-2.5 flex gap-3">
+          {summary.counts.Research > 0 && (
+            <span className={`text-xs font-medium ${SECTION_COLORS.Research}`}>
+              {summary.counts.Research} Research
+            </span>
+          )}
+          {summary.counts.Tools > 0 && (
+            <span className={`text-xs font-medium ${SECTION_COLORS.Tools}`}>
+              {summary.counts.Tools} Tools
+            </span>
+          )}
+          {summary.counts['Industry News'] > 0 && (
+            <span className={`text-xs font-medium ${SECTION_COLORS['Industry News']}`}>
+              {summary.counts['Industry News']} News
+            </span>
+          )}
+        </div>
+
+        {/* Hover overlay */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />
       </div>
     </Link>
   )
