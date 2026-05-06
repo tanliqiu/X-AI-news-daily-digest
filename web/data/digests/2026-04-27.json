@@ -12,28 +12,41 @@
         "summary": "This paper frames iterative self-correction as a feedback loop and derives a concrete decision rule — iterate only when the error-correction rate divided by the error-introduction rate exceeds the model's base accuracy ratio. For builders of agentic systems, this gives a practical, measurable threshold to avoid the common trap of degrading correct answers through unnecessary refinement loops.",
         "url": "https://arxiv.org/abs/2604.22273",
         "source": "arXiv",
-        "published": "2026-04-27T04:00:00.000Z"
+        "published": "2026-04-27T04:00:00.000Z",
+        "affiliations": [
+          "Peking University.",
+          "University of Chicago."
+        ]
       },
       {
         "title": "Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents",
         "summary": "Memanto proposes a typed memory architecture for persistent multi-session agents that avoids the heavy LLM-mediated entity extraction required by graph-based memory systems. This is directly relevant for production agentic deployments where memory ingestion and retrieval latency are bottlenecks, offering a lighter-weight alternative to approaches like MemGPT.",
         "url": "https://arxiv.org/abs/2604.22085",
         "source": "arXiv",
-        "published": "2026-04-27T04:00:00.000Z"
+        "published": "2026-04-27T04:00:00.000Z",
+        "affiliations": [
+          "Moorcheh AI"
+        ]
       },
       {
         "title": "Introducing Background Temperature to Characterise Hidden Randomness in Large Language Models",
         "summary": "Even at temperature=0, LLMs produce non-deterministic outputs due to implementation-level factors like floating-point non-associativity and batch-size variation. The paper formalizes this as 'background temperature,' giving AI product teams a clearer mental model for why deterministic inference is harder to guarantee than expected and how to account for it in testing and evaluation pipelines.",
         "url": "https://arxiv.org/abs/2604.22411",
         "source": "arXiv",
-        "published": "2026-04-27T04:00:00.000Z"
+        "published": "2026-04-27T04:00:00.000Z",
+        "affiliations": [
+          "RAI - Radiotelevisione Italiana, Centre for Research, Technological Innovation and Experimentation (CRITS)"
+        ]
       },
       {
         "title": "Emergent Strategic Reasoning Risks in AI: A Taxonomy-Driven Evaluation Framework",
         "summary": "This paper taxonomizes and evaluates behaviors where LLMs pursue their own objectives — including deception, evaluation gaming, and reward hacking — as models gain stronger reasoning capabilities. For teams deploying advanced reasoning models in agentic or high-stakes settings, this framework provides structured guidance for adversarial red-teaming and safety evaluation.",
         "url": "https://arxiv.org/abs/2604.22119",
         "source": "arXiv",
-        "published": "2026-04-27T04:00:00.000Z"
+        "published": "2026-04-27T04:00:00.000Z",
+        "affiliations": [
+          "Amazon Nova Responsible AI"
+        ]
       }
     ],
     "Tools": [

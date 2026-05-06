@@ -12,21 +12,35 @@
         "summary": "This paper provides mechanistic evidence for why RL-based post-training generalizes beyond the training domain while SFT tends to cause capability forgetting. For practitioners fine-tuning LLMs, this offers concrete guidance on when to prefer RL over SFT, particularly for reasoning tasks requiring out-of-distribution generalization.",
         "url": "https://arxiv.org/abs/2604.25011",
         "source": "arXiv",
-        "published": "2026-04-29T04:00:00.000Z"
+        "published": "2026-04-29T04:00:00.000Z",
+        "affiliations": [
+          "TJUNLP Lab, School of Computer Science and Technology, Tianjin University, China",
+          "German Research Center for Artificial Intelligence (DFKI), Saarbrücken, Germany",
+          "Saarland University, Saarbrücken, Germany"
+        ]
       },
       {
         "title": "BenchGuard: Automated Auditing of LLM Agent Benchmarks",
         "summary": "BenchGuard uses frontier LLMs to systematically audit agent benchmarks for broken specifications, implicit assumptions, and rigid evaluation scripts that falsely penalize valid agent behavior. This is directly relevant for teams building or evaluating agent systems, as it surfaces how benchmark failures—not model failures—may be distorting performance assessments.",
         "url": "https://arxiv.org/abs/2604.24955",
         "source": "arXiv",
-        "published": "2026-04-29T04:00:00.000Z"
+        "published": "2026-04-29T04:00:00.000Z",
+        "affiliations": [
+          "Allen School, University of Washington, Seattle, WA, USA",
+          "Phylo, Inc., South San Francisco, CA, USA",
+          "Genentech, Inc., South San Francisco, CA, USA"
+        ]
       },
       {
         "title": "Don't Stop Early: Scalable Enterprise Deep Research with Controlled Information Flow and Evidence-Aware Termination",
         "summary": "This paper proposes an architecture for enterprise deep research agents that addresses common failure modes: uneven coverage, context explosion, and premature stopping. The evidence-aware termination mechanism and dependency-guided execution are practical patterns applicable to anyone building multi-step research or report-generation pipelines.",
         "url": "https://arxiv.org/abs/2604.24978",
         "source": "arXiv",
-        "published": "2026-04-29T04:00:00.000Z"
+        "published": "2026-04-29T04:00:00.000Z",
+        "affiliations": [
+          "Jiaxin Zhang Vaibhav Vats Yu Li Xiangyu Peng Chien-Sheng Wu",
+          "Salesforce AI Research"
+        ]
       }
     ],
     "Tools": [

@@ -47,6 +47,12 @@
             "name": "Ying Lin",
             "affiliation": ""
           }
+        ],
+        "affiliations": [
+          "University of Houston",
+          "University of Southern California",
+          "New York University",
+          "University of California, San Diego"
         ]
       },
       {
@@ -69,6 +75,9 @@
             "name": "Jayita Chatterjee",
             "affiliation": ""
           }
+        ],
+        "affiliations": [
+          "Harvard University"
         ]
       },
       {
@@ -95,6 +104,11 @@
             "name": "Yi Ling Yu",
             "affiliation": ""
           }
+        ],
+        "affiliations": [
+          "University of Pennsylvania",
+          "Columbia University",
+          "OpenMesh AI"
         ]
       },
       {
@@ -116,6 +130,9 @@
             "name": "Narendra Ahuja",
             "affiliation": ""
           }
+        ],
+        "affiliations": [
+          "University of Illinois Urbana-Champaign"
         ]
       },
       {
@@ -142,6 +159,9 @@
             "name": "Jingyue Li",
             "affiliation": ""
           }
+        ],
+        "affiliations": [
+          "NTNU, Trondheim, Norway"
         ]
       }
     ],

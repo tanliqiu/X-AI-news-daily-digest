@@ -12,7 +12,12 @@
         "summary": "This paper addresses the over-generation problem in large reasoning models (LRMs), showing that models waste tokens on redundant verification and reflection steps. The authors propose tagging reasoning steps by type and using that structure to enable adaptive early-stopping, cutting inference costs without sacrificing accuracy. Practically useful for anyone running o1/R1-style reasoning models at scale who needs to manage token budgets.",
         "url": "https://arxiv.org/abs/2604.21057",
         "source": "arXiv",
-        "published": "2026-04-24T04:00:00.000Z"
+        "published": "2026-04-24T04:00:00.000Z",
+        "affiliations": [
+          "IBM Research Europe",
+          "Trinity College Dublin",
+          "ADAPT Research Centre"
+        ]
       },
       {
         "title": "Serialisation Strategy Matters: How FHIR Data Format Affects LLM Medication Reconciliation",

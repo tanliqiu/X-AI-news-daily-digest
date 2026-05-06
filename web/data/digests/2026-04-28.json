@@ -19,21 +19,31 @@
         "summary": "This paper addresses the critical safety gap in agentic LLM deployments by introducing uncertainty quantification specifically for function-calling scenarios where incorrect or irreversible actions (e.g., deleting data, initiating transactions) carry real costs. Practical takeaway: integrating calibrated confidence estimates before executing tool calls can serve as a low-cost safety layer in production agent systems. This is increasingly important as agentic frameworks move toward autonomous multi-step execution.",
         "url": "https://arxiv.org/abs/2604.22985",
         "source": "arXiv",
-        "published": "2026-04-28T04:00:00.000Z"
+        "published": "2026-04-28T04:00:00.000Z",
+        "affiliations": [
+          "University of Oxford",
+          "Apple"
+        ]
       },
       {
         "title": "TexOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction",
         "summary": "TexOCR introduces a benchmark and large-scale training corpus for converting scientific PDF pages into compilable LaTeX, going beyond plain-text or Markdown extraction. This matters for document ingestion pipelines serving academic or technical domains where preserving mathematical notation and structural fidelity is essential. Developers building RAG or document processing products for science and engineering use cases will benefit from the new evaluation suite.",
         "url": "https://arxiv.org/abs/2604.22880",
         "source": "arXiv",
-        "published": "2026-04-28T04:00:00.000Z"
+        "published": "2026-04-28T04:00:00.000Z",
+        "affiliations": [
+          "Yale University Zhejiang University"
+        ]
       },
       {
         "title": "Evaluating Temporal Consistency in Multi-Turn Language Models",
         "summary": "This paper identifies and formalizes 'temporal scope stability' — a model's ability to preserve, override, or transfer time-scoped factual context across conversation turns — and finds current LLMs struggle with it. For product builders, this highlights a concrete failure mode in multi-turn chatbots and assistants where users establish temporal context early and expect it to persist. The introduced benchmark can help teams select or fine-tune models for time-sensitive conversational applications.",
         "url": "https://arxiv.org/abs/2604.23051",
         "source": "arXiv",
-        "published": "2026-04-28T04:00:00.000Z"
+        "published": "2026-04-28T04:00:00.000Z",
+        "affiliations": [
+          "University of Virginia"
+        ]
       }
     ],
     "Tools": [

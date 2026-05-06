@@ -12,21 +12,33 @@
         "summary": "Researchers introduce ICD, a jailbreak strategy that extracts harmful content by soliciting single-word continuations sequentially before requesting a full response, effectively circumventing conversational safety filters. This trajectory-based attack highlights a fundamental fragility in token-level refusal mechanisms and suggests that safety evaluations need to account for multi-turn, incremental elicitation patterns. Teams deploying safety-critical LLM applications should test against this class of attack.",
         "url": "https://arxiv.org/abs/2604.25921",
         "source": "arXiv",
-        "published": "2026-04-30T04:00:00.000Z"
+        "published": "2026-04-30T04:00:00.000Z",
+        "affiliations": [
+          "University of Michigan",
+          "University of Toronto"
+        ]
       },
       {
         "title": "SpecTr-GBV: Multi-Draft Block Verification Accelerating Speculative Decoding",
         "summary": "This paper proposes SpecTr-GBV, which combines multi-draft candidate generation with block verification to improve throughput in speculative decoding, addressing latency bottlenecks in autoregressive inference. The approach increases token acceptance rates while reducing wasted verification cycles, which is directly relevant for teams optimizing inference costs on large models. Practical gains here could meaningfully reduce per-token costs in high-throughput production deployments.",
         "url": "https://arxiv.org/abs/2604.25925",
         "source": "arXiv",
-        "published": "2026-04-30T04:00:00.000Z"
+        "published": "2026-04-30T04:00:00.000Z",
+        "affiliations": [
+          "Center for Applied Statistics and School of Statistics, Renmin University of China",
+          "School of Intelligent Medicine, China Medical University",
+          "Beijing Advanced Innovation Center for Future Blockchain and Privacy Computing"
+        ]
       },
       {
         "title": "Lightweight LLMs for Biomedical Named Entity Recognition Across Output Formats",
         "summary": "The study benchmarks small, fine-tunable LLMs on biomedical NER tasks under realistic healthcare constraints — low compute budgets and privacy requirements — while testing how different output formats affect accuracy. Findings offer actionable guidance for teams building clinical NLP pipelines where deploying large frontier models is not feasible. Output format choice turns out to be a significant performance lever worth engineering attention.",
         "url": "https://arxiv.org/abs/2604.25920",
         "source": "arXiv",
-        "published": "2026-04-30T04:00:00.000Z"
+        "published": "2026-04-30T04:00:00.000Z",
+        "affiliations": [
+          "Inria, Inserm, Université Paris Cité, HeKA, UMR 1346, Paris, France 1"
+        ]
       }
     ],
     "Tools": [

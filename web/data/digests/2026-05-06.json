@@ -19,7 +19,7 @@
           "Benchmarks"
         ],
         "affiliations": [
-          "IISc Bangalore"
+          "Indian Institute of Science"
         ]
       },
       {
@@ -44,7 +44,8 @@
           "Inference"
         ],
         "affiliations": [
-          "University of Southern California"
+          "Information Sciences Institute, University of Southern California",
+          "Thomas Lord Department of Computer Science, University of Southern California"
         ]
       },
       {
@@ -56,6 +57,9 @@
         "keywords": [
           "Training",
           "Framework"
+        ],
+        "affiliations": [
+          "University of Michigan"
         ]
       }
     ],

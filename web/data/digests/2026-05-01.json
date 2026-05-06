@@ -12,28 +12,45 @@
         "summary": "CarryOnBench introduces a benchmark measuring whether LLMs can recover helpfulness after initially refusing seemingly harmful queries once users clarify benign intent. This directly addresses a real production pain point: overly cautious models that stay unhelpful even after context is provided, degrading user experience without improving safety. Teams fine-tuning or evaluating safety-aligned models should consider this benchmark to balance robustness with utility recovery.",
         "url": "https://arxiv.org/abs/2604.27093",
         "source": "arXiv",
-        "published": "2026-05-01T04:00:00.000Z"
+        "published": "2026-05-01T04:00:00.000Z",
+        "affiliations": [
+          "Carnegie Mellon University Allen Institute for AI University of Washington"
+        ]
       },
       {
         "title": "Length Value Model: Scalable Value Pretraining for Token-Level Length Modeling",
         "summary": "LenVM introduces token-level modeling of remaining generation length, enabling finer-grained control over inference cost and reasoning depth than sequence-level approaches. This is practically relevant for developers managing latency/cost trade-offs in production LLM deployments, as it could allow dynamic throttling of generation length based on task complexity. The framework is designed to be scalable via pretraining, suggesting it could be integrated into future base model training pipelines.",
         "url": "https://arxiv.org/abs/2604.27039",
         "source": "arXiv",
-        "published": "2026-05-01T04:00:00.000Z"
+        "published": "2026-05-01T04:00:00.000Z",
+        "affiliations": [
+          "University of California, Santa Barbara",
+          "Carnegie Mellon University",
+          "University of Wisconsin–Madison",
+          "LMSYS Org",
+          "Apple Inc."
+        ]
       },
       {
         "title": "Path-Lock Expert: Separating Reasoning Mode in Hybrid Thinking via Architecture-Level Separation",
         "summary": "Path-Lock Expert (PLE) proposes architecture-level separation of think/no-think modes in hybrid reasoning models to prevent 'reasoning leakage'—where models produce slow, verbose outputs even in fast-response mode. For product builders using models like DeepSeek or similar hybrid-thinking systems, this suggests a path toward more predictable latency profiles by routing modes through distinct parameters rather than relying on data or prompt cues alone. The approach could influence how next-generation reasoning models are trained and deployed.",
         "url": "https://arxiv.org/abs/2604.27201",
         "source": "arXiv",
-        "published": "2026-05-01T04:00:00.000Z"
+        "published": "2026-05-01T04:00:00.000Z",
+        "affiliations": [
+          "Case Western Reserve University",
+          "Michigan State University"
+        ]
       },
       {
         "title": "Exploring the Limits of Pruning: Task-Specific Neurons, Model Collapse, and Recovery in Task-Specific Large Language Models",
         "summary": "This study empirically confirms that task-specific neurons exist in fine-tuned LLMs for math and code, and that pruning them causes model collapse rather than graceful degradation. Practitioners compressing fine-tuned models should be cautious about applying generic pruning strategies, as task-critical neurons may be disproportionately removed. The findings suggest a need for task-aware pruning methods when optimizing specialized models for deployment.",
         "url": "https://arxiv.org/abs/2604.27115",
         "source": "arXiv",
-        "published": "2026-05-01T04:00:00.000Z"
+        "published": "2026-05-01T04:00:00.000Z",
+        "affiliations": [
+          "BRAC University"
+        ]
       }
     ],
     "Tools": [

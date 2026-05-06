@@ -12,21 +12,34 @@
         "summary": "The paper identifies two fundamental gaps in how LLMs handle incomplete-information games: failures to update beliefs correctly from observations, and failures to translate beliefs into rational actions. For builders deploying LLMs in negotiation, planning, or multi-agent scenarios, this highlights that current models may be unreliable in adversarial or incomplete-information settings without explicit scaffolding.",
         "url": "https://arxiv.org/abs/2605.00226",
         "source": "arXiv",
-        "published": "2026-05-04T04:00:00.000Z"
+        "published": "2026-05-04T04:00:00.000Z",
+        "affiliations": [
+          "EPFL",
+          "The University of Texas at Austin"
+        ]
       },
       {
         "title": "RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners",
         "summary": "RSAT trains 1-8B parameter models to produce step-by-step table reasoning with cell-level citations using SFT plus GRPO reinforcement, achieving strong faithfulness scores. This is practically valuable for anyone building enterprise analytics or document-grounded QA products where auditability of small, deployable models is critical.",
         "url": "https://arxiv.org/abs/2605.00199",
         "source": "arXiv",
-        "published": "2026-05-04T04:00:00.000Z"
+        "published": "2026-05-04T04:00:00.000Z",
+        "affiliations": [
+          "Department of Computer Science",
+          "The George Washington University, USA"
+        ]
       },
       {
         "title": "Putting HUMANS first: Efficient LAM Evaluation with Human Preference Alignment",
         "summary": "The paper shows that subsets of just 50 examples (0.3% of full benchmark data) can reliably evaluate large audio models across 40 tasks when selected with the right methods. This dramatically reduces evaluation cost, which is relevant for teams iterating quickly on audio-capable model pipelines.",
         "url": "https://arxiv.org/abs/2605.00022",
         "source": "arXiv",
-        "published": "2026-05-04T04:00:00.000Z"
+        "published": "2026-05-04T04:00:00.000Z",
+        "affiliations": [
+          "University of Southern California",
+          "Stanford University",
+          "OpenAthena"
+        ]
       },
       {
         "title": "How Frontier LLMs Adapt to Neurodivergence Context: A Measurement Framework for Surface vs. Structural Change in System-Prompted Responses",

@@ -1,3 +1,4 @@
+import { gunzipSync } from 'zlib'
 import { XMLParser } from 'fast-xml-parser'
 
 const FEEDS = [
@@ -9,45 +10,174 @@ const FEEDS = [
 const DEFAULT_LOOKBACK_HOURS = 48
 const MAX_PAPERS = 10
 
-// Extract numbered institution affiliations from arXiv HTML abstract page.
-// arXiv HTML uses LaTeXML, placing author/affiliation info in class="ltx_authors"
-// before class="ltx_abstract". Affiliations appear as "1 Institution A 2 Institution B".
-function parseAffiliationsFromHtml(html) {
-  const blockMatch = html.match(/class="ltx_authors"[^>]*>([\s\S]*?)(?=class="ltx_abstract")/)
-  if (!blockMatch) return []
+// Extract .tex file contents from a decompressed tar buffer using a minimal parser.
+function extractTexFromTar(tarBuf) {
+  const files = []
+  let offset = 0
+  while (offset + 512 <= tarBuf.length) {
+    if (tarBuf[offset] === 0) break
+    const name = tarBuf.subarray(offset, offset + 100).toString('utf8').replace(/\0+$/, '')
+    const size = parseInt(tarBuf.subarray(offset + 124, offset + 136).toString('utf8'), 8) || 0
+    const type = tarBuf[offset + 156]
+    offset += 512
+    if ((type === 0 || type === 48) && name.endsWith('.tex')) {
+      files.push(tarBuf.subarray(offset, offset + size).toString('utf8'))
+    }
+    offset += Math.ceil(size / 512) * 512
+  }
+  return files
+}
 
-  const text = blockMatch[1]
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\S+@\S+\.\S+/g, '')       // strip emails
-    .replace(/\([^)]*\)/g, '')          // strip parentheticals like (April 9, 2026)
-    .replace(/\s+/g, ' ')
-    .trim()
+// Extract unique institution names from LaTeX source.
+function affiliationsFromTex(tex) {
+  // Strip comments, normalize common escapes
+  const src = tex
+    .replace(/(?<!\\)%[^\n]*/g, '')
+    .replace(/\\&/g, '&')
+    .replace(/\\~\{?\}?/g, ' ')
 
-  const affiliations = []
-  const seen = new Set()
-  // Match: digit preceded by whitespace (not part of address like "7/9"), then institution text.
-  // Stop at: next numbered institution, E-mail marker, or end of string.
-  const regex = /(?<=\s|^)(\d{1,2})\s+([A-Z][\s\S]+?)(?=\s+\d{1,2}\s+[A-Z]|\s*(?:E-mail|email|Correspondence)\b|\s*$)/g
+  const results = [], seen = new Set()
 
-  for (const match of text.matchAll(regex)) {
-    const inst = match[2].trim().replace(/[,.\s]+$/, '').slice(0, 120)
-    if (inst.length >= 4 && !seen.has(inst)) {
-      seen.add(inst)
-      affiliations.push(inst)
-      if (affiliations.length >= 5) break
+  const INST_WORDS = /\b(?:University|Institute|Laboratory|Labs?|College|School|Research(?:er)?|Center|Centre|Department|Faculty|Hospital|Foundation|Technology|Sciences?|Academy|Polytechnic|Corp|Inc|Ltd|Group|Independent|NTNU|MIT|CMU|UCLA|EPFL|ETH)\b/i
+  const isPersonName = (s) => /^[A-Z][a-z]+(?: [A-Z]\.?)? [A-Z][a-z]+$/.test(s) && !INST_WORDS.test(s)
+  const isAddressOnly = (s) => /^[\w\s]+,\s*[A-Z]{2}\s+\d{5}/.test(s) || /^\d{5}$/.test(s)
+  const COUNTRIES = /\b(?:USA|United States|UK|United Kingdom|China|Germany|France|Japan|Canada|Australia|Norway|India|Korea|Italy|Spain|Netherlands|Switzerland|Sweden|Denmark|Finland|Ireland|Israel|Singapore|Brazil|Poland)\b/i
+  const isGarbage = (s) =>
+    s.includes('&') ||
+    /(?:equal|co-first)\s+contribution|corresponding author/i.test(s) ||
+    /^[a-z]{2,20}$/.test(s) ||   // lowercase-only token (username, partial command)
+    s.startsWith('\\') ||
+    // City-only or City+State+Country without any institution keyword
+    (!INST_WORDS.test(s) && COUNTRIES.test(s) && s.split(',').length <= 3 && s.split(/\s+/).length <= 6)
+
+  const clean = (raw) => raw
+    .replace(/\\includegraphics(?:\[[^\]]*\])?\s*\{[^}]*\}/g, '') // strip \includegraphics[...]{...}
+    .replace(/\$[^$\n]*\$/g, '')                                   // strip inline math $...$
+    .replace(/\$/g, '')                                            // strip lone $ residue
+    .replace(/\[\d+(?:\.\d+)?(?:pt|em|ex|cm|mm|in)\]/g, '')      // strip spacing like [7pt]
+    .replace(/\\(?:textbf|textit|emph|textrm|textsc|textsuperscript|footnotemark|thanks|footnote)\s*(?:\[[^\]]*\])?\s*\{[^}]*\}/g, '')
+    .replace(/\\[a-zA-Z]+(?:\{[^}]*\})?/g, ' ')
+    .replace(/\S*@\S+/g, '')
+    .replace(/,\s*[A-Za-z ]+,\s*[A-Z]{2}\s+\d{5}.*$/, '')
+    .replace(/,\s*[A-Z]{2}\s+\d{5}.*$/, '')
+    .replace(/[{}[\]]/g, '')
+    .replace(/\s+/g, ' ').replace(/[,\s]+$/, '').trim().slice(0, 120)
+
+  const add = (raw) => {
+    const rawSimple = raw
+      .replace(/\$[^$\n]*\$/g, '')
+      .replace(/\\[a-zA-Z]+(?:\{[^}]*\})?/g, ' ')
+      .replace(/\s+/g, ' ').trim()
+    if (isAddressOnly(rawSimple)) return
+    const s = clean(raw)
+    if (s.length >= 4 && !seen.has(s) && !isPersonName(s) && !isAddressOnly(s) && !isGarbage(s)) {
+      seen.add(s); results.push(s)
     }
   }
-  return affiliations
+
+  // 1. Pre-pass: $^n$Institution inline superscript style (digit-only — $^*$ marks authors, not institutions)
+  //    Must run before math stripping erases the markers.
+  for (const m of src.matchAll(/\$\^\{?(?:\d+)\}?\$\s*([A-Z][^$\\\n{}]{3,100})/g)) {
+    const s = clean(m[1])
+    if (s.length >= 4 && !seen.has(s) && !isPersonName(s) && !isGarbage(s)) {
+      seen.add(s); results.push(s)
+    }
+    if (results.length >= 5) break
+  }
+
+  // 2. ACM sigconf: \institution{Dept \\ ShortName} + optional nearby \city{} \country{}
+  //    Run before generic \affiliation{} to avoid capturing truncated inner content.
+  if (src.includes('\\institution{')) {
+    for (const m of src.matchAll(/\\institution\s*\{([^}]+)\}/g)) {
+      const parts = m[1].split(/\\\\/).map(p => clean(p)).filter(p => p.length >= 2)
+      const instName = parts[parts.length - 1] ?? clean(m[1])
+      if (!instName || instName.length < 2) continue
+      const after = src.slice(m.index + m[0].length, m.index + m[0].length + 250)
+      const city = after.match(/\\city\s*\{([^}]+)\}/)?.[1]
+      const country = after.match(/\\country\s*\{([^}]+)\}/)?.[1]
+      const combined = [instName, city && clean(city), country && clean(country)].filter(Boolean).join(', ')
+      if (!seen.has(combined)) { seen.add(combined); results.push(combined) }
+      if (results.length >= 5) return results
+    }
+    if (results.length > 0) return results
+  }
+
+  // 3. Standard affiliation commands (split by \\ and \qquad to handle multiple insts per line)
+  for (const m of src.matchAll(/\\(?:affiliation|affil|institute|address|IEEEauthorblockA)\*?\s*(?:\[[^\]]*\])?\s*\{([^}]+)\}/g)) {
+    for (const part of m[1].split(/\\\\|\\qquad|\\quad/)) { add(part); if (results.length >= 5) return results }
+  }
+
+  // 4. JMLR style: \addr Institution (no braces)
+  if (results.length === 0) {
+    for (const m of src.matchAll(/\\addr\s+([A-Z][^\\\n{$]{3,100})/g)) {
+      add(m[1]); if (results.length >= 5) return results
+    }
+  }
+
+  // 5. ICML: \icmlaffiliation{key}{Institution Name}
+  for (const m of src.matchAll(/\\icmlaffiliation\s*\{[^}]*\}\s*\{([^}]+)\}/g)) {
+    add(m[1]); if (results.length >= 5) return results
+  }
+
+  // 6. NeurIPS/ACL \textsuperscript{n}Institution Name
+  if (results.length === 0) {
+    for (const m of src.matchAll(/\\textsuperscript\{\d+\}\s*([A-Z][^\\\n{}]+)/g)) {
+      add(m[1]); if (results.length >= 5) return results
+    }
+  }
+
+  // 7. Fallback: \author{Name \\ Institution \\ \And ...} with brace-counting
+  if (results.length === 0) {
+    const marker = '\\author{'
+    const start = src.indexOf(marker)
+    if (start >= 0) {
+      let depth = 0, authorContent = null
+      for (let i = start + marker.length; i < src.length; i++) {
+        if (src[i] === '\\') { i++; continue }
+        if (src[i] === '{') depth++
+        else if (src[i] === '}') {
+          if (depth === 0) { authorContent = src.slice(start + marker.length, i); break }
+          depth--
+        }
+      }
+      if (authorContent) {
+        for (const group of authorContent.split(/\\And\b/i)) {
+          const parts = group.split(/\\\\/).filter(p => p.trim().length >= 4)
+          for (const part of parts.slice(1)) { add(part); if (results.length >= 5) return results }
+        }
+      }
+    }
+  }
+
+  return results
 }
 
 async function fetchArxivAffiliations(arxivId) {
   try {
-    const res = await fetch(`https://arxiv.org/html/${arxivId}`, {
+    const res = await fetch(`https://arxiv.org/e-print/${arxivId}`, {
       headers: { 'User-Agent': 'AI-Digest-Bot/1.0' },
-      signal: AbortSignal.timeout(12000),
+      signal: AbortSignal.timeout(15000),
     })
     if (!res.ok) return []
-    return parseAffiliationsFromHtml(await res.text())
+
+    const buf = Buffer.from(await res.arrayBuffer())
+    let texFiles = []
+    try {
+      const unpacked = gunzipSync(buf)
+      texFiles = extractTexFromTar(unpacked)
+      if (texFiles.length === 0) texFiles = [unpacked.toString('utf8')]
+    } catch {
+      // Not gzipped — try raw tar
+      texFiles = extractTexFromTar(buf)
+    }
+
+    // Prefer files that have \author (real paper), not standalone figures with \begin{document}
+    // Prefer files with both markers; fall back to any file with affiliation commands
+    const main = texFiles.find(t => t.includes('\\begin{document}') && t.includes('\\author'))
+      ?? texFiles.find(t => t.includes('\\affil') || t.includes('\\affiliation') || t.includes('\\author{'))
+      ?? texFiles.find(t => t.includes('\\begin{document}'))
+      ?? texFiles[0]
+    return main ? affiliationsFromTex(main) : []
   } catch {
     return []
   }
