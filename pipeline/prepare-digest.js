@@ -29,7 +29,7 @@ Selection criteria:
 
 For Research items only, add two extra fields:
 - "keywords": array of 1–3 tags chosen from: Evaluation, Security, Framework, Application, Alignment, Inference, Training, Multimodal, Reasoning, Agents, RAG, Benchmarks, Survey
-- "affiliations": array of up to 5 unique institution names, ordered by author contribution (first author's institution first). Use your training knowledge of AI researchers to infer their institutions. Include only institutions you are confident about; omit authors whose institution you don't know. If no affiliations are known, omit the field entirely. Return only institution names, not author names.
+- "affiliations": if the raw item has a non-empty "affiliations" array, pass it through unchanged. Otherwise infer up to 5 institution names from your training knowledge of the authors (ordered by contribution, omit unknowns). If none known, omit the field. Return only institution names, not author names.
 
 Return ONLY valid JSON. No markdown fences, no preamble. Schema:
 {
