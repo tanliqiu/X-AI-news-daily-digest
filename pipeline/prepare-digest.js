@@ -29,7 +29,7 @@ Selection criteria:
 
 For Research items only, add two extra fields:
 - "keywords": array of 1–3 tags chosen from: Evaluation, Security, Framework, Application, Alignment, Inference, Training, Multimodal, Reasoning, Agents, RAG, Benchmarks, Survey
-- "authors": pass through the authors array from the raw item (name + affiliation); if not available, omit the field
+- "affiliations": array of up to 5 unique institution names, ordered by author contribution (first author's institution first). Use your training knowledge of AI researchers to infer their institutions. Include only institutions you are confident about; omit authors whose institution you don't know. If no affiliations are known, omit the field entirely. Return only institution names, not author names.
 
 Return ONLY valid JSON. No markdown fences, no preamble. Schema:
 {
@@ -37,7 +37,7 @@ Return ONLY valid JSON. No markdown fences, no preamble. Schema:
   "tldr": ["most important development today", "second development", "third development"],
   "sections": {
     "Research": [
-      {"title": "...", "summary": "...", "url": "...", "source": "...", "published": "ISO-8601", "keywords": ["Reasoning"], "authors": [{"name": "...", "affiliation": "..."}]}
+      {"title": "...", "summary": "...", "url": "...", "source": "...", "published": "ISO-8601", "keywords": ["Reasoning"], "affiliations": ["MIT", "Google DeepMind"]}
     ],
     "Tools": [
       {"title": "...", "summary": "...", "url": "...", "source": "...", "published": "ISO-8601"}

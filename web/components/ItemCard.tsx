@@ -31,9 +31,6 @@ interface Props {
 }
 
 export default function ItemCard({ item, digestDate }: Props) {
-  const displayedAuthors = item.authors?.slice(0, 3) ?? []
-  const hasMoreAuthors = (item.authors?.length ?? 0) > 3
-
   return (
     <article className="border-l-2 border-zinc-700 pl-4">
       <div className="flex items-start justify-between gap-2 mb-1.5">
@@ -67,10 +64,7 @@ export default function ItemCard({ item, digestDate }: Props) {
       {item.keywords && item.keywords.length > 0 && (
         <div className="flex flex-wrap gap-1 mb-1.5">
           {item.keywords.map((kw) => (
-            <span
-              key={kw}
-              className="text-xs px-1.5 py-0.5 rounded bg-purple-900/30 text-purple-400 font-medium"
-            >
+            <span key={kw} className="text-xs px-1.5 py-0.5 rounded bg-purple-900/30 text-purple-400 font-medium">
               {kw}
             </span>
           ))}
@@ -81,13 +75,14 @@ export default function ItemCard({ item, digestDate }: Props) {
           {item.summary}
         </p>
       )}
-      {displayedAuthors.length > 0 && (
-        <p className="text-xs text-gray-600 mt-1">
-          {displayedAuthors
-            .map((a) => (a.affiliation ? `${a.name} (${a.affiliation})` : a.name))
-            .join(', ')}
-          {hasMoreAuthors ? ' et al.' : ''}
-        </p>
+      {item.affiliations && item.affiliations.length > 0 && (
+        <div className="flex flex-wrap gap-1 mt-1.5">
+          {item.affiliations.map((aff) => (
+            <span key={aff} className="text-xs px-1.5 py-0.5 rounded bg-zinc-800 text-gray-500 font-medium">
+              {aff}
+            </span>
+          ))}
+        </div>
       )}
     </article>
   )

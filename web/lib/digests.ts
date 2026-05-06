@@ -10,7 +10,7 @@ export interface DigestItem {
   source: string
   published: string
   keywords?: string[]
-  authors?: { name: string; affiliation: string }[]
+  affiliations?: string[]
 }
 
 export interface Digest {
