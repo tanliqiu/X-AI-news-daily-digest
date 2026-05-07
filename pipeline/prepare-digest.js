@@ -5,6 +5,7 @@ import { join } from 'path'
 import { fileURLToPath } from 'url'
 import Anthropic from '@anthropic-ai/sdk'
 import 'dotenv/config'
+import { fetchArxivAffiliations } from './collectors/arxiv.js'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const FEED_PATH = join(__dirname, 'raw-feed.json')
@@ -99,6 +100,24 @@ async function main() {
   if (items.length === 0) {
     console.log('[prepare-digest] No new items after cross-day dedup, skipping')
     return
+  }
+
+  // Enrich arXiv items from non-arXiv sources (e.g. HN) that are missing affiliations
+  const arxivOnly = items.filter(
+    (item) => item.source !== 'arXiv' && !item.affiliations?.length && item.url?.includes('arxiv.org/abs/')
+  )
+  if (arxivOnly.length > 0) {
+    console.log(`[prepare-digest] Fetching affiliations for ${arxivOnly.length} cross-source arXiv items...`)
+    for (let i = 0; i < arxivOnly.length; i += 3) {
+      const batch = arxivOnly.slice(i, i + 3)
+      const results = await Promise.all(
+        batch.map((item) => {
+          const id = item.url.match(/arxiv\.org\/abs\/([^\s?#]+)/)?.[1]
+          return id ? fetchArxivAffiliations(id) : Promise.resolve([])
+        })
+      )
+      batch.forEach((item, j) => { if (results[j].length > 0) item.affiliations = results[j] })
+    }
   }
 
   console.log(`[prepare-digest] Processing ${items.length} items with Claude...`)

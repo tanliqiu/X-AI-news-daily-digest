@@ -49,7 +49,11 @@
           "Benchmarks",
           "Reasoning"
         ],
-        "affiliations": []
+        "affiliations": [
+          "Meta FAIR",
+          "Stanford University",
+          "Harvard University"
+        ]
       },
       {
         "title": "vLLM V0 to V1: Correctness Before Corrections in RL",

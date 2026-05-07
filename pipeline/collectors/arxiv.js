@@ -153,7 +153,7 @@ function affiliationsFromTex(tex) {
   return results
 }
 
-async function fetchArxivAffiliations(arxivId) {
+export async function fetchArxivAffiliations(arxivId) {
   try {
     const res = await fetch(`https://arxiv.org/e-print/${arxivId}`, {
       headers: { 'User-Agent': 'AI-Digest-Bot/1.0' },
