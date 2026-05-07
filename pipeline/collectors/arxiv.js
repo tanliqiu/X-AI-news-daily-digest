@@ -47,6 +47,7 @@ function affiliationsFromTex(tex) {
     /(?:equal|co-first)\s+contribution|corresponding author/i.test(s) ||
     /^[a-z]{2,20}$/.test(s) ||   // lowercase-only token (username, partial command)
     /^(TBD|N\/A|NA|TBA|Anonymous)$/i.test(s.split(/[\s,]+/).pop() ?? s) ||  // placeholder suffix
+    /ORCID|\b\d{4}-\d{4}-\d{4}-\d{3}[\dX]\b/.test(s) ||  // ORCID identifiers
     s.startsWith('\\') ||
     // City-only or City+State+Country without any institution keyword
     (!INST_WORDS.test(s) && COUNTRIES.test(s) && s.split(',').length <= 3 && s.split(/\s+/).length <= 6)

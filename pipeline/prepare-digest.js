@@ -141,9 +141,10 @@ async function processFlaggedIssues() {
       await writeFile(digestPath, JSON.stringify(digest, null, 2))
       console.log(`[prepare-digest] Patched ${arxivId} in ${digestDate} → [${finalAffiliations.join(', ')}]`)
       patched.push({ arxivId, digestDate, affiliations: finalAffiliations, userCorrection, issueNumber: issue.number })
+      await closeIssue(issue.number)
+    } else {
+      console.warn(`[prepare-digest] ${arxivId} not found in ${digestDate} Research section — issue #${issue.number} left open`)
     }
-
-    await closeIssue(issue.number)
   }
 
   return patched
@@ -151,13 +152,6 @@ async function processFlaggedIssues() {
 
 async function main() {
   const client = new Anthropic()
-
-  // Process any pending affiliation flags before generating today's digest
-  const patched = await processFlaggedIssues()
-  if (patched.length > 0) {
-    const { generateCodeFixPR } = await import('./fix-affiliations.js')
-    await generateCodeFixPR(patched)
-  }
 
   if (!existsSync(FEED_PATH)) {
     console.error('[prepare-digest] raw-feed.json not found — run generate-feed.js first')
@@ -258,6 +252,13 @@ async function main() {
     `cache_write: ${usage.cache_creation_input_tokens ?? 0}, ` +
     `cache_read: ${usage.cache_read_input_tokens ?? 0}`
   )
+
+  // Process flagged affiliation issues after today's digest is written
+  const patched = await processFlaggedIssues()
+  if (patched.length > 0) {
+    const { generateCodeFixPR } = await import('./fix-affiliations.js')
+    await generateCodeFixPR(patched)
+  }
 }
 
 main().catch((err) => {

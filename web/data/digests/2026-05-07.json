@@ -1,105 +1,88 @@
 {
   "date": "2026-05-07",
   "tldr": [
-    "Anthropic signs a $5B/yr deal with xAI to access the Colossus supercluster, doubling Claude rate limits and signaling a major compute expansion",
-    "Anthropic launches 'dreaming' in Claude Managed Agents — a memory mechanism that reviews past sessions for self-improvement — plus multiagent orchestration and webhooks",
-    "Two new adaptive RL training methods (FREIA and APMPO) address the key weakness of static policy optimization in LLM reasoning fine-tuning"
+    "A TTS-STT flywheel approach dramatically closes the Indic ASR gap for entity-dense audio, where both open-source and commercial systems score near zero on entity recognition",
+    "Simon Willison warns that vibe coding and agentic engineering are converging in ways that raise reliability and oversight concerns for production AI systems",
+    "Gemini Flash continues to gain traction as a cost-effective production workhorse, with practitioners citing its 1M context window and structured output support as key differentiators"
   ],
   "sections": {
     "Research": [
       {
-        "title": "Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs",
-        "summary": "FREIA introduces an unsupervised RL algorithm that dynamically adapts advantage shaping based on the model's evolving reasoning capabilities, avoiding policy misdirection common in static schemes. This is practically relevant for teams building self-improving LLM pipelines without reliance on ground-truth labels. The approach addresses a key bottleneck in unsupervised fine-tuning workflows.",
-        "url": "https://arxiv.org/abs/2605.04065",
+        "title": "The TTS-STT Flywheel: Synthetic Entity-Dense Audio Closes the Indic ASR Gap Where Commercial and Open-Source Systems Fail",
+        "summary": "This paper demonstrates that both leading open-source (whisper-telugu-large-v2, EHR 0.027) and commercial (Deepgram Nova-3, EHR 0.16) ASR systems nearly fail on entity-dense Telugu audio covering digit strings, currency, addresses, and code-mixed content. The authors propose a self-contained TTS-STT flywheel using open-source Indic TTS to generate synthetic training data, significantly closing this performance gap. This is directly actionable for teams building voice products for Indian language markets where niche-domain accuracy is critical.",
+        "url": "https://arxiv.org/abs/2605.03073",
         "source": "arXiv",
-        "published": "2026-05-07T04:00:00.000Z",
+        "published": "2026-05-06T04:00:00.000Z",
         "keywords": [
-          "Training",
-          "Reasoning"
+          "Application",
+          "Benchmarks"
         ],
         "affiliations": [
-          "Harbin Institute of Technology (Shenzhen)",
-          "Peng Cheng Laboratory",
-          "The Chinese University of Hong Kong"
+          "ORCID: 0009-0003-2479-9208"
         ]
       },
       {
-        "title": "Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning",
-        "summary": "APMPO proposes a dynamic policy optimization scheme using power-mean aggregation that adjusts to the model's current reasoning level during RLVR training, outperforming static baselines. For practitioners fine-tuning reasoning models, this offers a more robust training objective than fixed reward weighting. Complements concurrent work like FREIA in addressing non-stationarity in LLM RL training.",
-        "url": "https://arxiv.org/abs/2605.04066",
+        "title": "Geometric Deviation as an Unsupervised Pre-Generation Reliability Signal: Probing LLM Representations for Answerability",
+        "summary": "This paper proposes using geometric deviation of hidden states from an 'answerable' reference set as a pre-generation signal to detect when a query falls outside an LLM's knowledge—without labeled failure data or output inspection. Tested across Llama 3.1-8B, Qwen 2.5-7B, and Mistral-7B-Instruct, the method offers a lightweight, unsupervised approach to hallucination prevention. For AI product builders, this could serve as a practical confidence gate before committing to expensive generation steps.",
+        "url": "https://arxiv.org/abs/2605.03196",
         "source": "arXiv",
-        "published": "2026-05-07T04:00:00.000Z",
+        "published": "2026-05-06T04:00:00.000Z",
         "keywords": [
-          "Training",
+          "Evaluation",
+          "Inference",
           "Reasoning"
-        ],
-        "affiliations": [
-          "Harbin Institute of Technology (Shenzhen)",
-          "Peng Cheng Laboratory",
-          "The Chinese University of Hong Kong"
         ]
       },
       {
-        "title": "ProgramBench: Can Language Models Rebuild Programs from Scratch?",
-        "summary": "ProgramBench is a new benchmark testing whether LLMs can fully reconstruct programs from high-level descriptions, probing deep code comprehension beyond typical code completion tasks. This is relevant for teams evaluating coding agents or agentic software engineering systems — the benchmark surfaces capability gaps that simpler pass@k metrics miss. Results will help calibrate which models are ready for autonomous software development workflows.",
-        "url": "https://arxiv.org/abs/2605.03546",
-        "source": "Hacker News",
-        "published": "2026-05-07T03:46:15.000Z",
+        "title": "MedStruct-S: A Benchmark for Key Discovery, Key-Conditioned QA and Semi-Structured Extraction from OCR Clinical Reports",
+        "summary": "MedStruct-S introduces a benchmark targeting three real-world clinical IE tasks from OCR-derived reports: field-header discovery, key-conditioned QA, and end-to-end key-value extraction—explicitly modeling heterogeneous and incompletely known key spaces. This is highly relevant for teams building medical document processing pipelines where template variability and OCR noise are persistent challenges. The benchmark fills a gap in existing evaluations that typically assume clean, templated inputs.",
+        "url": "https://arxiv.org/abs/2605.03103",
+        "source": "arXiv",
+        "published": "2026-05-06T04:00:00.000Z",
         "keywords": [
           "Benchmarks",
-          "Reasoning"
-        ],
-        "affiliations": [
-          "Meta FAIR",
-          "Stanford University",
-          "Harvard University"
-        ]
-      },
-      {
-        "title": "vLLM V0 to V1: Correctness Before Corrections in RL",
-        "summary": "ServiceNow AI documents lessons learned migrating RL training infrastructure from vLLM V0 to V1, emphasizing that correctness in the inference engine must precede any reward-based corrections. The post surfaces practical pitfalls — subtle inference bugs that silently corrupt RL training signals — that are highly relevant for teams running RLVR pipelines at scale. A useful engineering reference for anyone building on vLLM for post-training.",
-        "url": "https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections",
-        "source": "Hugging Face",
-        "published": "2026-05-06T19:06:55.000Z",
-        "keywords": [
-          "Training",
-          "Inference"
-        ],
-        "affiliations": [
-          "ServiceNow"
+          "Application",
+          "Evaluation"
         ]
       }
     ],
     "Tools": [
       {
-        "title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
-        "summary": "Anthropic is launching 'dreaming' as a research preview — a mechanism that lets Claude agents review past sessions to identify patterns and self-improve over time, effectively extending agent memory. The release also adds multiagent orchestration, outcomes tracking, and webhooks to the Managed Agents API, giving developers building on Claude a more complete agentic infrastructure. These features lower the engineering burden for building persistent, self-improving agent workflows.",
-        "url": "https://claude.com/blog/new-in-claude-managed-agents",
-        "source": "blog",
-        "published": "2026-05-06T00:00:00.000Z"
+        "title": "Crabbox 0.5.0: Remote CI Boxes with Desktop Leases, VNC, and AWS Windows Support",
+        "summary": "Crabbox 0.5.0 adds desktop and browser leases, authenticated WebVNC, AWS Windows with WSL2 support, and screenshot/app-launch capabilities to its remote CI box offering. This makes it a more complete solution for teams running agentic or browser-automation workloads that require persistent, interactive remote environments. The addition of Windows+WSL2 notably broadens compatibility for AI agent pipelines that need to test across OS environments.",
+        "url": "https://x.com/steipete/status/2051485798613111116",
+        "source": "X (@steipete)",
+        "published": "2026-05-05T02:15:03.000Z"
       }
     ],
     "Industry News": [
       {
-        "title": "Anthropic-SpaceXAI's 300MW/$5B/yr deal for Colossus I; ARR growth 8000% annualized",
-        "summary": "Anthropic has signed a deal giving it access to xAI's Colossus supercluster at 300MW capacity for roughly $5B/year, immediately doubling API rate limits for Claude users. This is one of the largest compute procurement deals in AI history and significantly narrows Anthropic's infrastructure gap with OpenAI and Google. For developers building on Claude, the rate limit increase is an immediate practical benefit; longer-term it signals Anthropic has the compute to scale frontier models aggressively.",
-        "url": "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
+        "title": "Vibe Coding and Agentic Engineering Are Getting Closer Than I'd Like",
+        "summary": "Simon Willison raises concerns that the informal, low-oversight style of 'vibe coding' is bleeding into agentic engineering contexts where reliability and auditability actually matter. This is a practical warning for teams scaling up AI-assisted development workflows, where the gap between prototyping habits and production requirements can introduce serious risk. The post is likely to resonate with applied AI teams navigating when to trust agent-generated code in real pipelines.",
+        "url": "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/",
+        "source": "Hacker News",
+        "published": "2026-05-06T15:06:37.000Z"
+      },
+      {
+        "title": "FFmpeg Developer Calls Out OxideAV for AI License Laundering of His Code",
+        "summary": "An FFmpeg developer publicly accused OxideAV of using AI-generated code that reproduces GPL-licensed FFmpeg logic while obscuring its origins—a pattern being called 'AI license laundering.' This raises a concrete legal and ethical risk for teams using AI coding assistants to generate codec or media-processing code, particularly when the underlying training data may include copyleft libraries. Product and legal teams should treat AI-generated code in sensitive IP domains with additional scrutiny.",
+        "url": "https://github.com/OxideAV/oxideav-magicyuv/issues/3",
+        "source": "Hacker News",
+        "published": "2026-05-06T01:50:42.000Z"
+      },
+      {
+        "title": "Gemini Flash Praised as Best-Value Production Model with 1M Context and Structured Outputs",
+        "summary": "Practitioners are increasingly citing Gemini Flash as the go-to model for production workloads, highlighting its cost-effectiveness, 1M token context window, and reliable structured output support. The accompanying live voice model is also drawing attention for its quality. For applied AI consultants, this reinforces Gemini Flash as a strong default recommendation for high-volume or long-context tasks where cost efficiency is a priority.",
+        "url": "https://x.com/nikunj/status/2051321911741972900",
+        "source": "X (@nikunj)",
+        "published": "2026-05-04T15:23:50.000Z"
+      },
+      {
+        "title": "[AINews] The Other vs The Utility: Reflections on AI Character (Clippy vs Anton Debate)",
+        "summary": "Latent Space's digest uses a quiet news day to examine the design philosophy tension between AI as a distinct 'other' with character versus AI as a pure utility—framed around the Clippy vs Anton debate. This is relevant for product teams making UX decisions about how AI assistants should present themselves to users, as these design choices increasingly affect adoption and trust. The piece is more reflective than prescriptive but surfaces a meaningful product design question.",
+        "url": "https://www.latent.space/p/ainews-the-other-vs-the-utility",
         "source": "Latent Space",
-        "published": "2026-05-07T05:57:14.000Z"
-      },
-      {
-        "title": "How David Sacks crashed and burned in the White House",
-        "summary": "The Verge reports that David Sacks's tenure as the Trump administration's AI and crypto czar has ended in dysfunction, with an internal model review process stalled and little policy progress made. For AI product builders, this signals continued regulatory uncertainty from the US federal government on AI governance. The departure leaves the administration's AI policy agenda — including export controls and safety frameworks — in limbo.",
-        "url": "https://www.theverge.com/column/925487/david-sacks-trump-administration-ai-model-review",
-        "source": "Hacker News",
-        "published": "2026-05-06T22:38:15.000Z"
-      },
-      {
-        "title": "Apple is enforcing an old App Store rule against a new kind of software",
-        "summary": "Apple is applying its existing App Store wrapper/thin-client rules to AI-powered apps that primarily route to external model APIs, potentially blocking or restricting a class of Claude/GPT-based iOS apps. This creates a meaningful distribution risk for AI product builders targeting iOS — especially those whose core value is orchestrating external foundation models rather than on-device computation. Developers should audit their App Store submissions against Apple's evolving interpretation of these rules.",
-        "url": "https://adaptivesoftware.substack.com/p/the-wrapper-and-the-code",
-        "source": "Hacker News",
-        "published": "2026-05-06T21:26:53.000Z"
+        "published": "2026-05-04T23:29:05.000Z"
       }
     ]
   }
