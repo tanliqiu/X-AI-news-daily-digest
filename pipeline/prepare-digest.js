@@ -71,8 +71,93 @@ function getPreviouslyShownUrls(outputDir, today) {
   return shown
 }
 
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const GITHUB_REPO = process.env.GITHUB_REPO ?? 'tanliqiu/X-AI-news-daily-digest'
+
+async function fetchFlaggedIssues() {
+  if (!GITHUB_TOKEN) return []
+  const res = await fetch(
+    `https://api.github.com/repos/${GITHUB_REPO}/issues?labels=affiliation-fix&state=open&per_page=50`,
+    { headers: { Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/vnd.github+json' } }
+  )
+  if (!res.ok) return []
+  return res.json()
+}
+
+async function closeIssue(issueNumber) {
+  if (!GITHUB_TOKEN) return
+  await fetch(`https://api.github.com/repos/${GITHUB_REPO}/issues/${issueNumber}`, {
+    method: 'PATCH',
+    headers: { Authorization: `Bearer ${GITHUB_TOKEN}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ state: 'closed' }),
+  })
+}
+
+async function processFlaggedIssues() {
+  const issues = await fetchFlaggedIssues()
+  if (issues.length === 0) return []
+
+  console.log(`[prepare-digest] Processing ${issues.length} flagged affiliation issue(s)...`)
+  const patched = []
+
+  for (const issue of issues) {
+    const body = issue.body ?? ''
+    const arxivId = body.match(/\*\*arXiv ID:\*\*\s*`([^`]+)`/)?.[1]
+    const digestDate = body.match(/\*\*Digest date:\*\*\s*(\S+)/)?.[1]
+    const userCorrection = body.match(/\*\*User correction:\*\*\s*(.+)/)?.[1]?.trim()
+
+    if (!arxivId || !digestDate) {
+      console.warn(`[prepare-digest] Skipping issue #${issue.number} — missing arXiv ID or date`)
+      continue
+    }
+
+    const digestPath = join(OUTPUT_DIR, `${digestDate}.json`)
+    if (!existsSync(digestPath)) {
+      console.warn(`[prepare-digest] Digest not found for ${digestDate}, skipping issue #${issue.number}`)
+      continue
+    }
+
+    const affiliations = await fetchArxivAffiliations(arxivId)
+    const finalAffiliations = affiliations.length > 0
+      ? affiliations
+      : userCorrection ? userCorrection.split(',').map((s) => s.trim()).filter(Boolean) : []
+
+    if (finalAffiliations.length === 0) {
+      console.warn(`[prepare-digest] No affiliations resolved for ${arxivId}, skipping`)
+      continue
+    }
+
+    const digest = JSON.parse(await readFile(digestPath, 'utf-8'))
+    let updated = false
+    for (const item of digest.sections.Research ?? []) {
+      if (item.url?.includes(arxivId)) {
+        item.affiliations = finalAffiliations
+        updated = true
+        break
+      }
+    }
+
+    if (updated) {
+      await writeFile(digestPath, JSON.stringify(digest, null, 2))
+      console.log(`[prepare-digest] Patched ${arxivId} in ${digestDate} → [${finalAffiliations.join(', ')}]`)
+      patched.push({ arxivId, digestDate, affiliations: finalAffiliations, userCorrection, issueNumber: issue.number })
+    }
+
+    await closeIssue(issue.number)
+  }
+
+  return patched
+}
+
 async function main() {
   const client = new Anthropic()
+
+  // Process any pending affiliation flags before generating today's digest
+  const patched = await processFlaggedIssues()
+  if (patched.length > 0) {
+    const { generateCodeFixPR } = await import('./fix-affiliations.js')
+    await generateCodeFixPR(patched)
+  }
 
   if (!existsSync(FEED_PATH)) {
     console.error('[prepare-digest] raw-feed.json not found — run generate-feed.js first')

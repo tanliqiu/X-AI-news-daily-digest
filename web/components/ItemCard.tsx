@@ -1,5 +1,6 @@
 import { DigestItem } from '@/lib/digests'
 import BookmarkButton from './BookmarkButton'
+import AffiliationFlagButton from './AffiliationFlagButton'
 
 const SOURCE_STYLES: Record<string, string> = {
   arXiv: 'bg-red-900/30 text-red-400',
@@ -28,9 +29,13 @@ function relativeDay(published: string): string {
 interface Props {
   item: DigestItem
   digestDate?: string
+  section?: string
 }
 
-export default function ItemCard({ item, digestDate }: Props) {
+export default function ItemCard({ item, digestDate, section }: Props) {
+  const arxivId = item.url.match(/arxiv\.org\/abs\/([^\s?#]+)/)?.[1] ?? null
+  const isResearch = section === 'Research'
+
   return (
     <article className="border-l-2 border-zinc-700 pl-4">
       <div className="flex items-start justify-between gap-2 mb-1.5">
@@ -44,12 +49,22 @@ export default function ItemCard({ item, digestDate }: Props) {
             </span>
           )}
         </div>
-        <BookmarkButton
-          url={item.url}
-          title={item.title}
-          source={item.source}
-          digestDate={digestDate ?? ''}
-        />
+        <div className="flex items-center gap-2">
+          {isResearch && arxivId && (
+            <AffiliationFlagButton
+              arxivId={arxivId}
+              title={item.title}
+              digestDate={digestDate ?? ''}
+              currentAffiliations={item.affiliations ?? []}
+            />
+          )}
+          <BookmarkButton
+            url={item.url}
+            title={item.title}
+            source={item.source}
+            digestDate={digestDate ?? ''}
+          />
+        </div>
       </div>
       <h3 className="text-sm font-semibold leading-snug mb-1 text-gray-100">
         <a

@@ -23,7 +23,7 @@ export default function SectionBlock({ title, items, digestDate }: Props) {
       </h2>
       <div className="space-y-5">
         {items.map((item, i) => (
-          <ItemCard key={i} item={item} digestDate={digestDate} />
+          <ItemCard key={i} item={item} digestDate={digestDate} section={title} />
         ))}
       </div>
     </section>
