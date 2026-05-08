@@ -27,6 +27,9 @@ Selection criteria:
 - For Hacker News items (no pre-written summary), infer relevance from the title
 - Prefer items with concrete implications over speculative or hype-driven content
 - Podcast episodes should go in "Industry News" unless they cover a specific research finding
+- Skip any item where the underlying content was published more than 3 weeks before today. \
+Old blog posts sometimes get reposted to HN; if you recognise the article as not being recent \
+(e.g. from the URL date, your training knowledge, or the content itself), exclude it.
 
 For Research items only, add two extra fields:
 - "keywords": array of 1–3 tags chosen from: Evaluation, Security, Framework, Application, Alignment, Inference, Training, Multimodal, Reasoning, Agents, RAG, Benchmarks, Survey
