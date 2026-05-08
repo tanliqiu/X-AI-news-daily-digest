@@ -1,0 +1,141 @@
+{
+  "date": "2026-05-08",
+  "tldr": [
+    "Anthropic signed a massive 300MW/$5B/yr compute deal with SpaceX's Colossus, signaling aggressive infrastructure scaling amid reported 80x usage/revenue growth",
+    "OpenAI released GPT-Realtime-2, GPT-Translate, and a new Whisper, establishing new SOTA for realtime voice APIs",
+    "Domain-trained small language models can outperform frontier LLMs on structured extraction tasks at 78-97% lower inference cost, per new legal AI benchmark"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "AdaGATE: Adaptive Gap-Aware Token-Efficient Evidence Assembly for Multi-Hop RAG",
+        "summary": "AdaGATE addresses a key failure mode in production RAG systems: multi-hop questions where retrieved evidence is noisy, redundant, or missing critical bridge facts. The system adaptively assembles and repairs evidence chains without retraining, offering a practical path to more reliable multi-hop QA under real-world context constraints.",
+        "url": "https://arxiv.org/abs/2605.05245",
+        "source": "arXiv",
+        "published": "2026-05-08T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "New York University"
+        ]
+      },
+      {
+        "title": "A Few Good Clauses: Comparing LLMs vs Domain-Trained Small Language Models on Structured Contract Extraction",
+        "summary": "A domain-specific Mixture-of-Experts SLM (Olava Extract) achieved macro F1 of 0.812 on structured legal contract extraction, outperforming five frontier LLMs while cutting inference costs by 78–97%. This is a strong signal for AI product builders in regulated verticals: fine-tuned small models can beat general-purpose giants on structured extraction at a fraction of the cost.",
+        "url": "https://arxiv.org/abs/2605.05532",
+        "source": "arXiv",
+        "published": "2026-05-08T04:00:00.000Z",
+        "keywords": [
+          "Application",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Onit Inc."
+        ]
+      },
+      {
+        "title": "One Turn Too Late: Response-Aware Defense Against Hidden Malicious Intent in Multi-Turn Dialogue",
+        "summary": "Attackers can distribute harmful intent across multiple benign-seeming conversation turns, bypassing safety guardrails in commercial LLMs. This paper proposes a response-aware defense mechanism that detects distributed malicious intent before generating a harmful reply, with implications for anyone building multi-turn conversational AI products.",
+        "url": "https://arxiv.org/abs/2605.05630",
+        "source": "arXiv",
+        "published": "2026-05-08T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "Georgia Institute of Technology",
+          "University of Illinois Urbana-Champaign",
+          "OpenAI",
+          "IBM Research",
+          "National Taiwan University"
+        ]
+      },
+      {
+        "title": "The Cost of Context: Mitigating Textual Bias in Multimodal RAG",
+        "summary": "Even perfectly accurate retrieved context can cause multimodal LLMs to abandon correct predictions—a phenomenon the authors call 'recorruption.' This finding has direct implications for multimodal RAG pipelines, where adding oracle-quality documents can paradoxically degrade performance at the instance level.",
+        "url": "https://arxiv.org/abs/2605.05594",
+        "source": "arXiv",
+        "published": "2026-05-08T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Multimodal",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Purdue University"
+        ]
+      },
+      {
+        "title": "ReaComp: Compiling LLM Reasoning into Symbolic Solvers for Efficient Program Synthesis",
+        "summary": "ReaComp uses coding agents to distill a small set of LLM reasoning traces into reusable symbolic program synthesizers, eliminating LLM calls entirely at test time. The resulting solver ensembles reach 91.3% accuracy on PBEBench-Lite, offering a compelling efficiency-reliability tradeoff for constrained program synthesis tasks in production.",
+        "url": "https://arxiv.org/abs/2605.05485",
+        "source": "arXiv",
+        "published": "2026-05-08T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Agents",
+          "Inference"
+        ],
+        "affiliations": [
+          "Carnegie Mellon University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Anthropic Claude: Dreaming and Outcomes — Agent Memory and Quality Control Features",
+        "summary": "Anthropic announced two new Claude agent platform features: 'Dreaming,' which reviews past agent sessions to extract patterns and curate persistent memories, and 'Outcomes,' which lets developers write quality rubrics that a grader agent enforces iteratively. These features directly address two of the hardest problems in production agentic systems—long-term learning and automated quality assurance.",
+        "url": "https://x.com/claudeai/status/2052067400690851842",
+        "source": "X (@claudeai)",
+        "published": "2026-05-06T16:46:08.000Z"
+      },
+      {
+        "title": "vLLM V0 to V1: Correctness Before Corrections in RL",
+        "summary": "ServiceNow AI published a detailed post on lessons learned migrating from vLLM V0 to V1 for reinforcement learning training, emphasizing the importance of correctness guarantees before applying RL corrections. Practitioners building RL-based fine-tuning pipelines on vLLM will find actionable guidance on avoiding subtle bugs introduced during the version transition.",
+        "url": "https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections",
+        "source": "Hugging Face",
+        "published": "2026-05-06T19:06:55.000Z"
+      },
+      {
+        "title": "Agentic Engineering",
+        "summary": "Addy Osmani's blog post outlines emerging best practices for 'agentic engineering'—designing software systems around autonomous AI agents rather than traditional request-response patterns. The piece covers orchestration patterns, failure handling, and evaluation strategies relevant to developers building agent-first products.",
+        "url": "https://addyosmani.com/blog/agentic-engineering/",
+        "source": "Hacker News",
+        "published": "2026-05-08T04:27:51.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] GPT-Realtime-2, -Translate, and -Whisper: new SOTA realtime voice APIs",
+        "summary": "OpenAI released GPT-Realtime-2, GPT-Translate, and an updated Whisper, claiming new state-of-the-art performance for realtime voice and translation APIs. This expands the practical toolset for builders of voice-first AI products and multilingual applications, with GPT-5 continuing its broad platform rollout.",
+        "url": "https://www.latent.space/p/ainews-gpt-realtime-2-translate-and",
+        "source": "Latent Space",
+        "published": "2026-05-08T07:11:24.000Z"
+      },
+      {
+        "title": "[AINews] Anthropic-SpaceX AI's 300MW/$5B/yr deal for Colossus I, ARR growth is 8000% annualized",
+        "summary": "Anthropic has secured a 300MW compute deal with SpaceX's Colossus data center at approximately $5B/year, reflecting both massive demand scaling (Dario cited 80x usage and revenue growth) and a strategic bet on large-scale proprietary infrastructure. For AI product builders, this signals continued Anthropic API capacity growth but also concentration risk in the compute supply chain.",
+        "url": "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
+        "source": "Latent Space",
+        "published": "2026-05-07T05:57:14.000Z"
+      },
+      {
+        "title": "AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields",
+        "summary": "Google DeepMind detailed real-world deployments of AlphaEvolve, a Gemini-powered evolutionary coding agent that has generated improvements in Google's internal infrastructure, chip design, and scientific computing. The post highlights agentic code optimization as a near-term high-ROI application for large organizations with complex engineering systems.",
+        "url": "https://deepmind.google/blog/alphaevolve-impact/",
+        "source": "Google DeepMind",
+        "published": "2026-05-06T10:43:49.000Z"
+      },
+      {
+        "title": "The Myth of Model Wars: Open vs Closed AI in 2026",
+        "summary": "This Practical AI episode argues that the open vs. closed model debate is becoming less relevant as agentic systems, edge deployment, and physical AI reshape the competitive landscape. Practitioners building AI products should focus on orchestration and deployment architecture rather than model provenance.",
+        "url": "https://share.transistor.fm/s/6095edc5",
+        "source": "Practical AI",
+        "published": "2026-05-07T09:00:00.000Z"
+      }
+    ]
+  }
+}
