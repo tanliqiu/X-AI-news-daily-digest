@@ -1,0 +1,124 @@
+{
+  "date": "2026-05-11",
+  "tldr": [
+    "Anthropic is reportedly growing 10x/year while much of the AI industry is cutting headcount, signaling a widening gap between frontier model providers and the rest of the market",
+    "New research finds LLMs fail to properly calibrate responses to uncertainty in retrieved context, a critical gap for RAG applications in high-stakes domains like medicine and finance",
+    "The open-source community is pushing back on AI-generated PR floods, while practitioners debate whether AI coding agents genuinely reduce long-term maintenance costs"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Can LLMs Take Retrieved Information with a Grain of Salt?",
+        "summary": "Researchers at RBC Borealis evaluated eight LLMs on whether they adjust response confidence to match the certainty level expressed in retrieved context, finding a significant failure mode: models often ignore hedging signals in retrieved documents. This is a practical concern for RAG pipelines in high-stakes domains where overconfident answers from uncertain sources (medical, financial) carry real risk. Builders should treat context-certainty obedience as an explicit eval dimension when selecting models for RAG applications.",
+        "url": "https://arxiv.org/abs/2605.06919",
+        "source": "arXiv",
+        "published": "2026-05-11T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "RBC Borealis"
+        ]
+      },
+      {
+        "title": "Domain-level metacognitive monitoring in frontier LLMs: A 33-model atlas",
+        "summary": "A large-scale study of 33 frontier LLMs across eight model families finds that aggregate confidence calibration scores mask substantial variation across knowledge domains — a model that appears well-calibrated overall may be systematically overconfident in specific areas. Using 1,500 MMLU items and Type-2 AUROC as the metric, the study reveals every above-chance model shows non-trivial domain-level variation. AI product builders relying on model confidence signals for routing or uncertainty quantification should evaluate calibration domain-by-domain rather than in aggregate.",
+        "url": "https://arxiv.org/abs/2605.06673",
+        "source": "arXiv",
+        "published": "2026-05-11T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Independent Researcher"
+        ]
+      },
+      {
+        "title": "IntentGrasp: A Comprehensive Benchmark for Intent Understanding",
+        "summary": "IntentGrasp introduces a benchmark drawn from 49 open-licensed corpora spanning 12 domains to evaluate how well LLMs understand the intent behind speech, conversation, and text. The dataset was designed to expose gaps in LLM assistants' ability to go beyond surface-level comprehension to true intent recognition. This is directly relevant for developers building dialog systems, customer service agents, or any application where correctly inferring user goals is critical.",
+        "url": "https://arxiv.org/abs/2605.06832",
+        "source": "arXiv",
+        "published": "2026-05-11T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Department of Computer Science, University of British Columbia"
+        ]
+      },
+      {
+        "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+        "summary": "Allen AI introduces EMO, a pretraining approach for mixture-of-experts models designed to encourage emergent specialization among experts rather than imposing it through hand-crafted routing rules. The method aims to improve parameter efficiency and downstream task performance by letting modular structure arise naturally during training. This is relevant for teams evaluating MoE architectures as a path to more capable and efficient open models.",
+        "url": "https://huggingface.co/blog/allenai/emo",
+        "source": "Hugging Face",
+        "published": "2026-05-08T16:03:50.000Z",
+        "keywords": [
+          "Training",
+          "Framework"
+        ],
+        "affiliations": [
+          "Allen Institute for AI"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "adamsreview: Multi-Agent PR Reviews for Claude Code",
+        "summary": "An open-source GitHub tool that orchestrates multiple Claude Code agents to conduct code review on pull requests, aiming for deeper and more consistent review coverage than single-pass LLM review. The multi-agent approach allows different agents to focus on distinct concerns (security, style, logic), potentially catching more issues. This is a practical starting point for teams looking to automate code review quality gates using Claude.",
+        "url": "https://github.com/adamjgmiller/adamsreview",
+        "source": "Hacker News",
+        "published": "2026-05-11T02:06:29.000Z"
+      },
+      {
+        "title": "GBrain v0.31.1 Adds MCP Thin Client Support, Goes Client-Server",
+        "summary": "GBrain, a local AI assistant tool, shipped MCP thin client support enabling a single home server to serve multiple client devices, effectively turning it into a client-server architecture for personal AI. This means users can centralize their local model hosting and connect to it from any device via the Model Context Protocol. Relevant for teams or individuals designing local-first AI deployments where resource consolidation matters.",
+        "url": "https://x.com/garrytan/status/2053306243704410460",
+        "source": "X (@garrytan)",
+        "published": "2026-05-10T02:48:51.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic Growing 10x/Year While Competitors Cut Workforce",
+        "summary": "Reporting from Latent Space highlights a sharp divergence in the AI labor market: Anthropic is growing headcount at roughly 10x annually while several other AI companies are executing layoffs exceeding 10% of staff. This signals that the competitive gap between top frontier model providers and the broader AI industry may be accelerating, with implications for where talent and resources are concentrating. Consultants and product builders should factor this into vendor stability assessments when choosing API providers.",
+        "url": "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
+        "source": "Latent Space",
+        "published": "2026-05-09T01:08:28.000Z"
+      },
+      {
+        "title": "AI Coding Agents Must Reduce Maintenance Costs, Not Just Ship Faster",
+        "summary": "A widely-read post by James Shore argues that AI coding tools are often evaluated on speed of initial delivery but should be judged primarily on whether they lower long-term maintenance burden — and that many current agents do not pass that test. The piece resonated strongly on HN (157 points), reflecting real practitioner anxiety about accruing AI-generated technical debt. This is a timely framing for consultants advising clients on how to measure ROI from AI coding adoption.",
+        "url": "https://www.jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs",
+        "source": "Hacker News",
+        "published": "2026-05-10T23:39:55.000Z"
+      },
+      {
+        "title": "Open-Source PS3 Emulator Devs Push Back on AI-Generated PR Flood",
+        "summary": "Maintainers of the RPCS3 PlayStation 3 emulator publicly asked contributors to stop submitting AI-generated pull requests that fail basic quality standards, citing wasted reviewer time and low signal-to-noise ratio. The incident (163 HN points, 116 comments) illustrates a growing open-source governance challenge as AI coding tools lower the barrier to contribution without improving contribution quality. Project maintainers and platform operators building AI-assisted workflows should consider explicit quality gates to prevent similar friction.",
+        "url": "https://kotaku.com/playstation-3-emulator-devs-politely-ask-that-people-stop-flooding-it-with-ai-code-pull-requests-2000694656",
+        "source": "Hacker News",
+        "published": "2026-05-10T23:36:48.000Z"
+      },
+      {
+        "title": "Maryland Ratepayers Billed $2B for Grid Upgrades Serving Out-of-State AI Data Centers",
+        "summary": "Maryland utility regulators have flagged that state residents are being charged roughly $2 billion in grid upgrade costs primarily driven by AI data center demand from out-of-state operators, prompting a complaint to federal energy regulators. The case illustrates how AI infrastructure buildout is creating unexpected cost externalities for local communities and triggering regulatory scrutiny. AI infrastructure planners and investors should monitor evolving state-level cost allocation rules as a material risk factor.",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/maryland-citizens-slapped-with-usd2-billion-grid-upgrade-bill-for-out-of-state-ai-data-centers-state-complains-to-federal-energy-regulators-says-additional-cost-breaks-ratepayer-protection-pledge-promises",
+        "source": "Hacker News",
+        "published": "2026-05-10T21:16:55.000Z"
+      },
+      {
+        "title": "\"Local AI Needs to Be the Norm\" — High-Signal HN Thread",
+        "summary": "A post advocating for local-first AI deployment generated over 1,100 HN points and 480 comments, making it one of the most engaged AI discussions of the weekend. The piece argues that privacy, cost, and infrastructure sovereignty concerns make locally-run models the right default rather than a niche choice. The volume of engagement signals that practitioner appetite for local deployment tooling and models remains strong and commercially relevant.",
+        "url": "https://unix.foo/posts/local-ai-needs-to-be-norm/",
+        "source": "Hacker News",
+        "published": "2026-05-10T17:19:28.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "May 8–11"
+}
