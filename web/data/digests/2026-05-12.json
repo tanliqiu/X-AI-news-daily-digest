@@ -1,0 +1,119 @@
+{
+  "date": "2026-05-12",
+  "tldr": [
+    "Anthropic launches Claude Platform on AWS, enabling direct enterprise deployment of Claude models within AWS infrastructure",
+    "Thinking Machines releases TML-Interaction-Small 276B-A12B, advancing state-of-the-art in real-time voice interaction and eliminating traditional VAD approaches",
+    "New research exposes critical flaws in hallucination detection methods for LLMs, showing many methods exploit surface correlates rather than evaluating actual reasoning"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Sanity Checks for Long-Form Hallucination Detection",
+        "summary": "This paper reveals that many hallucination detection methods for LLMs operating on chain-of-thought traces are measuring surface patterns rather than actual reasoning quality, using two oracle tests to expose the gap. The finding has direct implications for anyone relying on automated hallucination detection in production pipelines, suggesting current tools may give false confidence. Teams building QA or fact-checking systems should validate their detection methods against these controlled-invariance tests.",
+        "url": "https://arxiv.org/abs/2605.08346",
+        "source": "arXiv",
+        "published": "2026-05-12T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Los Alamos National Laboratory",
+          "The University of Texas at Austin",
+          "University of British Columbia"
+        ]
+      },
+      {
+        "title": "jina-embeddings-v5-omni: Text-Geometry-Preserving Multimodal Embeddings via Frozen-Tower Composition",
+        "summary": "Jina AI introduces a frozen-encoder composition approach that unifies text, image, audio, and video into a single semantic embedding space without jointly fine-tuning all encoders. This architecture is practically significant for building cross-modal retrieval and RAG systems, as it reduces training complexity while maintaining strong performance across modalities. Developers can adopt these models for unified multimodal search without needing separate embedding pipelines per modality.",
+        "url": "https://arxiv.org/abs/2605.08384",
+        "source": "arXiv",
+        "published": "2026-05-12T04:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "RAG"
+        ],
+        "affiliations": [
+          "Jina AI"
+        ]
+      },
+      {
+        "title": "A Semantic-Sampling Framework for Evaluating Calibration in Open-Ended Question Answering",
+        "summary": "This paper addresses a gap in calibration evaluation for LLMs deployed in high-stakes domains like medicine and law, where open-ended QA makes confidence scoring harder to assess than multiple-choice settings. The proposed semantic-sampling framework provides more realistic estimates of whether a model's expressed confidence actually correlates with correctness. This is directly actionable for teams building high-stakes AI applications who need reliable uncertainty quantification.",
+        "url": "https://arxiv.org/abs/2605.08432",
+        "source": "arXiv",
+        "published": "2026-05-12T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "University of Pennsylvania",
+          "Dartmouth College"
+        ]
+      },
+      {
+        "title": "SalesSim: Benchmarking and Aligning Multimodal Language Models as Retail User Simulators",
+        "summary": "Salesforce Research and UCLA introduce SalesSim, a framework for evaluating MLLMs as persona-driven customer simulators in multi-turn, tool-augmented retail conversations. This is a practical advance for teams building e-commerce conversational agents, as it enables systematic testing of how well AI can simulate realistic shopper behavior before deployment. The agentic framing—treating customer simulation as grounded decision-making—sets a higher bar than prior dialogue-generation approaches.",
+        "url": "https://arxiv.org/abs/2605.08334",
+        "source": "arXiv",
+        "published": "2026-05-12T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Multimodal"
+        ],
+        "affiliations": [
+          "Salesforce Research",
+          "University of California Los Angeles"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Building Blocks for Foundation Model Training and Inference on AWS",
+        "summary": "Hugging Face and Amazon detail the foundational infrastructure components for training and serving foundation models on AWS, covering distributed training patterns, inference optimization, and integration with SageMaker. This is a practical reference for engineering teams architecting large-scale model training or serving pipelines on AWS. The guide consolidates AWS-native tooling choices alongside Hugging Face libraries, reducing the ramp-up time for teams moving to cloud-based model development.",
+        "url": "https://huggingface.co/blog/amazon/foundation-model-building-blocks",
+        "source": "Hugging Face",
+        "published": "2026-05-11T23:18:26.000Z"
+      },
+      {
+        "title": "Fake building: Claude wrote 3k lines instead of import pywikibot",
+        "summary": "A developer documents a case where Claude generated 3,000 lines of custom code to replicate functionality that a single library import would have provided, illustrating a pattern of AI coding agents over-building rather than leveraging existing dependencies. This is a concrete caution for teams using AI coding assistants in production workflows: without explicit instructions to prefer existing libraries, agents may produce bloated, unmaintainable code. It reinforces the need for code review heuristics specifically targeting unnecessary reimplementation.",
+        "url": "https://fireflysentinel.github.io/posts/fake-building-claude-3000-lines/",
+        "source": "Hacker News",
+        "published": "2026-05-12T02:22:04.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Claude Platform on AWS",
+        "summary": "Anthropic has launched Claude Platform on AWS, allowing enterprises to deploy and manage Claude models directly within their AWS environment, with tighter integration into existing cloud infrastructure and security controls. This is a significant distribution move that makes Claude more accessible to enterprise customers already standardized on AWS, potentially reducing friction for regulated industries. Competitors like OpenAI and Google will feel pressure as Anthropic deepens its hyperscaler partnerships.",
+        "url": "https://claude.com/blog/claude-platform-on-aws",
+        "source": "Hacker News",
+        "published": "2026-05-12T01:24:29.000Z"
+      },
+      {
+        "title": "Thinking Machines' Native Interaction Models — TML-Interaction-Small 276B-A12B advances SOTA Realtime Voice",
+        "summary": "Thinking Machines has released TML-Interaction-Small, a 276B sparse MoE model that sets a new state-of-the-art for real-time voice interaction and eliminates the need for traditional voice activity detection (VAD), a longstanding bottleneck in voice AI pipelines. For teams building voice agents or real-time conversational AI, this could significantly reduce latency and simplify architecture by removing a dedicated VAD component. The open release via Hugging Face makes it immediately accessible for evaluation.",
+        "url": "https://www.latent.space/p/ainews-thinking-machines-native-interaction",
+        "source": "Latent Space",
+        "published": "2026-05-12T04:33:46.000Z"
+      },
+      {
+        "title": "'A consistent pattern of lying': trial exposes what insiders think of Sam Altman",
+        "summary": "The Musk v. OpenAI trial has surfaced internal accounts and testimony characterizing Sam Altman's conduct, with former insiders describing a pattern of deception around OpenAI's mission and structure. The proceedings are providing unprecedented public visibility into OpenAI's governance history, which may have implications for enterprise trust and regulatory scrutiny of the company. AI product teams relying on OpenAI APIs should monitor how reputational and legal risks evolve as the trial progresses.",
+        "url": "https://www.theguardian.com/us-news/2026/may/11/musk-v-openai-altman-trial",
+        "source": "Hacker News",
+        "published": "2026-05-12T02:17:32.000Z"
+      },
+      {
+        "title": "GM just laid off IT workers to hire those with stronger AI skills",
+        "summary": "General Motors has laid off hundreds of traditional IT workers and announced it will replace them with staff possessing stronger AI and automation skills, signaling an acceleration of AI-driven workforce restructuring in large enterprises beyond the tech sector. This is an early indicator of how AI adoption is reshaping hiring priorities in Fortune 500 companies, with implications for AI consultants and vendors targeting enterprise transformation engagements. Expect similar moves across other industries as AI tooling matures.",
+        "url": "https://techcrunch.com/2026/05/11/gm-just-laid-off-hundreds-of-it-workers-to-hire-those-with-stronger-ai-skills/",
+        "source": "Hacker News",
+        "published": "2026-05-11T23:33:04.000Z"
+      }
+    ]
+  }
+}
