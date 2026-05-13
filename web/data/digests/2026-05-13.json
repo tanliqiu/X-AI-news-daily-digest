@@ -1,0 +1,128 @@
+{
+  "date": "2026-05-13",
+  "tldr": [
+    "Needle: a 26M-parameter model distilled from Gemini's tool-calling capability offers a highly efficient open-source alternative for function-calling in production pipelines",
+    "New research shows LLM output diversity collapses due to miscalibrated token probabilities at inference time, not sampling strategy—with direct implications for creative and scientific AI applications",
+    "GLiGuard released as an open-source LLM safety guardrail model claiming 16x faster moderation than existing solutions, lowering the barrier to deploying content safety in production"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Sampling More, Getting Less: Calibration is the Diversity Bottleneck in LLMs",
+        "summary": "This paper introduces a validity-diversity framework showing that diversity collapse in LLM outputs stems from miscalibrated token-level probability distributions at inference time, not from insufficient sampling. For practitioners building creative or scientific discovery tools, this suggests that simply increasing sample count or temperature is insufficient—addressing calibration during training or post-processing is needed to achieve genuine output diversity.",
+        "url": "https://arxiv.org/abs/2605.11128",
+        "source": "arXiv",
+        "published": "2026-05-13T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of Southern California",
+          "UC Berkeley"
+        ]
+      },
+      {
+        "title": "ClinicalBench: Stress-Testing Assertion-Aware Retrieval for Cross-Admission Clinical QA on MIMIC-IV",
+        "summary": "ClinicalBench is a 400-question benchmark that evaluates retrieval over real EHR notes, specifically targeting failure modes like negation, temporality, and family-vs-patient attribution that can flip correct answers. The accompanying EpiKG system tags every fact in a patient knowledge graph with assertion and temporality labels, demonstrating measurable retrieval improvements for clinical RAG applications. Builders of healthcare AI products should note that standard retrieval pipelines fail on these assertion-aware edge cases.",
+        "url": "https://arxiv.org/abs/2605.11143",
+        "source": "arXiv",
+        "published": "2026-05-13T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Benchmarks",
+          "Application"
+        ],
+        "affiliations": [
+          "Department of Clinical Sciences, College of Medicine",
+          "University of Central Florida"
+        ]
+      },
+      {
+        "title": "ReVision: Scaling Computer-Use Agents via Temporal Visual Redundancy Reduction",
+        "summary": "ReVision addresses a key scalability bottleneck in computer-use agents (CUAs): the rapid token cost explosion as GUI interaction histories grow, which has previously prevented agents from benefiting from longer context. By compressing temporally redundant visual tokens across screenshots, the method enables CUAs to incorporate richer trajectory histories within fixed compute budgets, yielding meaningful performance gains. This is directly actionable for teams building GUI automation or desktop agent products.",
+        "url": "https://arxiv.org/abs/2605.11212",
+        "source": "arXiv",
+        "published": "2026-05-13T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Multimodal",
+          "Inference"
+        ],
+        "affiliations": [
+          "University of British Columbia",
+          "Microsoft Research"
+        ]
+      },
+      {
+        "title": "ReAD: Reinforcement-Guided Capability Distillation for Large Language Models",
+        "summary": "ReAD proposes a reinforcement learning-guided approach to capability distillation that explicitly accounts for interdependencies between multiple capabilities when compressing large models into smaller ones. Unlike prior methods that treat capabilities as independent targets, ReAD dynamically rebalances training signals based on how improving one skill affects others, leading to better task-specific small models. This is relevant for teams building specialized, efficient models for deployment where multiple abilities (e.g., reasoning + instruction-following) must co-exist.",
+        "url": "https://arxiv.org/abs/2605.11290",
+        "source": "arXiv",
+        "published": "2026-05-13T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Florida State University",
+          "Louisiana State University",
+          "Vanderbilt University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Needle: Gemini Tool Calling Distilled into a 26M Parameter Model",
+        "summary": "Cactus Compute released Needle, an open-source 26M-parameter model that distills Gemini's tool-calling capability into an extremely lightweight model suitable for edge deployment or high-throughput inference pipelines. With 438 HN upvotes and 149 comments, it attracted significant developer interest, suggesting strong practical demand for compact function-calling models. Teams building agentic pipelines that require low-latency or on-device tool use should evaluate this as a cost-effective alternative to large API-based models.",
+        "url": "https://github.com/cactus-compute/needle",
+        "source": "Hacker News",
+        "published": "2026-05-12T18:03:11.000Z"
+      },
+      {
+        "title": "GLiGuard: Open-Source LLM Safety Guardrail at 16x Faster Speed",
+        "summary": "Pioneer AI (creators of the GLiNER NER model) released GLiGuard, a small language model designed for LLM content moderation that claims 16x faster inference compared to existing safety moderation approaches. The open-source release lowers the barrier for adding production-grade safety layers to AI applications without incurring the latency or cost of larger moderation models. Developers shipping user-facing LLM features should benchmark this against current guardrail solutions.",
+        "url": "https://pioneer.ai/blog/gliguard-16x-faster-safety-moderation-with-a-small-language-model",
+        "source": "Hacker News",
+        "published": "2026-05-12T18:45:25.000Z"
+      },
+      {
+        "title": "Hypercubic Hopper: Agentic Interface for Mainframes and COBOL",
+        "summary": "Hypercubic launched Hopper, an AI agent interface for interacting with mainframe systems and COBOL codebases, targeting enterprises with legacy infrastructure. This addresses a real gap for organizations that can't easily modernize but want to layer AI-driven automation or querying on top of existing systems. Consultants working on enterprise AI transformation projects should track this as a potential accelerator for legacy integration work.",
+        "url": "https://www.hypercubic.ai/hopper",
+        "source": "Hacker News",
+        "published": "2026-05-12T17:10:22.000Z"
+      },
+      {
+        "title": "Google DeepMind: Reimagining the Mouse Pointer for the AI Era",
+        "summary": "Google DeepMind published a blog post describing AI Pointer, a rethinking of cursor interaction paradigms to support AI-native interfaces where the pointer can represent intent rather than just position. This signals a directional shift in how AI agents and humans may share GUI control surfaces, with implications for computer-use agent design and human-AI collaboration UX. Product teams building agent-assisted desktop or browser tools should monitor how this evolves into concrete APIs or OS integrations.",
+        "url": "https://deepmind.google/blog/ai-pointer/",
+        "source": "Hacker News",
+        "published": "2026-05-12T17:40:13.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "AI Isn't Paying Off the Way Companies Think, According to Gartner Study",
+        "summary": "A Gartner study reported by Fortune finds that AI investments are not delivering the ROI companies anticipated, particularly around automation-driven headcount reductions. This is a significant signal for AI consultants: organizations may be misframing success metrics, deploying AI in low-leverage areas, or underinvesting in change management. Practitioners should expect growing demand for ROI audits and strategic AI roadmap realignment engagements.",
+        "url": "https://fortune.com/2026/05/11/ai-automation-layoffs-gartner-study-roi/",
+        "source": "Hacker News",
+        "published": "2026-05-12T19:00:49.000Z"
+      },
+      {
+        "title": "[AINews] The End of Finetuning",
+        "summary": "Latent Space's newsletter reflects on whether finetuning as a dominant model adaptation strategy is being displaced by advances in prompting, in-context learning, and RLHF-at-scale. This is a timely strategic question for AI product builders deciding where to invest in model customization: finetuning workflows, RAG pipelines, or prompt engineering. The piece is worth reading for teams reassessing their model adaptation stack.",
+        "url": "https://www.latent.space/p/ainews-the-end-of-finetuning",
+        "source": "Latent Space",
+        "published": "2026-05-13T02:47:22.000Z"
+      },
+      {
+        "title": "Amex Global Business Travel: The World's First AI Take Private with Long Lake CEO Alexander Taubman",
+        "summary": "Long Lake Management announced a $6.3B acquisition of American Express Global Business Travel, framing it as the world's first AI-driven take-private where the acquirer's thesis is built on transforming and optimizing acquired companies with AI. This represents a meaningful data point in AI-driven private equity strategy, showing that AI transformation narratives are now driving large-scale M&A. Consultants and operators in enterprise AI should note this as validation of the AI-as-operational-transformation thesis at scale.",
+        "url": "https://www.youtube.com/watch?v=g5TWnUjbeFM",
+        "source": "No Priors",
+        "published": "2026-05-11T10:00:00.000Z"
+      }
+    ]
+  }
+}
