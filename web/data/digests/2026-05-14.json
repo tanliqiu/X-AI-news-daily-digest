@@ -1,0 +1,105 @@
+{
+  "date": "2026-05-14",
+  "tldr": [
+    "Anthropic launches Claude for Small Business, bringing Claude directly to SMBs as a new market segment",
+    "OpenAI's Sam Altman offers two months of free Codex to companies willing to switch, signaling intensifying competition in AI coding tools",
+    "Medicare introduces a new payment model designed around AI integration, a largely overlooked policy development with major implications for health-tech AI builders"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "The Bicameral Model: Bidirectional Hidden-State Coupling Between Parallel Language Models",
+        "summary": "This paper from AWS proposes coupling two frozen LLMs through a trainable neural interface on intermediate hidden states, enabling real-time continuous coordination rather than text-serialized communication. At each generation step, a primary model drives the task while a secondary model provides a concurrent signal, potentially reducing latency and information loss versus tool-call or chain-of-thought multi-model pipelines. This has direct implications for builders designing multi-agent or ensemble inference architectures.",
+        "url": "https://arxiv.org/abs/2605.11167",
+        "source": "arXiv",
+        "published": "2026-05-14T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "AWS Agentic AI"
+        ]
+      },
+      {
+        "title": "How Does Differential Privacy Affect Social Bias in LLMs? A Systematic Evaluation",
+        "summary": "This study systematically evaluates the interaction between differential privacy (DP) training and social bias in LLMs, finding that DP does not uniformly mitigate bias and can sometimes amplify it for certain demographic groups. For teams building privacy-preserving AI products—especially in regulated industries—this is a critical finding: DP compliance does not substitute for explicit bias auditing. Practitioners should treat privacy and fairness as orthogonal concerns requiring separate evaluation.",
+        "url": "https://arxiv.org/abs/2605.11195",
+        "source": "arXiv",
+        "published": "2026-05-14T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Alignment",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "University of Arkansas"
+        ]
+      },
+      {
+        "title": "Instructions Shape Production of Language, not Processing",
+        "summary": "Through layer-wise probing across five binary judgment tasks, this paper finds that instruction tokens primarily influence the language production stage of LLMs rather than the processing of input content. This asymmetry suggests that prompt instructions are more powerful for shaping outputs than for steering how models internally represent or understand inputs—a nuance with practical implications for prompt engineering and instruction-tuning design. Builders relying on instructions to change model 'understanding' may need to rethink their approach.",
+        "url": "https://arxiv.org/abs/2605.11206",
+        "source": "arXiv",
+        "published": "2026-05-14T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Evaluation",
+          "Training"
+        ],
+        "affiliations": [
+          "University of Tübingen",
+          "IBM Research",
+          "MIT"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "LLMs are breaking 20 year old system design",
+        "summary": "This post argues that LLM-driven architectures are fundamentally incompatible with design patterns—like stateless services, synchronous request-response, and strict API contracts—that have dominated software engineering for two decades. The piece is practically relevant for consultants advising on AI integration, as it identifies where legacy architectural assumptions will create friction when embedding LLMs into existing systems. Engineers building AI-native products should expect to revisit foundational design decisions rather than merely adding an LLM layer.",
+        "url": "https://zknill.io/posts/llms-are-breaking-20-year-old-system-design/",
+        "source": "Hacker News",
+        "published": "2026-05-14T06:39:39.000Z"
+      },
+      {
+        "title": "Arena AI Model ELO History",
+        "summary": "This open visualization tracks the historical Chatbot Arena ELO scores of major AI models over time, providing a longitudinal view of competitive model performance. For AI product builders, it offers a quick reference for understanding how model capabilities have shifted and which providers have maintained or lost ground on human-preference benchmarks. Useful for justifying model selection decisions to stakeholders with a data-driven historical narrative.",
+        "url": "https://mayerwin.github.io/AI-Arena-History/",
+        "source": "Hacker News",
+        "published": "2026-05-14T03:19:05.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Claude for Small Business",
+        "summary": "Anthropic has launched a dedicated Claude plan targeting small businesses, expanding beyond its existing Pro and Team tiers. This represents a direct move to capture SMB market share and signals Anthropic's intent to compete with OpenAI and Google in the broader business productivity segment. Consultants serving SMB clients should evaluate this offering as a potentially lower-friction entry point to enterprise AI adoption.",
+        "url": "https://www.anthropic.com/news/claude-for-small-business",
+        "source": "Hacker News",
+        "published": "2026-05-14T03:59:35.000Z"
+      },
+      {
+        "title": "OpenAI offers two months of free Codex to companies willing to switch",
+        "summary": "Sam Altman announced a 30-day promotion giving companies two free months of Codex usage to encourage switching from competing AI coding tools, framing Codex as the best AI coding product available. This aggressive competitive move directly targets Claude Code and GitHub Copilot users and signals that the AI coding assistant market is entering a price-competition phase. Builders and teams currently evaluating coding agents should factor in this limited-time offer when making near-term tooling decisions.",
+        "url": "https://x.com/sama/status/2054626219858293128",
+        "source": "X (@sama)",
+        "published": "2026-05-13T18:13:58.000Z"
+      },
+      {
+        "title": "Medicare's new payment model is built for AI. Most of the tech world has no idea",
+        "summary": "A new Medicare payment model has been structured in a way that is designed to accommodate and incentivize AI-driven clinical workflows, but it has gone largely unnoticed outside healthcare policy circles. For AI builders targeting health tech, this represents a significant regulatory tailwind that could accelerate adoption of AI tools in clinical settings with reimbursement backing. Consultants advising healthcare clients should understand this model as a potential commercial unlock for AI-assisted care delivery.",
+        "url": "https://techcrunch.com/2026/05/12/medicares-new-payment-model-is-built-for-ai-and-most-of-the-tech-world-has-no-idea/",
+        "source": "Hacker News",
+        "published": "2026-05-13T21:24:14.000Z"
+      },
+      {
+        "title": "Claude Design data access warning: projects lost after unsubscribing",
+        "summary": "A widely-upvoted Hacker News thread warns that users lose access to their Claude Design projects upon canceling their subscription, raising serious concerns about data portability and vendor lock-in. This is a practical risk consideration for teams building workflows or client deliverables on top of Claude Design. Consultants should advise clients to establish data export and backup protocols before committing production work to any subscription-gated AI design tool.",
+        "url": "https://news.ycombinator.com/item?id=48128003",
+        "source": "Hacker News",
+        "published": "2026-05-13T21:40:18.000Z"
+      }
+    ]
+  }
+}
