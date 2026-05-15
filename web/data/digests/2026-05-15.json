@@ -1,0 +1,130 @@
+{
+  "date": "2026-05-15",
+  "tldr": [
+    "Ontario auditors find AI clinical note-takers routinely produce factual errors, raising urgent reliability concerns for healthcare AI deployments",
+    "Anthropic launches 'dreaming' memory and multiagent orchestration in Claude Managed Agents, expanding agentic product capabilities for developers",
+    "New security research exposes a stealthy attack (Mistletoe) that can collapse speculative decoding speedups by poisoning draft models"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Mistletoe: Stealthy Acceleration-Collapse Attacks on Speculative Decoding",
+        "summary": "Researchers identify a novel attack on speculative decoding where a poisoned draft model can dramatically reduce the accepted token length, effectively eliminating the inference speedup without altering visible outputs. This is a practical security concern for any production system using model-based speculative decoding, particularly where draft models are sourced from third parties or open repositories. Teams deploying speculative decoding should audit the provenance and integrity of their draft models.",
+        "url": "https://arxiv.org/abs/2605.14005",
+        "source": "arXiv",
+        "published": "2026-05-15T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Inference"
+        ],
+        "affiliations": [
+          "Harbin Institute of Technology, Shenzhen",
+          "South China University of Technology",
+          "Tsinghua Shenzhen International Graduate School, Tsinghua University",
+          "Huawei Technology"
+        ]
+      },
+      {
+        "title": "Physics-R1: An Audited Olympiad Corpus and Recipe for Visual Physics Reasoning",
+        "summary": "A rigorous end-to-end audit of multimodal physics benchmarks uncovers widespread contamination, translation drift, and MCQ saturation that artificially inflate model performance scores. The paper introduces a three-stage deduplication pipeline and a cleaner corpus, providing a more honest baseline for evaluating vision-language reasoning. Practitioners evaluating multimodal models on science benchmarks should treat existing leaderboard numbers with skepticism until cleaner audits are run.",
+        "url": "https://arxiv.org/abs/2605.14040",
+        "source": "arXiv",
+        "published": "2026-05-15T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation",
+          "Multimodal"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "When Evidence Conflicts: Uncertainty and Order Effects in Retrieval-Augmented Biomedical Question Answering",
+        "summary": "Evaluating six open-weight LLMs under controlled conditions with contradictory retrieved evidence, this study finds that biomedical RAG systems are vulnerable to incorrect or conflicting context—and that the order in which evidence is presented affects answers. This has direct implications for medical AI product design: systems must handle conflicting retrieval gracefully rather than assuming retrieved context is trustworthy. Developers should implement conflict-detection and uncertainty-signaling layers in high-stakes RAG pipelines.",
+        "url": "https://arxiv.org/abs/2605.14115",
+        "source": "arXiv",
+        "published": "2026-05-15T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of Illinois Urbana-Champaign"
+        ]
+      },
+      {
+        "title": "Derivation Prompting: A Logic-Based Method for Improving Retrieval-Augmented Generation",
+        "summary": "This paper introduces Derivation Prompting, a technique that structures the RAG generation step using logic-inspired derivation steps to reduce hallucinations and reasoning errors in knowledge-intensive tasks. The method is prompting-only (no fine-tuning required), making it drop-in compatible with existing RAG pipelines. It offers a low-cost path to more reliable answers in domain-specific applications like legal, medical, or enterprise Q&A.",
+        "url": "https://arxiv.org/abs/2605.14053",
+        "source": "arXiv",
+        "published": "2026-05-15T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Universidad de la República"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Granite Embedding Multilingual R2: Open Apache 2.0 Multilingual Embeddings with 32K Context",
+        "summary": "IBM releases Granite Embedding Multilingual R2, a sub-100M parameter embedding model with 32K context support under the permissive Apache 2.0 license, claiming best-in-class retrieval quality at its size tier. The extended context window makes it practical for long-document RAG applications across multiple languages. Being fully open and commercially usable, it is a strong candidate to replace proprietary embedding APIs in cost-sensitive or privacy-sensitive deployments.",
+        "url": "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
+        "source": "Hugging Face",
+        "published": "2026-05-14T18:55:01.000Z"
+      },
+      {
+        "title": "Unlocking Asynchronicity in Continuous Batching",
+        "summary": "Hugging Face publishes a deep dive on asynchronous continuous batching, a technique that decouples prefill and decode phases to improve GPU utilization and reduce tail latency in LLM serving. The approach is directly applicable to teams running their own inference infrastructure and can yield meaningful throughput gains without hardware upgrades. Engineers optimizing self-hosted model serving should review this as a complementary technique to speculative decoding and PagedAttention.",
+        "url": "https://huggingface.co/blog/continuous_async",
+        "source": "Hugging Face",
+        "published": "2026-05-14T00:00:00.000Z"
+      },
+      {
+        "title": "Claude for Legal: Open-Source Reference Implementation",
+        "summary": "Anthropic releases 'Claude for Legal' as an open-source GitHub repository, providing a reference architecture for building legal AI applications on top of Claude. The release lowers the barrier to entry for consultants and developers building contract review, legal research, or document drafting tools. It signals Anthropic's intent to grow the legal vertical with opinionated starter kits rather than leaving all integration work to builders.",
+        "url": "https://github.com/anthropics/claude-for-legal",
+        "source": "Hacker News",
+        "published": "2026-05-14T21:05:05.000Z"
+      },
+      {
+        "title": "How Claude Code Works in Large Codebases",
+        "summary": "Anthropic publishes practical guidance on using Claude Code effectively in large, complex codebases, covering best practices for context management, file navigation, and task scoping. This is directly actionable for engineering teams evaluating or already using AI coding assistants at scale. The post reflects growing maturity in agentic coding tooling and highlights patterns that improve reliability in real-world, multi-file projects.",
+        "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+        "source": "Hacker News",
+        "published": "2026-05-15T04:15:31.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Ontario Auditors Find Doctors' AI Note-Takers Routinely Get Basic Facts Wrong",
+        "summary": "An Ontario audit of AI-powered clinical documentation tools found systematic factual errors in generated notes—including wrong medications, dosages, and patient details—raising serious patient safety concerns. This is a significant wake-up call for healthcare AI vendors and the clinical systems that have adopted these tools without sufficient validation infrastructure. Product teams in regulated industries should treat accuracy audits as a non-negotiable part of any deployment checklist.",
+        "url": "https://www.theregister.com/ai-ml/2026/05/14/ontario-auditors-find-doctors-ai-note-takers-routinely-blow-basic-facts/5240771",
+        "source": "Hacker News",
+        "published": "2026-05-14T22:37:40.000Z"
+      },
+      {
+        "title": "New in Claude Managed Agents: Dreaming, Outcomes, and Multiagent Orchestration",
+        "summary": "Anthropic launches 'dreaming'—a memory extension that lets agents review past sessions to self-improve—alongside multiagent orchestration and webhooks as part of Claude Managed Agents. These capabilities significantly expand what developers can build on Anthropic's platform, enabling longer-horizon autonomous workflows with richer state management. For AI product builders, this marks a meaningful step toward production-grade agent infrastructure rather than one-shot assistant interactions.",
+        "url": "https://claude.com/blog/new-in-claude-managed-agents",
+        "source": "blog",
+        "published": "2026-05-06T00:00:00.000Z"
+      },
+      {
+        "title": "Access to Frontier AI Will Soon Be Limited by Economic and Security Constraints",
+        "summary": "An essay argues that export controls, compute costs, and geopolitical dynamics will increasingly stratify who can access frontier AI models, creating a two-tier market between resource-rich and resource-constrained actors. For consultants and product builders, this signals the importance of planning for a future where top-tier model access may be gated, rationed, or geographically restricted. Understanding these constraints now informs architecture decisions around model portability and fallback strategies.",
+        "url": "https://writing.antonleicht.me/p/cut-off",
+        "source": "Hacker News",
+        "published": "2026-05-15T01:08:04.000Z"
+      },
+      {
+        "title": "AI-Native Healthcare: Abridge on 100M Doctor Visits and Prior Auth Automation",
+        "summary": "Abridge co-founders discuss how their clinical AI platform has processed over 100 million doctor visits, saving clinicians 10–20 hours per week, and is now automating prior authorization workflows. The conversation illustrates how a focused, verticalized AI product built around a specific clinical workflow can achieve significant scale and ROI. This is a compelling case study for applied AI consultants designing domain-specific AI systems in regulated industries.",
+        "url": "https://www.latent.space/p/abridge",
+        "source": "Latent Space",
+        "published": "2026-05-14T22:05:31.000Z"
+      }
+    ]
+  }
+}
