@@ -1,0 +1,96 @@
+{
+  "date": "2026-05-18",
+  "tldr": [
+    "Cerebras completes a $60B IPO, marking a major milestone for AI chip infrastructure companies",
+    "Growing public backlash against AI: multiple polls show Americans distrust both AI systems and the companies building them",
+    "New research proposes Capability Conditioned Scaffolding to prevent over-reliance on LLMs in domains where users lack evaluation expertise"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Always Learning, Always Mixing: Efficient and Simple Data Mixing All The Time",
+        "summary": "This paper introduces a unified data mixing method that works across the full LLM training lifecycle—pretraining, continual learning, and adaptation—without requiring separate proxy models for each phase. The approach simplifies training pipelines and could reduce the overhead of tuning data composition strategies when building or fine-tuning production models. Practitioners managing multi-stage training runs should find this directly applicable to improving model quality with less experimentation.",
+        "url": "https://arxiv.org/abs/2605.15220",
+        "source": "arXiv",
+        "published": "2026-05-18T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Framework"
+        ],
+        "affiliations": [
+          "New York University",
+          "Carnegie Mellon University",
+          "Microsoft"
+        ]
+      },
+      {
+        "title": "Capability Conditioned Scaffolding for Professional Human LLM Collaboration",
+        "summary": "The paper introduces a typed framework that adjusts LLM output style based on a user's domain expertise, aiming to prevent 'Professional Domain Drift'—where users defer to AI reasoning in areas they can't reliably evaluate. For AI product builders, this surfaces a concrete design pattern: matching response depth and transparency to user competency levels rather than one-size-fits-all personalization. This is especially relevant for high-stakes verticals like legal, medical, or financial AI assistants.",
+        "url": "https://arxiv.org/abs/2605.15404",
+        "source": "arXiv",
+        "published": "2026-05-18T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Application"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Eskwai for Students: Generative AI Assistant for Legal Education in Ghana",
+        "summary": "This paper details the development and deployment of a RAG-based AI assistant for law students in Ghana, offering curriculum-aligned Q&A on local legal content. It provides a practical case study in deploying RAG systems in resource-constrained, domain-specific settings in the Global South. Builders targeting emerging markets or specialized legal/educational AI products can draw lessons from the retrieval design and feasibility findings.",
+        "url": "https://arxiv.org/abs/2605.15380",
+        "source": "arXiv",
+        "published": "2026-05-18T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Application"
+        ],
+        "affiliations": [
+          "ETH Zurich",
+          "Kwame AI Inc."
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Claude Code as a Second Brain: Home Server + Obsidian Vault Workflow",
+        "summary": "This podcast episode walks through a practical setup where Claude Code is connected to a personal Obsidian note vault running on a home server, enabling AI-assisted thinking, research, and coding from a mobile device. The workflow demonstrates how Claude Code's agentic file-access capabilities can be extended beyond codebases into personal knowledge management. Consultants and solo builders may find this a useful template for augmenting their own research and development workflows.",
+        "url": "https://www.youtube.com/watch?v=in7i-EVDDlk",
+        "source": "AI & I by Every",
+        "published": "2026-05-13T15:02:38.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Cerebras' $60B IPO: Slowly, then All at Once",
+        "summary": "Cerebras has completed a $60 billion IPO, representing one of the largest public market exits for an AI infrastructure company to date. This signals strong investor appetite for purpose-built AI chip companies as an alternative to Nvidia's dominance in training and inference hardware. For AI product teams, Cerebras' public status may accelerate access to its ultra-fast inference hardware as it scales commercial operations.",
+        "url": "https://www.latent.space/p/ainews-cerebras-60b-ipo-slowly-then",
+        "source": "Latent Space",
+        "published": "2026-05-16T04:36:50.000Z"
+      },
+      {
+        "title": "An AI Hate Wave Is Here",
+        "summary": "New polling data from Axios shows a measurable surge in negative public sentiment toward AI, with backlash spanning concerns about job displacement, trust in AI companies, and perceived societal harms. This trend has direct implications for AI product positioning and go-to-market strategy, particularly for consumer-facing applications where trust is a key adoption barrier. Builders should expect increased scrutiny and may need to invest more in transparency and explainability features.",
+        "url": "https://www.axios.com/2026/05/17/ai-backlash-polling-sentiment",
+        "source": "Hacker News",
+        "published": "2026-05-17T21:23:25.000Z"
+      },
+      {
+        "title": "Most Americans don't trust AI – or the people in charge of it",
+        "summary": "Combined Pew and Gallup data shows that a majority of Americans distrust both AI systems and the organizations developing them, with skepticism extending to tech executives and regulators alike. This erosion of institutional trust is a growing headwind for AI adoption across enterprise and consumer markets. Product teams building AI-powered services should factor in trust-building UX and clear human-oversight mechanisms as competitive differentiators.",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/644853/pew-gallup-data-americans-dont-trust-ai",
+        "source": "Hacker News",
+        "published": "2026-05-18T01:39:30.000Z"
+      },
+      {
+        "title": "U.S. Congressman Beyer on AI challenges facing America and the World",
+        "summary": "Congressman Don Beyer, an active AI Ph.D student at George Mason University, discusses the legislative and policy landscape around AI with a rare combination of technical and political perspective. The conversation covers regulatory challenges, international competitiveness, and the governance gaps that practitioners should be aware of when building AI products at scale. This is a useful listen for consultants advising clients on AI compliance and policy risk.",
+        "url": "https://share.transistor.fm/s/9ac73d0a",
+        "source": "Practical AI",
+        "published": "2026-05-14T09:00:00.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "May 15–18"
+}
