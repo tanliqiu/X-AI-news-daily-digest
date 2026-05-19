@@ -1,0 +1,128 @@
+{
+  "date": "2026-05-19",
+  "tldr": [
+    "Simon Willison's 'last six months in LLMs' roundup is generating major HN discussion ahead of Google I/O, signaling a pivotal moment in the LLM landscape",
+    "New research reveals routing accuracy in agent skill libraries degays logarithmically with library size, providing the first scaling laws for agentic skill systems",
+    "Anthropic doubled Claude Design token limits across all plans, and OpenAI's Sam Altman touted a major ChatGPT quality update"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "The Scaling Laws of Skills in LLM Agent Systems",
+        "summary": "Across 15 frontier LLMs and 1,141 real-world skills, routing accuracy in agent skill libraries decays logarithmically as library size grows, creating a compounding failure mode for large-scale agentic systems. The study also identifies an 'execution law' linking per-skill LLM performance to downstream task success. Practitioners building skill-based agent systems should budget for retrieval/routing degradation and consider hierarchical or family-based skill organization to mitigate drift.",
+        "url": "https://arxiv.org/abs/2605.16508",
+        "source": "arXiv",
+        "published": "2026-05-19T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Inference"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "PQR: A Framework to Generate Diverse and Realistic User Queries that Elicit QA Agent Failures",
+        "summary": "PQR automates the discovery of QA agent failure cases by generating realistic (non-adversarial) user queries that expose weaknesses tied to specific objectives, significantly reducing the manual effort needed to stress-test production agents. The framework surfaces failure modes that adversarial-only testing misses, making it practically useful for pre-deployment red-teaming of customer-facing AI assistants. Teams building QA or support agents can use PQR to build more comprehensive regression test suites.",
+        "url": "https://arxiv.org/abs/2605.16551",
+        "source": "arXiv",
+        "published": "2026-05-19T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Agents"
+        ],
+        "affiliations": [
+          "Columbia University",
+          "University of California San Diego",
+          "Walmart",
+          "Arklex.ai"
+        ]
+      },
+      {
+        "title": "CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?",
+        "summary": "CHI-Bench introduces a benchmark for evaluating AI agents on realistic healthcare operational tasks that require multi-role composition, dense policy grounding, and multi-turn dialog—capabilities largely absent from existing agent benchmarks. Results reveal significant gaps in current frontier models when handling the handoffs and regulatory complexity of real clinical workflows. This benchmark provides a concrete, high-stakes evaluation target for teams building agentic AI in healthcare or other policy-heavy domains.",
+        "url": "https://arxiv.org/abs/2605.16679",
+        "source": "arXiv",
+        "published": "2026-05-19T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Application"
+        ],
+        "affiliations": [
+          "Johns Hopkins Medicine",
+          "Wellstar Health System",
+          "Stanford University",
+          "UCSD"
+        ]
+      },
+      {
+        "title": "Retrieval-Based Multi-Label Legal Annotation: Extensible, Data-Efficient and Hallucination-Free",
+        "summary": "This paper reframes multi-label legal document annotation as a retrieval problem—embedding documents and label descriptions in the same space—eliminating the need for task-specific retraining when taxonomies change and avoiding hallucinations common with generative LLMs. The approach is data-efficient and scales to large evolving label sets, making it directly applicable to compliance, contract review, and regulatory classification pipelines. Practitioners dealing with frequently updated legal taxonomies will find this a more maintainable alternative to fine-tuned classifiers or prompt-based LLMs.",
+        "url": "https://arxiv.org/abs/2605.16767",
+        "source": "arXiv",
+        "published": "2026-05-19T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Application"
+        ],
+        "affiliations": [
+          "University of Pittsburgh",
+          "Carnegie Mellon University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Fine-Tuning NVIDIA Cosmos Predict 2.5 with LoRA/DoRA for Robot Video Generation",
+        "summary": "NVIDIA's Cosmos Predict 2.5 world-model can now be fine-tuned using parameter-efficient methods (LoRA/DoRA) for domain-specific robot video generation, lowering the compute barrier for teams building synthetic training data pipelines for robotics. The Hugging Face blog post provides a practical walkthrough, making this accessible to AI engineers without large GPU clusters. This is a significant step for sim-to-real workflows where high-quality, controllable video generation can replace costly physical data collection.",
+        "url": "https://huggingface.co/blog/nvidia/cosmos-fine-tuning-for-robot-video-generation",
+        "source": "Hugging Face",
+        "published": "2026-05-18T16:00:21.000Z"
+      },
+      {
+        "title": "PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend",
+        "summary": "PaddleOCR 3.5 now supports a Hugging Face Transformers backend, making it easier to integrate state-of-the-art OCR and document parsing into standard ML pipelines without requiring the PaddlePaddle framework. This reduces friction for teams building document intelligence or RAG systems that need reliable text extraction from PDFs and scanned images. The Transformers compatibility also improves interoperability with the broader open-source ecosystem.",
+        "url": "https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers",
+        "source": "Hugging Face",
+        "published": "2026-05-18T15:12:46.000Z"
+      },
+      {
+        "title": "The Open Agent Leaderboard",
+        "summary": "IBM Research has launched an Open Agent Leaderboard on Hugging Face, providing standardized, reproducible benchmarking for open-source AI agents across a range of tasks. This fills a gap for teams evaluating agent frameworks and models without relying on proprietary or vendor-reported benchmarks. Having a neutral, community-accessible leaderboard should accelerate iteration and transparency in agentic AI development.",
+        "url": "https://huggingface.co/blog/ibm-research/open-agent-leaderboard",
+        "source": "Hugging Face",
+        "published": "2026-05-18T14:12:58.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "The last six months in LLMs in five minutes",
+        "summary": "Simon Willison's concise recap of the most important LLM developments over the past six months is generating significant discussion on Hacker News (400+ points, 288 comments), making it a useful orientation for practitioners catching up before Google I/O. The piece synthesizes capability jumps, tooling shifts, and emerging patterns in a format tailored for applied builders. It serves as a high-signal briefing for consultants advising clients on where the state of the art actually stands.",
+        "url": "https://simonwillison.net/2026/May/19/5-minute-llms/",
+        "source": "Hacker News",
+        "published": "2026-05-19T01:30:42.000Z"
+      },
+      {
+        "title": "The American Rebellion Against AI Is Gaining Steam",
+        "summary": "A WSJ piece gaining traction on Hacker News (100+ points, 106 comments) documents a growing consumer and worker backlash against AI deployment in the US, covering job displacement concerns, product quality complaints, and organized resistance. For AI product builders, this signals that public trust and communication strategy are becoming as important as technical capability. Teams shipping AI-powered products should factor sentiment risk and transparency into their go-to-market plans.",
+        "url": "https://www.wsj.com/tech/ai/the-american-rebellion-against-ai-is-gaining-steam-94b72529",
+        "source": "Hacker News",
+        "published": "2026-05-19T01:51:48.000Z"
+      },
+      {
+        "title": "Anthropic Doubles Claude Design Token Limits Across All Plans",
+        "summary": "Anthropic announced it has doubled token limits for Claude Design on every subscription tier, directly increasing the scope of creative and design tasks users can accomplish in a single session. This is a practical capacity upgrade for developers building design-assistance or content-generation products on top of Claude. Combined with recent model quality improvements, it strengthens the value proposition for Claude-based application builders.",
+        "url": "https://x.com/claudeai/status/2056460045756309820",
+        "source": "X (@claudeai)",
+        "published": "2026-05-18T19:40:56.000Z"
+      },
+      {
+        "title": "Sam Altman Touts Major ChatGPT Quality Improvement in Latest Update",
+        "summary": "OpenAI CEO Sam Altman publicly praised the team for a recent ChatGPT update he describes as a substantial quality leap, suggesting a notable model or system-level improvement has shipped. While specifics weren't disclosed, such signals from leadership typically precede formal announcements and indicate competitive pressure is driving rapid iteration. Practitioners evaluating LLM providers should re-benchmark ChatGPT on their use cases following this update.",
+        "url": "https://x.com/sama/status/2056435834333934051",
+        "source": "X (@sama)",
+        "published": "2026-05-18T18:04:44.000Z"
+      }
+    ]
+  }
+}
