@@ -38,7 +38,7 @@ function affiliationsFromTex(tex) {
 
   const results = [], seen = new Set()
 
-  const INST_WORDS = /\b(?:University|Institute|Laboratory|Labs?|College|School|Research(?:er)?|Center|Centre|Department|Faculty|Hospital|Foundation|Technology|Sciences?|Academy|Polytechnic|Corp|Inc|Ltd|Group|Independent|NTNU|MIT|CMU|UCLA|EPFL|ETH)\b/i
+  const INST_WORDS = /\b(?:University|Institute|Laboratory|Labs?|College|School|Research(?:er)?|Center|Centre|Department|Faculty|Hospital|Foundation|Technology|Sciences?|Academy|Polytechnic|Corp|Inc|Ltd|Group|Independent|NTNU|MIT|CMU|UCLA|EPFL|ETH|Ventures?)\b/i
   const isPersonName = (s) => /^[A-Z][a-z]+(?: [A-Z]\.?)? [A-Z][a-z]+$/.test(s) && !INST_WORDS.test(s)
   const isAddressOnly = (s) => /^[\w\s]+,\s*[A-Z]{2}\s+\d{5}/.test(s) || /^\d{5}$/.test(s)
   const COUNTRIES = /\b(?:USA|United States|UK|United Kingdom|China|Germany|France|Japan|Canada|Australia|Norway|India|Korea|Italy|Spain|Netherlands|Switzerland|Sweden|Denmark|Finland|Ireland|Israel|Singapore|Brazil|Poland)\b/i
@@ -104,31 +104,63 @@ function affiliationsFromTex(tex) {
     if (results.length > 0) return results
   }
 
-  // 3. Standard affiliation commands (split by \\ and \qquad to handle multiple insts per line)
-  for (const m of src.matchAll(/\\(?:affiliation|affil|institute|address|IEEEauthorblockA)\*?\s*(?:\[[^\]]*\])?\s*\{([^}]+)\}/g)) {
+  // 3. IEEEtran: \IEEEauthorblockA{...} — extract affiliation block with brace-balanced content,
+  //    then split by \\ and take only parts that look like institution names (not email/ORCID lines).
+  for (const m of src.matchAll(/\\IEEEauthorblockA\s*\{/g)) {
+    // Use brace-balanced extraction so nested \texttt{...} doesn't prematurely close the match.
+    let depth = 0, start = m.index + m[0].length, end = -1
+    for (let i = start; i < src.length; i++) {
+      if (src[i] === '\\') { i++; continue }
+      if (src[i] === '{') depth++
+      else if (src[i] === '}') {
+        if (depth === 0) { end = i; break }
+        depth--
+      }
+    }
+    if (end === -1) continue
+    const blockContent = src.slice(start, end)
+    // Split on \\ separators; take parts that are not email/ORCID/URL lines.
+    for (const part of blockContent.split(/\\\\/)) {
+      const stripped = part
+        .replace(/\\texttt\s*\{[^}]*\}/g, '')   // remove \texttt{...} (emails/urls)
+        .replace(/\\[a-zA-Z]+(?:\{[^}]*\})?/g, ' ')
+        .replace(/\S*@\S+/g, '')                 // remove email addresses
+        .replace(/ORCID\s*:\s*[\d-]+/gi, '')     // remove ORCID lines
+        .replace(/https?:\/\/\S+/g, '')          // remove URLs
+        .replace(/[{}]/g, '')
+        .replace(/\s+/g, ' ').trim()
+      if (stripped.length >= 4 && INST_WORDS.test(stripped)) {
+        add(stripped)
+        if (results.length >= 5) return results
+      }
+    }
+  }
+
+  // 4. Standard affiliation commands (split by \\ and \qquad to handle multiple insts per line)
+  for (const m of src.matchAll(/\\(?:affiliation|affil|institute|address)\*?\s*(?:\[[^\]]*\])?\s*\{([^}]+)\}/g)) {
     for (const part of m[1].split(/\\\\|\\qquad|\\quad/)) { add(part); if (results.length >= 5) return results }
   }
 
-  // 4. JMLR style: \addr Institution (no braces)
+  // 5. JMLR style: \addr Institution (no braces)
   if (results.length === 0) {
     for (const m of src.matchAll(/\\addr\s+([A-Z][^\\\n{$]{3,100})/g)) {
       add(m[1]); if (results.length >= 5) return results
     }
   }
 
-  // 5. ICML: \icmlaffiliation{key}{Institution Name}
+  // 6. ICML: \icmlaffiliation{key}{Institution Name}
   for (const m of src.matchAll(/\\icmlaffiliation\s*\{[^}]*\}\s*\{([^}]+)\}/g)) {
     add(m[1]); if (results.length >= 5) return results
   }
 
-  // 6. NeurIPS/ACL \textsuperscript{n}Institution Name
+  // 7. NeurIPS/ACL \textsuperscript{n}Institution Name
   if (results.length === 0) {
     for (const m of src.matchAll(/\\textsuperscript\{\d+\}\s*([A-Z][^\\\n{}]+)/g)) {
       add(m[1]); if (results.length >= 5) return results
     }
   }
 
-  // 7. Fallback: \author{Name \\ Institution \\ \And ...} with brace-counting
+  // 8. Fallback: \author{Name \\ Institution \\ \And ...} with brace-counting
   if (results.length === 0) {
     const marker = '\\author{'
     const start = src.indexOf(marker)
