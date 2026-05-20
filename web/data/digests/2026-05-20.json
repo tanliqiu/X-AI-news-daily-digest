@@ -1,0 +1,118 @@
+{
+  "date": "2026-05-20",
+  "tldr": [
+    "Google I/O 2026 delivered a major wave of releases including Gemini 3.5 Flash, Gemini Omni, and Gemini Spark background agents — signaling Google's aggressive push across model capability, video, and autonomous agent infrastructure.",
+    "Andrej Karpathy announced he has joined Anthropic, calling the next few years at the frontier 'especially formative' — a significant talent signal for the lab.",
+    "Anthropic launched self-hosted sandboxes and MCP tunnels for Claude Managed Agents, giving enterprises direct control over agent execution environments and private tool servers."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On",
+        "summary": "As LLM agents increasingly operate in multi-agent, peer-to-peer networks (A2A), the paper argues that trust mechanisms cannot be added after the fact — they must be architecturally embedded from the start. The authors analyze emerging attack surfaces and coordination failures in heterogeneous agent ecosystems, with direct implications for anyone building production multi-agent pipelines. This is a timely design guide for teams evaluating agent-to-agent delegation and security.",
+        "url": "https://arxiv.org/abs/2605.19035",
+        "source": "arXiv",
+        "published": "2026-05-20T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Agents"
+        ],
+        "affiliations": [
+          "University of Southern California",
+          "Carnegie Mellon University",
+          "University of Illinois Urbana-Champaign",
+          "Stanford University"
+        ]
+      },
+      {
+        "title": "DecisionBench: A Benchmark for Emergent Delegation in Long-Horizon Agentic Workflows",
+        "summary": "DecisionBench introduces a standardized substrate for evaluating how AI agents decide when and to whom to delegate subtasks across long-horizon workflows, using GAIA, tau-bench, and BFCL multi-turn tasks with a pool of 11 models from 7 vendor families. Metrics cover quality, cost, latency, delegation rate, and routing fidelity — providing a practical framework for teams building orchestration layers or multi-model routing systems. This fills a notable gap in evaluation tooling for production agentic systems.",
+        "url": "https://arxiv.org/abs/2605.19099",
+        "source": "arXiv",
+        "published": "2026-05-20T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Agents"
+        ],
+        "affiliations": [
+          "OpenMesh AI",
+          "University of Pennsylvania",
+          "Columbia University",
+          "Stanford University"
+        ]
+      },
+      {
+        "title": "Embedding by Elicitation: Dynamic Representations for Bayesian Optimization of System Prompts",
+        "summary": "ReElicit, from Meta, frames system prompt tuning as black-box Bayesian optimization over discrete text when only aggregate performance metrics are available — a realistic constraint in many deployed AI products. By dynamically eliciting embeddings from the LLM itself, the method navigates a variable-length discrete search space more efficiently than grid search or human iteration. This is practically useful for teams optimizing prompts at scale without per-example labeling.",
+        "url": "https://arxiv.org/abs/2605.19093",
+        "source": "arXiv",
+        "published": "2026-05-20T04:00:00.000Z",
+        "keywords": [
+          "Framework",
+          "Inference"
+        ],
+        "affiliations": [
+          "Meta"
+        ]
+      },
+      {
+        "title": "AgentNLQ: A General-Purpose Agent for Natural Language to SQL",
+        "summary": "AgentNLQ presents a multi-agent approach to NL2SQL that improves accuracy beyond current LLM baselines, targeting the persistent gap between LLM-generated SQL and expert human writers. The method is relevant for product teams building data analytics or BI copilot features on top of relational databases. Concrete accuracy gains on standard benchmarks make this a practical reference for NL2SQL system design.",
+        "url": "https://arxiv.org/abs/2605.19010",
+        "source": "arXiv",
+        "published": "2026-05-20T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Application"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels",
+        "summary": "Anthropic now allows Claude Managed Agents to execute tools inside customer-controlled infrastructure and connect to private MCP servers via encrypted tunnels, removing the requirement to expose internal services to Anthropic's cloud. This is a significant enterprise unlock for regulated industries or teams with strict data residency requirements building agentic workflows on Claude. Combined with MCP's growing ecosystem, this positions Claude as a more viable platform for sensitive enterprise automation.",
+        "url": "https://claude.com/blog/claude-managed-agents-updates",
+        "source": "blog",
+        "published": "2026-05-19T00:00:00.000Z"
+      },
+      {
+        "title": "Introducing the Ettin Reranker Family",
+        "summary": "Hugging Face introduces the Ettin reranker model family, designed to improve retrieval quality in RAG pipelines by more accurately scoring candidate document relevance. Rerankers are a high-leverage component in production RAG systems, and a new open family from HF lowers the barrier to deploying state-of-the-art retrieval without proprietary API dependencies. Teams building search or knowledge retrieval products should evaluate these as a drop-in improvement over cross-encoder baselines.",
+        "url": "https://huggingface.co/blog/ettin-reranker",
+        "source": "Hugging Face",
+        "published": "2026-05-19T00:00:00.000Z"
+      },
+      {
+        "title": "Remove-AI-Watermarks: CLI and library for removing AI watermarks from images",
+        "summary": "An open-source tool that strips AI-generated watermarks (e.g., from image generators) from images via CLI or library, which gained significant traction on Hacker News. While useful for legitimate pipeline use cases, it raises immediate concerns for AI content provenance and watermarking-based detection strategies. Teams relying on watermarks for content authenticity verification should note that these signals are increasingly defeatable.",
+        "url": "https://github.com/wiltodelta/remove-ai-watermarks",
+        "source": "Hacker News",
+        "published": "2026-05-19T22:30:31.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Andrej Karpathy joins Anthropic",
+        "summary": "Andrej Karpathy announced he has joined Anthropic as a researcher, citing the next few years at the frontier as 'especially formative' and expressing excitement to return to R&D. Coming off his independent work on AI education (including Eureka Labs), this is a marquee hire that strengthens Anthropic's research bench significantly. He noted plans to eventually resume his education-focused work.",
+        "url": "https://x.com/karpathy/status/2056753169888334312",
+        "source": "X (@karpathy)",
+        "published": "2026-05-19T15:05:42.000Z"
+      },
+      {
+        "title": "Google I/O 2026: Gemini 3.5 Flash, Gemini Omni, Spark background agents, and more",
+        "summary": "Google's I/O 2026 announcements include Gemini 3.5 Flash (reporting a 12-point jump on complex document tasks and strong gains on agentic coding benchmarks like Terminal-Bench and SWE-Bench), Gemini Omni (a multimodal video-capable model), and Gemini Spark (a 24/7 proactive background agent for personal task management). The breadth of releases — spanning frontier models, video simulation, autonomous agents, and computational discovery tools (ERA + AlphaEvolve) — signals Google is competing aggressively across every major AI product surface. Builders should prioritize evaluating Gemini 3.5 Flash as a cost-efficient tier for document and agentic workloads.",
+        "url": "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash",
+        "source": "Latent Space",
+        "published": "2026-05-20T03:34:17.000Z"
+      },
+      {
+        "title": "Railway's major outage caused by Google Cloud auto-banning its account",
+        "summary": "Railway, a popular cloud deployment platform, suffered a near-total outage after Google Cloud's automated systems banned its account without warning — taking down all customer deployments. The incident underscores the platform risk of building infrastructure on hyperscaler clouds where automated abuse-detection systems can disable accounts at scale with limited recourse. Railway published a detailed incident report after resolution, and the episode reignited community discussion about cloud provider lock-in and vendor risk management.",
+        "url": "https://blog.railway.com/p/incident-report-may-19-2026-gcp-account-outage",
+        "source": "Hacker News",
+        "published": "2026-05-20T00:23:54.000Z"
+      }
+    ]
+  }
+}
