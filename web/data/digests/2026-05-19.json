@@ -18,7 +18,9 @@
           "Benchmarks",
           "Inference"
         ],
-        "affiliations": []
+        "affiliations": [
+          "Evolvent AI Team"
+        ]
       },
       {
         "title": "PQR: A Framework to Generate Diverse and Realistic User Queries that Elicit QA Agent Failures",
@@ -39,7 +41,7 @@
       },
       {
         "title": "CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?",
-        "summary": "CHI-Bench introduces a benchmark for evaluating AI agents on realistic healthcare operational tasks that require multi-role composition, dense policy grounding, and multi-turn dialog—capabilities largely absent from existing agent benchmarks. Results reveal significant gaps in current frontier models when handling the handoffs and regulatory complexity of real clinical workflows. This benchmark provides a concrete, high-stakes evaluation target for teams building agentic AI in healthcare or other policy-heavy domains.",
+        "summary": "CHI-Bench introduces a benchmark for evaluating AI agents on realistic healthcare operational tasks that require multi-role composition, dense policy grounding, and multi-turn dialog\u2014capabilities largely absent from existing agent benchmarks. Results reveal significant gaps in current frontier models when handling the handoffs and regulatory complexity of real clinical workflows. This benchmark provides a concrete, high-stakes evaluation target for teams building agentic AI in healthcare or other policy-heavy domains.",
         "url": "https://arxiv.org/abs/2605.16679",
         "source": "arXiv",
         "published": "2026-05-19T04:00:00.000Z",
@@ -57,7 +59,7 @@
       },
       {
         "title": "Retrieval-Based Multi-Label Legal Annotation: Extensible, Data-Efficient and Hallucination-Free",
-        "summary": "This paper reframes multi-label legal document annotation as a retrieval problem—embedding documents and label descriptions in the same space—eliminating the need for task-specific retraining when taxonomies change and avoiding hallucinations common with generative LLMs. The approach is data-efficient and scales to large evolving label sets, making it directly applicable to compliance, contract review, and regulatory classification pipelines. Practitioners dealing with frequently updated legal taxonomies will find this a more maintainable alternative to fine-tuned classifiers or prompt-based LLMs.",
+        "summary": "This paper reframes multi-label legal document annotation as a retrieval problem\u2014embedding documents and label descriptions in the same space\u2014eliminating the need for task-specific retraining when taxonomies change and avoiding hallucinations common with generative LLMs. The approach is data-efficient and scales to large evolving label sets, making it directly applicable to compliance, contract review, and regulatory classification pipelines. Practitioners dealing with frequently updated legal taxonomies will find this a more maintainable alternative to fine-tuned classifiers or prompt-based LLMs.",
         "url": "https://arxiv.org/abs/2605.16767",
         "source": "arXiv",
         "published": "2026-05-19T04:00:00.000Z",

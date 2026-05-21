@@ -1,15 +1,15 @@
 {
   "date": "2026-05-20",
   "tldr": [
-    "Google I/O 2026 delivered a major wave of releases including Gemini 3.5 Flash, Gemini Omni, and Gemini Spark background agents — signaling Google's aggressive push across model capability, video, and autonomous agent infrastructure.",
-    "Andrej Karpathy announced he has joined Anthropic, calling the next few years at the frontier 'especially formative' — a significant talent signal for the lab.",
+    "Google I/O 2026 delivered a major wave of releases including Gemini 3.5 Flash, Gemini Omni, and Gemini Spark background agents \u2014 signaling Google's aggressive push across model capability, video, and autonomous agent infrastructure.",
+    "Andrej Karpathy announced he has joined Anthropic, calling the next few years at the frontier 'especially formative' \u2014 a significant talent signal for the lab.",
     "Anthropic launched self-hosted sandboxes and MCP tunnels for Claude Managed Agents, giving enterprises direct control over agent execution environments and private tool servers."
   ],
   "sections": {
     "Research": [
       {
         "title": "Trustworthy Agent Network: Trust in Agent Networks Must Be Baked In, Not Bolted On",
-        "summary": "As LLM agents increasingly operate in multi-agent, peer-to-peer networks (A2A), the paper argues that trust mechanisms cannot be added after the fact — they must be architecturally embedded from the start. The authors analyze emerging attack surfaces and coordination failures in heterogeneous agent ecosystems, with direct implications for anyone building production multi-agent pipelines. This is a timely design guide for teams evaluating agent-to-agent delegation and security.",
+        "summary": "As LLM agents increasingly operate in multi-agent, peer-to-peer networks (A2A), the paper argues that trust mechanisms cannot be added after the fact \u2014 they must be architecturally embedded from the start. The authors analyze emerging attack surfaces and coordination failures in heterogeneous agent ecosystems, with direct implications for anyone building production multi-agent pipelines. This is a timely design guide for teams evaluating agent-to-agent delegation and security.",
         "url": "https://arxiv.org/abs/2605.19035",
         "source": "arXiv",
         "published": "2026-05-20T04:00:00.000Z",
@@ -26,7 +26,7 @@
       },
       {
         "title": "DecisionBench: A Benchmark for Emergent Delegation in Long-Horizon Agentic Workflows",
-        "summary": "DecisionBench introduces a standardized substrate for evaluating how AI agents decide when and to whom to delegate subtasks across long-horizon workflows, using GAIA, tau-bench, and BFCL multi-turn tasks with a pool of 11 models from 7 vendor families. Metrics cover quality, cost, latency, delegation rate, and routing fidelity — providing a practical framework for teams building orchestration layers or multi-model routing systems. This fills a notable gap in evaluation tooling for production agentic systems.",
+        "summary": "DecisionBench introduces a standardized substrate for evaluating how AI agents decide when and to whom to delegate subtasks across long-horizon workflows, using GAIA, tau-bench, and BFCL multi-turn tasks with a pool of 11 models from 7 vendor families. Metrics cover quality, cost, latency, delegation rate, and routing fidelity \u2014 providing a practical framework for teams building orchestration layers or multi-model routing systems. This fills a notable gap in evaluation tooling for production agentic systems.",
         "url": "https://arxiv.org/abs/2605.19099",
         "source": "arXiv",
         "published": "2026-05-20T04:00:00.000Z",
@@ -43,7 +43,7 @@
       },
       {
         "title": "Embedding by Elicitation: Dynamic Representations for Bayesian Optimization of System Prompts",
-        "summary": "ReElicit, from Meta, frames system prompt tuning as black-box Bayesian optimization over discrete text when only aggregate performance metrics are available — a realistic constraint in many deployed AI products. By dynamically eliciting embeddings from the LLM itself, the method navigates a variable-length discrete search space more efficiently than grid search or human iteration. This is practically useful for teams optimizing prompts at scale without per-example labeling.",
+        "summary": "ReElicit, from Meta, frames system prompt tuning as black-box Bayesian optimization over discrete text when only aggregate performance metrics are available \u2014 a realistic constraint in many deployed AI products. By dynamically eliciting embeddings from the LLM itself, the method navigates a variable-length discrete search space more efficiently than grid search or human iteration. This is practically useful for teams optimizing prompts at scale without per-example labeling.",
         "url": "https://arxiv.org/abs/2605.19093",
         "source": "arXiv",
         "published": "2026-05-20T04:00:00.000Z",
@@ -65,7 +65,9 @@
           "Agents",
           "Application"
         ],
-        "affiliations": []
+        "affiliations": [
+          "JPMorganChase"
+        ]
       }
     ],
     "Tools": [
@@ -101,14 +103,14 @@
       },
       {
         "title": "Google I/O 2026: Gemini 3.5 Flash, Gemini Omni, Spark background agents, and more",
-        "summary": "Google's I/O 2026 announcements include Gemini 3.5 Flash (reporting a 12-point jump on complex document tasks and strong gains on agentic coding benchmarks like Terminal-Bench and SWE-Bench), Gemini Omni (a multimodal video-capable model), and Gemini Spark (a 24/7 proactive background agent for personal task management). The breadth of releases — spanning frontier models, video simulation, autonomous agents, and computational discovery tools (ERA + AlphaEvolve) — signals Google is competing aggressively across every major AI product surface. Builders should prioritize evaluating Gemini 3.5 Flash as a cost-efficient tier for document and agentic workloads.",
+        "summary": "Google's I/O 2026 announcements include Gemini 3.5 Flash (reporting a 12-point jump on complex document tasks and strong gains on agentic coding benchmarks like Terminal-Bench and SWE-Bench), Gemini Omni (a multimodal video-capable model), and Gemini Spark (a 24/7 proactive background agent for personal task management). The breadth of releases \u2014 spanning frontier models, video simulation, autonomous agents, and computational discovery tools (ERA + AlphaEvolve) \u2014 signals Google is competing aggressively across every major AI product surface. Builders should prioritize evaluating Gemini 3.5 Flash as a cost-efficient tier for document and agentic workloads.",
         "url": "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash",
         "source": "Latent Space",
         "published": "2026-05-20T03:34:17.000Z"
       },
       {
         "title": "Railway's major outage caused by Google Cloud auto-banning its account",
-        "summary": "Railway, a popular cloud deployment platform, suffered a near-total outage after Google Cloud's automated systems banned its account without warning — taking down all customer deployments. The incident underscores the platform risk of building infrastructure on hyperscaler clouds where automated abuse-detection systems can disable accounts at scale with limited recourse. Railway published a detailed incident report after resolution, and the episode reignited community discussion about cloud provider lock-in and vendor risk management.",
+        "summary": "Railway, a popular cloud deployment platform, suffered a near-total outage after Google Cloud's automated systems banned its account without warning \u2014 taking down all customer deployments. The incident underscores the platform risk of building infrastructure on hyperscaler clouds where automated abuse-detection systems can disable accounts at scale with limited recourse. Railway published a detailed incident report after resolution, and the episode reignited community discussion about cloud provider lock-in and vendor risk management.",
         "url": "https://blog.railway.com/p/incident-report-may-19-2026-gcp-account-outage",
         "source": "Hacker News",
         "published": "2026-05-20T00:23:54.000Z"
