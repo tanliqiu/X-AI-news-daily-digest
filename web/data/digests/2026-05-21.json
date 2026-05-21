@@ -1,0 +1,122 @@
+{
+  "date": "2026-05-21",
+  "tldr": [
+    "OpenAI confidentially filed for IPO and its GPT-next model solved an 80-year-old Erdős math problem for under $1,000, signaling rapid capability gains with real-world impact",
+    "Anthropic acquired SDK/MCP tooling startup Stainless for ~$300M and is expanding compute infrastructure to Colossus2 with GB200 GPUs, ahead of its first projected profitable quarter",
+    "Intuit is laying off 3,000+ employees to pivot to AI, the latest high-profile example of enterprise workforce restructuring driven by AI automation"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning",
+        "summary": "Models with million-token context windows still fail on tasks requiring complex reasoning over long inputs. This paper proposes training on 'proxy contexts'—minimal relevant subsets—to transfer reasoning skills to full-context settings, offering a practical fine-tuning strategy for improving long-document RAG and agentic pipelines.",
+        "url": "https://arxiv.org/abs/2605.20201",
+        "source": "arXiv",
+        "published": "2026-05-21T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "RAG"
+        ],
+        "affiliations": [
+          "The University of Edinburgh"
+        ]
+      },
+      {
+        "title": "FlowLM: Few-Step Language Modeling via Diffusion-to-Flow Adaptation",
+        "summary": "FlowLM converts pretrained diffusion language models into flow-matching models via lightweight fine-tuning, achieving quality comparable to 2,000-step diffusion sampling in just a few inference steps. This dramatically reduces generation latency for diffusion-based LLMs, making them more viable for production deployment.",
+        "url": "https://arxiv.org/abs/2605.20199",
+        "source": "arXiv",
+        "published": "2026-05-21T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Training"
+        ],
+        "affiliations": [
+          "Shanghai Jiao Tong University",
+          "ByteDance"
+        ]
+      },
+      {
+        "title": "Improving Quantized Model Performance in Qualitative Analysis with Multi-Pass Prompt Verification",
+        "summary": "This study benchmarks LLaMA-3.1 8B across 2-bit through 8-bit quantization on qualitative analysis of interview transcripts, finding that low-bit models produce higher inconsistency and hallucination rates. A multi-pass prompt verification technique is shown to partially recover quality, providing actionable guidance for teams deploying quantized models on-device or in resource-constrained environments.",
+        "url": "https://arxiv.org/abs/2605.20193",
+        "source": "arXiv",
+        "published": "2026-05-21T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of Turku"
+        ]
+      },
+      {
+        "title": "MedicalBench: Evaluating Large Language Models Toward Improved Medical Concept Extraction",
+        "summary": "MedicalBench introduces a benchmark specifically targeting implicit medical concepts in EHR narratives—concepts that are clinically meaningful but not explicitly stated—an area where existing benchmarks fall short. This is directly relevant for teams building clinical NLP pipelines where implicit reasoning over patient records is critical for downstream tasks like coding, summarization, and decision support.",
+        "url": "https://arxiv.org/abs/2605.20197",
+        "source": "arXiv",
+        "published": "2026-05-21T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Application"
+        ],
+        "affiliations": [
+          "Optum AI"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "OlmoEarth v1.1: A more efficient family of Earth observation models",
+        "summary": "Allen AI has released OlmoEarth v1.1, an updated open family of models optimized for Earth observation tasks such as satellite image analysis. The improved efficiency makes it more practical to deploy geospatial AI in cloud or edge environments without prohibitive compute costs.",
+        "url": "https://huggingface.co/blog/allenai/olmoearth-v1-1",
+        "source": "Hugging Face",
+        "published": "2026-05-19T18:38:09.000Z"
+      },
+      {
+        "title": "Hermes Agent: Agents that grow with you (Nous Research)",
+        "summary": "Nous Research's Hermes Agent is an open-source self-improving agent framework that uses recursive learning to adapt over time, blurring the line between model and harness. For practitioners, this raises important questions about evaluation and control when deploying agents that modify their own behavior through use.",
+        "url": "https://share.transistor.fm/s/451da102",
+        "source": "Practical AI",
+        "published": "2026-05-21T09:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic Acquires Stainless for ~$300M, Securing Key MCP and SDK Infrastructure",
+        "summary": "Anthropic has acquired Stainless, the startup behind SDKs for OpenAI, Anthropic, and Google, and a growing MCP server tooling business. The acquisition gives Anthropic direct control over critical developer plumbing—API clients and Model Context Protocol infrastructure—that underpins how third-party developers connect agents to external services.",
+        "url": "https://x.com/danshipper/status/2057122805657821240",
+        "source": "X (@danshipper)",
+        "published": "2026-05-20T15:34:31.000Z"
+      },
+      {
+        "title": "OpenAI Confidentially Files for IPO; GPT-next Solves Erdős Unit Distance Problem for Under $1,000",
+        "summary": "OpenAI has filed confidentially for an IPO, a major milestone for the company's corporate restructuring. Simultaneously, its GPT-next model was used to disprove an 80-year-old Erdős conjecture on planar unit distances—a landmark demonstration of AI-assisted mathematical research delivered at remarkably low cost.",
+        "url": "https://www.latent.space/p/ainews-openai-gpt-next-disproves",
+        "source": "Latent Space",
+        "published": "2026-05-21T07:28:36.000Z"
+      },
+      {
+        "title": "Anthropic Nears First Profitable Quarter; Expands to Colossus2 with NVIDIA GB200",
+        "summary": "Anthropic is reportedly approaching its first profitable quarter on the back of explosive revenue growth, while also announcing an infrastructure expansion onto xAI's Colossus2 cluster using NVIDIA GB200 GPUs. This combination of financial sustainability and massive compute investment signals Anthropic's intent to compete directly with OpenAI at scale.",
+        "url": "https://x.com/nottombrown/status/2057194829986300375",
+        "source": "Hacker News",
+        "published": "2026-05-20T20:55:52.000Z"
+      },
+      {
+        "title": "Intuit Lays Off 3,000+ Employees to Accelerate AI Transition",
+        "summary": "Intuit is cutting over 3,000 roles—roughly 8% of its workforce—explicitly to redeploy resources toward AI-driven product development. This is one of the largest enterprise workforce restructurings framed directly around AI adoption, signaling a broader industry shift in how legacy software companies are reconfiguring headcount.",
+        "url": "https://techcrunch.com/2026/05/20/intuit-to-lay-off-over-3000-employees-to-refocus-on-ai/",
+        "source": "Hacker News",
+        "published": "2026-05-21T00:36:01.000Z"
+      },
+      {
+        "title": "Railway: The Agent-Native Cloud — Infrastructure Built Around Coding Agents",
+        "summary": "Railway CEO Jake Cooper describes how the platform has grown to 3M users and 100K signups per week, with over $200K in monthly spend driven by AI coding agents. The conversation covers Railway's move to own-metal data centers and the decline of traditional PR workflows as agents increasingly own the full development loop—concrete signals for teams designing infrastructure for agentic workloads.",
+        "url": "https://www.latent.space/p/railway",
+        "source": "Latent Space",
+        "published": "2026-05-20T22:42:06.000Z"
+      }
+    ]
+  }
+}
