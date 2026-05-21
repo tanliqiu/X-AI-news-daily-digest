@@ -7,6 +7,11 @@ export async function POST(req: NextRequest) {
   const token = process.env.GITHUB_TOKEN
   if (!token) return NextResponse.json({ error: 'Not configured' }, { status: 500 })
 
+  const flagSecret = process.env.NEXT_PUBLIC_FLAG_SECRET
+  if (flagSecret && req.headers.get('x-flag-secret') !== flagSecret) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
   const { arxivId, title, digestDate, currentAffiliations, userCorrection } = await req.json()
 
   const bodyLines = [

@@ -30,9 +30,13 @@ export default function AffiliationFlagButton({ arxivId, title, digestDate, curr
   async function submit() {
     setStatus('submitting')
     try {
+      const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+      const secret = process.env.NEXT_PUBLIC_FLAG_SECRET
+      if (secret) headers['x-flag-secret'] = secret
+
       const res = await fetch('/api/flag-affiliation', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({ arxivId, title, digestDate, currentAffiliations, userCorrection: correction }),
       })
       const data = await res.json()
