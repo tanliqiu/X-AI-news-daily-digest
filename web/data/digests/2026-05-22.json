@@ -1,0 +1,122 @@
+{
+  "date": "2026-05-22",
+  "tldr": [
+    "Exa, Modal, and TurboPuffer reach unicorn status, signaling strong investor appetite for AI infrastructure plays",
+    "CODA proposes rewriting transformer blocks as GEMM-epilogue programs, offering a compiler-level path to significant inference speedups",
+    "RankJudge introduces a synthetic benchmark generator for multi-turn LLM-as-a-judge evaluation, addressing a key bottleneck in automated quality assessment for conversational AI"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "CODA: Rewriting Transformer Blocks as GEMM-Epilogue Programs",
+        "summary": "CODA recasts transformer operations as fused GEMM-epilogue programs, enabling compilers to optimize entire blocks rather than individual ops. This approach could yield meaningful inference latency and memory bandwidth improvements for teams deploying transformers at scale, without requiring model architecture changes.",
+        "url": "https://arxiv.org/abs/2605.19269",
+        "source": "Hacker News",
+        "published": "2026-05-22T04:54:33.000Z",
+        "keywords": [
+          "Inference",
+          "Framework"
+        ],
+        "affiliations": [
+          "Massachusetts Institute of Technology",
+          "Princeton University",
+          "Together AI",
+          "Meta"
+        ]
+      },
+      {
+        "title": "RankJudge: A Multi-Turn LLM-as-a-Judge Synthetic Benchmark Generator",
+        "summary": "RankJudge automates the creation of evaluation benchmarks for multi-turn conversational systems, addressing the annotation bottleneck that arises when human review can't keep pace with generated output volume. Teams building chatbots or complex agentic pipelines can use it to cheaply generate targeted, axis-specific quality benchmarks for auto-evaluation.",
+        "url": "https://arxiv.org/abs/2605.21748",
+        "source": "arXiv",
+        "published": "2026-05-22T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Layer 6 AI",
+          "University of Toronto"
+        ]
+      },
+      {
+        "title": "Multi-Stream LLMs: Parallelizing Prompts, Thinking, and I/O",
+        "summary": "This paper proposes separating the prompt, reasoning, and output streams of LLMs into parallel processing paths, potentially unlocking significant throughput gains for inference pipelines that currently serialize these phases. For product teams building reasoning-heavy or tool-calling agents, the architecture hints at a path to lower latency without sacrificing chain-of-thought quality.",
+        "url": "https://arxiv.org/abs/2605.12460",
+        "source": "Hacker News",
+        "published": "2026-05-21T19:37:26.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning",
+          "Agents"
+        ],
+        "affiliations": [
+          "Max Planck Institute for Intelligent Systems",
+          "ETH Zurich",
+          "University of Tübingen",
+          "ELLIS Institute Tübingen"
+        ]
+      },
+      {
+        "title": "CR4T: Rewrite-Based Guardrails for Adolescent LLM Safety",
+        "summary": "CR4T proposes replacing refusal-based safety mechanisms with constructive rewrite strategies specifically tuned for adolescent users, arguing that hard refusals create unhelpful dead-ends in emotionally sensitive interactions. This is practically relevant for any team building consumer AI products targeting minors, where both safety compliance and user experience are requirements.",
+        "url": "https://arxiv.org/abs/2605.21609",
+        "source": "arXiv",
+        "published": "2026-05-22T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Security"
+        ],
+        "affiliations": [
+          "Virginia Tech"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Claude Code Lark/Feishu Bridge (open-source)",
+        "summary": "This open-source integration lets developers interact with Claude Code directly inside Lark/Feishu chat, mapping each group chat to a coding session and giving Claude access to work context such as docs and meeting transcripts. It's a practical pattern for teams on Asian enterprise communication platforms who want to embed agentic coding assistance into existing workflows.",
+        "url": "https://x.com/zarazhangrui/status/2057710284920520906",
+        "source": "X (@zarazhangrui)",
+        "published": "2026-05-22T06:28:56.000Z"
+      },
+      {
+        "title": "DivSkill-SQL: Residual Skill Optimization for Text-to-SQL Ensembles",
+        "summary": "DivSkill-SQL improves Text-to-SQL ensemble accuracy by training specialist models on the failure modes of a base model, reducing correlated errors across candidate SQL outputs. Teams building natural language database interfaces can adopt this residual skill framing to push past the ceiling of stochastic decoding diversity alone.",
+        "url": "https://arxiv.org/abs/2605.21792",
+        "source": "arXiv",
+        "published": "2026-05-22T04:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "New AI Infra Unicorns: Exa, Modal, TurboPuffer",
+        "summary": "Search API Exa, serverless compute platform Modal, and vector database TurboPuffer have each crossed unicorn valuations, reflecting sustained investor conviction in purpose-built AI infrastructure. For builders evaluating their stack, these raises validate the segment and suggest continued product investment and stability from all three vendors.",
+        "url": "https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa",
+        "source": "Latent Space",
+        "published": "2026-05-22T05:50:58.000Z"
+      },
+      {
+        "title": "Giving Agents Computers — Daytona's 74% MoM Growth and Bare-Metal Sandboxes",
+        "summary": "Daytona CEO Ivan Burazin discusses the company's rapid growth to 850K daily agent sandbox runs, driven by demand for isolated execution environments for AI coding agents. The conversation highlights bare-metal sandboxes and RL-based evals as differentiators, offering a useful reference point for teams architecting secure agent infrastructure.",
+        "url": "https://www.latent.space/p/daytona",
+        "source": "Latent Space",
+        "published": "2026-05-21T20:37:40.000Z"
+      },
+      {
+        "title": "OpenAI's Yann Dubois: Why AI Progress Suddenly Feels Real",
+        "summary": "Yann Dubois, who co-leads OpenAI's Post-Training Frontiers team, describes a reliability threshold crossed around December 2025 that shifted internal focus from benchmark competition to genuine user usefulness. He frames the 'last mile' of vertical-specific adaptation as the remaining high-value opportunity for builders, and discusses how test-time compute improvements contributed to the step-change.",
+        "url": "https://www.youtube.com/watch?v=DhD1zZ8w8Mw",
+        "source": "The MAD Podcast with Matt Turck",
+        "published": "2026-05-21T11:30:00.000Z"
+      },
+      {
+        "title": "Google DeepMind Launches Asia-Pacific Accelerator for Environmental Risk AI",
+        "summary": "Google DeepMind is launching a startup accelerator in Asia-Pacific focused specifically on AI applications targeting environmental risks. The program signals DeepMind's intent to expand its applied AI ecosystem beyond research, and may be relevant to consultants targeting climate-tech or sustainability-focused AI product development in the region.",
+        "url": "https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/",
+        "source": "Google DeepMind",
+        "published": "2026-05-21T19:46:42.000Z"
+      }
+    ]
+  }
+}
