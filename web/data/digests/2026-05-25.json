@@ -1,0 +1,118 @@
+{
+  "date": "2026-05-25",
+  "tldr": [
+    "DeepSeek is making its 75% price discount on its flagship model permanent, intensifying cost pressure across the AI API market",
+    "Memory now accounts for nearly two-thirds of AI chip component costs, a structural shift with major implications for hardware procurement and inference economics",
+    "All major model labs are converging on agentic product strategies, with practical patterns like API-sniffing via Claude Code emerging as a workaround for hard-to-automate web interfaces"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Query-Adaptive Semantic Chunking for Retrieval-Augmented Generation: A Dynamic Strategy with Contextual Window Expansion",
+        "summary": "This paper proposes integrating user query context directly into the document chunking stage of RAG pipelines, rather than treating chunking as a static preprocessing step. The approach addresses the precision-recall trade-off inherent in fixed-size chunking by dynamically sizing and expanding chunks based on query semantics. Builders of RAG systems may see meaningful retrieval quality improvements by adopting query-aware chunking strategies.",
+        "url": "https://arxiv.org/abs/2605.22834",
+        "source": "arXiv",
+        "published": "2026-05-25T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Framework"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "How Far Will They Go? Red-Teaming Online Influence with Large Language Models",
+        "summary": "Researchers at USC's Information Sciences Institute red-teamed locally deployed open-source LLMs for their capacity to support political influence operations on social media, focusing on models accessible to privacy-conscious bad actors rather than frontier API models. The study surfaces concrete risk profiles relevant to platform trust-and-safety teams and developers building content moderation or detection tools. Findings underscore that open-weight models present a distinct threat surface that safety evaluations of commercial APIs may underestimate.",
+        "url": "https://arxiv.org/abs/2605.22880",
+        "source": "arXiv",
+        "published": "2026-05-25T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Evaluation",
+          "Agents"
+        ],
+        "affiliations": [
+          "Information Sciences Institute",
+          "University of Southern California"
+        ]
+      },
+      {
+        "title": "RAS: Reflection-Augmented Scaling with In-Context Learning for Executable Cypher Query Generation",
+        "summary": "This Cloudera paper tackles inference-time scaling for Text2Cypher, where LLMs generate graph database queries and syntactic failures produce hard system errors distinct from semantic inaccuracies. The reflection-augmented approach uses error messages as feedback signals to iteratively correct non-executable queries, improving reliability without retraining. Teams building natural-language interfaces to graph databases (e.g., Neo4j-backed knowledge graphs) can adopt this pattern to reduce runtime failures.",
+        "url": "https://arxiv.org/abs/2605.22937",
+        "source": "arXiv",
+        "published": "2026-05-25T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning",
+          "Application"
+        ],
+        "affiliations": [
+          "Cloudera"
+        ]
+      },
+      {
+        "title": "Evaluating Large Language Models in a Complex Hidden Role Game",
+        "summary": "Using Secret Hitler as a controlled testbed, this paper from University of Göttingen introduces quantitative metrics—Role Identification Accuracy, Deception Retention Rate, and Game State Impact Rate—to measure LLM deceptive and persuasive capabilities. The open-source framework enables reproducible safety evaluations of deception potential across models. This is directly useful for AI safety teams needing structured benchmarks for social manipulation risks.",
+        "url": "https://arxiv.org/abs/2605.22826",
+        "source": "arXiv",
+        "published": "2026-05-25T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Alignment"
+        ],
+        "affiliations": [
+          "University of Göttingen"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Towards Speed-of-Light Text Generation with Nemotron-Labs Diffusion Language Models",
+        "summary": "NVIDIA's Nemotron-Labs has released diffusion-based language models targeting dramatically faster text generation speeds compared to autoregressive approaches. The HuggingFace post details the architecture and availability, positioning diffusion LMs as a practical option for latency-sensitive inference workloads. Developers building real-time applications should evaluate these models as inference cost and speed constraints become increasingly central.",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-labs-diffusion",
+        "source": "Hugging Face",
+        "published": "2026-05-23T00:02:03.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "DeepSeek to Make Permanent 75% Discount on Flagship AI Model",
+        "summary": "DeepSeek is permanently locking in a 75% price reduction on its flagship model, signaling a sustained competitive pricing posture rather than a promotional tactic. This move puts additional downward pressure on API pricing across the industry and makes cost-sensitive use cases more viable for builders using frontier-class models. Teams that benchmarked DeepSeek as too cheap to be sustainable should revisit their infrastructure cost models.",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model",
+        "source": "Hacker News",
+        "published": "2026-05-24T14:09:33.000Z"
+      },
+      {
+        "title": "Memory has grown to nearly two-thirds of AI chip component costs",
+        "summary": "Epoch AI analysis finds that memory now constitutes roughly 65% of AI chip component costs, a significant structural shift driven by the insatiable bandwidth demands of large model inference and training. This has direct implications for hardware procurement decisions, cloud pricing, and the economics of on-premise AI deployments. It also explains continued investment in memory-centric chip architectures and the premium placed on HBM supply.",
+        "url": "https://epoch.ai/data-insights/ai-chip-component-cost-shares",
+        "source": "Hacker News",
+        "published": "2026-05-24T16:31:29.000Z"
+      },
+      {
+        "title": "[AINews] All Model Labs are now Agent Labs",
+        "summary": "Latent Space's newsletter synthesizes a broad trend: every major model lab—OpenAI, Anthropic, Google DeepMind, and others—is now explicitly repositioning itself as an agent-focused company rather than a model provider. This strategic convergence signals that agentic product surfaces (coding agents, research agents, workflow automation) are where labs expect differentiated value to accrue. Builders should expect model APIs to increasingly bundle agent infrastructure, tooling, and memory as default capabilities.",
+        "url": "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
+        "source": "Latent Space",
+        "published": "2026-05-23T04:21:17.000Z"
+      },
+      {
+        "title": "'AI washing': firms are scrambling to rebrand themselves as tech-focused",
+        "summary": "The Guardian reports a wave of companies rebranding with AI-forward messaging regardless of substantive AI integration, echoing earlier 'blockchain washing' dynamics. For AI consultants and procurement teams, this makes due diligence on actual AI capability versus marketing claims increasingly important. The trend also risks eroding buyer trust in the broader market if overstated claims go unchallenged.",
+        "url": "https://www.theguardian.com/technology/2026/may/24/ai-washing-pr-firms-scrambling-rebrand",
+        "source": "Hacker News",
+        "published": "2026-05-24T15:21:28.000Z"
+      },
+      {
+        "title": "Claude is not your architect. Stop letting it pretend",
+        "summary": "A widely-discussed practitioner post (251 points on HN) argues that over-relying on Claude and similar LLMs for system architecture decisions produces brittle designs because models optimize for plausible-sounding outputs rather than operational constraints. The piece advocates using AI as an implementation accelerator while keeping architectural judgment with experienced engineers. This is a practical corrective for teams that have shifted too much design authority to AI coding assistants.",
+        "url": "https://www.hollandtech.net/claude-is-not-your-architect/",
+        "source": "Hacker News",
+        "published": "2026-05-24T18:28:11.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "May 22–25"
+}
