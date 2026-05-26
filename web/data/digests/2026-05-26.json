@@ -1,0 +1,116 @@
+{
+  "date": "2026-05-26",
+  "tldr": [
+    "Claude discovered a macOS kernel vulnerability (CVE-2026-28952), marking a notable milestone for AI-assisted security research in production systems",
+    "A popular HN post on 'using AI to write better code more slowly' highlights a growing practitioner sentiment that AI tools improve quality but not necessarily speed",
+    "Raon-Speech introduces a 9B-parameter speech LM with full-duplex conversation support, trained on 1.38M hours, relevant for building real-time voice AI products"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Raon-Speech Technical Report",
+        "summary": "Raon-Speech is a 9B-parameter speech language model supporting English and Korean understanding and generation, trained on 1.38M hours of curated audio. It also introduces Raon-SpeechChat, a full-duplex extension enabling natural real-time conversation. Practitioners building voice-first AI products should note its approach to preserving text LLM capabilities while adding speech modalities.",
+        "url": "https://arxiv.org/abs/2605.23912",
+        "source": "arXiv",
+        "published": "2026-05-26T04:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Training"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Faithful or Fabricated? A Causal Framework for Rationalization Bias in LLM Judges",
+        "summary": "This paper examines whether LLM judges are 'cue-invariant'—i.e., whether their rankings and explanations remain stable when non-evidential surface cues (position, style) are perturbed. Findings reveal that LLM judge explanations often rationalize pre-determined outcomes rather than faithfully reflect reasoning, posing risks for teams using LLM-as-judge in evaluation pipelines. Product builders relying on automated evaluation should treat judge rationales with skepticism and implement causal robustness checks.",
+        "url": "https://arxiv.org/abs/2605.23970",
+        "source": "arXiv",
+        "published": "2026-05-26T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Indian Institute of Technology (IIT) Mandi",
+          "The Alan Turing Institute",
+          "University of Warwick"
+        ]
+      },
+      {
+        "title": "AERIC: Anticipatory Hidden-State Monitoring for Implicit Harmful Dialogue",
+        "summary": "AERIC proposes a lightweight monitor that inspects LLM hidden states mid-generation to detect implicit harmful content before it is fully output, addressing gaps left by response-level and token-level safety guards. The approach targets implicit harm—cases where toxicity is not signaled by overtly toxic text—which is particularly challenging for streaming deployments. Teams building safety layers for real-time LLM applications may find this anticipatory approach more practical than post-hoc filtering.",
+        "url": "https://arxiv.org/abs/2605.23974",
+        "source": "arXiv",
+        "published": "2026-05-26T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "The University of Texas at Austin"
+        ]
+      },
+      {
+        "title": "EchoDistill: Alignment Noisy-to-Clean Self-Distillation for Robust Audio LLMs",
+        "summary": "EchoDistill addresses the brittleness of Audio LLMs under real-world noise conditions by using a frozen clean-audio teacher to guide a noisy-input student via self-distillation, reducing hallucinations and semantic drift. Unlike waveform enhancement or answer-level supervision, this alignment-based approach works at the representation level. Developers deploying audio LLMs in environments with ambient noise (call centers, IoT devices) should consider this robustness-focused training strategy.",
+        "url": "https://arxiv.org/abs/2605.23954",
+        "source": "arXiv",
+        "published": "2026-05-26T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Multimodal"
+        ],
+        "affiliations": [
+          "ICT, CAS",
+          "BUPT",
+          "USTC"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Harness, Scaffold, and the AI Agent Terms Worth Getting Right",
+        "summary": "Hugging Face published a practical glossary clarifying terminology for AI agent systems—distinguishing concepts like 'harness,' 'scaffold,' 'tool,' and 'environment.' Clear shared vocabulary reduces miscommunication on engineering teams building multi-agent systems and helps align product specs with implementation. A useful reference for teams onboarding new engineers or writing agent architecture documentation.",
+        "url": "https://huggingface.co/blog/agent-glossary",
+        "source": "Hugging Face",
+        "published": "2026-05-25T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "CVE-2026-28952: Apple macOS 26.5 Kernel Vulnerability Found by Claude",
+        "summary": "Anthropic's Claude is credited with discovering a kernel-level vulnerability in macOS 26.5, now patched by Apple under CVE-2026-28952. This is a significant milestone demonstrating AI's ability to perform meaningful, production-relevant security research autonomously. For AI product builders, it signals that LLMs are entering the offensive/defensive security workflow in a concrete, credentialed way.",
+        "url": "https://support.apple.com/en-us/127115",
+        "source": "Hacker News",
+        "published": "2026-05-25T23:40:40.000Z"
+      },
+      {
+        "title": "Using AI to Write Better Code More Slowly",
+        "summary": "A widely-shared practitioner post argues that AI coding tools improve code quality and thoughtfulness but often increase the time spent per feature due to more deliberate review and iteration. This challenges the default 'AI = faster development' assumption and has implications for how teams should measure productivity when adopting AI coding assistants. The post sparked 245 HN comments, reflecting significant resonance in the developer community.",
+        "url": "https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/",
+        "source": "Hacker News",
+        "published": "2026-05-25T23:16:59.000Z"
+      },
+      {
+        "title": "Norway's 2 Petabytes of Huawei Flash Storage and LLM Training",
+        "summary": "Norway has deployed 2 petabytes of Huawei flash storage specifically for LLM training workloads, raising questions about supply chain dependencies and geopolitical risk in AI infrastructure. The scale highlights how storage—not just compute—is becoming a critical bottleneck for national and enterprise AI programs. Organizations planning large-scale training infrastructure should factor in storage vendor diversification as a strategic concern.",
+        "url": "https://www.blocksandfiles.com/flash/2026/05/22/norways-2-petabytes-of-huawei-flash-storage-and-llm-training/5244910",
+        "source": "Hacker News",
+        "published": "2026-05-25T19:37:57.000Z"
+      },
+      {
+        "title": "Why AWS and Azure Cannot Run Autonomous AI – Ivan Burazin (Daytona)",
+        "summary": "Daytona CEO Ivan Burazin argues on the MAD Podcast that mainstream cloud platforms are architecturally ill-suited for autonomous AI agents because agents require persistent, isolated sandboxed machines rather than stateless compute. He frames agents as 'digital knowledge workers' each needing their own compute environment, positioning sandboxed execution as a foundational infrastructure requirement. This is directly relevant for teams designing agent deployment architectures and evaluating cloud-native vs. purpose-built agent infrastructure.",
+        "url": "https://www.youtube.com/watch?v=kMXJrzAa5fM",
+        "source": "The MAD Podcast with Matt Turck",
+        "published": "2026-05-14T11:30:00.000Z"
+      },
+      {
+        "title": "Notes on Pope Leo XIV's Encyclical on AI",
+        "summary": "Simon Willison analyzes Pope Leo XIV's encyclical on AI, which frames artificial intelligence as a civilizational-scale ethical challenge requiring human dignity safeguards. While primarily a theological document, it signals that AI governance is now a concern at the highest levels of major global institutions, which may influence regulatory and public discourse. AI product teams operating in regulated or consumer-facing sectors should monitor how this shapes public expectations and policy momentum.",
+        "url": "https://simonwillison.net/2026/May/25/encyclical-on-ai/",
+        "source": "Hacker News",
+        "published": "2026-05-26T04:45:29.000Z"
+      }
+    ]
+  }
+}
