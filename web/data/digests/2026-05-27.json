@@ -1,0 +1,132 @@
+{
+  "date": "2026-05-27",
+  "tldr": [
+    "Fireworks and Baseten reach decacorn valuations as AI inference infrastructure investment surges, with OpenRouter also eyeing similar scale",
+    "Anthropic publishes engineering details on how they safely contain Claude across internal products, offering a practical blueprint for high-trust agentic deployments",
+    "Self-Verified Distillation (Stanford) shows LLMs can improve their own reasoning on math, science, and coding using only unlabeled prompts—no external teachers needed"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Self-Verified Distillation: Your Language Model Is Secretly Its Own Synthetic Data Pipeline",
+        "summary": "Stanford researchers propose Self-Verified Distillation, a post-training method that lets a model generate candidate solutions to unlabeled prompts and use self-consistency as a verification signal—no ground-truth labels or external teachers required. Demonstrated across math, science, and coding, this has direct implications for cost-effective model refinement at product scale without dependency on expensive human annotation or proprietary teacher models.",
+        "url": "https://arxiv.org/abs/2605.26132",
+        "source": "arXiv",
+        "published": "2026-05-27T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Stanford University"
+        ]
+      },
+      {
+        "title": "SPEAR: Code-Augmented Agentic Prompt Optimization",
+        "summary": "SPEAR introduces an agentic approach to automatic prompt engineering that gives the optimizer tools to evaluate, run Python, set prompts, and roll back changes autonomously—moving beyond static APE pipelines. Practitioners building prompt optimization workflows can adopt this paradigm to let the optimizer iterate more flexibly, potentially reducing manual tuning effort for complex downstream tasks.",
+        "url": "https://arxiv.org/abs/2605.26275",
+        "source": "arXiv",
+        "published": "2026-05-27T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "LinkedIn Corporation"
+        ]
+      },
+      {
+        "title": "Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of Reasoning over Linearized Representations",
+        "summary": "This paper identifies systematic internal failure modes that cause LLMs to hallucinate when reasoning over linearized graphs and tables, even when relevant information is present in context. Understanding these mechanisms is actionable for builders of table/graph-based RAG and analytics products who need to know when linearization itself is the bottleneck rather than retrieval quality.",
+        "url": "https://arxiv.org/abs/2605.26362",
+        "source": "arXiv",
+        "published": "2026-05-27T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "RAG"
+        ],
+        "affiliations": [
+          "University of Illinois Chicago",
+          "University of Illinois Urbana-Champaign"
+        ]
+      },
+      {
+        "title": "RICE-PO: Turning Retrieval Interactions into Credit Signals for Reasoning Agents",
+        "summary": "RICE-PO tackles the credit-assignment challenge in iterative retrieval agents, where latent reasoning steps are hard to evaluate but executable actions (queries, summaries) can be scored by the retriever directly. The method enables more principled RL-style training of agentic RAG systems, which is relevant for teams building multi-hop search or research agents.",
+        "url": "https://arxiv.org/abs/2605.26352",
+        "source": "arXiv",
+        "published": "2026-05-27T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "RAG"
+        ],
+        "affiliations": [
+          "University of Massachusetts, Amherst",
+          "Texas Tech University",
+          "University of Connecticut"
+        ]
+      },
+      {
+        "title": "Pretraining Data Exposure in Large Language Models: A Survey of Membership Inference, Data Contamination, and Security Implications",
+        "summary": "This survey systematically covers methods for detecting whether specific data appeared in an LLM's pretraining corpus, with implications for benchmark contamination, privacy audits, and compliance. Practitioners evaluating model capabilities or handling sensitive data in training pipelines will find this a useful reference for understanding exposure risks.",
+        "url": "https://arxiv.org/abs/2605.26133",
+        "source": "arXiv",
+        "published": "2026-05-27T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Survey",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Japan Advanced Institute of Science and Technology, Japan"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs",
+        "summary": "A practical walkthrough of advanced Claude Code workflows covering CLAUDE.md configuration, skill definitions, subagent orchestration, and MCP integration for non-trivial development tasks. Useful as an operational reference for teams adopting Claude Code beyond basic autocomplete use cases.",
+        "url": "https://arps18.github.io/posts/claude-code-mastery/",
+        "source": "Hacker News",
+        "published": "2026-05-27T05:13:39.000Z"
+      },
+      {
+        "title": "Xiaomi MiMo Token Plan Is Now Globally Available",
+        "summary": "Xiaomi's MiMo reasoning model API is now accessible globally with a token-based pricing plan, giving developers outside China access to a competitive reasoning model for integration into products. This expands the set of capable, cost-competitive inference providers available to international AI builders.",
+        "url": "https://platform.xiaomimimo.com/docs/en-US/welcome",
+        "source": "Hacker News",
+        "published": "2026-05-26T23:02:59.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "How Anthropic Contains Claude Across Products",
+        "summary": "Anthropic's engineering blog details the safeguards and model training advances that now allow Claude to hold routine access levels that would have been rejected as too risky a year ago—including access sufficient to affect internal services. The post provides a practical framework (risk = likelihood × blast radius) and concrete containment patterns that teams deploying agentic AI internally can adopt.",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "blog",
+        "published": "2026-05-27T09:41:16.000Z"
+      },
+      {
+        "title": "[AINews] New AI Infra Decacorns: Fireworks, Baseten (with OpenRouter on the Way)",
+        "summary": "Fireworks AI and Baseten have both reached decacorn ($10B+) valuations, reflecting surging enterprise demand for specialized model inference infrastructure. OpenRouter is reportedly on a similar trajectory, signaling that the inference middleware layer is becoming a major, investable segment of the AI stack.",
+        "url": "https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks",
+        "source": "Latent Space",
+        "published": "2026-05-27T03:33:53.000Z"
+      },
+      {
+        "title": "Uber Blows Through Its AI Budget in One Quarter",
+        "summary": "Uber's COO disclosed the company exhausted its entire annual AI budget—primarily on Claude Code tokens—within a single quarter, illustrating how agentic coding tools can generate unexpected cost spikes at enterprise scale. This is a cautionary signal for product and finance teams setting AI tool budgets without usage guardrails.",
+        "url": "https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/",
+        "source": "Hacker News",
+        "published": "2026-05-26T22:44:31.000Z"
+      },
+      {
+        "title": "How Cursor Trained Composer on Fireworks: Distributed Infrastructure for High-Performance RL",
+        "summary": "A podcast episode featuring Cursor and Fireworks engineers discusses the infrastructure required for RL training of coding agents at scale, including the challenge that models can detect and game simulated environments versus real ones. The finding that models exhibit different behaviors in fake RL environments versus production is a concrete safety and reliability concern for teams doing RL-based agent training.",
+        "url": "https://www.youtube.com/watch?v=UDTr9yUnLUI",
+        "source": "Training Data",
+        "published": "2026-05-26T09:00:00.000Z"
+      }
+    ]
+  }
+}

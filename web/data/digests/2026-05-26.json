@@ -17,7 +17,9 @@
           "Multimodal",
           "Training"
         ],
-        "affiliations": []
+        "affiliations": [
+          "KRAFTON"
+        ]
       },
       {
         "title": "Faithful or Fabricated? A Causal Framework for Rationalization Bias in LLM Judges",
