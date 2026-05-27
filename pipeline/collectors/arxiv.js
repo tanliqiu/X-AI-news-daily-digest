@@ -58,6 +58,10 @@ function affiliationsFromTex(tex) {
     .replace(/\$/g, '')                                            // strip lone $ residue
     .replace(/\[\d+(?:\.\d+)?(?:pt|em|ex|cm|mm|in)\]/g, '')      // strip spacing like [7pt]
     .replace(/\\(?:textbf|textit|emph|textrm|textsc|textsuperscript|footnotemark|thanks|footnote)\s*(?:\[[^\]]*\])?\s*\{[^}]*\}/g, '')
+    // Strip font size commands that wrap content (normalsize, large, Large, small, footnotesize, etc.)
+    // but preserve the inner text — handled by the generic \cmd{content} stripper below
+    .replace(/\\(?:normalsize|large|Large|LARGE|huge|Huge|small|footnotesize|scriptsize|tiny|centering|raggedright|raggedleft)\s*\{([^}]*)\}/g, '$1')
+    .replace(/\\(?:normalsize|large|Large|LARGE|huge|Huge|small|footnotesize|scriptsize|tiny|centering|raggedright|raggedleft)\b\s*/g, '')
     .replace(/\\[a-zA-Z]+(?:\{[^}]*\})?/g, ' ')
     .replace(/\S*@\S+/g, '')
     .replace(/,\s*[A-Za-z ]+,\s*[A-Z]{2}\s+\d{5}.*$/, '')
@@ -161,6 +165,8 @@ function affiliationsFromTex(tex) {
   }
 
   // 8. Fallback: \author{Name \\ Institution \\ \And ...} with brace-counting
+  //    Also handles single-institution \author{} blocks where the whole content names an org,
+  //    e.g. \author{\centering \quad \normalsize{KRAFTON$^{\dagger}$}}
   if (results.length === 0) {
     const marker = '\\author{'
     const start = src.indexOf(marker)
@@ -175,9 +181,38 @@ function affiliationsFromTex(tex) {
         }
       }
       if (authorContent) {
+        // First try the standard multi-author split approach (skip first part per \And group)
+        let foundViaStandard = false
         for (const group of authorContent.split(/\\And\b/i)) {
           const parts = group.split(/\\\\/).filter(p => p.trim().length >= 4)
-          for (const part of parts.slice(1)) { add(part); if (results.length >= 5) return results }
+          for (const part of parts.slice(1)) {
+            add(part)
+            if (results.length >= 5) return results
+            if (results.length > 0) foundViaStandard = true
+          }
+        }
+
+        // If standard split found nothing, try treating the entire \author{} content as a
+        // possible institution name. This handles custom title formats like:
+        //   \author{\centering \quad \normalsize{KRAFTON$^{\dagger}$}}
+        // where the org name is wrapped in font-size commands with no \\ separators.
+        if (!foundViaStandard && results.length === 0) {
+          // Extract text from font-size/alignment wrappers before generic command stripping
+          const unwrapped = authorContent
+            .replace(/\\(?:centering|raggedright|raggedleft|quad|qquad)\b\s*/g, ' ')
+            .replace(/\\(?:normalsize|large|Large|LARGE|huge|Huge|small|footnotesize|scriptsize|tiny)\s*\{([^}]*)\}/g, '$1')
+            .replace(/\\(?:normalsize|large|Large|LARGE|huge|Huge|small|footnotesize|scriptsize|tiny)\b\s*/g, '')
+            .trim()
+          // Split by \\ in case there are multiple lines; check all parts (not slice(1))
+          const parts = unwrapped.split(/\\\\/).map(p => p.trim()).filter(p => p.length >= 2)
+          for (const part of parts) {
+            add(part)
+            if (results.length >= 5) return results
+          }
+          // If still nothing, try the whole unwrapped block as one candidate
+          if (results.length === 0) {
+            add(unwrapped)
+          }
         }
       }
     }
