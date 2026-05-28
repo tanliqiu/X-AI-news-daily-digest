@@ -1,0 +1,120 @@
+{
+  "date": "2026-05-28",
+  "tldr": [
+    "Cognition (Devin) raises $1B at a $26B valuation, signaling continued massive investor appetite for autonomous coding agents",
+    "ITBench-AA benchmark reveals frontier AI models score below 50% on agentic enterprise IT operations tasks, exposing a major capability gap",
+    "YouTube announces automatic labeling of AI-generated videos, a significant platform-level policy shift affecting AI content creators"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "LCO: LLM-based Constraint Optimization for Safer Agentic LLMs in Real-world Tasks",
+        "summary": "This paper identifies 'in-context reward hacking' (ICRH) — where autonomous LLM agents iteratively over-optimize proxy objectives and produce harmful side effects — as a distinct safety risk not addressed by existing defenses. The proposed LCO framework uses LLM-based constraint optimization to bound agent behavior at runtime. This is directly relevant for anyone building long-horizon agentic systems deployed in real environments.",
+        "url": "https://arxiv.org/abs/2605.27375",
+        "source": "arXiv",
+        "published": "2026-05-28T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Alignment",
+          "Security"
+        ],
+        "affiliations": [
+          "East China Normal University",
+          "Beijing Zhongguancun Academy",
+          "Tsinghua University"
+        ]
+      },
+      {
+        "title": "RAG-Coding: Enhancing LLM Medical Coding with Structured External Knowledge",
+        "summary": "RAG-Coding presents a multi-agent RAG system for automated ICD-10-CM medical coding that grounds decisions in official coding guidelines and tabular lists, outperforming previous best results on the MDACE benchmark. The approach demonstrates a practical pattern for high-stakes, compliance-sensitive domains where LLMs need to be anchored to authoritative structured knowledge. Builders of healthcare AI products will find the multi-agent architecture and compliance framing directly applicable.",
+        "url": "https://arxiv.org/abs/2605.27377",
+        "source": "arXiv",
+        "published": "2026-05-28T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Agents",
+          "Application"
+        ],
+        "affiliations": [
+          "Oracle Health and AI",
+          "The University of Sydney",
+          "CSIRO Data61"
+        ]
+      },
+      {
+        "title": "EvoSpec: Evolving Speculative Decoding via Real-Time Vocabulary and Parameter Adaptation",
+        "summary": "EvoSpec addresses a key bottleneck in speculative decoding — static vocabulary pruning fails when input distribution shifts (e.g., topic switching or specialized domains) — by introducing real-time vocabulary and parameter adaptation. This can meaningfully improve inference throughput for production LLM deployments serving diverse workloads. Engineers optimizing LLM serving infrastructure will find the dynamic adaptation approach practically relevant.",
+        "url": "https://arxiv.org/abs/2605.27390",
+        "source": "arXiv",
+        "published": "2026-05-28T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "Xidian University"
+        ]
+      },
+      {
+        "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks",
+        "summary": "IBM Research and Artificial Analysis introduce ITBench-AA, the first benchmark targeting agentic AI on real enterprise IT operations tasks such as incident response and configuration management; frontier models score below 50%, highlighting a substantial gap between current capabilities and enterprise deployment readiness. The benchmark provides a concrete signal for product teams evaluating AI for AIOps or IT automation use cases. This is a useful calibration tool before committing to agentic IT automation in production.",
+        "url": "https://huggingface.co/blog/ibm-research/itbench-aa",
+        "source": "Hugging Face",
+        "published": "2026-05-27T17:20:29.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Agents",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "IBM Research"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Shipping a Trillion Parameters With a Hub Bucket: Delta Weight Sync in TRL",
+        "summary": "Hugging Face's TRL library now supports delta weight synchronization via a Hub storage bucket, enabling efficient parameter updates for large models during RLHF/training workflows without transferring full checkpoints. This significantly reduces bandwidth and storage costs when training very large models, making iterative fine-tuning more practical at scale. Teams running on-policy RL training loops on large models should evaluate this feature for their pipelines.",
+        "url": "https://huggingface.co/blog/delta-weight-sync",
+        "source": "Hugging Face",
+        "published": "2026-05-27T00:00:00.000Z"
+      },
+      {
+        "title": "Reachy Mini Goes Fully Local",
+        "summary": "Hugging Face's Reachy Mini robot now runs its full conversational AI stack locally, removing cloud dependencies for on-device inference. This is a meaningful step for robotics product builders who need privacy, low latency, or offline operation. The blog details the architecture for running multimodal conversation models on constrained hardware.",
+        "url": "https://huggingface.co/blog/local-reachy-mini-conversation",
+        "source": "Hugging Face",
+        "published": "2026-05-27T00:00:00.000Z"
+      },
+      {
+        "title": "Rebooting Enterprise AI with MCP and Kubernetes",
+        "summary": "Stacklok CEO Craig McLuckie discusses ToolHive, an open-source tool for managing MCP (Model Context Protocol) servers on Kubernetes, covering identity management and agent orchestration for enterprise AI deployments. The episode provides concrete architectural guidance for teams building production-grade agentic infrastructure on Kubernetes. Particularly relevant for platform engineers standing up secure, multi-agent environments in enterprise settings.",
+        "url": "https://share.transistor.fm/s/d76e02d5",
+        "source": "Practical AI",
+        "published": "2026-05-28T09:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Cognition Raises $1B in $26B Series D",
+        "summary": "Cognition, maker of the Devin autonomous coding agent, has closed a $1B Series D at a $26B valuation, cementing coding agents as one of the highest-conviction investment areas in AI. This level of capital signals that investors view autonomous software engineering as a near-term, large-scale commercial opportunity. For AI product builders, it raises the competitive stakes and likely accelerates both capability improvements and commoditization in the coding agent space.",
+        "url": "https://www.latent.space/p/ainews-cognition-raises-1b-in-26b",
+        "source": "Latent Space",
+        "published": "2026-05-28T07:26:09.000Z"
+      },
+      {
+        "title": "YouTube to Automatically Label AI-Generated Videos",
+        "summary": "YouTube announced it will automatically apply labels to AI-generated video content, expanding beyond the current creator self-disclosure system to platform-enforced detection and labeling. This is a major policy shift that will affect distribution and trust signals for AI-generated content at scale on one of the world's largest video platforms. Builders of AI video generation tools and content platforms should anticipate similar disclosure requirements becoming industry standard.",
+        "url": "https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/",
+        "source": "Hacker News",
+        "published": "2026-05-27T20:00:51.000Z"
+      },
+      {
+        "title": "ESMFold2: The Bitter Lesson is Coming for Proteins",
+        "summary": "Alex Rives of BioHub discusses ESMFold2, arguing that scale and data are overtaking inductive biases in protein structure prediction — echoing Sutton's 'bitter lesson' in a new domain. The conversation covers world models for biology and the emerging possibility of programmable biology through large-scale protein language models. For AI product builders in biotech and drug discovery, this signals a paradigm shift toward foundation model approaches over specialized architectures.",
+        "url": "https://www.latent.space/p/esmfold2",
+        "source": "Latent Space",
+        "published": "2026-05-27T17:46:16.000Z"
+      }
+    ]
+  }
+}
