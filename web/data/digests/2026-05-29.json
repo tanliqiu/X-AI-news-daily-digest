@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-29",
+  "tldr": [
+    "Anthropic raises $965B Series H and releases Claude Opus 4.8 alongside Dynamic Workflows and ultracode capabilities",
+    "A developer embedded a prompt-injection payload in the jqwik library to delete output from AI coding agents, highlighting supply-chain security risks for agentic workflows",
+    "The mysterious Hy3 LLM is topping OpenRouter model rankings by a large margin, sparking speculation about its origins and capabilities"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Review Arcade: On the Human Alignment and Gameability of LLM Reviews",
+        "summary": "This study empirically evaluates LLM-generated peer reviews using 2025 ACL Rolling Review papers, examining both how well they align with human reviewers and how easily authors can game them by LLM-revising submissions. The findings have direct implications for anyone building AI-assisted editorial or evaluation pipelines, where adversarial author behavior may systematically inflate automated scores.",
+        "url": "https://arxiv.org/abs/2605.28897",
+        "source": "arXiv",
+        "published": "2026-05-29T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "University of Hamburg"
+        ]
+      },
+      {
+        "title": "Orthogonal Concept Erasure for Diffusion Models",
+        "summary": "This paper proposes an editing-based method to remove unsafe or undesired concepts from diffusion models without the high cost of full retraining, using orthogonal projections to preserve overall generative quality. For teams deploying image generation products, this offers a more scalable path to content moderation at the model level.",
+        "url": "https://arxiv.org/abs/2605.28902",
+        "source": "arXiv",
+        "published": "2026-05-29T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Training"
+        ],
+        "affiliations": [
+          "University of Science and Technology of China",
+          "Ant Group"
+        ]
+      },
+      {
+        "title": "Adopt ≠ Adapt: Longitudinal Analyses of LLM Conversations in the Wild",
+        "summary": "Analyzing ~12,000 Microsoft Bing Copilot users over time, this study finds that while population-level usage trends are visible, individual users show highly heterogeneous behavioral trajectories — most adopt LLMs without meaningfully adapting their prompting strategies. Product builders should not assume users will self-optimize; onboarding and guided workflows remain important for driving effective engagement.",
+        "url": "https://arxiv.org/abs/2605.29018",
+        "source": "arXiv",
+        "published": "2026-05-29T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Application"
+        ],
+        "affiliations": [
+          "Cornell University",
+          "Microsoft Research"
+        ]
+      },
+      {
+        "title": "VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis",
+        "summary": "VFEAgent introduces a multi-agent system that automates Finite Element Analysis workflows end-to-end, handling multimodal inputs and complex engineering tasks that prior LLM-based approaches struggled with. This is a concrete example of domain-specific agentic systems replacing expert-heavy technical workflows, relevant to teams building AI products for engineering and simulation.",
+        "url": "https://arxiv.org/abs/2605.28978",
+        "source": "arXiv",
+        "published": "2026-05-29T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Multimodal",
+          "Application"
+        ],
+        "affiliations": [
+          "Peking University",
+          "China Agricultural University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Claude Code – Everything You Can Configure That the Docs Don't Tell You",
+        "summary": "A developer reverse-engineered the Claude Code source to surface undocumented configuration options and behavioral knobs not covered in official documentation. This is a practical resource for teams integrating Claude Code into development pipelines who want finer control over agent behavior.",
+        "url": "https://buildingbetter.tech/p/i-read-the-claude-code-source-code",
+        "source": "Hacker News",
+        "published": "2026-05-29T02:13:20.000Z"
+      },
+      {
+        "title": "Zot now supports Claude Opus 4.8",
+        "summary": "Zot, a lightweight AI interface tool, has added support for the newly released Claude Opus 4.8, making the model accessible through its interface alongside existing providers. Teams already using Zot as a unified AI frontend can immediately leverage Anthropic's latest model without switching tooling.",
+        "url": "https://www.zot.sh",
+        "source": "Hacker News",
+        "published": "2026-05-29T05:48:21.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic raises $965B Series H, releases Opus 4.8 and Dynamic Workflows/ultracode",
+        "summary": "Anthropic has closed a massive $965B Series H funding round and simultaneously shipped Claude Opus 4.8 along with Dynamic Workflows and an ultracode capability. This signals Anthropic's intent to aggressively push into agentic and coding use cases, with direct competitive implications for teams choosing between frontier model providers.",
+        "url": "https://www.latent.space/p/ainews-anthropic-raises-965b-series",
+        "source": "Latent Space",
+        "published": "2026-05-29T02:07:24.000Z"
+      },
+      {
+        "title": "Undisclosed addition in jqwik instructed AI coding agents to delete app output",
+        "summary": "A developer fed up with 'vibe coders' secretly added a prompt-injection payload to the jqwik Java testing library that instructs AI coding agents to silently delete application output. This is a real-world demonstration of supply-chain prompt injection risk, underscoring the need for sandboxing and output verification in any agentic coding workflow.",
+        "url": "https://arstechnica.com/security/2026/05/fed-up-with-vibe-coders-dev-sneaks-data-nuking-prompt-injection-into-their-code/",
+        "source": "Hacker News",
+        "published": "2026-05-29T07:05:31.000Z"
+      },
+      {
+        "title": "The mysterious Hy3 LLM is topping OpenRouter Model Rankings by a large margin",
+        "summary": "An unidentified model dubbed Hy3 has surged to the top of OpenRouter's model rankings by a significant margin, with little public information about its provenance or architecture. For practitioners selecting models via OpenRouter, this warrants investigation — but the opacity also raises questions about evaluation reliability and potential leaderboard gaming.",
+        "url": "https://minimaxir.com/2026/05/openrouter-hy3/",
+        "source": "Hacker News",
+        "published": "2026-05-29T00:09:35.000Z"
+      },
+      {
+        "title": "The Age of Async Agents — Cognition's Walden Yan & OpenInspect's Cole Murray",
+        "summary": "This podcast episode covers Cognition's Devin achieving 80% commit rates, spec-to-PR workflows, full VM environments for agents, and the emerging pattern of product managers shipping code directly via AI agents. It offers a grounded look at where autonomous software engineering agents are delivering production value today.",
+        "url": "https://www.latent.space/p/cognition",
+        "source": "Latent Space",
+        "published": "2026-05-28T18:41:24.000Z"
+      },
+      {
+        "title": "Microsoft data suggests using AI is more expensive than hiring people",
+        "summary": "Internal Microsoft data reportedly indicates that AI tooling costs can exceed the cost of human labor for certain tasks, challenging the dominant cost-savings narrative around enterprise AI adoption. This is a critical data point for consultants advising clients on AI ROI and build-vs-hire decisions.",
+        "url": "https://finance.yahoo.com/sectors/technology/articles/microsoft-data-suggests-using-ai-225900743.html",
+        "source": "Hacker News",
+        "published": "2026-05-29T00:49:05.000Z"
+      }
+    ]
+  }
+}
