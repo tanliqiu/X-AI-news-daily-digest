@@ -1,0 +1,133 @@
+{
+  "date": "2026-06-01",
+  "tldr": [
+    "NVIDIA releases Cosmos 3, the first open omni-model targeting physical AI reasoning and robotic action, available on Hugging Face",
+    "OpenAI's Sam Altman signals major robotics hiring push and a new biodefense initiative, marking a concrete expansion beyond software AI",
+    "Autonomous Agentic Data Engineering research shows LLMs can self-direct end-to-end data curation pipelines for domain specialization, reducing reliance on human-designed workflows"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Exploring Autonomous Agentic Data Engineering for Model Specialization",
+        "summary": "This paper formalizes 'Autonomous Agentic Data Engineering,' where LLMs autonomously execute end-to-end data curation pipelines to produce high-quality domain-specific training data without human-designed workflows. The findings are directly relevant to teams building specialized AI products who currently spend significant effort manually curating fine-tuning datasets. If the approach holds, it could dramatically lower the cost of domain adaptation.",
+        "url": "https://arxiv.org/abs/2605.30407",
+        "source": "arXiv",
+        "published": "2026-06-01T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Training"
+        ],
+        "affiliations": [
+          "Zhejiang University",
+          "Platform and Content Group, Tencent"
+        ]
+      },
+      {
+        "title": "Configurable Reward Model for Balanced Safety Alignment",
+        "summary": "The Configurable Safety Reward Model (CSRM) from Johns Hopkins and Meta is jointly optimized to adapt to heterogeneous and rapidly changing safety specifications without requiring full retraining. For AI product teams managing safety policies that evolve with regulations or user contexts, this offers a practical path to dynamic safety enforcement without the cost of repeated RLHF cycles.",
+        "url": "https://arxiv.org/abs/2605.30487",
+        "source": "arXiv",
+        "published": "2026-06-01T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Training"
+        ],
+        "affiliations": [
+          "Johns Hopkins University",
+          "Meta Superintelligence Labs"
+        ]
+      },
+      {
+        "title": "CanLegalRAGBench: Evaluating Retrieval-Augmented Generation on Canadian Case Law",
+        "summary": "This benchmark evaluates RAG-based legal assistants against realistic Canadian case law queries rather than synthetic ones, exposing hallucination risks that simpler benchmarks miss. Developers building legal AI products—especially in jurisdictions underrepresented in existing datasets—can use this to calibrate how much hallucination risk their retrieval pipelines still carry. The work underscores that domain-specific, realistic benchmarks are essential before deploying high-stakes legal assistants.",
+        "url": "https://arxiv.org/abs/2605.30497",
+        "source": "arXiv",
+        "published": "2026-06-01T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of British Columbia",
+          "Vector Institute"
+        ]
+      },
+      {
+        "title": "Protocol for Evaluating ChatGPT in Biomedical Association Generation and Verification Using a RAG-Enabled, Cross-Model Majority Voting Workflow",
+        "summary": "This paper presents a structured evaluation protocol combining RAG, biomedical ontology validation, and cross-model majority voting to assess ChatGPT's reliability in generating disease-centric biomedical associations. The self-consistency strategy across multiple ChatGPT model variants is a practical technique for practitioners building high-stakes biomedical AI pipelines who need to quantify and reduce hallucination. The ontology-grounded verification approach could be adapted for other scientific domains requiring factual precision.",
+        "url": "https://arxiv.org/abs/2605.30300",
+        "source": "arXiv",
+        "published": "2026-06-01T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation",
+          "Application"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Welcome NVIDIA Cosmos 3: The First Open Omni-model for Physical AI Reasoning and Action",
+        "summary": "NVIDIA has released Cosmos 3 on Hugging Face as an open omni-model designed specifically for physical AI applications, supporting both reasoning and action in robotic and embodied AI contexts. This is significant for teams building robotics or physical automation pipelines who previously had to piece together separate vision, language, and action models. Being fully open and hosted on Hugging Face lowers the barrier to experimentation considerably.",
+        "url": "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai",
+        "source": "Hugging Face",
+        "published": "2026-06-01T04:44:55.000Z"
+      },
+      {
+        "title": "Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler",
+        "summary": "Hugging Face published a practical guide to using PyTorch's built-in profiler to identify performance bottlenecks in model training and inference. For ML engineers optimizing training costs or inference latency, this is a foundational skill that can surface GPU underutilization and memory inefficiencies quickly. The beginner framing makes it accessible for teams new to production-level model optimization.",
+        "url": "https://huggingface.co/blog/torch-profiler",
+        "source": "Hugging Face",
+        "published": "2026-05-29T00:00:00.000Z"
+      },
+      {
+        "title": "Vault-Operator: Karpathy LLM Wiki Pattern Integrated into Obsidian Agentic Workflow",
+        "summary": "An open-source project implementing Karpathy's LLM wiki pattern as an agentic workflow inside Obsidian, enabling automated note synthesis and knowledge management. This is a practical template for consultants and knowledge workers who want to use local LLM-powered agents to continuously organize and surface information from their personal knowledge bases. The lightweight approach is a good starting point for building personal AI productivity tools without cloud dependencies.",
+        "url": "https://github.com/pssah4/vault-operator",
+        "source": "Hacker News",
+        "published": "2026-06-01T00:03:11.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI Robotics Hiring Push and Biodefense Initiative Announced by Sam Altman",
+        "summary": "Sam Altman announced OpenAI is aggressively hiring for a robotics division focused on full-stack hardware, operations, systems, and ML engineering, with a stated near-term focus on robots supporting skilled infrastructure workers. Separately, he flagged a new OpenAI biodefense initiative, signaling the company is moving into high-stakes physical-world and biosecurity domains. Both announcements suggest OpenAI is deliberately broadening beyond pure software AI products in 2026.",
+        "url": "https://x.com/sama/status/2061117302528188712",
+        "source": "X (@sama)",
+        "published": "2026-05-31T16:07:13.000Z"
+      },
+      {
+        "title": "Amnesty International Report: 'Unlawful by Design' — Human Rights Costs of Generative AI",
+        "summary": "Amnesty International released a report arguing that generative AI systems are systematically violating human rights through their design, training data practices, and deployment conditions. For AI product teams, this signals growing civil-society and regulatory pressure that could translate into concrete legal obligations in multiple jurisdictions. Teams should treat this as an early indicator of compliance risks that may emerge in EU AI Act enforcement and similar frameworks.",
+        "url": "https://www.amnesty.org/en/documents/pol40/0996/2026/en/",
+        "source": "Hacker News",
+        "published": "2026-06-01T01:41:59.000Z"
+      },
+      {
+        "title": "Evals Startups Pivoting to Continual Learning Platforms in 2026",
+        "summary": "Swyx observes that evaluation and analytics startups are undergoing a structural shift from one-time benchmark tooling to continual learning platforms that close the loop between monitoring and model improvement. This is a meaningful signal for AI infrastructure buyers: point-in-time evals are becoming table stakes, and the competitive differentiation is moving to automated feedback loops. Teams building or buying evals tooling should assess vendors on their continual learning story, not just benchmark coverage.",
+        "url": "https://x.com/swyx/status/2061206120233054327",
+        "source": "X (@swyx)",
+        "published": "2026-05-31T22:00:09.000Z"
+      },
+      {
+        "title": "Meta AI Support Feature Exploited to Steal Instagram Accounts",
+        "summary": "A Hacker News thread reports that Meta's AI-powered customer support feature contains a vulnerability allowing attackers to socially engineer account takeovers on Instagram. This is a concrete example of AI deployment introducing new attack surfaces in customer-facing products, relevant to any team integrating LLM-based support agents with account management or authentication flows. Security review of AI support agent permissions and escalation paths should be treated as a critical deployment gate.",
+        "url": "https://news.ycombinator.com/item?id=48350239",
+        "source": "Hacker News",
+        "published": "2026-05-31T22:11:40.000Z"
+      },
+      {
+        "title": "Google Research at I/O 2026: A New Era of Innovation Recap",
+        "summary": "Google Research published a summary of its major announcements from I/O 2026, spanning advances across models, infrastructure, and applied research directions. For practitioners tracking Google's product roadmap, this post consolidates which research directions are being productized and prioritized. Teams building on Google Cloud AI services should review this to align their roadmaps with upcoming platform capabilities.",
+        "url": "https://research.google/blog/a-new-era-of-innovation-google-research-at-io-2026/",
+        "source": "Google AI",
+        "published": "2026-05-28T20:58:00.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "May 29–1"
+}
