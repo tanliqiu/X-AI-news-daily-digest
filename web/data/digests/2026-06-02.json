@@ -1,0 +1,115 @@
+{
+  "date": "2026-06-02",
+  "tldr": [
+    "OpenAI frontier models and Codex are now available on AWS, expanding enterprise deployment options for builders already in the AWS ecosystem",
+    "NVIDIA announces Cosmos 3, Nemotron 3 Ultra, and RTX Spark — a significant hardware and model stack update with broad implications for on-device and data center AI",
+    "GitHub Copilot's shift to metered billing is triggering developer backlash, signaling growing sensitivity to AI tooling costs in dev workflows"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "SENSE: Semantic Embedding Navigation with Soft-gated Evaluation for Retrieval-based Speculative Decoding",
+        "summary": "SENSE improves retrieval-based speculative decoding by replacing rigid lexical matching with semantic embeddings and a soft-gated verification mechanism, making draft token retrieval more robust to surface-level variation. This is directly applicable to teams deploying LLM inference at scale who want to accelerate throughput without swapping out their target model. The plug-and-play design means it can be layered onto existing LLM serving stacks.",
+        "url": "https://arxiv.org/abs/2606.00021",
+        "source": "arXiv",
+        "published": "2026-06-02T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "RAG"
+        ],
+        "affiliations": [
+          "Zhejiang University"
+        ]
+      },
+      {
+        "title": "ART: Attention Run-time Termination for Efficient Large Language Model Decoding",
+        "summary": "ART proposes a runtime KV cache pruning method that jointly considers keys and values during decoding, addressing memory bandwidth bottlenecks in long-context LLM inference. By terminating attention computation early at runtime rather than relying on static pre-decoding pruning, it achieves better quality-efficiency trade-offs. Practitioners building long-context applications (e.g., document Q&A, code review) will find this relevant for reducing inference costs.",
+        "url": "https://arxiv.org/abs/2606.00024",
+        "source": "arXiv",
+        "published": "2026-06-02T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "King Abdullah University of Science and Technology (KAUST)"
+        ]
+      },
+      {
+        "title": "TrustLDM: Benchmarking Trustworthiness in Language Diffusion Models",
+        "summary": "TrustLDM introduces the first comprehensive trustworthiness benchmark specifically for language diffusion models (LDMs), covering safety, robustness, and fairness dimensions unique to their any-order decoding paradigm. As LDMs emerge as a faster alternative to autoregressive models, this benchmark highlights new risk surfaces that product teams need to evaluate before deployment. The work is practically timely for teams considering non-autoregressive architectures for latency-sensitive applications.",
+        "url": "https://arxiv.org/abs/2606.00023",
+        "source": "arXiv",
+        "published": "2026-06-02T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Security"
+        ],
+        "affiliations": [
+          "Peking University",
+          "CISPA Helmholtz Center for Information Security"
+        ]
+      },
+      {
+        "title": "A Multi-Domain Red Teaming Framework for Safety, Robustness, and Fairness Evaluation of Medical LLMs",
+        "summary": "This paper presents a red teaming framework that stress-tests eleven LLMs across 690 clinically grounded adversarial scenarios spanning nine healthcare domains, exposing gaps that standard benchmarks miss. For teams building medical AI products, it offers a reusable evaluation methodology for uncovering failure modes under realistic adversarial and ethically complex clinical conditions. The 150+ subcategory taxonomy also provides a practical template for scoping safety testing in regulated domains.",
+        "url": "https://arxiv.org/abs/2606.00027",
+        "source": "arXiv",
+        "published": "2026-06-02T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Benchmarks",
+          "Application"
+        ],
+        "affiliations": [
+          "John Snow Labs Inc."
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains",
+        "summary": "JetBrains has released Mellum2, a 12B parameter Mixture-of-Experts model designed for code-focused tasks, available on Hugging Face. As an MoE architecture, it offers competitive performance with lower active parameter counts, making it viable for teams that want an open, self-hostable coding assistant without the full inference cost of dense models. This is a direct competitor to other open coding models and relevant for enterprises wanting IDE-integrated AI on their own infrastructure.",
+        "url": "https://huggingface.co/blog/JetBrains/mellum2-launch",
+        "source": "Hugging Face",
+        "published": "2026-06-01T15:45:17.000Z"
+      },
+      {
+        "title": "OpenAI Frontier Models and Codex Now Available on AWS",
+        "summary": "OpenAI's latest frontier models, including Codex, are now accessible through AWS, allowing teams to invoke them within existing AWS infrastructure, IAM policies, and billing. This removes a key integration friction point for enterprises already standardized on AWS, enabling AI-powered code generation and task automation without managing a separate OpenAI account or data residency agreement. It also signals deepening cloud partnerships as a primary go-to-market channel for frontier AI capabilities.",
+        "url": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws/",
+        "source": "Hacker News",
+        "published": "2026-06-01T21:50:02.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] NVIDIA Cosmos 3, Nemotron 3 Ultra, and RTX Spark",
+        "summary": "NVIDIA announced Cosmos 3 (world foundation model), Nemotron 3 Ultra (reasoning-focused LLM), and RTX Spark (compact AI PC hardware) in a sweeping product update. For AI builders, this expands the NVIDIA ecosystem across both data center and edge use cases, with Nemotron 3 Ultra positioning as a strong open-weights reasoning model. The RTX Spark device in particular lowers the barrier for local AI development and inference.",
+        "url": "https://www.latent.space/p/ainews-nvidia-cosmos-3-nemotron-3",
+        "source": "Latent Space",
+        "published": "2026-06-02T03:28:10.000Z"
+      },
+      {
+        "title": "Angry Devs Vow to Flee GitHub Copilot as Metered Billing Takes Hold",
+        "summary": "GitHub's transition to consumption-based pricing for Copilot is generating significant developer pushback, with many threatening to migrate to competing tools. This is an important signal for AI product builders about pricing model sensitivity — flat-rate subscriptions remain strongly preferred over metered billing for developer tooling. Teams evaluating AI coding assistants should factor in pricing predictability as a key adoption driver.",
+        "url": "https://www.theregister.com/ai-and-ml/2026/06/02/github-copilot-users-threaten-exit-as-metered-billing-kicks-in/5249826",
+        "source": "Hacker News",
+        "published": "2026-06-02T01:55:07.000Z"
+      },
+      {
+        "title": "Can the Stockmarket Swallow Anthropic, SpaceX and OpenAI?",
+        "summary": "The Economist examines whether public markets can absorb potential IPOs from the largest private AI and tech companies, questioning whether their trillion-dollar-plus private valuations are sustainable in public market conditions. For AI service builders and investors, this shapes the funding landscape — if these IPOs struggle, it could tighten capital availability across the AI startup ecosystem. The piece adds context to Michael Burry's concurrent skepticism about AI valuations.",
+        "url": "https://www.economist.com/finance-and-economics/2026/06/01/can-the-stockmarket-swallow-anthropic-spacex-and-openai",
+        "source": "Hacker News",
+        "published": "2026-06-01T23:45:46.000Z"
+      },
+      {
+        "title": "Why Video Agent Models Are Next — Ethan He, xAI Grok Imagine",
+        "summary": "xAI's Ethan He discusses how Grok Imagine was built in three months and why video generation models are evolving toward agentic, world-model-like capabilities. The conversation provides a rare inside look at the speed of productionizing frontier multimodal models and the architectural trade-offs between pure video generation and world models. Relevant for teams building on or competing with video AI capabilities.",
+        "url": "https://www.latent.space/p/video-agents",
+        "source": "Latent Space",
+        "published": "2026-06-01T15:41:48.000Z"
+      }
+    ]
+  }
+}
