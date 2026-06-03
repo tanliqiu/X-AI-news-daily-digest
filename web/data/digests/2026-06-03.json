@@ -1,0 +1,130 @@
+{
+  "date": "2026-06-03",
+  "tldr": [
+    "Microsoft Build introduced the MAI-Thinking-1 and MAI family models, marking a significant push into frontier reasoning models for enterprise and developer use.",
+    "University of Toronto researchers demonstrated an AI worm capable of targeting any internet-connected device, raising urgent security concerns for AI-integrated systems.",
+    "Holo3.1 launched as a fast, locally-runnable computer-use agent model, lowering the barrier for building on-device agentic workflows."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Adaptive Latent Agentic Reasoning (ALAR)",
+        "summary": "ALAR proposes a dual-mode framework that switches between verbose chain-of-thought and compact latent reasoning depending on the complexity of each step in a multi-turn agent trajectory. This directly addresses token waste in agentic pipelines, where current LLMs over-reason on trivial steps, adding latency and cost. Builders of autonomous agents can use this approach to reduce inference overhead without sacrificing performance on hard sub-tasks.",
+        "url": "https://arxiv.org/abs/2606.02871",
+        "source": "arXiv",
+        "published": "2026-06-03T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "University of California, Davis",
+          "University of Waterloo",
+          "Greenshoe, Inc."
+        ]
+      },
+      {
+        "title": "Economy of Minds: Emerging Multi-Agent Intelligence with Economic Interactions",
+        "summary": "This paper introduces a decentralized multi-agent framework where agents bid via auctions for the right to act, using economic signals for credit assignment and self-organization—inspired by Hayek's market theory. The approach enables emergent collective intelligence without a central controller, which has direct implications for designing scalable, self-managing agent swarms. Practitioners building complex multi-agent systems may find this economic coordination mechanism a practical alternative to hand-crafted orchestration logic.",
+        "url": "https://arxiv.org/abs/2606.02859",
+        "source": "arXiv",
+        "published": "2026-06-03T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "Harvard University",
+          "MIT",
+          "Kempner Institute"
+        ]
+      },
+      {
+        "title": "Fixing FOLIO and MALLS: Verified Annotations and an LLM-assisted Framework to Focus Human Relabeling",
+        "summary": "A systematic audit of two widely-used NL-to-FOL benchmarks (FOLIO and MALLS) found that roughly 39% of inspected instances contained labeling errors, calling into question prior evaluation results for neurosymbolic and logical reasoning systems. The paper also contributes an LLM-assisted relabeling pipeline to efficiently focus human annotation effort. Teams evaluating reasoning or NLI models against these benchmarks should treat prior scores with caution until corrected splits are adopted.",
+        "url": "https://arxiv.org/abs/2606.02837",
+        "source": "arXiv",
+        "published": "2026-06-03T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Reasoning",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of Udine, Italy"
+        ]
+      },
+      {
+        "title": "Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States",
+        "summary": "Probing Qwen3-14B reveals that linear probes achieve 100% accuracy distinguishing deductive, inductive, and abductive reasoning tasks—but this signal reflects dataset formatting artifacts rather than genuine differences in internal reasoning representations. This undermines a common interpretability claim and suggests researchers and practitioners should be cautious when using linear probing as evidence that models have learned distinct reasoning modes. The finding has implications for anyone using probing techniques to audit or guide model behavior.",
+        "url": "https://arxiv.org/abs/2606.02907",
+        "source": "arXiv",
+        "published": "2026-06-03T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Horizon Research",
+          "Google",
+          "Google DeepMind",
+          "Northeastern University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Holo3.1: Fast & Local Computer Use Agents",
+        "summary": "Holo3.1 is a new model from H Company designed for computer-use agent tasks that can run locally and at speed, removing the need to route screen-interaction workloads through cloud APIs. This significantly lowers latency, cost, and privacy concerns for building desktop or browser automation agents. Developers building RPA-style or agentic UI automation products now have a viable on-device option to benchmark against cloud-based alternatives.",
+        "url": "https://huggingface.co/blog/Hcompany/holo31",
+        "source": "Hugging Face",
+        "published": "2026-06-02T14:13:23.000Z"
+      },
+      {
+        "title": "OpenAI Codex for Business: Website Hosting, Improved Plugins, and Visual Annotation Feedback",
+        "summary": "OpenAI has shipped several Codex enhancements for business plan users, including the ability to host and share websites directly, upgraded plugins and role-specific skills, and a visual annotation system for giving feedback to agents in documents, slides, and spreadsheets. These additions move Codex closer to an end-to-end agentic work environment rather than just a code assistant. Product teams can now build richer human-in-the-loop workflows around Codex without relying on separate hosting or review tooling.",
+        "url": "https://x.com/thsottiaux/status/2061876999564791952",
+        "source": "X (@thsottiaux)",
+        "published": "2026-06-02T18:25:59.000Z"
+      },
+      {
+        "title": "Gemini Thinking Levels Now Available on Web, iOS, and Android",
+        "summary": "Google has rolled out Thinking Levels—controls that let users adjust how much reasoning compute Gemini applies to a query—across all major Gemini consumer surfaces. This gives developers and end-users a practical dial to balance response speed against reasoning depth, similar to controls seen in other frontier model interfaces. Teams integrating Gemini into products can now surface this control to users as a feature rather than needing to manage it solely at the API level.",
+        "url": "https://x.com/joshwoodward/status/2062025667852812583",
+        "source": "X (@joshwoodward)",
+        "published": "2026-06-03T04:16:44.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Microsoft Build: MAI-Thinking-1 and MAI Family Models",
+        "summary": "Microsoft unveiled MAI-Thinking-1 and a broader MAI model family at Build 2026, signaling a serious move into proprietary frontier reasoning models rather than relying solely on OpenAI's API. The MAI models are positioned for enterprise integration across Microsoft's product stack, with technical details suggesting competitive reasoning capabilities. For AI consultants and product builders, this expands the choice of reasoning model providers with deep Microsoft ecosystem integration.",
+        "url": "https://www.latent.space/p/ainews-microsoft-build-mai-thinking",
+        "source": "Latent Space",
+        "published": "2026-06-03T05:49:02.000Z"
+      },
+      {
+        "title": "GitHub's Plan for Agents — Kyle Daigle, GitHub",
+        "summary": "GitHub COO Kyle Daigle outlines how the platform is evolving to accommodate the explosion of agentic coding workflows driven by tools like Copilot, addressing scaling strains on repositories, CI/CD, and collaboration infrastructure. The roadmap points toward GitHub becoming a coordination layer for AI agents rather than just a code host. Builders of agentic dev tools should pay attention to where GitHub is investing, as platform-level support will shape what's feasible for agent-assisted software development.",
+        "url": "https://www.latent.space/p/github",
+        "source": "Latent Space",
+        "published": "2026-06-02T16:48:21.000Z"
+      },
+      {
+        "title": "U of T Researchers Demonstrate AI Worm That Could Target Any Online Device",
+        "summary": "University of Toronto researchers have demonstrated a self-propagating AI worm capable of targeting internet-connected devices by exploiting LLM-integrated systems, representing a novel class of AI-enabled security threat. The research highlights that as AI becomes embedded in more networked products, the attack surface for adversarial exploitation grows significantly. Teams building AI-powered products with network connectivity or tool-use capabilities should treat this as a concrete threat model to assess in their security reviews.",
+        "url": "https://www.utoronto.ca/news/u-t-researchers-demonstrate-ai-worm-could-target-any-online-device",
+        "source": "Hacker News",
+        "published": "2026-06-03T03:47:21.000Z"
+      },
+      {
+        "title": "AI Outperforms Law Professors in Stanford Law Study",
+        "summary": "A Stanford Law study found that AI systems outperformed law professors on a set of legal analysis tasks, adding to growing evidence of professional-grade AI capability in high-stakes knowledge work. This has immediate implications for legal tech products—both as validation for AI-assisted legal services and as a signal that the capability bar for competing with AI in knowledge domains is rising fast. Builders in the legal AI space (and adjacent professional verticals) should take this as a meaningful benchmark for product positioning.",
+        "url": "https://law.stanford.edu/press/ai-outperforms-law-professors-in-stanford-law-study/",
+        "source": "Hacker News",
+        "published": "2026-06-02T23:43:12.000Z"
+      }
+    ]
+  }
+}
