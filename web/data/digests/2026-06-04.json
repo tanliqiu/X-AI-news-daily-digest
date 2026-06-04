@@ -1,0 +1,146 @@
+{
+  "date": "2026-06-04",
+  "tldr": [
+    "Large-scale study finds RAG often doesn't help—and sometimes hurts—open-weight models on biomedical QA, challenging a widely held assumption in medical AI product design",
+    "OpenAI's Codex suffered three reliability incidents in 24 hours; usage limits reset across all paid plans as reliability fixes are prioritized",
+    "UC Berkeley CS courses report soaring failing grades alongside dwindling math skills correlated with increased AI tool usage, raising concerns about AI-assisted learning outcomes"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "When Retrieval Doesn't Help: A Large-Scale Study of Biomedical RAG",
+        "summary": "A broad evaluation of RAG across five open-weight models (7B–72B), ten biomedical QA datasets, and four retrieval methods finds that retrieval frequently fails to improve—and sometimes degrades—performance compared to models relying solely on parametric knowledge. This challenges the default assumption that adding retrieval is always beneficial in high-stakes medical settings and suggests practitioners should carefully validate RAG pipelines rather than treating them as universal improvements. Teams building healthcare AI products should benchmark RAG against strong no-retrieval baselines before deploying.",
+        "url": "https://arxiv.org/abs/2606.04127",
+        "source": "arXiv",
+        "published": "2026-06-04T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "The University of Texas at San Antonio"
+        ]
+      },
+      {
+        "title": "SaliMory: Orchestrating Cognitive Memory for Conversational Agents",
+        "summary": "SALIMORY introduces a framework that trains a single LM to manage a cognitively-structured persistent memory for lifelong conversational agents, addressing both the context-bloat problem of naive retrieval and the credit-assignment bottleneck in multi-stage RL pipelines. This is practically relevant for anyone building long-running AI companions or customer-service agents that need to maintain coherent user context across many sessions. The work comes from Meta Reality Labs, suggesting near-term applicability in consumer-facing agent products.",
+        "url": "https://arxiv.org/abs/2606.04120",
+        "source": "arXiv",
+        "published": "2026-06-04T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "RAG",
+          "Framework"
+        ],
+        "affiliations": [
+          "Meta Reality Labs"
+        ]
+      },
+      {
+        "title": "Expert-Aware Refusal Steering",
+        "summary": "This paper extends refusal-steering attacks—using activation vectors to suppress safety refusals—to three open-source Mixture-of-Experts (MoE) LLMs, finding that steering effectiveness varies significantly across expert routing structures. For teams deploying MoE-based models in production, this highlights a concrete attack surface that differs from dense models and requires dedicated red-teaming. Understanding expert-level vulnerability patterns is increasingly important as MoE architectures (e.g., Mixtral, DeepSeek) become common deployment choices.",
+        "url": "https://arxiv.org/abs/2606.04160",
+        "source": "arXiv",
+        "published": "2026-06-04T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "University of Montana",
+          "University of Arizona",
+          "European Bioinformatics Institute",
+          "European Molecular Biology Laboratory"
+        ]
+      },
+      {
+        "title": "Discourse-Role Labels as Presentation-Time Variables for Context Use in Language Models",
+        "summary": "This study examines how prompt labels like 'Reference:', 'Evidence:', or 'Note:' influence whether LLMs adopt misleading information injected via context, using 500 MMLU-Pro items. The results show that label choice meaningfully shifts model susceptibility to context-based manipulation—a critical finding for RAG and agentic systems where context framing is under developer control. Practitioners building RAG pipelines should be deliberate about which discourse-role labels they use to wrap retrieved content.",
+        "url": "https://arxiv.org/abs/2606.04109",
+        "source": "arXiv",
+        "published": "2026-06-04T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Security",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Chengdu University of Information Technology"
+        ]
+      },
+      {
+        "title": "POLARIS: Guiding Small Models to Write Long Stories",
+        "summary": "POLARIS proposes a lower-compute GRPO fine-tuning recipe using a frontier LLM-as-judge with structured rewards and anchored reference injection to help small open-weight models produce high-quality long-form creative text. The approach is significant for product teams looking to deploy smaller, cheaper models for content generation tasks where frontier model costs are prohibitive. It demonstrates that RL-based fine-tuning with well-designed judge feedback can meaningfully close the quality gap for length-sensitive creative tasks.",
+        "url": "https://arxiv.org/abs/2606.04095",
+        "source": "arXiv",
+        "published": "2026-06-04T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning",
+          "Application"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Mnemo – Local-First AI Memory Layer for Any LLM (Rust, SQLite, petgraph)",
+        "summary": "Mnemo is an open-source, local-first memory layer for LLMs built in Rust with SQLite and petgraph, designed to provide persistent, structured memory without relying on cloud services. This is practically useful for developers building privacy-sensitive or offline-capable AI applications who need persistent context management without vendor lock-in. The local-first architecture makes it a compelling alternative to hosted memory solutions for enterprise or regulated-industry deployments.",
+        "url": "https://github.com/zaydmulani09/mnemo",
+        "source": "Hacker News",
+        "published": "2026-06-03T20:32:10.000Z"
+      },
+      {
+        "title": "Adding MCP Tools to Reachy Mini",
+        "summary": "Hugging Face published a guide on integrating Model Context Protocol (MCP) tools into the Reachy Mini robot, enabling it to use LLM-driven tool calls for physical world interaction. This is a concrete example of MCP expanding beyond software agents into robotics, which is relevant for developers exploring embodied AI or hardware-integrated agentic systems. The tutorial lowers the barrier to experimenting with LLM-controlled physical devices using the MCP standard.",
+        "url": "https://huggingface.co/blog/adding-mcp-tools-to-reachy-mini",
+        "source": "Hugging Face",
+        "published": "2026-06-03T00:00:00.000Z"
+      },
+      {
+        "title": "Google Open-Sources Hydrology Framework for Flood Resilience",
+        "summary": "Google Research is open-sourcing its hydrology framework used for flood forecasting, making a production-grade geospatial AI system available to researchers and developers building climate and infrastructure applications. For AI product teams working in climate tech or geospatial analytics, this provides a battle-tested foundation that was previously only available internally at Google. The release signals a broader trend of large tech companies open-sourcing specialized scientific AI infrastructure.",
+        "url": "https://research.google/blog/the-next-chapter-in-flood-resilience-open-sourcing-googles-hydrology-framework/",
+        "source": "Google AI",
+        "published": "2026-06-03T18:37:32.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI Codex Hit Three Reliability Incidents in 24 Hours; Usage Limits Reset",
+        "summary": "OpenAI's Codex product experienced three separate reliability incidents within a single day, prompting the team to reset usage limits across all paid plans as a goodwill measure. The public acknowledgment from the Codex lead signals that reliability is under active scrutiny as the product scales, which is relevant for teams evaluating Codex for production coding workflows. Organizations depending on Codex for agentic coding tasks should factor in current reliability track record when planning SLAs.",
+        "url": "https://x.com/thsottiaux/status/2062329981548802523",
+        "source": "X (@thsottiaux)",
+        "published": "2026-06-04T00:25:58.000Z"
+      },
+      {
+        "title": "Failing Grades Soar with AI Usage, Dwindling Math Skills in Berkeley CS Classes",
+        "summary": "UC Berkeley professors report rising failure rates and declining foundational math skills in CS courses, correlated with increased student reliance on AI tools. This has direct implications for AI product builders who depend on a pipeline of junior engineering talent, and for teams designing AI-assisted developer tools—suggesting that over-reliance on AI for learning may undermine the skills needed to effectively oversee and debug AI-generated code. It reinforces the importance of intentional AI tool design that supports skill development rather than substituting for it.",
+        "url": "https://www.dailycal.org/news/campus/academics/failing-grades-soar-as-professors-see-greater-ai-usage-dwindling-math-skills-in-uc-berkeley/article_16fad0bf-02cb-4b8c-8d88-888ffd9f8608.html",
+        "source": "Hacker News",
+        "published": "2026-06-04T00:18:02.000Z"
+      },
+      {
+        "title": "Satya Nadella at Microsoft Build: Agentic Systems Are the New Infrastructure",
+        "summary": "In a crossover podcast appearance, Microsoft CEO Satya Nadella articulated that the goal is no longer to perform infrastructure tasks but to build agentic systems that perform those tasks—citing Azure networking as a flagship example. He also emphasized that tech companies must demonstrate tangible benefits rather than rely on trust, reflecting growing pressure to show ROI from AI investments. This framing is a strong signal about Microsoft's product direction and the enterprise expectation shift toward autonomous AI systems managing cloud infrastructure.",
+        "url": "https://www.latent.space/p/satya-2026",
+        "source": "Latent Space",
+        "published": "2026-06-03T17:13:57.000Z"
+      },
+      {
+        "title": "Breaking Down the 2026 Stanford AI Index Report",
+        "summary": "The Practical AI podcast breaks down the 2026 Stanford AI Index, covering AI adoption trends, the disappearance of junior tech roles, robotics advances, and the US-China AI race. Key practical takeaway: AI exhibits a 'jagged frontier' of capability—excelling at math olympiads while failing at reading analog clocks—which should inform realistic expectations when scoping AI product use cases. The report's findings on AI safety and workforce displacement are increasingly relevant for product strategy and hiring decisions.",
+        "url": "https://share.transistor.fm/s/302b36f8",
+        "source": "Practical AI",
+        "published": "2026-06-04T09:00:00.000Z"
+      },
+      {
+        "title": "Developer Test: Spending $1,500 to See If LLMs Can Hack a Vulnerable App",
+        "summary": "A developer built a deliberately vulnerable web application and systematically tested multiple LLMs' ability to discover and exploit security vulnerabilities, spending $1,500 in API costs across the experiment. The findings provide a concrete, cost-grounded benchmark for how capable current models are at offensive security tasks—relevant both for red-teaming AI tools and for assessing AI-assisted penetration testing products. Teams building security tooling or evaluating LLM risk should find the methodology and results directly applicable.",
+        "url": "https://kasra.blog/blog/i-spent-1500-seeing-if-llms-could-hack-my-app/",
+        "source": "Hacker News",
+        "published": "2026-06-04T00:56:32.000Z"
+      }
+    ]
+  }
+}
