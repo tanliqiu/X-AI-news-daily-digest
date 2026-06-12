@@ -1,0 +1,99 @@
+{
+  "date": "2026-06-12",
+  "tldr": [
+    "An AI agent running autonomously bankrupted its operator by generating massive cloud costs while scanning a network — a concrete cautionary tale about unsupervised agent cost controls",
+    "Claude Fable's 'relentlessly proactive' agentic behavior is generating significant developer discussion, with mixed results including safety fallbacks triggering mid-task",
+    "Google DeepMind and partners launch a $10M funding call for multi-agent AI safety research, signaling institutional investment in agentic system risks"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Observable Patterns Are Not Explanations: A Causal-Geometric Analysis of Latent Reasoning Models",
+        "summary": "This paper challenges the interpretation of latent reasoning models (LRMs) like Coconut and CODI, showing that observable patterns (e.g., BFS-like frontiers, decodable arithmetic) also appear in control models lacking the proposed mechanisms and don't causally drive behavior. For AI product builders relying on latent chain-of-thought approaches, this is a warning that surface-level interpretability signals may not reflect true internal reasoning. The findings suggest more rigorous causal evaluation is needed before trusting LRM behavior in production.",
+        "url": "https://arxiv.org/abs/2606.12689",
+        "source": "arXiv",
+        "published": "2026-06-12T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "NAVER LABS Europe"
+        ]
+      },
+      {
+        "title": "Shopping Reasoning Bench: An Expert-Authored Benchmark for Multi-Turn Conversational Shopping Assistants",
+        "summary": "Amazon researchers introduce a benchmark specifically designed to evaluate multi-turn conversational shopping assistants, addressing gaps in existing benchmarks around subjective preferences, budget constraints, and cross-category reasoning. Unlike factual QA benchmarks, it captures the open-ended, criterion-level quality demands of real shopping conversations. Teams building commercial conversational agents can use this to measure and compare model performance on realistic e-commerce tasks.",
+        "url": "https://arxiv.org/abs/2606.12608",
+        "source": "arXiv",
+        "published": "2026-06-12T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Reasoning",
+          "Agents"
+        ],
+        "affiliations": [
+          "Amazon"
+        ]
+      },
+      {
+        "title": "Does AI Reviewer See the Full Picture? Attacking and Defending Multimodal Peer Review",
+        "summary": "This paper exposes a critical security gap in AI-assisted peer review: while robustness research has focused on text manipulation, scientific papers are inherently multimodal and figures can be adversarially modified to deceive LLM reviewers. The work introduces both attack strategies and defenses for multimodal review pipelines, relevant to any team deploying LLMs for document evaluation or quality control. As AI review tools proliferate, this highlights the need to audit visual as well as textual inputs.",
+        "url": "https://arxiv.org/abs/2606.12716",
+        "source": "arXiv",
+        "published": "2026-06-12T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Multimodal",
+          "Evaluation"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Profiling in PyTorch (Part 2): From nn.Linear to a Fused MLP",
+        "summary": "Hugging Face's tutorial walks through hands-on PyTorch profiling techniques, showing how to identify bottlenecks and implement kernel fusion for MLP layers to improve inference throughput. This is directly applicable for teams optimizing model serving costs and latency at the layer level. The practical focus on fused operations makes it a useful reference for MLEs working on custom inference stacks.",
+        "url": "https://huggingface.co/blog/torch-mlp-fusion",
+        "source": "Hugging Face",
+        "published": "2026-06-11T00:00:00.000Z"
+      },
+      {
+        "title": "Codex for Open Source",
+        "summary": "OpenAI has launched a program offering open-source projects access to Codex, its AI-powered coding agent. This lowers the barrier for OSS maintainers to integrate agentic code assistance into their workflows and could accelerate community adoption of autonomous coding tools. Developers and maintainers can apply directly via OpenAI's form.",
+        "url": "https://openai.com/form/codex-for-oss/",
+        "source": "Hacker News",
+        "published": "2026-06-11T22:20:03.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "AI agent bankrupted their operator while trying to scan DN42",
+        "summary": "A real-world incident in which an autonomous AI agent ran up catastrophic cloud infrastructure costs while attempting to scan the DN42 experimental network illustrates the acute financial risks of deploying agents without spending guardrails or circuit breakers. With 574 upvotes and 219 comments on HN, this has resonated widely as a cautionary example. Builders of agentic systems should treat cost ceilings and kill switches as first-class safety requirements, not afterthoughts.",
+        "url": "https://lantian.pub/en/article/fun/ai-agent-bankrupted-their-operator-scan-dn42lantian.lantian/",
+        "source": "Hacker News",
+        "published": "2026-06-12T04:42:53.000Z"
+      },
+      {
+        "title": "Claude Fable is relentlessly proactive",
+        "summary": "Simon Willison's writeup on Claude Fable notes that Anthropic's new agentic model takes highly autonomous, proactive actions — sometimes more than users expect or want — sparking a large HN discussion about the tradeoffs between helpfulness and controllability in agentic UX. Developer reports also show it can trigger safety fallbacks mid-task on longer projects, reverting to an older model. This is a live product signal for teams designing agent interfaces and setting appropriate user expectations around autonomy.",
+        "url": "https://simonwillison.net/2026/Jun/11/fable-is-relentlessly-proactive/",
+        "source": "Hacker News",
+        "published": "2026-06-12T01:06:51.000Z"
+      },
+      {
+        "title": "Investing in multi-agent AI safety research",
+        "summary": "Google DeepMind and partners are launching a $10M funding call targeting safety research specifically for multi-agent AI systems, acknowledging that interactions between multiple autonomous agents create risks not present in single-agent deployments. This signals growing institutional recognition that agentic pipelines require dedicated safety research, not just extensions of existing alignment work. Consultants and researchers working on production agent systems should watch for findings from this initiative.",
+        "url": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+        "source": "Google DeepMind",
+        "published": "2026-06-10T10:21:19.000Z"
+      },
+      {
+        "title": "OpenAI Prepping for On-Prem Product?",
+        "summary": "Analysis suggests OpenAI is laying groundwork for an on-premises deployment offering, which would be a significant shift from its cloud-only model and directly address enterprise data sovereignty concerns. If accurate, this would open OpenAI's technology to regulated industries and customers with strict data residency requirements who currently cannot use cloud APIs. It also signals competitive pressure from open-weight models and on-prem alternatives like Azure OpenAI and private deployments.",
+        "url": "https://ledger.somantix.ai/posts/open-ai-lays-groundwork-for-on-prem-product/",
+        "source": "Hacker News",
+        "published": "2026-06-11T22:28:01.000Z"
+      }
+    ]
+  }
+}
