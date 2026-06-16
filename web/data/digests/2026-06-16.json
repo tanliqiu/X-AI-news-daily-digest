@@ -1,0 +1,110 @@
+{
+  "date": "2026-06-16",
+  "tldr": [
+    "NVIDIA releases Nemotron 3 Ultra, a 550B parameter MoE Hybrid Mamba-Transformer model trained on 20T tokens with 1M context and strong agentic reasoning capabilities",
+    "OpenAI's losses grew nearly 8x in 2025 to $34B in spending, raising sustainability questions for the broader AI industry",
+    "Microsoft turns to AWS to handle GitHub's AI capacity crunch, highlighting the infrastructure strain of scaling AI developer tools"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
+        "summary": "NVIDIA introduces Nemotron 3 Ultra, a 550B total / 55B active parameter MoE model combining Mamba and Attention layers, pre-trained on 20T tokens with context extended to 1M tokens via SFT, RL, and Multi-teacher On-Policy Distillation. The hybrid architecture targets agentic reasoning workloads and is being released openly, making it a significant option for teams building long-context or agent-based AI products. Its efficient active parameter count (55B) relative to total size makes it cost-competitive at inference time.",
+        "url": "https://arxiv.org/abs/2606.15007",
+        "source": "arXiv",
+        "published": "2026-06-16T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Reasoning",
+          "Inference"
+        ],
+        "affiliations": [
+          "NVIDIA"
+        ]
+      },
+      {
+        "title": "PhoneHarness: Harnessing Phone-Use Agents through Mixed GUI, CLI, and Tool Actions",
+        "summary": "PhoneHarness proposes a new evaluation framework for mobile agents that moves beyond GUI-only interaction, incorporating device-side CLI commands and structured tool calls to reflect real-world phone workflows. The benchmark reveals that current mobile agents score poorly when required to select the right interaction modality rather than just tap the screen. Practitioners building mobile automation products should anticipate that multi-modal action spaces are necessary for production-grade phone agents.",
+        "url": "https://arxiv.org/abs/2606.14832",
+        "source": "arXiv",
+        "published": "2026-06-16T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "The Chinese University of Hong Kong",
+          "The Chinese University of Hong Kong, Shenzhen",
+          "Tsinghua University"
+        ]
+      },
+      {
+        "title": "Are Online Skill and Memory Modules Always Worth Their Tokens? A Budget-Constrained Study of Web Agents",
+        "summary": "This paper audits popular web agent augmentation modules (AWM, ASI, ReasoningBank) under a fixed token budget, finding that their performance gains largely disappear when compared against a vanilla baseline given the same token allowance. The results challenge the common practice of bolting on memory and skill modules without accounting for their inference cost overhead. Builders of agentic web products should carefully benchmark augmentation modules on a cost-normalized basis before deploying them.",
+        "url": "https://arxiv.org/abs/2606.15017",
+        "source": "arXiv",
+        "published": "2026-06-16T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Evaluation",
+          "Inference"
+        ],
+        "affiliations": [
+          "ServiceNow AI Research",
+          "ÉTS Montreal",
+          "University of British Columbia",
+          "McGill University"
+        ]
+      },
+      {
+        "title": "CoRA: Confidence-Rationale Alignment for Reliable Chain-of-Thought Reasoning",
+        "summary": "CoRA introduces a GRPO-based RL training framework that penalizes models for expressing high confidence when their chain-of-thought rationale is weak or incomplete, improving calibration without sacrificing accuracy. This addresses a subtle but critical failure mode in production CoT systems where confidently wrong answers can propagate downstream in multi-step pipelines. The approach is practically relevant for any team using CoT prompting in high-stakes or agentic settings.",
+        "url": "https://arxiv.org/abs/2606.14961",
+        "source": "arXiv",
+        "published": "2026-06-16T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Alignment",
+          "Training"
+        ],
+        "affiliations": [
+          "Vanderbilt University",
+          "Vanderbilt University Medical Center",
+          "Intuit AI Research"
+        ]
+      }
+    ],
+    "Tools": [],
+    "Industry News": [
+      {
+        "title": "OpenAI Losses Increased Nearly 8X in 2025, with Spending Hitting $34B",
+        "summary": "Leaked financials show OpenAI's losses ballooned nearly 8-fold in 2025 as compute and talent spending reached $34B, far outpacing revenue growth. This has significant implications for the broader AI ecosystem—pricing pressure on API products, potential investor scrutiny, and questions about the sustainability of the current scaling-first business model. Consultants and product teams building on OpenAI's APIs should monitor how this financial pressure may affect pricing, model availability, and product prioritization.",
+        "url": "https://www.wheresyoured.at/exclusive-openai-financials/",
+        "source": "Hacker News",
+        "published": "2026-06-16T04:05:48.000Z"
+      },
+      {
+        "title": "Microsoft turns to AWS as GitHub faces AI capacity crunch",
+        "summary": "Microsoft is reportedly routing GitHub AI workloads to AWS infrastructure to cope with surging demand that its own Azure capacity cannot fully absorb. This underscores the acute compute supply constraints facing even the largest AI platform operators, and signals that multi-cloud dependency is becoming a practical reality even for tightly integrated ecosystems. Teams relying on GitHub Copilot or adjacent AI developer tools should be aware of potential latency or reliability implications during high-demand periods.",
+        "url": "https://runtimewire.com/article/microsoft-github-aws-ai-capacity-crunch",
+        "source": "Hacker News",
+        "published": "2026-06-16T02:47:57.000Z"
+      },
+      {
+        "title": "Anthropic pauses credit change for Claude Code",
+        "summary": "Anthropic reversed or paused a planned change to how credits are counted for Claude Code usage, following apparent user pushback. This reflects the ongoing tension between monetizing heavy agentic usage and maintaining developer goodwill for tools that consume large numbers of tokens per session. Teams building products on top of Claude Code or similar agentic coding tools should track Anthropic's evolving pricing policies closely as the model shifts toward sustained commercial use.",
+        "url": "https://news.ycombinator.com/item?id=48546618",
+        "source": "Hacker News",
+        "published": "2026-06-15T20:28:39.000Z"
+      },
+      {
+        "title": "[AINews] Satya on Loopcraft: Building Frontier Ecosystems",
+        "summary": "This Latent Space digest covers Satya Nadella's essay on 'Loopcraft,' framing how frontier AI ecosystems are being architected around feedback loops between models, tools, and enterprises. The piece is relevant for consultants advising on AI strategy, as it reflects Microsoft's evolving platform narrative for how organizations should position themselves in relation to frontier model providers. It offers a useful lens for understanding how large enterprise AI buyers are being courted and what infrastructure bets Microsoft is signaling.",
+        "url": "https://www.latent.space/p/ainews-satya-on-loopcraft-building",
+        "source": "Latent Space",
+        "published": "2026-06-16T02:29:29.000Z"
+      }
+    ]
+  }
+}
