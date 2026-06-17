@@ -1,0 +1,116 @@
+{
+  "date": "2026-06-17",
+  "tldr": [
+    "Leaked OpenAI financials reveal $38.5B in losses and unsustainable compute burn, raising questions about the economics of frontier AI development",
+    "GLM-5.2 takes the top spot among open-weights models on Artificial Analysis, with particular strength in frontend coding tasks",
+    "France moves to replace Palantir's AI data tools with domestic provider ChapsVision, signaling growing AI sovereignty concerns in Europe"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "RepSelect: Robust LLM Unlearning via Representation Selectivity",
+        "summary": "Current LLM unlearning methods are easily reversed by fine-tuning or few-shot prompting because they target representations shared with the retain set. RepSelect addresses this by identifying and modifying representations that are selective to the forget set, making unlearning substantially harder to reverse — a critical property for deploying models under compliance or safety constraints.",
+        "url": "https://arxiv.org/abs/2606.17168",
+        "source": "arXiv",
+        "published": "2026-06-17T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "University of Oxford"
+        ]
+      },
+      {
+        "title": "MemSlides: A Hierarchical Memory Driven Agent Framework for Personalized Slide Generation with Multi-turn Local Revision",
+        "summary": "MemSlides separates long-term user preference memory from working memory in a presentation-generation agent, enabling stable personalization across sessions and reliable local edits during multi-turn revision. This architecture pattern is directly applicable to any agentic product requiring persistent user context without full-context re-injection.",
+        "url": "https://arxiv.org/abs/2606.17162",
+        "source": "arXiv",
+        "published": "2026-06-17T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "Beijing University of Posts and Telecommunications",
+          "Tsinghua University",
+          "Shanghai Jiao Tong University"
+        ]
+      },
+      {
+        "title": "Self-Generated Error Training for Token Editing in Diffusion Language Models",
+        "summary": "This paper identifies a training-inference mismatch in LLaDA2.1's token editor, which is trained on random corruptions but encounters the model's own fluent draft errors at inference. The proposed fix — using a no-gradient draft pass to generate realistic errors for supervision — improves editing quality and offers a generalizable recipe for closing similar distributional gaps in diffusion LM pipelines.",
+        "url": "https://arxiv.org/abs/2606.17175",
+        "source": "arXiv",
+        "published": "2026-06-17T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Inference"
+        ],
+        "affiliations": [
+          "Shanghai Jiao Tong University"
+        ]
+      },
+      {
+        "title": "Are you speaking my languages? On spoken language adherence in multimodal LLMs",
+        "summary": "Multimodal LLMs used for ASR frequently output transcriptions in the wrong language, degrading downstream application quality. Google DeepMind researchers propose a soft prompting approach that hints at expected languages without hard constraints, preserving code-switching flexibility while significantly improving language adherence — a practical fix for multilingual voice products.",
+        "url": "https://arxiv.org/abs/2606.17281",
+        "source": "arXiv",
+        "published": "2026-06-17T04:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Application"
+        ],
+        "affiliations": [
+          "Google DeepMind"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "GLM-5.2: Built for Long-Horizon Tasks",
+        "summary": "Zhipu AI's GLM-5.2 is now the top-ranked open-weights model on the Artificial Analysis Intelligence Index, with particular strength in frontend coding and long-horizon task completion. Practitioners evaluating open-weight alternatives to GPT-4-class models now have a strong new candidate, especially for code generation workflows.",
+        "url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+        "source": "Hugging Face",
+        "published": "2026-06-17T09:01:25.000Z"
+      },
+      {
+        "title": "From the Hugging Face Hub to robot hardware with Strands Agents and LeRobot",
+        "summary": "Amazon's Strands Agents framework now integrates with Hugging Face's LeRobot, enabling a direct path from Hub-hosted robot policies to physical hardware deployment. This lowers the barrier for AI product teams looking to prototype real-world robotics applications without building custom orchestration layers.",
+        "url": "https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware",
+        "source": "Hugging Face",
+        "published": "2026-06-17T10:18:05.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Leaked OpenAI financials show $38.5B loss and compute burn",
+        "summary": "Leaked documents reportedly show OpenAI running $38.5B in cumulative losses with aggressive compute expenditure, raising significant questions about the unit economics of frontier model development. For AI product builders and investors, this underscores the structural cost pressure that could accelerate pricing changes, capacity constraints (as seen in recent Codex outages), and consolidation across the industry.",
+        "url": "https://runtimewire.com/article/openai-leaked-financials-altman-compute-burn",
+        "source": "Hacker News",
+        "published": "2026-06-17T02:47:29.000Z"
+      },
+      {
+        "title": "France to ditch Palantir's AI data tools in favour of domestic provider",
+        "summary": "France is replacing Palantir with domestic AI provider ChapsVision for sensitive government data workloads, citing sovereignty concerns. This is a concrete signal that European public-sector AI contracts will increasingly favor local providers, with implications for any US-based AI company targeting government or regulated enterprise clients in the EU.",
+        "url": "https://www.theguardian.com/world/2026/jun/16/france-ai-data-tools-palantir-chapsvision",
+        "source": "Hacker News",
+        "published": "2026-06-17T00:16:14.000Z"
+      },
+      {
+        "title": "The founder's playbook: Building an AI-native startup",
+        "summary": "Anthropic's Claude blog publishes a practical guide for founders building AI-native companies, covering product strategy, model integration, and differentiation in a crowded market. The piece reflects Anthropic's growing effort to cultivate an ecosystem of builders around Claude, similar to OpenAI's developer outreach playbook.",
+        "url": "https://claude.com/blog/the-founders-playbook",
+        "source": "Hacker News",
+        "published": "2026-06-17T07:04:42.000Z"
+      },
+      {
+        "title": "Google DeepMind partners with UK government on AI-accelerated housing planning",
+        "summary": "Google DeepMind is working with the UK government on an AI prototype designed to speed up housing planning decisions, one of the most bureaucratically constrained sectors in the UK economy. This is an early example of frontier AI labs pursuing high-impact public-sector applications beyond productivity tooling, which may open new enterprise and government contract opportunities.",
+        "url": "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/",
+        "source": "Google DeepMind",
+        "published": "2026-06-16T21:29:50.000Z"
+      }
+    ]
+  }
+}
