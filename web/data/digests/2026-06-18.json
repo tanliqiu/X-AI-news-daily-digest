@@ -1,0 +1,142 @@
+{
+  "date": "2026-06-18",
+  "tldr": [
+    "Noam Shazeer, co-lead of Google's Gemini and transformer architecture pioneer, is joining OpenAI — a major talent shift with significant implications for model development.",
+    "Midjourney announces a medical imaging product, marking its second product line and signaling expansion of frontier AI labs into healthcare.",
+    "JetFlow introduces parallel tree drafting for speculative decoding, breaking through scaling ceilings that have limited inference acceleration in production LLM deployments."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "JetFlow: Breaking the Scaling Ceiling of Speculative Decoding with Parallel Tree Drafting",
+        "summary": "JetFlow addresses a core bottleneck in speculative decoding — the causality-efficiency dilemma of autoregressive drafters — by using parallel tree drafting to generate wider draft trees without cascading overhead. This allows larger draft budgets to translate into real throughput gains even at high acceptance rates. Practitioners building high-throughput LLM inference systems can use this to squeeze more performance from existing hardware.",
+        "url": "https://arxiv.org/abs/2606.18394",
+        "source": "arXiv",
+        "published": "2026-06-18T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "UC San Diego",
+          "Zhejiang University",
+          "UIUC",
+          "Nanjing University",
+          "StepFun"
+        ]
+      },
+      {
+        "title": "VISUALSKILL: Multimodal Skills for Computer-Use Agents",
+        "summary": "VISUALSKILL proposes a hierarchical multimodal skill library for computer-use agents (CUAs) that stores reusable skills as both text and visual artifacts, addressing the mismatch between text-only skill representations and the inherently visual nature of GUI interaction. This approach improves performance on long-horizon tasks and unseen software without retraining. Teams building desktop or browser automation agents can adopt this pattern to reduce failures on novel UI states.",
+        "url": "https://arxiv.org/abs/2606.18448",
+        "source": "arXiv",
+        "published": "2026-06-18T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Multimodal"
+        ],
+        "affiliations": [
+          "UC Santa Barbara",
+          "MIT CSAIL",
+          "MIT-IBM Watson AI Lab"
+        ]
+      },
+      {
+        "title": "SproutRAG: Attention-Guided Tree Search with Progressive Embeddings for Long-Document RAG",
+        "summary": "SproutRAG introduces an attention-guided tree search mechanism that retrieves context at multiple granularity levels simultaneously, avoiding the information loss from single-level retrieval or summarization-based approaches while reducing reliance on costly LLM calls during indexing. This directly targets the granularity-coherence tradeoff that plagues production RAG pipelines over long documents. Developers building document Q&A or enterprise search products will find this a strong architectural alternative to flat chunking strategies.",
+        "url": "https://arxiv.org/abs/2606.18381",
+        "source": "arXiv",
+        "published": "2026-06-18T04:00:00.000Z",
+        "keywords": [
+          "RAG"
+        ],
+        "affiliations": [
+          "University of British Columbia",
+          "ServiceNow Research"
+        ]
+      },
+      {
+        "title": "Redact or Keep? A Fully Local AI Cascade for Educational Dialogue De-Identification",
+        "summary": "This paper presents a fully local AI pipeline for de-identifying sensitive educational transcripts, resolving the tension between data governance (keeping data on-premises) and the contextual judgment needed to distinguish person names from academic terms. The cascade approach avoids sending student data to commercial APIs while maintaining competitive accuracy. This is directly applicable to any organization building AI tools over sensitive, regulated datasets where cloud LLMs are off-limits.",
+        "url": "https://arxiv.org/abs/2606.18372",
+        "source": "arXiv",
+        "published": "2026-06-18T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Application"
+        ],
+        "affiliations": [
+          "Cornell University, Ithaca, NY, USA"
+        ]
+      },
+      {
+        "title": "Possible or Definite? A Benchmark for Evaluating Diagnostic Uncertainty Preservation in Clinical Text",
+        "summary": "This paper introduces a benchmark targeting a clinically critical failure mode: LLMs altering uncertainty language (e.g., changing 'possible pneumonia' to 'pneumonia') during summarization or revision of clinical notes. Most existing evaluations miss this subtle but high-stakes distortion. Teams deploying LLMs in healthcare NLP pipelines should add uncertainty-preservation checks to their evaluation suites.",
+        "url": "https://arxiv.org/abs/2606.18471",
+        "source": "arXiv",
+        "published": "2026-06-18T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Trine University",
+          "University of Michigan",
+          "Amazon"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Codex App, CLI and SDK Work with Any Open Source Model",
+        "summary": "A reminder gaining traction on X: OpenAI's Codex App, CLI, and SDK are model-agnostic and can be used with open-source models, not just OpenAI's own offerings. This significantly broadens the practical utility of the Codex toolchain for teams wanting to avoid vendor lock-in or run local models. AI product builders can use this to plug preferred open models into a mature coding-agent workflow.",
+        "url": "https://x.com/thsottiaux/status/2067181377028538431",
+        "source": "X (@thsottiaux)",
+        "published": "2026-06-17T09:43:41.000Z"
+      },
+      {
+        "title": "Claude Design Launches in Beta on All Paid Plans",
+        "summary": "Anthropic has released Claude Design in beta across web and desktop for all paid subscribers, featuring a redesigned canvas editor with drag, resize, and alignment controls. This positions Claude as a more direct competitor to design-focused AI tools. Consultants building design or content workflows should evaluate whether Claude Design fits into their client toolchains.",
+        "url": "https://x.com/claudeai/status/2067325894268428560",
+        "source": "X (@claudeai)",
+        "published": "2026-06-17T19:17:56.000Z"
+      },
+      {
+        "title": "Local Qwen Isn't a Worse Opus, It's a Different Tool",
+        "summary": "A widely-shared post argues that local models like Qwen should be evaluated on their own terms — latency, cost, privacy, offline capability — rather than benchmarked against frontier cloud models like Claude Opus. This reframes how practitioners should architect AI product stacks, suggesting local and cloud models serve complementary roles. The practical implication is that hybrid deployments combining local models for routine tasks and cloud models for complex reasoning can optimize both cost and capability.",
+        "url": "https://blog.alexellis.io/local-ai-is-not-opus/",
+        "source": "Hacker News",
+        "published": "2026-06-18T03:04:20.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Noam Shazeer Joins OpenAI",
+        "summary": "Noam Shazeer, co-inventor of the transformer architecture's key components and former Google Gemini co-lead, is joining OpenAI in a major talent acquisition. This is one of the most significant researcher moves in the AI industry in years, given Shazeer's foundational contributions to modern LLM architecture. The move could meaningfully accelerate OpenAI's model research and signals intensifying competition for top AI talent.",
+        "url": "https://www.reuters.com/technology/googles-gemini-co-lead-noam-shazeer-join-openai-2026-06-18/",
+        "source": "Hacker News",
+        "published": "2026-06-18T00:31:28.000Z"
+      },
+      {
+        "title": "Midjourney Medical: Organ Scanning as a Consumer Product",
+        "summary": "Midjourney has announced a medical imaging product aimed at making organ scanning as accessible as stepping on a scale, marking the bootstrapped AI lab's second product line after its image generation flagship. This signals that frontier AI labs are looking to diversify into high-value vertical applications, particularly health. For AI consultants, this is an early indicator of where multimodal AI is heading in consumer health markets.",
+        "url": "https://www.latent.space/p/ainews-midjourney-medical-scan-your",
+        "source": "Latent Space",
+        "published": "2026-06-18T04:23:05.000Z"
+      },
+      {
+        "title": "ChatGPT's Image Generator Manipulated to Produce Harmful Content",
+        "summary": "Mindgard researchers demonstrated that ChatGPT's image generation can be manipulated via a viral prompt to bypass safety filters and produce violent or sexual content. This is a concrete red-teaming finding with direct implications for organizations deploying image generation in customer-facing products. Teams should audit their moderation and input-validation pipelines if relying on OpenAI's image generation APIs.",
+        "url": "https://mindgard.ai/blog/chatgpt-spontaneously-generated-violent-images-from-a-viral-prompt",
+        "source": "Hacker News",
+        "published": "2026-06-18T00:24:04.000Z"
+      },
+      {
+        "title": "GLM-5.2 Tops Frontend Coding Benchmarks, Beating Claude Opus 4.8",
+        "summary": "Zhipu AI's GLM-5.2 has surpassed Claude Opus 4.8 on Next.js coding evaluations, becoming the top open model for frontend code generation according to Vercel's evals. This is a significant signal that open models are closing the gap on frontier proprietary models in specialized coding tasks. Developers building coding assistants or agentic dev tools should reassess their model selection, as open alternatives may now match or exceed commercial models in key domains.",
+        "url": "https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding",
+        "source": "Latent Space",
+        "published": "2026-06-17T05:37:40.000Z"
+      }
+    ]
+  }
+}
