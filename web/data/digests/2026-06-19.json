@@ -1,0 +1,124 @@
+{
+  "date": "2026-06-19",
+  "tldr": [
+    "DeepSeek releases V4 preview with 1.6T-parameter MoE models supporting 1 million token context windows",
+    "Claude Code launches shareable Artifacts feature, turning coding sessions into live, auto-updating visual pages for teams",
+    "Google DeepMind publishes an AI Control Roadmap for securing agentic AI systems with real-time monitoring"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+        "summary": "DeepSeek releases a preview of two new MoE models—V4-Pro (1.6T params, 49B activated) and V4-Flash (284B params, 13B activated)—both supporting 1M token context lengths via a hybrid compressed sparse attention architecture. The efficient activation ratios (only ~3% of params used per inference) make these models highly relevant for cost-sensitive production deployments. Builders handling long-document workflows, multi-file codebases, or extended agent sessions should evaluate these models immediately.",
+        "url": "https://arxiv.org/abs/2606.19348",
+        "source": "arXiv",
+        "published": "2026-06-19T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Framework"
+        ],
+        "affiliations": [
+          "DeepSeek"
+        ]
+      },
+      {
+        "title": "MosaicLeaks: Can your research agent keep a secret?",
+        "summary": "ServiceNow researchers introduce MosaicLeaks, a benchmark evaluating whether agentic AI systems inadvertently leak confidential or sensitive information when operating over enterprise data. This is a critical security evaluation for anyone deploying research or RAG agents over proprietary document stores. The findings have direct implications for enterprise AI deployments where data containment is a compliance requirement.",
+        "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+        "source": "Hugging Face",
+        "published": "2026-06-18T18:13:13.000Z",
+        "keywords": [
+          "Security",
+          "Agents",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "ServiceNow"
+        ]
+      },
+      {
+        "title": "Is it agentic enough? Benchmarking open models on your own tooling",
+        "summary": "Hugging Face introduces a framework for evaluating open-source models on custom tool-use tasks, addressing the gap between generic agentic benchmarks and real-world deployment tooling. Practitioners can now systematically compare models on the exact tools and APIs relevant to their own product, rather than relying on generic leaderboards. This is practically useful for teams deciding which open model to integrate into their agentic pipelines.",
+        "url": "https://huggingface.co/blog/is-it-agentic-enough",
+        "source": "Hugging Face",
+        "published": "2026-06-18T00:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Hugging Face"
+        ]
+      },
+      {
+        "title": "Pruning via Causal Attribution Preserves Reasoning Performance in Large Language Models",
+        "summary": "This paper introduces Causal Attribution Pruning (CAP), a training-free method that identifies critical attention heads by measuring their causal impact on reasoning and uses this to guide fine-grained weight pruning. CAP preserves reasoning performance while reducing model size, making it attractive for teams that need to deploy capable models under compute or latency constraints. The training-free nature lowers the barrier to applying it to existing models in production.",
+        "url": "https://arxiv.org/abs/2606.19350",
+        "source": "arXiv",
+        "published": "2026-06-19T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Massachusetts Institute of Technology",
+          "The University of Texas at Austin"
+        ]
+      },
+      {
+        "title": "Beyond LoRA: Can you beat the most popular fine-tuning technique?",
+        "summary": "Hugging Face's PEFT team benchmarks alternative fine-tuning methods against LoRA across multiple tasks, providing practitioners with a data-driven comparison of when other PEFT techniques outperform the de facto standard. The post highlights cases where newer adapters offer better trade-offs in accuracy or parameter efficiency, directly informing decisions on customizing foundation models. Teams regularly fine-tuning LLMs for vertical applications will find this a useful reference.",
+        "url": "https://huggingface.co/blog/peft-beyond-lora",
+        "source": "Hugging Face",
+        "published": "2026-06-18T00:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Hugging Face"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Claude Code now supports Artifacts",
+        "summary": "Anthropic has launched Artifacts in Claude Code (beta for Team and Enterprise plans), allowing coding sessions to generate live, shareable visual pages—such as PR walkthroughs, system dashboards, and release checklists—that automatically update as the session progresses. This turns previously ephemeral agentic work into persistent, team-accessible deliverables shareable via private link. It's a meaningful UX improvement for engineering teams using Claude Code for multi-step projects.",
+        "url": "https://claude.com/blog/artifacts-in-claude-code",
+        "source": "blog",
+        "published": "2026-06-18T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Securing the future of AI agents — Google DeepMind",
+        "summary": "Google DeepMind has published an AI Control Roadmap detailing how they are securing internal systems that use AI agents, combining traditional access controls with real-time behavioral monitoring. This is one of the more concrete public frameworks from a frontier lab on operationalizing agent safety in production environments. Teams deploying autonomous agents in sensitive enterprise contexts will find this a useful reference for designing their own guardrails.",
+        "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+        "source": "Google DeepMind",
+        "published": "2026-06-16T15:46:31.000Z"
+      },
+      {
+        "title": "[AINews] GLM > GPT? GLM-5.2 passes vibe check; Z.ai forecasts Open Fable by December",
+        "summary": "GLM-5.2 from Zhipu AI is reportedly matching or exceeding GPT-class models on informal evaluations, signaling that the open frontier model race is intensifying beyond Western labs. Z.ai (formerly Zhipu) is also forecasting the release of 'Open Fable,' a highly capable open model, by December 2026. For teams evaluating open-weight alternatives to proprietary APIs, GLM-5.2 warrants immediate testing.",
+        "url": "https://www.latent.space/p/ainews-glm-gpt-glm-52-passes-vibe",
+        "source": "Latent Space",
+        "published": "2026-06-19T05:53:54.000Z"
+      },
+      {
+        "title": "Amazon investigating engineers who criticized AI data center expansion",
+        "summary": "Amazon is reportedly pursuing disciplinary action against employees who publicly backed a moratorium on new AI data center construction in Seattle. The situation highlights growing internal tension at major cloud providers between AI infrastructure expansion goals and employee activism around environmental and community impacts. This has potential downstream implications for AI infrastructure availability and corporate AI governance narratives.",
+        "url": "https://www.cnbc.com/2026/06/18/amazon-engineers-ai-data-center-opposition.html",
+        "source": "Hacker News",
+        "published": "2026-06-18T20:14:15.000Z"
+      },
+      {
+        "title": "The Neocloud Boom: State of AI Compute 2026 | Stephen Balaban (Lambda)",
+        "summary": "Lambda CTO Stephen Balaban discusses the state of AI compute with Firstmark's Matt Turck, arguing that demand for GPU capacity remains insatiable and that claims of overbuilding are wrong. Key topics include why GPU compute has not become a commodity, the real moats for neocloud providers, and continued confidence in scaling laws. This is a useful market-level perspective for teams planning infrastructure strategy or evaluating cloud GPU providers.",
+        "url": "https://www.youtube.com/watch?v=0NttU4CbyVs",
+        "source": "The MAD Podcast with Matt Turck",
+        "published": "2026-06-18T11:30:00.000Z"
+      }
+    ]
+  }
+}
