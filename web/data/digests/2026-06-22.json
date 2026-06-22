@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-22",
+  "tldr": [
+    "OpenAI Codex has a critical logging bug that can write terabytes of data to local SSDs, posing a real risk for developers running it locally.",
+    "Sakana AI released Fugu, a new model drawing significant community attention this weekend.",
+    "Fine-tuning small local LLMs like Qwen 3:0.6B for classification tasks is showing practical results, with a hands-on write-up gaining traction."
+  ],
+  "sections": {
+    "Research": [],
+    "Tools": [
+      {
+        "title": "Sakana Fugu",
+        "summary": "Sakana AI released Fugu, a new model that generated significant community discussion over the weekend. Sakana is known for evolutionary and nature-inspired approaches to model development, and Fugu appears to be their latest release in that lineage. AI product builders should keep an eye on the technical details as Sakana's models have previously introduced novel architectural ideas.",
+        "url": "https://sakana.ai/fugu/",
+        "source": "Hacker News",
+        "published": "2026-06-22T02:08:18.000Z"
+      },
+      {
+        "title": "Good results fine-tuning a local LLM like Qwen 3:0.6B to categorize questions",
+        "summary": "A practical walkthrough demonstrates that fine-tuning a sub-1B parameter model like Qwen 3:0.6B can yield solid question-classification results on local hardware. This is a useful reference for teams looking to replace API calls with lightweight, on-device classifiers for routing or triage tasks. The write-up gained notable traction on Hacker News, suggesting broad interest in cost-effective fine-tuning workflows.",
+        "url": "https://www.teachmecoolstuff.com/viewarticle/fine-tuning-a-local-llm-to-categorize-questions",
+        "source": "Hacker News",
+        "published": "2026-06-21T22:55:23.000Z"
+      },
+      {
+        "title": "Codex logging bug may write TBs to local SSDs",
+        "summary": "A confirmed bug in OpenAI's Codex CLI can cause runaway log writes that fill local SSDs with terabytes of data, potentially bricking developer machines or workflows. Teams using Codex in local or CI environments should check for the issue and apply any available mitigations immediately. The GitHub issue attracted significant attention (138 points, 77 comments) indicating widespread impact.",
+        "url": "https://github.com/openai/codex/issues/28224",
+        "source": "Hacker News",
+        "published": "2026-06-22T07:30:17.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Petition against Meta's employee training data collection for ML models",
+        "summary": "A petition has emerged opposing Meta's practice of using employee-generated data for training its ML models, raising concerns about consent and internal data governance. This reflects growing friction between AI development practices and workforce privacy expectations, a dynamic that enterprise AI builders and HR-adjacent AI product teams will need to navigate carefully. The petition site gained moderate HN traction, signaling that internal data use policies are becoming a visible flashpoint.",
+        "url": "https://mcipetition.com/",
+        "source": "Hacker News",
+        "published": "2026-06-21T23:34:07.000Z"
+      },
+      {
+        "title": "You're probably using Agent Skills wrong",
+        "summary": "A practitioner post argues that most developers are misapplying the concept of \"agent skills,\" likely conflating tool definitions with higher-level capability abstractions. The piece offers a reframe for structuring agent capabilities more effectively, which is directly relevant for teams building on frameworks like Claude Agents, LangChain, or custom agentic pipelines. Worth a read for anyone designing agent skill taxonomies or tool registries.",
+        "url": "https://notes.ansonbiggs.com/youre-probably-using-agent-skills-wrong/",
+        "source": "Hacker News",
+        "published": "2026-06-22T01:02:16.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Jun 19–22"
+}
