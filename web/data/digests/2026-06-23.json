@@ -1,0 +1,64 @@
+{
+  "date": "2026-06-23",
+  "tldr": [
+    "OpenAI launches GPT-5.5-Cyber and 'Patch The Planet' initiative, positioning AI as a proactive cyber defense tool rather than just a vulnerability finder",
+    "AWS introduces Lambda MicroVMs for isolated execution of user and AI-generated code, addressing a key safety concern for agentic workloads",
+    "Meta pauses an internal AI training program that tracked employee keystrokes after details were leaked, raising enterprise AI ethics concerns"
+  ],
+  "sections": {
+    "Research": [],
+    "Tools": [
+      {
+        "title": "AWS Lambda MicroVMs for Isolated Execution of User and AI-Generated Code",
+        "summary": "AWS has launched Lambda MicroVMs, providing hardware-level isolation for executing untrusted user and AI-generated code. This directly addresses one of the most pressing infrastructure challenges in building agentic AI products: safely running arbitrary code produced by LLMs without risking host system compromise. Builders shipping code-execution features in AI apps can now lean on a managed, sandboxed runtime rather than rolling their own isolation layer.",
+        "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-lambda-microvms/",
+        "source": "Hacker News",
+        "published": "2026-06-23T02:38:31.000Z"
+      },
+      {
+        "title": "PP-OCRv6 on Hugging Face: 50-Language OCR from 1.5M to 34.5M Parameters",
+        "summary": "PaddlePaddle has released PP-OCRv6 on Hugging Face, a family of OCR models supporting 50 languages with a size range from 1.5M to 34.5M parameters. The broad language coverage and small footprint make it a practical drop-in for document processing pipelines, especially in resource-constrained or on-device deployments. Teams building multilingual document extraction or RAG pipelines now have a strong open-source OCR baseline to evaluate.",
+        "url": "https://huggingface.co/blog/PaddlePaddle/pp-ocrv6",
+        "source": "Hugging Face",
+        "published": "2026-06-22T13:18:56.000Z"
+      },
+      {
+        "title": "Shipping huggingface_hub Every Week with AI, Open Tools, and a Human in the Loop",
+        "summary": "Hugging Face details how they automated the release CI pipeline for the huggingface_hub Python library using AI tooling combined with a human-in-the-loop review step. The post provides a concrete, reproducible blueprint for AI-assisted release automation that practitioners can adapt for their own open-source or internal libraries. It's a practical example of AI accelerating developer workflows without fully removing human oversight.",
+        "url": "https://huggingface.co/blog/huggingface-hub-release-ci",
+        "source": "Hugging Face",
+        "published": "2026-06-23T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI DayBreak: GPT-5.5-Cyber and 'Patch The Planet' Cyber Defense Initiative",
+        "summary": "OpenAI has released GPT-5.5-Cyber, claiming state-of-the-art performance on the CyberGym benchmark, alongside new offerings called 'Patch The Planet' and 'Codex Security' aimed at automatically remediating vulnerabilities rather than merely identifying them. The initiative is framed as a collaboration with the US government and the broader security ecosystem, signaling OpenAI's push into enterprise security as a product category. For AI product builders, this marks a meaningful expansion of what frontier model providers are positioning as core use cases beyond coding and chat.",
+        "url": "https://openai.com/index/daybreak-securing-the-world/",
+        "source": "Hacker News",
+        "published": "2026-06-23T01:36:08.000Z"
+      },
+      {
+        "title": "Meta Pauses AI Training Program That Tracked Employee Keystrokes After Internal Leak",
+        "summary": "Meta has suspended an internal program that collected employee keystroke data to train AI models, after details of the initiative were leaked internally. The incident highlights the significant governance and trust risks companies face when harvesting behavioral data from employees for AI training purposes. For teams designing AI training data strategies, this serves as a cautionary example of how opacity around data collection can quickly become a reputational and operational liability.",
+        "url": "https://www.businessinsider.com/meta-ai-training-data-leak-exposed-employee-activity-across-company-2026-6",
+        "source": "Hacker News",
+        "published": "2026-06-22T21:43:22.000Z"
+      },
+      {
+        "title": "Red-Teaming after Mythos — Zico Kolter & Matt Fredrikson, Gray Swan",
+        "summary": "OpenAI board member Zico Kolter and Gray Swan CEO Matt Fredrikson discuss why AI security requires a distinct discipline from traditional cybersecurity, including the unique failure modes introduced by frontier models. The conversation covers the practical implications of red-teaming methodology in a post-Mythos landscape and what it means for organizations deploying capable AI systems. Relevant for anyone building products that need to meet emerging AI safety and security standards.",
+        "url": "https://www.latent.space/p/gray-swan",
+        "source": "Latent Space",
+        "published": "2026-06-22T21:06:55.000Z"
+      },
+      {
+        "title": "SpaceX Is Already a $28B/yr Neocloud",
+        "summary": "Analysis surfaced by Latent Space highlights Jamin Ball's figures showing SpaceX's Starlink and cloud infrastructure has quietly reached $28B in annualized revenue, positioning it as a major player in the neocloud market competing for AI workloads. This reframes the AI infrastructure landscape: the race for compute is not just among hyperscalers and GPU-native clouds but also includes vertically integrated players with proprietary connectivity. AI product teams evaluating infrastructure providers should track this emerging competitive dynamic.",
+        "url": "https://www.latent.space/p/ainews-spacex-is-already-a-28byr",
+        "source": "Latent Space",
+        "published": "2026-06-23T06:19:49.000Z"
+      }
+    ]
+  }
+}
