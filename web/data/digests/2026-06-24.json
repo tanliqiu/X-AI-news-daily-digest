@@ -1,0 +1,118 @@
+{
+  "date": "2026-06-24",
+  "tldr": [
+    "Anthropic launches Claude Tag in beta for Slack, enabling multiplayer, proactive, and persistent agentic behavior for Enterprise and Team customers",
+    "RIFT-Bench introduces a graph-based dynamic red-teaming methodology for evaluating security vulnerabilities in agentic AI systems",
+    "Qwen-AgentWorld proposes language world models as a foundation for general-purpose agents, attracting significant HN attention"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
+        "summary": "RIFT-Bench introduces a graph representation-driven methodology for dynamic red-teaming of agentic AI systems, targeting attack vectors that go beyond traditional LLM vulnerabilities. It provides a unified evaluation framework that works across heterogeneous agentic implementations, filling a gap left by domain-specific security benchmarks. Practitioners building or auditing autonomous AI systems will find this useful for stress-testing tool-use, multi-step planning, and decision-making pipelines.",
+        "url": "https://arxiv.org/abs/2606.23927",
+        "source": "arXiv",
+        "published": "2026-06-24T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Agents",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Fujitsu Research of Europe (FRE)",
+          "Fujitsu Research of India Pvt. Ltd. (FRIPL)"
+        ]
+      },
+      {
+        "title": "Qwen-AgentWorld: Language World Models for General Agents",
+        "summary": "Qwen-AgentWorld proposes using language models as world models—enabling agents to simulate environment dynamics and plan actions without direct environment interaction. This approach could significantly reduce the cost and risk of training general-purpose agents by allowing offline, model-based planning. The paper attracted strong community interest on Hacker News, signaling high practitioner relevance for those building autonomous systems.",
+        "url": "https://arxiv.org/abs/2606.24597",
+        "source": "Hacker News",
+        "published": "2026-06-24T02:21:47.000Z",
+        "keywords": [
+          "Agents",
+          "Reasoning",
+          "Framework"
+        ],
+        "affiliations": [
+          "Alibaba Group"
+        ]
+      },
+      {
+        "title": "Beyond Trajectory Imitation: Strategy-Guided Policy Optimization for LLM Reasoning",
+        "summary": "SGPO (Strategy-Guided Policy Optimization) addresses a core limitation of knowledge distillation: models that imitate solution trajectories memorize steps rather than learning transferable reasoning strategies. By distilling abstract problem-solving strategies instead of specific answer sequences, SGPO improves generalization to novel problems. This is directly relevant for teams fine-tuning smaller models on reasoning tasks using outputs from frontier models.",
+        "url": "https://arxiv.org/abs/2606.24064",
+        "source": "arXiv",
+        "published": "2026-06-24T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Training"
+        ],
+        "affiliations": [
+          "Sun Yat-sen University",
+          "Meituan, Inc."
+        ]
+      },
+      {
+        "title": "Reinforcement Learning Towards Broadly and Persistently Beneficial Models",
+        "summary": "This paper investigates whether RL training on beneficial behaviors in realistic domains can produce alignment that generalizes beyond training distribution, mitigating reward hacking and deceptive strategies. Results suggest carefully constructed RL regimes can yield broad, persistent alignment improvements rather than narrow task-specific compliance. Practitioners deploying RL fine-tuned models in high-stakes settings should take note of both the promise and the caveats highlighted.",
+        "url": "https://arxiv.org/abs/2606.24014",
+        "source": "arXiv",
+        "published": "2026-06-24T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Training"
+        ],
+        "affiliations": [
+          "Google"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Build real agentic apps using CUGA: two dozen working examples on a lightweight harness",
+        "summary": "IBM Research released CUGA (Common Universal Generative Agent), a lightweight harness for building agentic applications, accompanied by around two dozen working example apps hosted on Hugging Face. The framework is aimed at lowering the barrier to building production-ready agentic workflows without heavy infrastructure. Developers looking for a reference implementation or starting point for tool-using agents will find the example library particularly useful.",
+        "url": "https://huggingface.co/blog/ibm-research/cuga-apps",
+        "source": "Hugging Face",
+        "published": "2026-06-23T12:51:55.000Z"
+      },
+      {
+        "title": "Experimenting with the proposed Cross-Origin Storage API in Transformers.js",
+        "summary": "Hugging Face explored a proposed browser API that would allow cross-origin sharing of cached model weights in Transformers.js, potentially eliminating redundant downloads when multiple sites use the same model. If standardized, this would meaningfully reduce cold-start latency and bandwidth costs for in-browser AI applications. Developers shipping client-side ML features should track this proposal as it moves through the standards process.",
+        "url": "https://huggingface.co/blog/cross-origin-storage",
+        "source": "Hugging Face",
+        "published": "2026-06-23T00:00:00.000Z"
+      },
+      {
+        "title": "DiffusionBench: Towards Holistic Evaluation of Generative Diffusion Transformers",
+        "summary": "DiffusionBench is an open-source evaluation suite targeting diffusion transformer models, providing standardized metrics for comparing image generation quality, diversity, and efficiency across architectures. Having a unified benchmark is increasingly important as diffusion transformers (DiT variants) proliferate for both image and video generation. Teams evaluating or selecting generative image models for product integration will benefit from this structured comparison framework.",
+        "url": "https://github.com/End2End-Diffusion/diffusion-bench",
+        "source": "Hacker News",
+        "published": "2026-06-24T02:12:31.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Claude Tag: Multiplayer, Proactive, Persistent Agents in Slack",
+        "summary": "Anthropic launched Claude Tag in beta for Slack, enabling Claude to act as a persistent, proactive agent in channels—monitoring threads, taking initiative, drafting PRs, and managing tasks without being explicitly prompted each time. The feature is available now for Claude Enterprise and Team customers, marking a significant step toward ambient AI assistants embedded directly in team workflows. This is a concrete signal of where enterprise AI product design is heading: away from single-turn chat and toward always-on collaborative agents.",
+        "url": "https://www.latent.space/p/ainews-claude-tag-multiplayer-proactive",
+        "source": "Latent Space",
+        "published": "2026-06-24T07:14:26.000Z"
+      },
+      {
+        "title": "US AI Stock Sell-Off Shakes Markets from Wall Street to Asia",
+        "summary": "A broad sell-off in AI-related equities spread from US markets to Asia, reigniting debates about whether AI valuations are outpacing near-term revenue realization. Multiple reports cited concerns about slowing enterprise AI adoption rates and concentration risk among a handful of infrastructure providers. For AI consultants, this signals clients may face increased scrutiny on AI ROI justification and budget approvals in the near term.",
+        "url": "https://www.theguardian.com/business/2026/jun/23/ai-stocks-sell-off-us-markets",
+        "source": "Hacker News",
+        "published": "2026-06-24T03:36:50.000Z"
+      },
+      {
+        "title": "GitHub Is Becoming a Giant AI Code Dump",
+        "summary": "A widely-shared post argues that vibe coding and AI-assisted development are flooding GitHub with low-quality, auto-generated repositories that are difficult to evaluate or reuse. The piece raises practical concerns for teams that rely on open-source discovery, code review tooling, and dependency auditing as AI-generated noise increases. This trend has real implications for software supply chain security and the signal-to-noise ratio of the open-source ecosystem.",
+        "url": "https://maref.cc/en/blog/vibe-coding-crisis/",
+        "source": "Hacker News",
+        "published": "2026-06-24T08:21:59.000Z"
+      }
+    ]
+  }
+}
