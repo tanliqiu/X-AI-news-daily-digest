@@ -1,0 +1,129 @@
+{
+  "date": "2026-06-25",
+  "tldr": [
+    "Anthropic accuses Alibaba of illicitly extracting Claude's AI capabilities, signaling escalating IP disputes in the AI industry",
+    "OpenAI unveils its first custom silicon chip built in partnership with Broadcom, a major step toward compute independence",
+    "Google DeepMind introduces computer use capabilities in Gemini 3.5 Flash, bringing agentic desktop control to a fast, cost-efficient model"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Perfect Detection, Failed Control: The Geometry of Knowing vs. Steering in Language Models",
+        "summary": "This paper challenges a core assumption of mechanistic interpretability: that detecting a behavior in a model's activations means you can control it. By measuring the geometric angle between detection directions and causal steering directions, the authors show these can diverge significantly, meaning interpretability probes don't automatically translate into reliable control mechanisms. Practitioners building safety interventions or behavior-steering systems should account for this detection-control gap.",
+        "url": "https://arxiv.org/abs/2606.24952",
+        "source": "arXiv",
+        "published": "2026-06-25T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Security"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Dustin: Draft-Augmented Sparse Verification for Efficient Long-Context Generation with Speculative Decoding",
+        "summary": "Dustin addresses a key bottleneck in speculative decoding for long-context LLMs: KV cache loading during token verification dominates latency and existing compression approaches either hurt accuracy or add overhead. The proposed draft-augmented sparse verification scheme dynamically selects relevant KV cache entries using draft model signals, improving throughput without accuracy loss. This is directly relevant for teams deploying long-context inference at scale.",
+        "url": "https://arxiv.org/abs/2606.24957",
+        "source": "arXiv",
+        "published": "2026-06-25T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "National Yang Ming Chiao Tung University",
+          "Technische Universität Darmstadt",
+          "Cornell University"
+        ]
+      },
+      {
+        "title": "LLM Performance on a Real, Double-Marked GCSE Benchmark",
+        "summary": "Using 32,534 real student responses across five GCSE subjects with dual human examiner marks as a gold standard, this study finds that top LLMs match examiner consensus about as well as examiners agree with each other. This provides strong evidence for deploying LLMs in automated educational assessment pipelines, and the dataset itself is a valuable resource for edtech AI product development.",
+        "url": "https://arxiv.org/abs/2606.24973",
+        "source": "arXiv",
+        "published": "2026-06-25T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Medly AI"
+        ]
+      },
+      {
+        "title": "Small Edits, Large Models: How Wikipedia Advocacy Shapes LLM Values",
+        "summary": "A small group of volunteers made 125 targeted Wikipedia edits on animal welfare topics, and using gradient-based data attribution the authors demonstrate these edits measurably shift how major LLMs discuss those topics. This is a concrete demonstration that training data provenance matters at scale and that adversarial or advocacy-driven data poisoning via high-weight sources like Wikipedia is a real threat for AI product teams to monitor.",
+        "url": "https://arxiv.org/abs/2606.24890",
+        "source": "arXiv",
+        "published": "2026-06-25T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Training",
+          "Security"
+        ],
+        "affiliations": [
+          "Compassion Aligned Machine Learning (CaML)",
+          "Pro-Animal Wikipedians (PAW)"
+        ]
+      },
+      {
+        "title": "Thinking to Recall: How Reasoning Unlocks Parametric Knowledge in LLMs",
+        "summary": "Google Research finds that activating chain-of-thought reasoning helps LLMs better retrieve and surface knowledge already stored in their parameters, rather than just improving step-by-step logic. This has practical implications for RAG system design: reasoning traces may reduce retrieval dependency for certain knowledge-intensive tasks. Teams should consider when reasoning alone can substitute for external retrieval.",
+        "url": "https://research.google/blog/thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms/",
+        "source": "Google AI",
+        "published": "2026-06-24T16:51:52.000Z",
+        "keywords": [
+          "Reasoning",
+          "RAG"
+        ],
+        "affiliations": [
+          "Google"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel",
+        "summary": "NVIDIA and Hugging Face have integrated NeMo AutoModel to streamline and accelerate fine-tuning of transformer models, offering significant speedups through optimized distributed training configurations. This lowers the engineering barrier for teams looking to customize frontier-class models on their own data without deep infrastructure expertise. It's a practical option for enterprises needing efficient, production-grade fine-tuning pipelines.",
+        "url": "https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel",
+        "source": "Hugging Face",
+        "published": "2026-06-24T16:00:13.000Z"
+      },
+      {
+        "title": "Introducing the FFASR Leaderboard: Benchmarking ASR in the Real World",
+        "summary": "Hugging Face launches the FFASR (Far-Field ASR) leaderboard to evaluate speech recognition models under realistic, challenging acoustic conditions rather than clean studio audio. This gives developers a more honest signal for selecting ASR models for real-world deployments such as call centers, voice assistants, or meeting transcription. Teams can now benchmark models against conditions that better reflect production environments.",
+        "url": "https://huggingface.co/blog/ffasr-leaderboard",
+        "source": "Hugging Face",
+        "published": "2026-06-24T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic Says Alibaba Illicitly Extracted Claude AI Model Capabilities",
+        "summary": "Anthropic has accused Alibaba of improperly extracting capabilities from its Claude AI models, in what appears to be a model distillation or capability-theft dispute. This is one of the most high-profile legal confrontations over AI IP to date and could set important precedents for how frontier model capabilities are protected. AI product teams relying on proprietary APIs should watch this case closely as it may shape terms-of-service enforcement across the industry.",
+        "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+        "source": "Hacker News",
+        "published": "2026-06-24T19:48:01.000Z"
+      },
+      {
+        "title": "OpenAI Unveils Its First Custom Chip, Built by Broadcom",
+        "summary": "OpenAI has revealed its first custom AI inference chip, developed in partnership with Broadcom, marking a strategic move to reduce dependence on Nvidia and control its own compute stack. This follows a broader industry trend of frontier labs vertically integrating silicon alongside software, which will eventually affect pricing and availability of AI compute for downstream builders. In the near term, the chip is likely to be used for internal inference workloads before any external availability.",
+        "url": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
+        "source": "Hacker News",
+        "published": "2026-06-24T17:47:00.000Z"
+      },
+      {
+        "title": "Introducing Computer Use in Gemini 3.5 Flash",
+        "summary": "Google DeepMind is bringing computer-use (GUI agent) capabilities to Gemini 3.5 Flash, its fast and cost-efficient model tier, making agentic desktop and browser automation more accessible for production deployments. This directly competes with Anthropic's Claude computer use offering and lowers the cost of building agent workflows that interact with GUIs. Developers building RPA or browser automation products now have a strong low-latency alternative to evaluate.",
+        "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
+        "source": "Google DeepMind",
+        "published": "2026-06-24T16:30:01.000Z"
+      },
+      {
+        "title": "Why the Frontier Ecosystem Must Be Open — Matei Zaharia and Reynold Xin, Databricks",
+        "summary": "Databricks co-founders Matei Zaharia and Reynold Xin make the case for open frontier models as the foundation for enterprise 'Agent Clouds,' arguing that proprietary stacks create dangerous lock-in for companies building on AI. The conversation covers the architecture of agent systems at scale and what infrastructure primitives will matter most for the next wave of AI products. Relevant for anyone evaluating build-vs-buy decisions in their AI stack.",
+        "url": "https://www.latent.space/p/databricks",
+        "source": "Latent Space",
+        "published": "2026-06-24T18:53:16.000Z"
+      }
+    ]
+  }
+}
