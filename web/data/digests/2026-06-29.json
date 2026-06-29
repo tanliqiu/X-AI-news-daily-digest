@@ -1,0 +1,113 @@
+{
+  "date": "2026-06-29",
+  "tldr": [
+    "OpenAI quietly released GPT-5.6 variants (Sol/Terra/Luna) in a tiered rollout restricted to trusted partners, signaling a new model access stratification strategy.",
+    "Google detailed how frozen Multi-Token Prediction accelerates Gemini Nano on-device inference on Pixel hardware, a practical win for edge AI deployments.",
+    "Central bankers issued warnings about AI investment bubble risks, while a new AI ASIC (Sophon PFG-1) promises 330 GB of on-die DRAM without HBM, pointing to hardware diversification pressure."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Supersede: Diagnosing and Training the Memory-Update Gap in LLM Agents",
+        "summary": "This paper isolates a specific and underappreciated failure mode in long-running LLM agents: the inability to correctly discard superseded facts and use updated values across multi-session conversations. The authors demonstrate that even with full context, agents fail on knowledge-update tasks, and propose targeted training interventions to close this gap. This is directly relevant to anyone building persistent agents, CRM bots, or assistants that must track changing user state.",
+        "url": "https://arxiv.org/abs/2606.27472",
+        "source": "arXiv",
+        "published": "2026-06-29T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "EntMTP: Accelerating LLM Inference with Entropy Guided Multi Token Prediction",
+        "summary": "EntMTP proposes dynamically adjusting speculation depth during multi-token prediction based on token-level entropy, rather than committing to a static tree topology throughout generation. This reduces wasted compute during uncertain predictions while maintaining throughput gains on high-confidence spans. The approach is relevant for teams optimizing self-speculative decoding in production inference pipelines.",
+        "url": "https://arxiv.org/abs/2606.27550",
+        "source": "arXiv",
+        "published": "2026-06-29T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs",
+        "summary": "This paper proposes an axiomatic evaluation framework for assessing the quality of latent thought representations in LLMs, independent of downstream benchmark scores. The authors argue that current evaluations conflate representation quality with overall model capacity, making it impossible to attribute failures to the representation itself. For practitioners building chain-of-thought or scratchpad-based systems, this offers a more rigorous diagnostic lens.",
+        "url": "https://arxiv.org/abs/2606.27378",
+        "source": "arXiv",
+        "published": "2026-06-29T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Reasoning",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "University of British Columbia"
+        ]
+      },
+      {
+        "title": "Position: The Term \"Machine Unlearning\" Is Overused in LLMs",
+        "summary": "This position paper argues that \"machine unlearning\" should be reserved for precise dataset-deletion tasks, and that the term is being misapplied to a range of knowledge suppression and behavior modification techniques in LLM research. The distinction matters practically: regulatory compliance (e.g., GDPR deletion requests) requires true unlearning, while safety or copyright use cases may call for different methods. AI product teams navigating compliance and content policy obligations should understand this taxonomy.",
+        "url": "https://arxiv.org/abs/2606.27379",
+        "source": "arXiv",
+        "published": "2026-06-29T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Training"
+        ],
+        "affiliations": [
+          "Yonsei University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Lore – Give your coding agent the decisions your team made",
+        "summary": "Lore is an open-source tool that lets teams encode architectural decisions, conventions, and past choices into a knowledge base that coding agents can consult during code generation. This addresses a key gap in agentic coding workflows where agents lack institutional context, leading to inconsistent or off-policy outputs. Practically useful for engineering teams already using Claude Code, Cursor, or similar tools who want to enforce team standards at the agent level.",
+        "url": "https://github.com/itsthelore/rac-core",
+        "source": "Hacker News",
+        "published": "2026-06-29T04:40:35.000Z"
+      },
+      {
+        "title": "Herdr: Agent multiplexer that lives in your terminal",
+        "summary": "Herdr is an open-source terminal-based tool for running and managing multiple AI coding agents simultaneously, acting as a multiplexer across agent sessions. This fills a practical need for developers who want to parallelize agentic tasks without context-switching between different UIs or losing visibility into agent state. It's a lightweight orchestration layer for power users running concurrent AI-assisted development workflows.",
+        "url": "https://github.com/ogulcancelik/herdr",
+        "source": "Hacker News",
+        "published": "2026-06-29T04:27:46.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI GPT-5.6 Sol / Terra / Luna — restricted to trusted partners",
+        "summary": "OpenAI released a family of GPT-5.6 model variants (Sol, Terra, Luna) in a tiered rollout that limits access to trusted partners, with a notable simultaneous release alongside Anthropic on the same day. This signals a shift toward stratified model access as a competitive lever, which has implications for developers and enterprises planning API-based product roadmaps. Teams relying on frontier model capabilities should monitor partner access programs more closely.",
+        "url": "https://www.latent.space/p/ainews-openai-gpt-56-sol-terra-luna",
+        "source": "Latent Space",
+        "published": "2026-06-27T05:23:22.000Z"
+      },
+      {
+        "title": "Accelerating Gemini Nano models on Pixel with frozen Multi-Token Prediction",
+        "summary": "Google Research details how freezing multi-token prediction heads during fine-tuning allows Gemini Nano to achieve faster on-device inference on Pixel phones without sacrificing output quality. This technique is practically significant for any team deploying smaller models at the edge, where latency and power constraints dominate. The blog post provides concrete engineering insights applicable to on-device LLM product development beyond Google's own stack.",
+        "url": "https://research.google/blog/accelerating-gemini-nano-models-on-pixel-with-frozen-multi-token-prediction/",
+        "source": "Google AI",
+        "published": "2026-06-26T18:30:00.000Z"
+      },
+      {
+        "title": "AI boom risks global financial crash, warn central bankers",
+        "summary": "Central bank officials have issued public warnings that the scale and pace of AI investment creates systemic financial risk, with concerns about asset bubbles and concentration of exposure in the banking sector. For AI consultants and builders, this is a signal that macro-level scrutiny of AI capital allocation is intensifying, which could affect enterprise procurement cycles and investor appetite. It also adds regulatory tailwind for AI governance frameworks.",
+        "url": "https://www.telegraph.co.uk/business/2026/06/28/ai-boom-risks-global-financial-crash-central-bankers-warn/",
+        "source": "Hacker News",
+        "published": "2026-06-29T01:25:04.000Z"
+      },
+      {
+        "title": "HackerRank open sourced its ATS — and resume scoring is wildly inconsistent",
+        "summary": "HackerRank open-sourced its applicant tracking system, and a developer's investigation found the AI-based resume scorer returned dramatically different scores (74, 88, 90) for the same resume across runs, exposing significant reliability issues in production AI hiring tools. This is a useful cautionary case study for teams building or procuring AI evaluation systems, illustrating how non-determinism and score volatility can undermine trust in automated decisions. The open-source release itself offers a real-world codebase for studying applied LLM scoring in hiring contexts.",
+        "url": "https://danunparsed.com/p/hackerrank-open-source-ats",
+        "source": "Hacker News",
+        "published": "2026-06-29T01:44:40.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Jun 26–29"
+}
