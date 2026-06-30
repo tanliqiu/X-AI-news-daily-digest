@@ -1,0 +1,110 @@
+{
+  "date": "2026-06-30",
+  "tldr": [
+    "Anthropic launches Managed Agents, decoupling reasoning from execution to enable more scalable long-running agent workflows",
+    "South Korea announces $1T investment in memory chip production and humanoid robots, signaling massive AI infrastructure commitment",
+    "Moondream argues GPU pricing is in a bubble, with implications for AI product cost structures"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Turn-Averaged SAEs for Feature Discovery and Long-Context Attribution",
+        "summary": "Anthropic researchers introduce turn-averaged sparse autoencoders (SAEs) that compress an entire conversation turn into a fixed set of interpretable features, rather than scaling linearly with token count. This makes mechanistic interpretability practical for long multi-turn transcripts, enabling attribution analysis across extended agentic sessions. Practitioners building interpretability tools or auditing long-context model behavior will find this a meaningful architectural improvement.",
+        "url": "https://arxiv.org/abs/2606.28548",
+        "source": "arXiv",
+        "published": "2026-06-30T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Agents"
+        ],
+        "affiliations": [
+          "Anthropic"
+        ]
+      },
+      {
+        "title": "SEAD: Competence-Aware On-Policy Distillation via Entropy-Guided Supervision",
+        "summary": "SEAD uses token-level entropy as a proxy for student competence during on-policy knowledge distillation, selectively applying teacher supervision only where it is neither noisy (incoherent rollouts) nor redundant (already-mastered tokens). The method addresses waste at token, phase, and prompt granularity, improving training efficiency for teams fine-tuning smaller models from larger teachers. This is practically relevant for anyone building cost-efficient distilled models for production deployment.",
+        "url": "https://arxiv.org/abs/2606.28562",
+        "source": "arXiv",
+        "published": "2026-06-30T04:00:00.000Z",
+        "keywords": [
+          "Training"
+        ]
+      },
+      {
+        "title": "Legal Domain Adaptation of Modern BERT Models",
+        "summary": "Researchers at Princeton further pre-train ModernBERT on all US court opinions using masked language modeling, finding significant gains on legal NLP benchmarks despite ModernBERT already having trained on roughly 500x more data than original BERT. The result reinforces that domain-specific continued pre-training remains valuable even for large, data-rich base models. Teams building legal AI products should consider targeted continued pre-training over relying on general-purpose encoders.",
+        "url": "https://arxiv.org/abs/2606.28538",
+        "source": "arXiv",
+        "published": "2026-06-30T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Application"
+        ],
+        "affiliations": [
+          "Princeton University"
+        ]
+      },
+      {
+        "title": "DiScoFormer: One transformer for density and score, across distributions",
+        "summary": "Allen AI's DiScoFormer is a single transformer architecture trained to jointly estimate probability density and score functions across diverse distributions, potentially unifying generative modeling objectives. This could simplify pipelines for teams building generative AI products that currently require separate models for different distributional tasks. The HuggingFace blog post provides accessible coverage of the approach and pre-trained checkpoints.",
+        "url": "https://huggingface.co/blog/allenai/discoformer",
+        "source": "Hugging Face",
+        "published": "2026-06-29T18:02:48.000Z",
+        "keywords": [
+          "Framework",
+          "Training"
+        ],
+        "affiliations": [
+          "Allen Institute for AI"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+        "summary": "Anthropic's new Managed Agents feature separates the reasoning model (brain) from tool-execution subagents (hands), allowing Claude to orchestrate long-running tasks while maintaining conversational availability—consistent with the Claude Code background subagents update teased on X. This architectural pattern reduces the need for custom orchestration harnesses and lowers the barrier for building reliable multi-step AI workflows. Developers can get started via the Claude Agent SDK docs.",
+        "url": "https://www.anthropic.com/engineering/managed-agents",
+        "source": "blog",
+        "published": "2026-06-30T09:29:59.000Z"
+      },
+      {
+        "title": "Open Memory Protocol – One Memory Store for Claude, ChatGPT, Cursor",
+        "summary": "Open Memory Protocol is an open-source project proposing a unified memory store that can be read and written by multiple AI assistants including Claude, ChatGPT, and Cursor. Standardizing memory across tools addresses a real pain point for power users and enterprise deployments where context needs to persist across different AI interfaces. Early-stage but worth watching as a potential cross-platform memory standard.",
+        "url": "https://github.com/SMJAI/open-memory-protocol",
+        "source": "Hacker News",
+        "published": "2026-06-30T00:05:33.000Z"
+      },
+      {
+        "title": "Anthropic Claude Code Quality Post-Mortem: Three Separate Regressions Resolved",
+        "summary": "Anthropic's engineering blog details three distinct bugs introduced in April that degraded Claude Code, the Agent SDK, and Claude Cowork—while leaving the API unaffected—all resolved in v2.1.116 by April 20. The post-mortem is a useful reference for teams relying on Claude Code in CI/CD pipelines, clarifying which surfaces were affected and what process changes Anthropic is implementing. Notably the API remained unaffected throughout, which matters for teams building on top of the API rather than the CLI tool.",
+        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+        "source": "blog",
+        "published": "2026-06-30T09:29:59.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "South Korea to Spend $1T on Memory Chip Production and Humanoid Robots",
+        "summary": "South Korea announced a $1 trillion national investment plan targeting expanded memory chip manufacturing and humanoid robotics, signaling state-level commitment to dominating AI hardware supply chains. For AI product builders, this could meaningfully affect long-term GPU and memory availability and pricing as Korean chipmakers scale. It also highlights humanoid robotics as an emerging area of serious industrial investment.",
+        "url": "https://arstechnica.com/ai/2026/06/south-korea-to-spend-1t-on-more-memory-chip-production-and-humanoid-robots/",
+        "source": "Hacker News",
+        "published": "2026-06-29T22:21:00.000Z"
+      },
+      {
+        "title": "Popping the GPU Bubble",
+        "summary": "Moondream's blog post argues that current GPU pricing reflects a speculative bubble rather than sustainable demand fundamentals, with implications for how AI startups should plan infrastructure costs. If accurate, teams locked into long-term GPU commitments at peak prices could face significant competitive disadvantage as prices normalize. Worth reading for anyone making near-term compute procurement decisions.",
+        "url": "https://moondream.ai/blog/popping-the-gpu-bubble",
+        "source": "Hacker News",
+        "published": "2026-06-30T05:14:35.000Z"
+      },
+      {
+        "title": "Why Won't Europe Build AI Data Centers in Iceland?",
+        "summary": "This piece examines why Iceland—with abundant cheap renewable energy and natural cooling—has not attracted major European AI data center investment despite seemingly ideal conditions, pointing to grid capacity limits, permitting friction, and connectivity concerns. Understanding these infrastructure bottlenecks is relevant for AI companies planning European compute deployments under growing regulatory pressure to use green energy. The analysis highlights that optimal physical conditions alone are insufficient without policy and connectivity infrastructure.",
+        "url": "https://mrkt30.com/why-wont-europe-build-ai-data-centers-in-iceland/",
+        "source": "Hacker News",
+        "published": "2026-06-30T01:30:40.000Z"
+      }
+    ]
+  }
+}
