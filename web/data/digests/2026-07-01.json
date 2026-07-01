@@ -1,0 +1,131 @@
+{
+  "date": "2026-07-01",
+  "tldr": [
+    "Anthropic is restoring global access to Claude Fable 5 and releasing Sonnet 5, marking a major model availability expansion after export control restrictions",
+    "Google DeepMind launched Nano Banana 2 Lite and Gemini Omni Flash, adding new lightweight options for builders",
+    "Godot open-source engine bans AI-authored code contributions, signaling growing governance friction around AI-generated code in collaborative projects"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "A Single Rewrite Suffices: Empirical Lessons from Production Skill Description Optimization",
+        "summary": "Enterprise AI agents that route queries to specialized skills suffer from 'skill collision' when descriptions overlap, causing misrouting at scale. This paper presents an automated pipeline for optimizing skill descriptions and finds that a single LLM-driven rewrite is sufficient to resolve most routing conflicts, reducing a significant engineering bottleneck. Practical for teams building multi-skill agent systems.",
+        "url": "https://arxiv.org/abs/2606.30775",
+        "source": "arXiv",
+        "published": "2026-07-01T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "Microsoft"
+        ]
+      },
+      {
+        "title": "Test-Time Verification for Text-to-SQL via Outcome Reward Models",
+        "summary": "This paper proposes using trained Outcome Reward Models (ORMs) as semantic verifiers during inference for Text-to-SQL tasks, outperforming heuristic strategies like Best-of-N sampling and Majority Voting. ORMs provide richer signal than execution success alone, improving reliability of SQL generation in production pipelines. Directly applicable to teams building natural language database interfaces.",
+        "url": "https://arxiv.org/abs/2606.30851",
+        "source": "arXiv",
+        "published": "2026-07-01T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Polytechnic University of Bari",
+          "IBM T.J. Watson Research Center"
+        ]
+      },
+      {
+        "title": "When Calibration Rankings Reverse: Accuracy-Controlled Evaluation for Fair Comparison of LLMs",
+        "summary": "Standard calibration metrics like Expected Calibration Error and Brier Score are confounded by differences in model accuracy, making cross-model comparisons misleading. The authors propose ACE, an accuracy-controlled evaluation method that enables fairer calibration comparisons across LLMs of varying capability. Teams benchmarking model confidence for high-stakes applications should adopt accuracy-controlled evaluation to avoid misleading conclusions.",
+        "url": "https://arxiv.org/abs/2606.30814",
+        "source": "arXiv",
+        "published": "2026-07-01T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Fudan University",
+          "University of Cambridge"
+        ]
+      },
+      {
+        "title": "Using AI Agents to Automate Black-Box Audits of Personalization Algorithms at Scale",
+        "summary": "This paper introduces an AI agent-based framework for scalable black-box auditing of recommendation and personalization systems, replacing costly real-user studies with controllable synthetic agents. The approach enables independent auditors to probe platform algorithms without white-box access, lowering the barrier for algorithmic accountability work. Relevant for AI product teams that need to audit or stress-test their own recommendation pipelines.",
+        "url": "https://arxiv.org/abs/2606.30801",
+        "source": "arXiv",
+        "published": "2026-07-01T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Massachusetts Institute of Technology",
+          "Carnegie Mellon University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Start building with Nano Banana 2 Lite and Gemini Omni Flash",
+        "summary": "Google DeepMind has released Nano Banana 2 Lite and Gemini Omni Flash, expanding its lineup of lightweight and efficient models for developers. These releases target cost-sensitive and latency-constrained use cases, broadening the options for teams building on Google's model infrastructure. Builders should evaluate these for edge deployment and high-throughput applications.",
+        "url": "https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/",
+        "source": "Google DeepMind",
+        "published": "2026-06-30T16:02:40.000Z"
+      },
+      {
+        "title": "Introducing TabFM: A zero-shot foundation model for tabular data",
+        "summary": "Google Research has released TabFM, a foundation model capable of zero-shot inference on tabular data without task-specific fine-tuning. This significantly lowers the barrier for applying ML to structured enterprise data, where training custom models has historically required substantial labeled data. Teams working with tabular datasets should evaluate TabFM as an alternative to traditional AutoML pipelines.",
+        "url": "https://research.google/blog/introducing-tabfm-a-zero-shot-foundation-model-for-tabular-data/",
+        "source": "Google AI",
+        "published": "2026-06-30T10:26:00.000Z"
+      },
+      {
+        "title": "ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration",
+        "summary": "IBM Research has released ScarfBench on Hugging Face, a benchmark for evaluating AI agents on enterprise Java framework migration tasks—a high-value but underserved use case for code agents. The benchmark provides a structured way to compare agent performance on realistic legacy codebase transformation scenarios. Useful for teams building or evaluating coding agents targeting enterprise software modernization.",
+        "url": "https://huggingface.co/blog/ibm-research/scarfbench",
+        "source": "Hugging Face",
+        "published": "2026-06-30T18:32:50.000Z"
+      },
+      {
+        "title": "Featuring Every Eval Ever Results on Hugging Face Model Pages",
+        "summary": "Hugging Face is now surfacing community evaluation results from the 'Every Eval Ever' initiative directly on model pages, making it easier to compare models across a broad set of benchmarks in one place. This aggregation reduces the friction of hunting down benchmark results across disparate leaderboards. Practitioners selecting models for specific tasks will benefit from the consolidated visibility.",
+        "url": "https://huggingface.co/blog/eee-community-evals",
+        "source": "Hugging Face",
+        "published": "2026-06-30T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic restoring access to Claude Fable 5 and Sonnet 5 globally",
+        "summary": "Anthropic is lifting export control restrictions on Claude Fable 5 and simultaneously releasing Claude Sonnet 5, which reportedly matches Opus 4.8 performance at lower cost with improved agentic task completion. This is a significant availability expansion for developers who lost access during the restriction period, and Sonnet 5's price-performance positioning makes it immediately relevant for production deployments. Teams should re-evaluate their model tier choices in light of these releases.",
+        "url": "https://www.anthropic.com/news/redeploying-fable-5",
+        "source": "Hacker News",
+        "published": "2026-07-01T03:11:40.000Z"
+      },
+      {
+        "title": "Godot will no longer accept AI-authored code contributions",
+        "summary": "The Godot open-source game engine project has banned AI-generated code contributions, citing concerns that heavy AI users cannot reliably understand or debug the code they submit. This sets a notable precedent for open-source project governance and reflects a growing debate about code quality and accountability when AI tools are in the loop. Consultants advising on AI-assisted development workflows should be aware of similar policies emerging in other OSS communities.",
+        "url": "https://www.pcgamer.com/gaming-industry/open-source-game-engine-godot-will-no-longer-accept-ai-authored-code-contributions-we-cant-trust-heavy-users-of-ai-to-understand-their-code-enough-to-fix-it/",
+        "source": "Hacker News",
+        "published": "2026-07-01T07:43:22.000Z"
+      },
+      {
+        "title": "Meta adding rate limits and soft paywall to AI smart glasses",
+        "summary": "Meta is introducing usage rate limits and a soft paywall for AI features on its smart glasses, signaling a shift from free-to-use AI hardware to monetized AI services. This move reflects broader industry pressure to recover inference costs from consumer hardware AI features. Product teams building on AI-enabled hardware platforms should anticipate similar access-tier models from other vendors.",
+        "url": "https://www.theverge.com/gadgets/959899/meta-ai-glasses-paywall-rate-limit",
+        "source": "Hacker News",
+        "published": "2026-07-01T05:43:44.000Z"
+      },
+      {
+        "title": "AIEWF Daily Dispatch: Loops, Software Factories & Forward Deployed Engineers",
+        "summary": "At the AI Engineer World's Fair, key themes included agent loop architectures, the rise of 'software factories' powered by AI, and the convergence of product engineering and forward-deployed engineering roles. Open models also featured prominently in discussions. These trends suggest the industry is moving toward AI-native development workflows where engineers are as much orchestrators as coders.",
+        "url": "https://www.latent.space/p/aiewf-daily-dispatch-loops",
+        "source": "Latent Space",
+        "published": "2026-07-01T04:46:21.000Z"
+      }
+    ]
+  }
+}
