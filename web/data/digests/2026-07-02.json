@@ -1,0 +1,105 @@
+{
+  "date": "2026-07-02",
+  "tldr": [
+    "Kimi K2.7 Code is now available in GitHub Copilot, expanding model choice for developers directly in their coding workflow",
+    "A study finds developers felt 19% more productive with AI assistance but were actually 19% slower, highlighting a critical gap between perceived and real AI productivity gains",
+    "Meta has capped internal AI token spending after costs approached billions, signaling that even hyperscalers are grappling with LLM inference economics"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "The gauge broke: devs felt 20% faster with AI, measured 19% slower",
+        "summary": "A study found a stark disconnect between subjective and objective measures of AI-assisted developer productivity: developers reported feeling ~20% faster while actual measured output showed they were ~19% slower. This has direct implications for teams evaluating AI coding tools—self-reported productivity surveys are unreliable signals and organizations need objective throughput metrics before drawing conclusions about ROI.",
+        "url": "https://intrepidkarthi.com/writing/the-gauge-broke/",
+        "source": "Hacker News",
+        "published": "2026-07-02T06:44:34.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Senior SWE-Bench: open-source benchmark that assesses agents as senior engineers",
+        "summary": "Snorkel AI released Senior SWE-Bench, an open-source benchmark designed to evaluate coding agents on tasks representative of senior software engineer complexity, going beyond the original SWE-Bench's more routine issues. For practitioners building or evaluating coding agents, this provides a higher-bar benchmark that better distinguishes frontier model capabilities and exposes gaps that simpler benchmarks miss.",
+        "url": "https://senior-swe-bench.snorkel.ai/",
+        "source": "Hacker News",
+        "published": "2026-07-02T02:55:16.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Agents"
+        ],
+        "affiliations": [
+          "Snorkel AI"
+        ]
+      },
+      {
+        "title": "Readable but Not Controllable: Neuron-Level Evidence for Medical LLM Hallucination",
+        "summary": "Researchers show that internal LLM representations can reliably detect hallucinations in medical QA (AUROC scores above baseline), but these same representations do not enable effective steering to suppress hallucinations. This finding is critical for anyone building clinical AI products—detection probes are viable as guardrails, but don't expect mechanistic interventions on latent space to reliably reduce hallucination at inference time.",
+        "url": "https://arxiv.org/abs/2607.00158",
+        "source": "arXiv",
+        "published": "2026-07-02T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Application",
+          "Evaluation"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "ALEE: Any-Language Evaluation of Embeddings via English-Centric Minimal Pairs",
+        "summary": "ALEE introduces a dynamic, cross-lingual embedding evaluation framework that extends existing minimal-pair methods to any language, including low-resource ones, using LLM-generated abstractions rather than static test sets. For teams building multilingual search or retrieval systems, this offers a more robust and scalable way to benchmark embedding models across languages without relying on domain-specific or easily overfit benchmarks.",
+        "url": "https://arxiv.org/abs/2607.00171",
+        "source": "arXiv",
+        "published": "2026-07-02T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "RAG"
+        ],
+        "affiliations": [
+          "University of Zurich"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Kimi K2.7 Code is generally available in GitHub Copilot",
+        "summary": "Moonshot AI's Kimi K2.7 Code model is now accessible directly within GitHub Copilot, giving developers another frontier coding model option without leaving their IDE. This expands the competitive landscape of models available in Copilot and gives teams a practical alternative to evaluate for code generation and completion tasks at scale.",
+        "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/",
+        "source": "Hacker News",
+        "published": "2026-07-02T04:32:41.000Z"
+      },
+      {
+        "title": "Hugging Face and Cerebras bring Gemma 4 to real-time voice AI",
+        "summary": "Hugging Face and Cerebras have integrated Google's Gemma 4 model with Cerebras's high-throughput inference hardware to enable real-time voice AI applications. This collaboration lowers the barrier to building low-latency voice interfaces by combining an open model with purpose-built fast inference infrastructure, making production voice AI more accessible outside of proprietary stacks.",
+        "url": "https://huggingface.co/blog/cerebras-gemma4-voice-ai",
+        "source": "Hugging Face",
+        "published": "2026-07-01T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Meta caps internal AI token spending",
+        "summary": "Meta has introduced internal caps on AI token consumption after costs approached billions of dollars in 2026, a sign that even large tech companies are hitting economic limits on unconstrained LLM usage internally. For AI product builders, this is a leading indicator that token economics and usage governance will become standard organizational concerns, and designing cost-aware AI systems is increasingly a first-class requirement.",
+        "url": "https://mlq.ai/news/meta-caps-internal-ai-token-spending-after-costs-approach-billions-in-2026/",
+        "source": "Hacker News",
+        "published": "2026-07-01T23:58:48.000Z"
+      },
+      {
+        "title": "AIEWF Daily Dispatch: Autoresearch and the tension between AI and human agency",
+        "summary": "At the AI Engineer World's Fair, speakers debated the 'software factory' vision of fully automated research and engineering pipelines, with significant pushback from those emphasizing the need for human understanding and oversight. The session highlights a growing professional divide on how much agency to cede to autonomous agents, a tension directly relevant to teams deciding how to structure human-in-the-loop workflows.",
+        "url": "https://www.latent.space/p/aiewf-daily-dispatch-agency",
+        "source": "Latent Space",
+        "published": "2026-07-02T06:13:49.000Z"
+      },
+      {
+        "title": "Google shutters MusicFX to focus on Google Flow Music",
+        "summary": "Google Labs announced that MusicFX and MusicFX DJ will be retired on July 31, 2026, as the team consolidates efforts into Google Flow Music, a platform for creating, sharing, and remixing original music. This signals Google's strategy of narrowing early AI music experiments into a single, longer-term product—a pattern useful to watch for teams building on Google's creative AI APIs.",
+        "url": "https://x.com/GoogleLabs/status/2072417166952136789",
+        "source": "X (@GoogleLabs)",
+        "published": "2026-07-01T20:28:50.000Z"
+      }
+    ]
+  }
+}
