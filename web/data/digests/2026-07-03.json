@@ -1,0 +1,120 @@
+{
+  "date": "2026-07-03",
+  "tldr": [
+    "BPE tokenization creates exploitable alignment gaps: character-level perturbations bypass safety filters across five major model families by fragmenting safety-critical words into sub-word tokens absent from alignment training data",
+    "Kara proposes sliding-window KV cache compression for long chain-of-thought reasoning models, targeting the memory and latency bottlenecks that limit throughput in production inference",
+    "Vercel's new agent framework 'eve' and Adobe's 'agentic sites' concept signal a shift in how AI products are being architected—toward skills-based agents and dynamically assembled web experiences"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Breaking Safety at the Token Boundary: How BPE Tokenization Creates Exploitable Gaps in LLM Alignment",
+        "summary": "Character-level perturbations that fragment safety-critical words into BPE sub-word tokens can bypass alignment in five major model families (Qwen-3, Qwen-2.5, Gemma-3, Llama-3.1, Mistral) because public alignment datasets contain no intentionally fragmented inputs. This is a concrete, reproducible attack surface that practitioners deploying safety-filtered models should audit and address through augmented training data or tokenization-aware guardrails. The finding has direct implications for any production system relying on LLM-as-judge or built-in refusals.",
+        "url": "https://arxiv.org/abs/2607.01239",
+        "source": "arXiv",
+        "published": "2026-07-03T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "Palo Alto Networks"
+        ]
+      },
+      {
+        "title": "Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression",
+        "summary": "Reasoning models that produce long chain-of-thought sequences accumulate massive KV caches that degrade decoding throughput; Kara addresses this with a sliding-window compression approach that selectively retains important KV pairs. The technique targets a practical bottleneck for anyone serving models like DeepSeek-R1 or o-series models at scale, where memory constraints directly cap concurrency. Engineers building inference infrastructure for reasoning-heavy workloads should track this as a drop-in optimization path.",
+        "url": "https://arxiv.org/abs/2607.01237",
+        "source": "arXiv",
+        "published": "2026-07-03T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Carnegie Mellon University"
+        ]
+      },
+      {
+        "title": "Office Comprehension Benchmark",
+        "summary": "OCB is the first public benchmark evaluating LLM systems on native Word, Excel, and PowerPoint file formats, covering structural perception (tables, charts, formulas, named ranges) and domain-specific business tasks. This fills a major gap for teams building document-understanding or enterprise copilot products, where real-world files rarely arrive as clean plain text. The dual-track design (File Fidelity Q&A + domain tasks) gives practitioners a way to stress-test multimodal pipelines on actual office artifacts.",
+        "url": "https://arxiv.org/abs/2607.01245",
+        "source": "arXiv",
+        "published": "2026-07-03T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Multimodal",
+          "Application"
+        ]
+      },
+      {
+        "title": "Prompt Framing Distorts Count-Based Evaluation of LLM Error Detection: Evidence from Numeric Anchoring",
+        "summary": "ErrorBench shows that count-based F1 scores for LLM error detection can inflate dramatically without any improvement in actual span localization—a phenomenon driven purely by prompt framing. Evaluated across six LLMs and five prompt conditions on 4,290 responses, the study reveals that widely used evaluation proxies can mislead product teams into overestimating model quality. Anyone using LLM-as-judge pipelines for quality assurance should validate their metrics against localization-level ground truth.",
+        "url": "https://arxiv.org/abs/2607.01240",
+        "source": "arXiv",
+        "published": "2026-07-03T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Zhejiang University"
+        ]
+      },
+      {
+        "title": "Safeguarding LLM Agents from Misalignment through Provenance Analysis",
+        "summary": "This paper proposes using provenance analysis—tracking the lineage of information influencing an agent's tool invocations—as a more systematic runtime guardrail than LLM-as-judge approaches. It addresses the critical safety gap where agents with access to powerful tools may take hard-to-reverse actions misaligned with user intent. Practitioners building agentic systems with real-world tool access should consider provenance-aware monitoring as a complement to prompt-level safety checks.",
+        "url": "https://arxiv.org/abs/2607.01236",
+        "source": "arXiv",
+        "published": "2026-07-03T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "Carnegie Mellon University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "14× faster embeddings: how we rebuilt the ONNX path in Manticore",
+        "summary": "Manticore Search achieved a 14x speedup in embedding generation by rebuilding their ONNX inference path, with detailed engineering changes documented in the post. For teams running self-hosted vector search or RAG pipelines with CPU-bound embedding workloads, this represents a meaningful throughput improvement without hardware changes. The write-up provides concrete optimization techniques applicable beyond Manticore to any ONNX-based embedding serving setup.",
+        "url": "https://manticoresearch.com/blog/onnx-embeddings-speedup/",
+        "source": "Hacker News",
+        "published": "2026-07-03T03:49:47.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Vercel's Andrew Qu on why agents are a new kind of software",
+        "summary": "Vercel's Chief of Software details how their internal agent framework 'eve' was built around skills, sandboxes, and agent-readable websites—framing agents as a fundamentally different software paradigm rather than an extension of existing web apps. The discussion highlights practical architectural decisions for teams building agent-native products, including how to structure capability surfaces for LLM consumption. This is a concrete engineering perspective from a major platform vendor actively shipping agentic infrastructure.",
+        "url": "https://www.latent.space/p/vercel-agents-new-software",
+        "source": "Latent Space",
+        "published": "2026-07-03T00:08:18.000Z"
+      },
+      {
+        "title": "AIEWF Daily Dispatch: The great loops debate and the state of AI engineering",
+        "summary": "The AI Engineer World's Fair closed with a debate about agentic loops and a survey of the current state of AI engineering practice, surfacing ongoing disagreement about how to architect reliable autonomous systems. The closing keynotes focused on what to build next, making this a useful signal for where the practitioner community's attention is heading in H2 2026. Teams building agentic products will find the loops debate directly relevant to architectural choices around control flow and human-in-the-loop design.",
+        "url": "https://www.latent.space/p/aiewf-daily-dispatch-locomotives",
+        "source": "Latent Space",
+        "published": "2026-07-03T05:11:43.000Z"
+      },
+      {
+        "title": "Anthropic launches 'Built with Claude: Life Sciences' hackathon with $100k prize pool",
+        "summary": "Anthropic announced a global virtual hackathon focused on life sciences applications built with Claude Science and Claude Code, run in partnership with the Gladstone Institute with $100k in credits as prizes. This signals Anthropic's push into domain-specific scientific applications and provides a concrete on-ramp for teams exploring Claude in research and biotech contexts. The credits-based prize structure also de-risks early experimentation for startups building in the life sciences space.",
+        "url": "https://x.com/claudeai/status/2072681853971001849",
+        "source": "X (@claudeai)",
+        "published": "2026-07-02T14:00:37.000Z"
+      },
+      {
+        "title": "Image Generation and Visual Intelligence with Black Forest Labs",
+        "summary": "Black Forest Labs co-founder Dustin Podell walks through the evolution from diffusion to flow matching, the architecture behind the FLUX model family, and how the models are being applied to practical image editing and visual workflows. For product teams evaluating image generation backends, this provides a clear technical comparison of the FLUX approach versus earlier diffusion methods. The episode also covers deployment considerations for running image generation in production.",
+        "url": "https://share.transistor.fm/s/6d8dad5f",
+        "source": "Practical AI",
+        "published": "2026-07-02T09:00:00.000Z"
+      }
+    ]
+  }
+}
