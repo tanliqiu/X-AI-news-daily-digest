@@ -1,0 +1,83 @@
+{
+  "date": "2026-07-06",
+  "tldr": [
+    "GPT-5.6 Sol Ultra is coming to OpenAI's Codex coding agent, signaling continued rapid model iteration for developer tools",
+    "Research confirms code cleanliness measurably improves coding agent performance, with practical implications for teams adopting AI-assisted development",
+    "Google DeepMind partners with film studio A24 in a first-of-its-kind research collaboration exploring AI in creative industries"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Does code cleanliness affect coding agents? A controlled minimal-pair study",
+        "summary": "SonarSource researchers ran a controlled study using matched pairs of clean vs. messy codebases and found that code quality measurably affects how well coding agents perform tasks. For teams deploying AI coding assistants, this suggests that investing in code hygiene isn't just a human readability concern—it directly improves agent reliability and output quality. The finding has immediate implications for engineering orgs deciding whether to clean up technical debt before or alongside AI tooling rollouts.",
+        "url": "https://arxiv.org/abs/2605.20049",
+        "source": "Hacker News",
+        "published": "2026-07-05T23:03:55.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "SonarSource"
+        ]
+      },
+      {
+        "title": "Really Big Test-Time Compute in AI Changes Benchmarks, Safety and Research with OpenAI Research Scientist Noam Brown",
+        "summary": "OpenAI's Noam Brown argues that current safety frameworks and responsible scaling policies are inadequate because they evaluate models at a fixed capability snapshot, but model capability is now a direct function of test-time compute budget—a factor that can vary by orders of magnitude. This creates a fundamental challenge for AI evaluators and safety researchers who need to decide at what inference budget to assess risk. Practitioners building high-stakes AI products should factor in that a model's effective capability envelope is much wider than standard benchmarks suggest.",
+        "url": "https://www.youtube.com/watch?v=AZrU6y3pUcU",
+        "source": "No Priors",
+        "published": "2026-06-26T10:13:00.000Z",
+        "keywords": [
+          "Inference",
+          "Evaluation",
+          "Alignment"
+        ],
+        "affiliations": [
+          "OpenAI"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "🤗 Kernels: Major Updates",
+        "summary": "Hugging Face has shipped significant updates to its Kernels library, which provides optimized GPU kernels for inference workloads. The revamp improves performance and usability for teams running custom or fine-tuned models, making it easier to integrate hardware-level optimizations without writing low-level CUDA code. This is relevant for any team trying to reduce inference latency or cost when self-hosting models.",
+        "url": "https://huggingface.co/blog/revamped-kernels",
+        "source": "Hugging Face",
+        "published": "2026-07-06T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "GPT-5.6 Sol Ultra will be in Codex",
+        "summary": "OpenAI is bringing its GPT-5.6 Sol Ultra model to Codex, its cloud-based coding agent, indicating that the company's fastest-iterating frontier models are being funneled directly into developer productivity tools. This compresses the time between frontier model release and practical agentic coding capability, raising the bar for competitors like Anthropic's Claude Code and Google's Gemini-based coding tools. Teams evaluating coding agents should expect another significant capability jump in the near term.",
+        "url": "https://twitter.com/thsottiaux/status/2073933490513752151",
+        "source": "Hacker News",
+        "published": "2026-07-06T01:04:03.000Z"
+      },
+      {
+        "title": "Google DeepMind and A24 announce first-of-its-kind research partnership",
+        "summary": "Google DeepMind has formed a research partnership with indie film studio A24, marking one of the first formal collaborations between a leading AI lab and a major creative entertainment company. The partnership will explore how AI research can intersect with filmmaking and storytelling, potentially yielding new multimodal and generative media tools. For AI product builders in the creative space, this signals that frontier lab capabilities are increasingly being directed toward high-production-value entertainment use cases.",
+        "url": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
+        "source": "Google DeepMind",
+        "published": "2026-07-03T14:25:43.000Z"
+      },
+      {
+        "title": "When AI Costs More Than the Engineer",
+        "summary": "A Tom Tunguz analysis projects that AI tooling spend will surpass the cost of human engineers for many software teams by around 2029, based on current trajectory of model pricing and usage growth. This framing is useful for consultants and CTOs building business cases around AI adoption, as it shifts the ROI conversation from productivity multiplier to direct cost substitution. The piece suggests organizations should start modeling AI infrastructure costs as a first-class line item alongside headcount.",
+        "url": "https://tomtunguz.com/ai-spend-breakeven-2029/",
+        "source": "Hacker News",
+        "published": "2026-07-06T07:05:25.000Z"
+      },
+      {
+        "title": "New Microsoft 365 pricing live, some products up by 42% due to AI",
+        "summary": "Microsoft has raised Microsoft 365 prices by up to 42%, with Copilot AI features cited as the primary driver of the increase—effectively bundling AI capabilities as a mandatory cost for enterprise customers. This \"AI tax\" dynamic is likely to accelerate scrutiny of AI ROI in enterprise procurement decisions and could push some organizations toward open-source or self-hosted alternatives. Applied AI consultants should be prepared to help clients evaluate whether the bundled value justifies the premium.",
+        "url": "https://www.windowslatest.com/2026/07/05/microsoft-365-just-got-a-price-hike-over-continuous-innovation-but-copilot-is-the-ai-tax-on-businesses/",
+        "source": "Hacker News",
+        "published": "2026-07-05T21:58:20.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Jul 3–6"
+}
