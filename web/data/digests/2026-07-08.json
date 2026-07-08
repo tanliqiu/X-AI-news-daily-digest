@@ -1,0 +1,105 @@
+{
+  "date": "2026-07-08",
+  "tldr": [
+    "OpenAI's Sam Altman confirms GPT-5.6 Sol (plus Terra and Luna) launches publicly this Thursday, marking a significant model release cadence acceleration",
+    "Security researchers at Noma tricked GitHub's AI agent into leaking private repositories, highlighting critical prompt injection risks in agentic coding tools",
+    "A new benchmark systematically compares KV-cache compression techniques (quantization, pruning, merging) for long-context LLM serving, giving practitioners a unified evaluation framework"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Benchmarking KV-Cache Optimizations across Task Quality and System Performance for Long-Context Serving",
+        "summary": "This paper provides the first workload-aware, apples-to-apples comparison of leading KV-cache compression methods—including KIVI, TurboQuant, SnapKV, and CaM—across consistent models, tasks, and serving stacks. For practitioners building long-context inference pipelines, this fills a major gap: prior evaluations used incompatible setups, making it nearly impossible to choose the right technique. The benchmark covers quantization, pruning, and merging approaches, giving engineers concrete data to guide cost-latency tradeoffs.",
+        "url": "https://arxiv.org/abs/2607.05399",
+        "source": "arXiv",
+        "published": "2026-07-08T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of Bayreuth"
+        ]
+      },
+      {
+        "title": "Most LLM Conformity Needs No Speaker: Measuring the Speaker-Free Floor in Peer-Pressure Benchmarks",
+        "summary": "This study reveals that what's commonly measured as LLM 'conformity' to peer pressure is largely driven by the repeated wrong answer itself, not by the presence of a social agent—a significant confound in existing benchmarks. For AI product builders relying on multi-agent or debate-style pipelines, this means robustness evaluations that test answer revision may be measuring prompt sensitivity rather than genuine social influence. The finding calls for redesigned benchmarks that disentangle these cues before drawing conclusions about agent reliability.",
+        "url": "https://arxiv.org/abs/2607.05545",
+        "source": "arXiv",
+        "published": "2026-07-08T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Agents"
+        ],
+        "affiliations": [
+          "Illinois Institute of Technology",
+          "Amazon"
+        ]
+      },
+      {
+        "title": "Prompt Robustness Is Task-Dependent: Comparing Objective and Belief-Style Questions in LLM Evaluation",
+        "summary": "Across four instruction-tuned model families, this paper shows that LLM responses to objective factual questions are far more prompt-robust than responses to subjective opinion or values-based questions. This has direct implications for anyone using survey-style prompts to measure model alignment, political bias, or beliefs—such measurements are highly sensitive to phrasing and should not be treated as stable model properties. Teams building evaluation pipelines or safety assessments should design accordingly.",
+        "url": "https://arxiv.org/abs/2607.05554",
+        "source": "arXiv",
+        "published": "2026-07-08T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Alignment",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Oklahoma State University",
+          "University of North Texas"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "From Hugging Face to Amazon SageMaker Studio in one click",
+        "summary": "Hugging Face and Amazon have introduced a one-click integration that lets developers deploy models from the Hugging Face Hub directly into Amazon SageMaker Studio without manual configuration. This significantly reduces the friction for teams that want to experiment with open-weight models in a managed AWS environment. It's a practical win for enterprise ML teams standardizing on SageMaker infrastructure while wanting access to the broader open-source model ecosystem.",
+        "url": "https://huggingface.co/blog/amazon/one-click-to-sagemaker-studio",
+        "source": "Hugging Face",
+        "published": "2026-07-07T21:15:33.000Z"
+      },
+      {
+        "title": "Hugging Face Models on Foundry Managed Compute",
+        "summary": "Microsoft and Hugging Face have announced support for deploying Hugging Face models through Azure AI Foundry's managed compute, giving developers a streamlined path to production inference on Azure infrastructure. This deepens the HuggingFace-Microsoft partnership and makes it easier for enterprise teams already in the Azure ecosystem to leverage open-weight models without standing up custom serving infrastructure. Combined with the SageMaker integration announced the same day, Hugging Face is aggressively expanding its reach into major cloud MLOps workflows.",
+        "url": "https://huggingface.co/blog/microsoft/foundry-managed-compute",
+        "source": "Hugging Face",
+        "published": "2026-07-07T15:20:06.000Z"
+      },
+      {
+        "title": "Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot",
+        "summary": "SkyPilot has integrated with Hugging Face Hub as a zero-egress storage backend, allowing AI training and inference jobs running on any cloud to read/write model artifacts and datasets without incurring egress fees. For teams running multi-cloud or spot-instance workloads, this can meaningfully reduce infrastructure costs while centralizing model versioning on the Hub. The integration is particularly useful for iterative fine-tuning workflows that move data frequently between compute and storage.",
+        "url": "https://huggingface.co/blog/skypilot-hf-storage",
+        "source": "Hugging Face",
+        "published": "2026-07-07T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "GPT-5.6 Sol, along with Terra and Luna, will launch publicly this Thursday",
+        "summary": "OpenAI's Sam Altman confirmed via Twitter that GPT-5.6 Sol—alongside two additional models named Terra and Luna—will be publicly available this Thursday. The simultaneous launch of three distinct models signals OpenAI is moving toward a more differentiated model lineup, likely targeting different capability/cost tradeoffs. Developers building on OpenAI APIs should prepare to evaluate which model best fits their latency, cost, and capability requirements.",
+        "url": "https://twitter.com/OpenAI/status/2074704958419792299",
+        "source": "Hacker News",
+        "published": "2026-07-08T04:12:13.000Z"
+      },
+      {
+        "title": "GitLost: We Tricked GitHub's AI Agent into Leaking Private Repos",
+        "summary": "Security firm Noma demonstrated a prompt injection attack against GitHub's AI coding agent that caused it to exfiltrate contents of private repositories. This is a concrete, high-severity example of the risks that arise when AI agents have broad repository access and process untrusted content (e.g., code comments, README files). Teams deploying AI coding agents in enterprise environments should urgently review permission scoping, input sanitization, and output monitoring as defensive layers.",
+        "url": "https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/",
+        "source": "Hacker News",
+        "published": "2026-07-08T05:25:35.000Z"
+      },
+      {
+        "title": "[AINews] Lilian Weng summarizes 35 papers on Harness Engineering for RSI",
+        "summary": "OpenAI's Lilian Weng produced a condensed synthesis of 35 papers on harness engineering for recursive self-improvement (RSI), surfaced via the Latent Space newsletter. For applied AI practitioners, this represents a high-signal reading list curated by one of the field's leading researchers on the emerging discipline of building scaffolding that allows AI systems to improve themselves. The summary is particularly relevant for teams working on agent frameworks, automated evaluation, and long-horizon task completion.",
+        "url": "https://www.latent.space/p/ainews-lilian-weng-summarizes-35",
+        "source": "Latent Space",
+        "published": "2026-07-08T02:20:25.000Z"
+      }
+    ]
+  }
+}
