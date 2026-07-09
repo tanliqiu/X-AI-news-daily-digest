@@ -1,0 +1,115 @@
+{
+  "date": "2026-07-09",
+  "tldr": [
+    "SpaceXAI launches Grok 4.5, its first Opus-class model following the Cursor acquisition, marking another rapid frontier model release",
+    "NVIDIA and Hugging Face release open datasets specifically designed for training agentic AI systems",
+    "Hugging Face ships a native-speed vLLM transformers modeling backend, improving inference performance for production deployments"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Healthier LLMs: Retrieval-Augmented Generation for Public Health Question Answering",
+        "summary": "This paper evaluates how RAG configurations affect LLM performance on public health Q&A, where hallucinations and outdated guidance pose real risks. The study goes beyond multiple-choice benchmarks to assess end-to-end RAG pipeline quality, offering practical guidance for builders deploying health-domain AI. Key finding: retrieval configuration choices are critical to overall system accuracy.",
+        "url": "https://arxiv.org/abs/2607.06641",
+        "source": "arXiv",
+        "published": "2026-07-09T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "LLMs Silently Correct African American English: Auditing and Mitigating Dialect Bias via Activation Steering",
+        "summary": "Across six instruction-tuned LLMs (14B–70B parameters), the study finds models systematically rewrite African American English (AAE) into Standard American English even when AAE context is explicit. The paper presents an audit-and-mitigation framework using activation steering, which has practical implications for teams building inclusive products or serving diverse user populations. Builders deploying conversational AI should be aware this bias operates silently without surfacing in standard loss metrics.",
+        "url": "https://arxiv.org/abs/2607.06845",
+        "source": "arXiv",
+        "published": "2026-07-09T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "York University",
+          "Vector Institute",
+          "Emory University",
+          "Wilfrid Laurier University",
+          "University of Toronto"
+        ]
+      },
+      {
+        "title": "MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning",
+        "summary": "MILES introduces a memory system that accumulates reusable reasoning sub-steps across sequential problems, allowing LLMs to improve test-time performance without retraining. Unlike prior approaches that store whole solutions or use heuristic selection, MILES learns which stored modules to retrieve, improving generalization to novel problems. This is directly relevant for building agents or reasoning pipelines that handle long-horizon or repeated task types.",
+        "url": "https://arxiv.org/abs/2607.06974",
+        "source": "arXiv",
+        "published": "2026-07-09T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Agents"
+        ],
+        "affiliations": [
+          "University of New South Wales (UNSW Sydney)"
+        ]
+      },
+      {
+        "title": "Behavior Leverage Imbalance in Multi-Teacher On-Policy Distillation",
+        "summary": "This paper identifies a subtle failure mode when training agentic LLMs via multi-teacher distillation: one teacher can dominate behavior in ways invisible to aggregate loss metrics, causing the student to underperform on certain action types like tool calls. The findings have direct implications for teams training tool-using agents with distillation pipelines. The paper recommends monitoring per-behavior distributions rather than relying solely on aggregate training signals.",
+        "url": "https://arxiv.org/abs/2607.07050",
+        "source": "arXiv",
+        "published": "2026-07-09T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Training"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Data for Agents",
+        "summary": "NVIDIA and Hugging Face have released open datasets specifically curated for training and evaluating agentic AI systems. This addresses a key bottleneck for teams building production agents, where high-quality task-completion data has been scarce. The release should accelerate fine-tuning and benchmarking workflows for tool-use and multi-step reasoning agents.",
+        "url": "https://huggingface.co/blog/nvidia/open-data-for-agents",
+        "source": "Hugging Face",
+        "published": "2026-07-08T17:16:05.000Z"
+      },
+      {
+        "title": "Native-speed vLLM transformers modeling backend",
+        "summary": "Hugging Face has shipped a native-speed modeling backend for vLLM that integrates directly with the Transformers library, reducing inference overhead for production deployments. This closes a performance gap between vLLM's custom kernels and Transformers-native model support, making it easier to deploy newer or custom architectures at speed. Teams running self-hosted inference at scale should evaluate this for latency and throughput improvements.",
+        "url": "https://huggingface.co/blog/native-speed-vllm-transformers-backend",
+        "source": "Hugging Face",
+        "published": "2026-07-08T00:00:00.000Z"
+      },
+      {
+        "title": "New in Claude Code: /checkup command",
+        "summary": "Anthropic has added a /checkup command to Claude Code that automates common maintenance tasks: pruning unused MCP servers and skills to save context, deduplicating CLAUDE.md files, breaking up large instruction files into nested structures, and pre-approving frequently denied read-only commands. For teams managing Claude Code at scale, this reduces configuration drift and context bloat that degrades agent performance. It also enables auto mode and prompts users to update to the latest version.",
+        "url": "https://x.com/bcherny/status/2074997570317779038",
+        "source": "X (@bcherny)",
+        "published": "2026-07-08T23:22:27.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] SpaceXAI launches Grok 4.5, first Opus-class model post Cursor acquisition",
+        "summary": "SpaceXAI has released Grok 4.5, positioned as its first frontier-tier (Opus-class) model following its acquisition of Cursor, the widely-used AI coding assistant. This signals SpaceXAI's intent to compete at the top tier of both general reasoning and developer tooling. The rapid release cadence from SpaceXAI continues to pressure other frontier labs and reshape the competitive landscape for AI product builders.",
+        "url": "https://www.latent.space/p/ainews-spacexai-launches-grok-45",
+        "source": "Latent Space",
+        "published": "2026-07-09T06:05:41.000Z"
+      },
+      {
+        "title": "Why AI Infrastructure must evolve for Agent Experience — Akshat Bubna, Modal CTO",
+        "summary": "Modal's CTO discusses why cloud infrastructure built for batch ML workloads is poorly suited for agent workloads, which require low-latency cold starts, durable execution, and fine-grained compute scaling. The episode covers Modal's learnings from building agent-native infrastructure and their new project Kitaru. Practical for teams choosing or building infrastructure to support multi-step, long-running agentic workflows.",
+        "url": "https://www.latent.space/p/modal2026",
+        "source": "Latent Space",
+        "published": "2026-07-08T22:55:07.000Z"
+      },
+      {
+        "title": "Building Durable AI Agents",
+        "summary": "ZenML's Hamza Tahir discusses how MLOps principles—reproducibility, observability, and workflow orchestration—apply to production agentic systems, drawing on lessons from their new Kitaru project. The episode covers agent harnesses, fleet management, and the infrastructure gaps that make agents fragile in production today. Useful for ML engineers tasked with operationalizing agent systems beyond proof-of-concept.",
+        "url": "https://share.transistor.fm/s/facb92e2",
+        "source": "Practical AI",
+        "published": "2026-07-09T09:00:00.000Z"
+      }
+    ]
+  }
+}
