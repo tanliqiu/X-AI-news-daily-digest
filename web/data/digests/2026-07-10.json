@@ -1,0 +1,121 @@
+{
+  "date": "2026-07-10",
+  "tldr": [
+    "OpenAI launches GPT-5.6 (Sol/Terra/Luna variants) with Codex integrated into ChatGPT as a superapp, marking a major product consolidation",
+    "NYT alleges OpenAI faked inability to search training data and concealed billions of logs in the ongoing copyright trial, raising significant legal risk",
+    "China is weighing restrictions on foreign access to Chinese open-source AI models, potentially creating a 'silicon curtain' with major supply-chain implications"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "DeepSearch-World: Self-Distillation for Deep Search Agents in a Verifiable Environment",
+        "summary": "DeepSearch-Evolve introduces a self-distillation framework where web search agents improve iteratively within a deterministic, reproducible environment—avoiding the pitfalls of static teacher trajectories in SFT and sparse rewards in RL. The verifiable environment allows reliable credit assignment during long-horizon web interactions, a key bottleneck for production search agents. This is directly applicable to building robust tool-use agents that can improve from their own experience without requiring expensive human-labeled trajectories.",
+        "url": "https://arxiv.org/abs/2607.07820",
+        "source": "arXiv",
+        "published": "2026-07-10T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "HKUST",
+          "Tencent",
+          "HKUST(GZ)"
+        ]
+      },
+      {
+        "title": "Tail-Aware Credit Calibration for LLM Reinforcement Learning",
+        "summary": "This paper identifies 'Positive-Credit Contamination' in critic-free RL methods like GRPO/PPO, where low-probability tail tokens receive undeserved positive advantage signals, degrading reasoning quality. The proposed tail-aware credit calibration selectively down-weights these tokens during advantage computation. Practitioners training reasoning models with RL should take note, as this failure mode may be silently hurting performance in current pipelines.",
+        "url": "https://arxiv.org/abs/2607.07976",
+        "source": "arXiv",
+        "published": "2026-07-10T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Johns Hopkins University",
+          "Rice University",
+          "University of North Carolina at Charlotte",
+          "Workato"
+        ]
+      },
+      {
+        "title": "Hallucination Self-Play: Bootstrapping Reinforced Detector via Evolved Generator",
+        "summary": "HSP (Hallucination Self-Play) frames hallucination detection as an adversarial game where the generator and detector co-evolve, eliminating reliance on static synthetic data from large proprietary LLMs. By iteratively hardening the detector against an improving generator, the system achieves stronger faithfulness detection without expensive annotation. This offers a practical path to building cheaper, self-improving hallucination detectors for production RAG and summarization pipelines.",
+        "url": "https://arxiv.org/abs/2607.07993",
+        "source": "arXiv",
+        "published": "2026-07-10T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Alignment",
+          "Training"
+        ],
+        "affiliations": [
+          "Simon Fraser University",
+          "Microsoft",
+          "University of Illinois at Chicago"
+        ]
+      },
+      {
+        "title": "A Reliability Assessment of LALM Audio Judges for Full-Duplex Voice Agents",
+        "summary": "This study benchmarks Gemini models (2.5 Flash, 3.5 Flash, 3.1 Pro) as automated audio judges for scoring full-duplex voice agent conversations directly from stereo waveforms, validated against human raters across 8 production dimensions. Gemini 2.5 Flash shows strong inter-rater reliability, suggesting LLM-as-judge pipelines can extend reliably to raw audio evaluation. Teams building voice AI products can potentially replace costly human QA with Gemini-based audio judges for continuous monitoring.",
+        "url": "https://arxiv.org/abs/2607.07985",
+        "source": "arXiv",
+        "published": "2026-07-10T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Multimodal"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Profiling in PyTorch (Part 3): Attention is all you profile",
+        "summary": "Hugging Face's third installment in their PyTorch profiling series focuses specifically on attention mechanisms, covering how to identify and diagnose performance bottlenecks in attention layers. This is highly practical for teams optimizing inference latency on transformer models, particularly as attention remains a primary cost center at longer context lengths. The guide provides actionable profiling workflows applicable to both training and serving workloads.",
+        "url": "https://huggingface.co/blog/torch-attention-profile",
+        "source": "Hugging Face",
+        "published": "2026-07-10T00:00:00.000Z"
+      },
+      {
+        "title": "Building a real-time AI tutor for 5-year-olds",
+        "summary": "Ello's engineering blog details how they achieved sub-1000ms end-to-end latency for a real-time reading tutor aimed at young children, covering model selection, streaming architecture, and the UX constraints imposed by this age group. The post is a concrete case study in latency-sensitive AI product design where voice interaction must feel instantaneous to be effective. Builders of real-time voice or tutoring applications will find practical architectural decisions documented here.",
+        "url": "https://www.ello.com/blog/teaching-a-child-in-1000-ms",
+        "source": "Hacker News",
+        "published": "2026-07-09T20:51:06.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI launches GPT-5.6 Sol/Terra/Luna, Codex becomes ChatGPT superapp",
+        "summary": "OpenAI released GPT-5.6 as a family of three model variants (Sol, Terra, Luna) and integrated Codex directly into ChatGPT, positioning it as a unified superapp for coding and general tasks. Rate limits for ChatGPT Work and Codex were reset twice to encourage adoption of the new models. This consolidation signals OpenAI's intent to compete on both frontier model capability and developer platform stickiness simultaneously.",
+        "url": "https://www.latent.space/p/ainews-openai-launches-gpt-56-solterraluna",
+        "source": "Latent Space",
+        "published": "2026-07-10T06:19:40.000Z"
+      },
+      {
+        "title": "OpenAI faked inability to search training data, hid billions of logs, NYT alleges",
+        "summary": "The New York Times claims in court filings that OpenAI misrepresented its ability to search training data and concealed billions of logs relevant to the copyright lawsuit. If substantiated, this could expose OpenAI to significant legal liability and intensify regulatory scrutiny around training data provenance. AI product teams relying on OpenAI infrastructure should monitor this case closely as outcomes may affect data licensing norms industry-wide.",
+        "url": "https://arstechnica.com/tech-policy/2026/07/openai-faked-inability-to-search-training-data-hid-billions-of-logs-nyt-says/",
+        "source": "Hacker News",
+        "published": "2026-07-09T19:01:43.000Z"
+      },
+      {
+        "title": "China may restrict foreign access to Chinese open-source AI models",
+        "summary": "Reuters reports that China is considering regulations that would limit foreign access to Chinese open-source AI models such as those from DeepSeek and Qwen, effectively creating a 'silicon curtain.' This would significantly disrupt the open-source AI supply chain for developers globally who rely on these models for cost-efficient alternatives to closed APIs. Teams building products on Chinese open-source models should begin evaluating contingency model strategies.",
+        "url": "https://www.reuters.com/technology/artificial-intelligence/china-weighs-silicon-curtain-around-sought-after-ai-models-2026-07-08/",
+        "source": "Hacker News",
+        "published": "2026-07-10T06:22:06.000Z"
+      },
+      {
+        "title": "Ben Bernanke Joins Anthropic Oversight Trust",
+        "summary": "Former Federal Reserve Chair Ben Bernanke has joined Anthropic's Long-Term Benefit Trust, the oversight body designed to ensure the company's mission stays aligned with broad societal benefit rather than purely commercial interests. Adding a high-profile macroeconomic and systemic-risk expert signals Anthropic's intent to bolster institutional credibility as AI governance becomes a competitive differentiator. This may influence enterprise and government customers weighing Anthropic against less formally governed competitors.",
+        "url": "https://www.anthropic.com/news/ben-bernanke",
+        "source": "Hacker News",
+        "published": "2026-07-10T02:39:07.000Z"
+      }
+    ]
+  }
+}
