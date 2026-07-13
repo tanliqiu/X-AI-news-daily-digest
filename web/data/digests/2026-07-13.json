@@ -1,0 +1,104 @@
+{
+  "date": "2026-07-13",
+  "tldr": [
+    "OpenAI's GPT-5.6 Sol is confirmed to remain available across all paid ChatGPT tiers (Plus, Pro, Team, Edu), signaling a commitment to keeping frontier models in subscription plans",
+    "Anthropic extends Claude Fable 5 access on all paid plans and keeps Claude Code weekly rate limits 50% higher through July 19, offering developers more runway with top-tier models",
+    "A new HN discussion on flagging AI-generated articles (646 points, 297 comments) reflects growing community pressure on platforms to surface AI content provenance"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "HALO: Hybrid Adaptive Latent Reasoning for Language Models",
+        "summary": "HALO introduces an adaptive computation layer on top of frozen pretrained LLMs, selectively applying extra refinement steps only where needed rather than uniformly across all tokens. This hybrid approach reduces wasted compute compared to fixed multi-step refinement heads while outperforming single-step alternatives. Practitioners building inference-time compute scaling systems could use this as a lightweight way to boost frozen backbone quality without full retraining.",
+        "url": "https://arxiv.org/abs/2607.08775",
+        "source": "arXiv",
+        "published": "2026-07-13T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "An Emergent Mirage: Is Emergent Misalignment and Realignment Indeed a Robust Phenomenon?",
+        "summary": "This paper systematically stress-tests the 'Emergent Misalignment' (EM) phenomenon—where fine-tuning on narrow misaligned datasets causes broad misalignment—by running repeated alignment/misalignment cycles with controlled LoRA fine-tuning. The findings challenge the robustness of EM and its reversibility through limited realignment, with implications for safety teams relying on quick re-alignment as a mitigation strategy. AI product teams using fine-tuning pipelines should treat EM claims with caution and invest in more thorough behavioral evaluation across training cycles.",
+        "url": "https://arxiv.org/abs/2607.09053",
+        "source": "arXiv",
+        "published": "2026-07-13T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Evaluation"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "AgentKGV: Agentic LLM-RAG Framework with Two-Stage Training for the Fact Verification of Knowledge Graphs",
+        "summary": "AgentKGV combines dynamic query routing and iterative query rewriting in an agentic RAG pipeline to verify facts in automatically constructed knowledge graphs at industrial scale. The two-stage training approach specifically addresses surface-form mismatch between KG entities and source documents—a common failure mode in enterprise KG pipelines. Teams building knowledge graph-backed AI products will find the dynamic routing strategy directly applicable to improving retrieval precision.",
+        "url": "https://arxiv.org/abs/2607.09092",
+        "source": "arXiv",
+        "published": "2026-07-13T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Agents"
+        ],
+        "affiliations": [
+          "SungKyunKwan University",
+          "NAVER"
+        ]
+      },
+      {
+        "title": "Flash-MSA: Accelerating Million-Token Training with Sparse Attention Kernels",
+        "summary": "Flash-MSA introduces sparse attention kernels designed to make training on million-token context windows practically feasible, targeting one of the key compute bottlenecks for long-context LLM development. By reducing the quadratic cost of full attention at extreme sequence lengths, this work has direct implications for teams building document-level or long-context AI applications. The open project page suggests early-stage tooling that developers working on long-context fine-tuning could experiment with.",
+        "url": "https://nanduruganesh.github.io/flash-msa/",
+        "source": "Hacker News",
+        "published": "2026-07-12T20:46:43.000Z",
+        "keywords": [
+          "Training",
+          "Inference"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Google SensorFM: Foundation Model for Wearable Health Data",
+        "summary": "Google Research has released SensorFM, a generative foundation model and interface designed to interpret and reason over wearable sensor data at scale. The model targets health applications by providing a unified AI layer across heterogeneous sensor modalities, reducing the need for task-specific modeling pipelines. Developers building health and wellness AI products on wearable data streams should evaluate SensorFM as a potential backbone for extraction and analysis tasks.",
+        "url": "https://research.google/blog/sensorfm-towards-a-general-intelligence-and-interface-for-wearable-health-data/",
+        "source": "Google AI",
+        "published": "2026-07-09T09:56:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI Confirms GPT-5.6 Sol Stays in All Paid ChatGPT Subscriptions",
+        "summary": "OpenAI product staff publicly confirmed that GPT-5.6 Sol will remain available across all paid ChatGPT tiers—Go, Plus, Pro, Team, Edu—until a better model ships. This is a direct response to community concerns about frontier models being gated to higher subscription tiers after launch. For AI product builders relying on ChatGPT-tier access in user-facing apps, this provides near-term planning stability around model availability.",
+        "url": "https://x.com/thsottiaux/status/2076459871021736245",
+        "source": "X (@thsottiaux)",
+        "published": "2026-07-13T00:13:06.000Z"
+      },
+      {
+        "title": "Anthropic Extends Claude Fable 5 Access and Raises Claude Code Rate Limits Through July 19",
+        "summary": "Anthropic announced it is extending Claude Fable 5 availability on all paid plans and maintaining a 50% increase to Claude Code's weekly rate limits through July 19. This gives developers additional time to build and evaluate against Anthropic's latest model without hitting tighter usage caps. Teams with active Claude Code deployments should take advantage of the elevated limits before they potentially revert.",
+        "url": "https://x.com/claudeai/status/2076351399999557669",
+        "source": "X (@claudeai)",
+        "published": "2026-07-12T17:02:05.000Z"
+      },
+      {
+        "title": "HN Community Pushes for AI-Generated Content Flags on Hacker News",
+        "summary": "A high-engagement Ask HN thread (646 points, 297 comments) calls for a platform-level mechanism to flag AI-generated articles, reflecting mounting community concern about AI content flooding curated link aggregators. For AI product and content teams, this signals that even technically sophisticated audiences are seeking provenance signals, and that AI-generated content strategies risk backlash without clear disclosure. Platform developers may want to monitor this thread for practical proposals that could spread to other communities.",
+        "url": "https://news.ycombinator.com/item?id=48886741",
+        "source": "Hacker News",
+        "published": "2026-07-13T01:24:20.000Z"
+      },
+      {
+        "title": "'6 Months to Live for Open Models' — Interconnects Analysis",
+        "summary": "A widely shared essay on Interconnects argues that the window for open-weight models to remain competitive with frontier closed models may be closing within six months, as compute and data advantages compound at leading labs. This has significant implications for AI product builders who have based their stack on open models for cost, control, or compliance reasons. Teams should audit their dependency on open model parity assumptions and consider contingency planning for a wider capability gap.",
+        "url": "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+        "source": "Hacker News",
+        "published": "2026-07-12T18:50:37.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Jul 10–13"
+}
