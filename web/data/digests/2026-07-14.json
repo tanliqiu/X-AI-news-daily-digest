@@ -1,0 +1,108 @@
+{
+  "date": "2026-07-14",
+  "tldr": [
+    "Post-training quantization can silently shift LLM reasoning failure modes even when task accuracy appears unchanged, posing hidden risks for production deployments.",
+    "OpenAI's Codex coding agent has grown to 7M+ users (10x in 6 months), potentially surpassing Claude Code in adoption, while OpenAI's ad business is reportedly on pace to miss forecasts by 90%.",
+    "New research shows LLM-generated clinical trial summaries carry significant hallucination risks, with a new benchmark framework for measuring faithfulness across multiple stakeholder audiences."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Silent Failures in Quantized LLM Reasoning: A Taxonomy-Based Analysis of Hollow Convergence and Failure Mode Shifts",
+        "summary": "Quantizing LLMs (FP32 → FP16 → NF4) can preserve top-line accuracy while fundamentally changing how models fail — a phenomenon the authors call 'hollow convergence.' Analyzing 30,000 chain-of-thought outputs across five models and four benchmarks, they find failure type distributions shift significantly with precision, meaning accuracy metrics alone are insufficient for validating quantized models in production. Teams deploying quantized models should audit reasoning quality, not just benchmark scores.",
+        "url": "https://arxiv.org/abs/2607.09999",
+        "source": "arXiv",
+        "published": "2026-07-14T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Inference",
+          "Evaluation"
+        ]
+      },
+      {
+        "title": "Faithful by Design: Evaluating and Improving LLM-Generated Clinical Trial Summaries for Multi-Stakeholder Audiences",
+        "summary": "This paper introduces a 200-trial benchmark for measuring hallucination in LLM-generated clinical trial summaries tailored to healthcare providers, patients, and payers. The framework provides a concrete evaluation methodology for high-stakes summarization tasks where factual faithfulness is non-negotiable. Practitioners building medical AI products will find the multi-audience evaluation approach directly applicable to other domain-specific summarization use cases.",
+        "url": "https://arxiv.org/abs/2607.09932",
+        "source": "arXiv",
+        "published": "2026-07-14T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Application"
+        ],
+        "affiliations": [
+          "University of Texas at Austin"
+        ]
+      },
+      {
+        "title": "Global Merger-Arbitrage Forecasting with Language Models",
+        "summary": "Researchers from Balyasny Asset Management demonstrate an LLM-based system for predicting M&A deal outcomes using long-context reasoning over hundreds of pages of regulatory and financial documents. The system outperforms human analyst baselines on a specialized benchmark, showing that LLMs can deliver practical alpha in high-stakes, document-heavy financial workflows. This is a strong proof-of-concept for applying frontier LLMs in specialized finance verticals beyond generic sentiment analysis.",
+        "url": "https://arxiv.org/abs/2607.09921",
+        "source": "arXiv",
+        "published": "2026-07-14T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Application"
+        ],
+        "affiliations": [
+          "Balyasny Asset Management"
+        ]
+      },
+      {
+        "title": "CLIR-Bench: Benchmarking Multimodal Question Answering over Irregular Clinical Time Series",
+        "summary": "CLIR-Bench introduces a benchmark specifically targeting multimodal QA over sparse, irregularly sampled clinical time series — a gap in existing medical AI evaluations that focus on regular or static data. The benchmark tests whether models can ground temporal evidence correctly, a critical capability for patient monitoring and clinical decision support applications. Builders of clinical AI products should use this to stress-test model reliability on realistic, messy real-world data.",
+        "url": "https://arxiv.org/abs/2607.09880",
+        "source": "arXiv",
+        "published": "2026-07-14T04:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Benchmarks",
+          "Application"
+        ],
+        "affiliations": [
+          "Shandong University, China",
+          "University of Auckland, New Zealand"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Building Food Metadata with LLM Juries",
+        "summary": "DoorDash engineering blog describes a production system using multiple LLMs as a 'jury' to generate and validate food item metadata at scale, combining context optimization with multimodal AI. The LLM jury approach — where models cross-check each other's outputs — provides a practical pattern for improving reliability in high-volume structured data extraction tasks. This is a concrete, replicable architecture for teams building AI-powered data enrichment pipelines.",
+        "url": "https://careersatdoordash.com/blog/building-food-metadata-with-llm-juries-context-optimization-multimodal-ai/",
+        "source": "Hacker News",
+        "published": "2026-07-14T01:41:49.000Z"
+      },
+      {
+        "title": "Robust, Scalable Detection of Text Containment in Large Web-Crawled Corpora",
+        "summary": "FindMyText is a new open-source Python package for efficiently detecting whether a given text appears verbatim or near-verbatim within large web-crawled corpora, using fingerprint chain matching to reduce false positives over simple similarity approaches. This is directly useful for dataset deduplication, training data auditing, and copyright/contamination checks in LLM pre-training pipelines. Teams managing large training datasets or evaluating benchmark contamination now have a purpose-built tool for the task.",
+        "url": "https://arxiv.org/abs/2607.10020",
+        "source": "arXiv",
+        "published": "2026-07-14T04:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Codex usage up >10x in 6 months to 7M users, +1M in the past ~day; did Codex overtake Claude Code??",
+        "summary": "OpenAI's Codex coding agent has surged to 7 million active users — a 10x increase in six months — with 1 million new users added in roughly a single day, raising questions about whether it has overtaken Anthropic's Claude Code in adoption. The growth comes amid notable silence from Anthropic on Claude Code usage figures, making direct comparison difficult. For AI product builders, this signals that the agentic coding assistant market is consolidating rapidly and platform choice may increasingly be driven by ecosystem lock-in.",
+        "url": "https://www.latent.space/p/ainews-codex-usage-up-10x-in-6-months",
+        "source": "Latent Space",
+        "published": "2026-07-14T01:22:27.000Z"
+      },
+      {
+        "title": "OpenAI's Ad Business Is on Pace to Miss Its Own Forecast by 90%, Analyst Says",
+        "summary": "Analyst estimates suggest OpenAI's advertising revenue initiative is tracking at roughly 10% of its own internal forecasts, highlighting the difficulty of monetizing AI products beyond subscriptions and API access. This underperformance may accelerate OpenAI's push to diversify revenue through enterprise contracts and platform fees rather than ad-supported tiers. For AI product builders, it reinforces that ad-based models remain a challenging fit for AI assistants at this stage of the market.",
+        "url": "https://www.adweek.com/media/openais-ad-business-is-on-pace-to-miss-its-own-forecast-by-90-analyst-says/",
+        "source": "Hacker News",
+        "published": "2026-07-14T05:21:02.000Z"
+      },
+      {
+        "title": "Empowering India's next generation of innovators with ATL Saathi",
+        "summary": "Google DeepMind and India's Atal Innovation Mission launched ATL Saathi, a Gemini-powered AI assistant designed to support educators running robotics and STEM labs across Indian schools. The deployment targets a large-scale, low-resource educational environment and demonstrates Gemini's application in multilingual, domain-specific assistant roles. It also signals Google's strategy of using public-sector education partnerships to expand Gemini's footprint in emerging markets.",
+        "url": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/",
+        "source": "Google DeepMind",
+        "published": "2026-07-13T12:37:28.000Z"
+      }
+    ]
+  }
+}
