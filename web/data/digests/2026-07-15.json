@@ -1,0 +1,118 @@
+{
+  "date": "2026-07-15",
+  "tldr": [
+    "A critical security vulnerability in Cursor (0day) was publicly disclosed, with researchers resorting to full disclosure after responsible disclosure failed — a significant concern for AI coding tool users.",
+    "Bonsai 27B launches as a 27B-parameter model optimized to run on-device on phones, pushing the frontier of edge inference for large models.",
+    "A memory-based prompt injection attack on Claude demonstrates that AI memory features can be exploited to exfiltrate sensitive user data, highlighting a growing attack surface for AI products."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Scaling Point-in-Time Language Models",
+        "summary": "This paper addresses 'lookahead bias' in LLMs trained on unrestricted internet data — a critical problem for finance and social science applications where models inadvertently learn from future information. The authors propose point-in-time LLMs trained exclusively on text available up to each calendar date, making rigorous backtesting and causal inference feasible. This has direct implications for any AI product built for quantitative finance, forecasting, or policy analysis.",
+        "url": "https://arxiv.org/abs/2607.11889",
+        "source": "arXiv",
+        "published": "2026-07-15T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Application"
+        ],
+        "affiliations": [
+          "Yale University",
+          "EPFL"
+        ]
+      },
+      {
+        "title": "Transforming LLMs into Efficient Cross-Encoders via Knowledge Distillation for RAG Reranking",
+        "summary": "This paper fine-tunes LLaMA 3 (8B) as a high-accuracy reranker for RAG pipelines using LoRA adapters and 4-bit quantization, dramatically reducing the typical quadratic inference cost of cross-encoders. The two-stage approach (SFT + quantization via Unsloth) offers a practical recipe for teams wanting better retrieval quality without prohibitive latency. Directly applicable to production RAG systems where reranking quality is a bottleneck.",
+        "url": "https://arxiv.org/abs/2607.11933",
+        "source": "arXiv",
+        "published": "2026-07-15T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Inference"
+        ]
+      },
+      {
+        "title": "CANDI: Contextual Alignment for Niche Domains Question Answering",
+        "summary": "CANDI-QA introduces a new benchmark specifically designed for evaluating LLMs in specialized domains like medicine and finance, where standard QA benchmarks miss nuanced contextual grounding and user-awareness requirements. This fills a real gap for teams building domain-specific AI products that need evaluation beyond general-knowledge accuracy. The benchmark targets practical deployment gaps rather than just raw capability.",
+        "url": "https://arxiv.org/abs/2607.11891",
+        "source": "arXiv",
+        "published": "2026-07-15T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of South Carolina"
+        ]
+      },
+      {
+        "title": "TAKE: Trajectory-Aware Knowledge Estimation for Text Dataset Distillation",
+        "summary": "TAKE proposes a framework that compresses large text corpora to as little as 0.1% of their original size while maintaining downstream task performance, using influence functions to identify the most impactful training samples. For AI product builders managing expensive fine-tuning and continual learning pipelines, this could substantially reduce data storage and compute costs. The approach is practically relevant for teams iterating rapidly on domain-specific models.",
+        "url": "https://arxiv.org/abs/2607.11898",
+        "source": "arXiv",
+        "published": "2026-07-15T04:00:00.000Z",
+        "keywords": [
+          "Training"
+        ],
+        "affiliations": [
+          "Deakin University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Bonsai 27B: A 27B-Class Model That Runs on a Phone",
+        "summary": "PrismML has released Bonsai 27B, a 27-billion-parameter model optimized for on-device inference on mobile hardware — a significant leap from the typical 7B ceiling for phone-deployable models. This opens new possibilities for offline-capable, privacy-preserving AI applications and reduces reliance on cloud API calls. Developers building mobile AI products should evaluate this for latency-sensitive or data-sensitive use cases.",
+        "url": "https://prismml.com/news/bonsai-27b",
+        "source": "Hacker News",
+        "published": "2026-07-14T17:50:48.000Z"
+      },
+      {
+        "title": "LeMario: Training a JEPA World Model on Super Mario Bros",
+        "summary": "This project demonstrates training a Joint Embedding Predictive Architecture (JEPA) world model on Super Mario Bros gameplay, showing JEPA's applicability to game environments as a structured alternative to diffusion-based world models. For developers building simulation or game AI, this provides a concrete, reproducible example of JEPA-based world modeling outside of image-only domains. The open project lowers the barrier to experimenting with this architecture class.",
+        "url": "https://www.benjamin-bai.com/projects/lemario",
+        "source": "Hacker News",
+        "published": "2026-07-14T22:30:47.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Cursor 0day: When Full Disclosure Becomes the Only Protection Left",
+        "summary": "Mindgard researchers publicly disclosed a zero-day vulnerability in Cursor, the popular AI coding assistant, after responsible disclosure efforts failed to result in a timely fix. The vulnerability represents a serious risk for developers using Cursor in professional environments, and the decision to go public is a cautionary tale about security practices in fast-moving AI tooling companies. Teams relying on AI coding assistants should review their security posture and monitor vendor patch timelines closely.",
+        "url": "https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left",
+        "source": "Hacker News",
+        "published": "2026-07-14T17:58:35.000Z"
+      },
+      {
+        "title": "I Tricked Claude into Leaking Your Deepest, Darkest Secrets",
+        "summary": "A researcher demonstrated a 'memory heist' prompt injection attack against Claude, exploiting the model's memory/personalization features to exfiltrate sensitive user data stored across sessions. This is a concrete proof-of-concept showing that persistent memory features in AI assistants create new attack surfaces that go beyond single-session jailbreaks. Builders integrating memory or personalization into AI products should treat this as a critical security consideration requiring adversarial testing.",
+        "url": "https://www.ayush.digital/blog/the-memory-heist",
+        "source": "Hacker News",
+        "published": "2026-07-15T06:28:00.000Z"
+      },
+      {
+        "title": "5 Trends That Defined AI Engineering at World's Fair 2026",
+        "summary": "Latent Space's recap of the AI Engineering World's Fair 2026 identifies a structural shift: practitioners are now building systems organized around agents rather than simply incorporating AI calls into traditional software. Key trends include agent coordination layers, the separation of advising vs. executing token roles, and the move toward composable orchestration strategies. This is a valuable practitioner-facing signal for teams planning their AI architecture roadmaps.",
+        "url": "https://www.latent.space/p/aiewf26trends",
+        "source": "Latent Space",
+        "published": "2026-07-14T23:21:21.000Z"
+      },
+      {
+        "title": "Codex / ChatGPT Work Approaching 9M Users, Adding ~1M/Day",
+        "summary": "OpenAI's Codex (rebranded as ChatGPT Work) is reportedly approaching 9 million users with growth of approximately 1 million users per day, based on signals from OpenAI's product team on social media. This explosive adoption rate signals that agentic coding assistants are crossing into mainstream enterprise use, with significant implications for the competitive landscape and for developers building products in the coding-assistant space.",
+        "url": "https://www.latent.space/p/ainews-not-much-happened-today-c72",
+        "source": "Latent Space",
+        "published": "2026-07-14T23:54:07.000Z"
+      },
+      {
+        "title": "Anthropic's Katelyn Lesse & Angela Jiang: Building an Ecosystem, Not a Walled Garden",
+        "summary": "Anthropic product leaders discuss their philosophy of building an open ecosystem around Claude, including architectural thinking around agent coordination layers that separate knowledge, execution, and coordination concerns. The conversation introduces 'strategies' as meta-harnesses that compose orchestrated agent behaviors, offering a concrete mental model for multi-agent system design. Relevant for teams designing complex agent workflows on top of Anthropic's APIs.",
+        "url": "https://www.youtube.com/watch?v=vPnVTHYplrQ",
+        "source": "Training Data",
+        "published": "2026-07-14T09:00:00.000Z"
+      }
+    ]
+  }
+}
