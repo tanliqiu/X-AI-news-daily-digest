@@ -1,0 +1,109 @@
+{
+  "date": "2026-07-16",
+  "tldr": [
+    "Thinky releases Inkling, a 975B-A41B multimodal open-weights model under Apache 2.0, claimed to be the best American open model",
+    "OpenAI's Codex (GPT-5.6) investigated for unexpected file deletions when run in full-access mode without sandboxing protections",
+    "New benchmark evaluates whether LLMs can perform deep technical comprehension of computer architecture papers, surfacing limits of current models"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers",
+        "summary": "This paper benchmarks leading LLMs on deep technical understanding of computer architecture research, going beyond surface-level Q&A to test reasoning about complex systems concepts. The findings have direct implications for AI-assisted engineering and research workflows, revealing where current models fall short on specialized technical domains. Practitioners building tools for technical document analysis or expert-level code/architecture assistance should take note of the identified gaps.",
+        "url": "https://arxiv.org/abs/2607.11859",
+        "source": "Hacker News",
+        "published": "2026-07-16T02:17:31.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation",
+          "Reasoning"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "MAGE: Understanding Stability-Performance Trade-offs in Multi-component Prompt Optimization",
+        "summary": "MAGE is a controlled analysis framework that studies how combining components of iterative prompt optimization—episodic memory, Pareto selection, and adaptive evaluation—interact and affect stability versus performance. The work reveals that adding more optimization components doesn't reliably improve outcomes and can introduce instability, a practically important caution for teams building automated prompt engineering pipelines. This provides a principled basis for choosing which prompt optimization components to deploy in production.",
+        "url": "https://arxiv.org/abs/2607.11944",
+        "source": "arXiv",
+        "published": "2026-07-16T04:00:00.000Z",
+        "keywords": [
+          "Framework",
+          "Evaluation",
+          "Reasoning"
+        ]
+      },
+      {
+        "title": "Belief-Reality Separation Lives in Routing Over a Shared Value Slot in Language Models",
+        "summary": "This mechanistic interpretability paper identifies the specific internal components in LLMs responsible for distinguishing a character's beliefs from ground-truth facts—a key capability for theory-of-mind tasks and accurate agent behavior. The mechanism involves a shared value slot and a query-position router, and the findings could inform how developers build more reliable agents that correctly track context and avoid confabulating facts with attributed beliefs. This has implications for applications in dialogue systems, multi-agent frameworks, and any product where models must reason about user mental states.",
+        "url": "https://arxiv.org/abs/2607.11945",
+        "source": "arXiv",
+        "published": "2026-07-16T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Alignment"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Towards Demystifying the Creativity of Diffusion Models",
+        "summary": "Google Research investigates the theoretical underpinnings of how diffusion models generate novel outputs that appear to go beyond their training data. Understanding this mechanism is relevant for practitioners building generative AI products, particularly around copyright risk assessment and model output novelty guarantees. The work aims to provide a more rigorous algorithmic explanation of generalization in diffusion-based image generation.",
+        "url": "https://research.google/blog/towards-demystifying-the-creativity-of-diffusion-models/",
+        "source": "Google AI",
+        "published": "2026-07-15T18:06:27.000Z",
+        "keywords": [
+          "Training",
+          "Framework"
+        ],
+        "affiliations": [
+          "Google"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Agentty – A Drop-in Alternative to Claude-Code, Written in C++26 (11MB Binary)",
+        "summary": "Agentty is a lightweight, open-source CLI coding agent implemented in C++26, offering a drop-in replacement for Claude Code in a self-contained 11MB binary. The minimal footprint makes it attractive for deployment in constrained environments or as an embeddable component in developer toolchains. Teams looking for a fast, dependency-light agentic coding tool with full source access may find this a compelling alternative to hosted solutions.",
+        "url": "https://github.com/1ay1/agentty",
+        "source": "Hacker News",
+        "published": "2026-07-15T22:30:24.000Z"
+      },
+      {
+        "title": "Vercel Sandbox: 3.5M+ Sandboxes Per Day, 100% DAU Growth Month-over-Month",
+        "summary": "Vercel's Sandbox product is scaling rapidly, now powering code execution infrastructure for Notion, Airtable, Meta, Zapier, and others at 3.5 million sandboxes created daily. The active-CPU pricing model is positioned as best-in-class for cost efficiency in AI agent and interactive code execution workloads. This makes Vercel Sandbox an increasingly viable option for teams building AI products that require secure, scalable sandboxed execution environments.",
+        "url": "https://x.com/rauchg/status/2077559189015335019",
+        "source": "X (@rauchg)",
+        "published": "2026-07-16T01:01:24.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Thinky Releases Inkling: 975B-A41B Multimodal Open-Weights Model Under Apache 2.0",
+        "summary": "Thinky's debut model release, Inkling (975B-A41B), is a large multimodal mixture-of-experts model released under Apache 2.0, accompanied by a smaller Inkling-Small (276B-A12B) variant. It is being called the best American open-weights model currently available, representing a significant milestone for the open-model ecosystem. For AI product builders, the permissive license and scale make this a notable option for self-hosted or fine-tuned deployments requiring frontier-class multimodal capabilities.",
+        "url": "https://www.latent.space/p/ainews-thinkys-inkling-975b-a41b",
+        "source": "Latent Space",
+        "published": "2026-07-16T06:18:05.000Z"
+      },
+      {
+        "title": "OpenAI Codex GPT-5.6 Investigated for Unexpected File Deletions",
+        "summary": "OpenAI's Codex team confirmed that GPT-5.6 can unexpectedly delete files when run in full-access mode without sandboxing or auto-review enabled, typically triggered when the model attempts to override the $HOME environment variable to create a temporary directory. This is a critical safety consideration for teams deploying Codex in CI/CD pipelines or agentic workflows with filesystem access. OpenAI is actively investigating and recommends enabling sandboxing protections to mitigate the risk.",
+        "url": "https://x.com/thsottiaux/status/2077630111499882637",
+        "source": "X (@thsottiaux)",
+        "published": "2026-07-16T05:43:13.000Z"
+      },
+      {
+        "title": "Gemini Southeast Asia Report: Active Users Doubled, 70% of Prompts in Native Languages",
+        "summary": "Google's first Gemini Southeast Asia Report reveals active users more than doubled year-over-year, with 70% of prompts submitted in native languages and 40% using only voice, image, or video inputs. This signals that multimodal and local-language capabilities are primary growth drivers in emerging markets, not text-based English prompting. Product teams targeting Southeast Asian users should prioritize native language support and voice/image interfaces as first-class features.",
+        "url": "https://x.com/joshwoodward/status/2077411104775406045",
+        "source": "X (@joshwoodward)",
+        "published": "2026-07-15T15:12:58.000Z"
+      },
+      {
+        "title": "MIT Economics Paper: Speculative Growth and the AI 'Bubble'",
+        "summary": "A new MIT economics working paper examines whether current AI investment patterns constitute speculative bubble dynamics or are consistent with rational expectations of transformative productivity growth. For AI consultants and product builders, the analysis is relevant to understanding investor risk appetite, infrastructure spending sustainability, and the timeline of enterprise AI adoption cycles. The paper provides a framework for distinguishing genuine growth signals from speculative excess in the current market.",
+        "url": "https://economics.mit.edu/sites/default/files/2026-07/speculative_growth_AI_public.pdf",
+        "source": "Hacker News",
+        "published": "2026-07-15T21:39:21.000Z"
+      }
+    ]
+  }
+}
