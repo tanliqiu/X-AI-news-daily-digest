@@ -1,0 +1,114 @@
+{
+  "date": "2026-07-17",
+  "tldr": [
+    "Kimi K3 (2.8T-A50B MoE) becomes the largest open model ever released, topping web engineering benchmarks above all proprietary models at Sonnet-level pricing—spurring developers to switch away from closed alternatives",
+    "Anthropic publishes its internal containment playbook for Claude deployments, detailing how they grant and sandbox progressively higher agent permissions across products",
+    "Hugging Face discloses a July 2026 security incident, a reminder that supply-chain risks around model hubs remain a live concern for AI product builders"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Just Keep Prompting: Evaluating Repetitive Socratic Prompting in VLMs",
+        "summary": "The JKP framework stress-tests Vision-Language Models by issuing up to 10 follow-up turns of adversarial negation, Socratic questioning, and contradiction to measure whether models hold their ground or cave to pressure. For product builders, this directly quantifies a real deployment risk: chatbots that flip correct answers under user pushback can erode trust and introduce errors in high-stakes applications. The benchmark provides a structured way to compare VLM robustness before selecting a model for conversational products.",
+        "url": "https://arxiv.org/abs/2607.14099",
+        "source": "arXiv",
+        "published": "2026-07-17T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Multimodal"
+        ],
+        "affiliations": [
+          "Northeastern University"
+        ]
+      },
+      {
+        "title": "Polestar: Drift-Aware Cache Calibration and Token Commitment for Efficient Inference of Diffusion LLMs",
+        "summary": "Polestar addresses two key bottlenecks in diffusion LLM inference—inefficient KV-cache reuse under bidirectional attention and quality degradation from static confidence thresholds—by tracking token representation drift to adaptively calibrate both. For teams evaluating diffusion-based language models (e.g., for parallel generation use cases), this work offers concrete techniques to close the speed-quality gap vs. autoregressive models. The drift-aware approach could meaningfully reduce inference costs without sacrificing output fidelity.",
+        "url": "https://arxiv.org/abs/2607.14107",
+        "source": "arXiv",
+        "published": "2026-07-17T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "Georgia Institute of Technology",
+          "Intel AI Group"
+        ]
+      },
+      {
+        "title": "Eta Given Delta: Defining LLM Tool Efficiency With Marginal Tool Utility",
+        "summary": "This paper introduces two new metrics—tool efficiency and marginal tool utility—to quantify whether individual tool calls in an LLM agent trajectory are actually contributing to task success or just adding latency and cost. Practically, this gives agent developers a principled way to prune redundant tools from their setups, potentially reducing API costs and speeding up agentic workflows. It's a useful complement to existing accuracy-focused agent evals.",
+        "url": "https://arxiv.org/abs/2607.14108",
+        "source": "arXiv",
+        "published": "2026-07-17T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Evaluation"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Automatically Evolving Prompt Guidelines for Task-Specific Optimization",
+        "summary": "Rather than relying on generic prompt engineering heuristics, this system automatically evolves task-specific prompt guidelines by iterating on failure cases and underspecified queries. For practitioners building LLM-powered products, this points toward automated prompt governance pipelines that continuously refine instructions as edge cases emerge in production. The approach reduces the manual burden of prompt maintenance as task requirements shift.",
+        "url": "https://arxiv.org/abs/2607.14105",
+        "source": "arXiv",
+        "published": "2026-07-17T04:00:00.000Z",
+        "keywords": [
+          "Framework",
+          "Application"
+        ],
+        "affiliations": [
+          "University of Luxembourg",
+          "Luxembourg Institute of Health"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "LM Studio Bionic: the AI agent for open models",
+        "summary": "LM Studio has launched Bionic, an agentic layer built on top of its local open-model runtime, enabling multi-step AI agent workflows to run entirely on-device. For developers who need privacy-preserving or offline-capable agentic applications, this lowers the barrier significantly compared to cloud-based agent frameworks. The high HN engagement (235 points, 81 comments) suggests strong developer interest in self-hosted agent infrastructure.",
+        "url": "https://lmstudio.ai/blog/introducing-lm-studio-bionic",
+        "source": "Hacker News",
+        "published": "2026-07-16T20:18:15.000Z"
+      },
+      {
+        "title": "NVIDIA Nemotron 3 Embed Ranks #1 Overall on RTEB, Advancing Agentic Retrieval",
+        "summary": "NVIDIA's Nemotron 3 Embed has taken the top spot on the Retrieval Text Embedding Benchmark (RTEB), which specifically targets agentic retrieval scenarios beyond standard semantic search. For teams building RAG pipelines or agentic systems that rely on dense retrieval, this model is now a strong candidate to benchmark against existing embedding choices. NVIDIA's win also signals increased competition in the embedding model space from hardware-side AI labs.",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-3-embed-wins-rteb",
+        "source": "Hugging Face",
+        "published": "2026-07-16T16:01:21.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Kimi K3 2.8T-A50B: the largest open model ever released; Opus 4.8-class at Sonnet 5 pricing",
+        "summary": "Moonshot AI's Kimi K3, a 2.8-trillion-parameter MoE model activating 50B parameters, has topped web engineering benchmarks above all proprietary models—including Anthropic's Fable—while being priced competitively with mid-tier closed models. Early adopters are already reporting switching production workloads away from closed-source alternatives, and Vercel's CEO confirmed it is the top performer on their web engineering benchmark. This is a major inflection point for the open-model ecosystem and cost structures for AI product builders.",
+        "url": "https://www.latent.space/p/ainews-kimi-k3-28t-a50b-the-largest",
+        "source": "Latent Space",
+        "published": "2026-07-17T01:46:36.000Z"
+      },
+      {
+        "title": "How we contain Claude across products",
+        "summary": "Anthropic's engineering blog details how they progressively grant Claude higher-risk permissions—including access sufficient to affect internal services—while managing blast radius through safeguards, model training, and sandboxing. The post is a practical reference for organizations scaling agentic deployments, covering auto-permission modes, multi-agent orchestration interfaces, and worktree isolation techniques. It also signals how Anthropic's own internal bar for acceptable agent autonomy has shifted dramatically over the past year.",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "blog",
+        "published": "2026-07-17T08:05:29.000Z"
+      },
+      {
+        "title": "Security incident disclosure — July 2026",
+        "summary": "Hugging Face publicly disclosed a security incident affecting its platform in July 2026, underscoring supply-chain risks for teams that rely on the Hub for model distribution and access. AI product builders hosting or consuming models via Hugging Face should review the disclosure details and assess whether any credentials, model weights, or dataset access tokens may have been compromised. This is a reminder to treat model hub integrations with the same security diligence as any third-party software dependency.",
+        "url": "https://huggingface.co/blog/security-incident-july-2026",
+        "source": "Hugging Face",
+        "published": "2026-07-16T00:00:00.000Z"
+      },
+      {
+        "title": "OpenAI Head of Industrial Compute on Stargate and the AI Infrastructure Buildout",
+        "summary": "Sachin Katti, OpenAI's Head of Industrial Compute, discussed the Stargate data center program and the unprecedented scale of AI infrastructure investment, framing it as potentially the largest infrastructure buildout in human history. For AI product builders, this context matters for long-term capacity planning and understanding why frontier model availability and pricing will continue to evolve rapidly. The conversation also touches on data center financing structures that are reshaping the capital markets around AI compute.",
+        "url": "https://x.com/mattturck/status/2077791541167268243",
+        "source": "X (@mattturck)",
+        "published": "2026-07-16T16:24:41.000Z"
+      }
+    ]
+  }
+}
