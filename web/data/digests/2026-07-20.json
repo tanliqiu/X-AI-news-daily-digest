@@ -1,0 +1,131 @@
+{
+  "date": "2026-07-20",
+  "tldr": [
+    "Claude Fable reportedly produced a counterexample to the longstanding Jacobian Conjecture, a major open math problem — if verified, a landmark AI reasoning milestone",
+    "Anthropic researchers identify a 'global workspace' structure in LLMs using the Jacobian lens, revealing which representations models are poised to verbalize — key new interpretability technique",
+    "Investor pressure mounts on big tech to justify AI capex as stocks sell off, while infrastructure demand is so acute that power companies are using eminent domain to seize land for data centers"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Verbalizable Representations Form a Global Workspace in Language Models",
+        "summary": "Anthropic researchers introduce the 'Jacobian lens', an interpretability technique that identifies which internal representations an LLM is about to verbalize at any point during processing — analogous to the 'global workspace' theory of human consciousness. The finding reveals a functional separation between processed-but-silent and about-to-be-spoken representations, with practical implications for understanding model reasoning, steering, and transparency. This could inform new approaches to hallucination detection and controlled generation.",
+        "url": "https://arxiv.org/abs/2607.15495",
+        "source": "arXiv",
+        "published": "2026-07-20T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Inference"
+        ],
+        "affiliations": [
+          "Anthropic"
+        ]
+      },
+      {
+        "title": "VarRate: Training-Free Variable-Rate KV Cache Compression for Long-Context LLMs",
+        "summary": "VarRate proposes a hybrid KV cache compression method that avoids the irreversible accuracy collapse (11–15 point drops) seen in token-eviction approaches like SnapKV, while also improving on uniform low-rank coding. It dynamically allocates compression budgets across layers and tokens without requiring retraining, making it a practical drop-in for reducing memory overhead in long-context inference deployments. Teams running large-context models in production should find this directly applicable.",
+        "url": "https://arxiv.org/abs/2607.15498",
+        "source": "arXiv",
+        "published": "2026-07-20T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "Iowa State University"
+        ]
+      },
+      {
+        "title": "Process Reward Informed Tree Rollout for Effective Multi-Turn RL",
+        "summary": "This paper addresses a core inefficiency in RL training for long-horizon agents: methods like GRPO/RLOO waste rollout budget on dead-end trajectories. The proposed tree-rollout approach uses process reward models to guide exploration toward promising intermediate states, improving sample efficiency in multi-turn agentic tasks. Practitioners building RL-trained agents for complex workflows should see meaningfully better training returns per compute dollar.",
+        "url": "https://arxiv.org/abs/2607.15610",
+        "source": "arXiv",
+        "published": "2026-07-20T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "UC San Diego",
+          "Amazon"
+        ]
+      },
+      {
+        "title": "Better Starts, Better Ends: Bootstrapped Iterative Self-Reasoning Distillation for Compressed Reasoning",
+        "summary": "This work targets the redundancy problem in long chain-of-thought traces from large reasoning models, where repeated self-verification and detours inflate compute costs. The bootstrapped self-distillation approach trains a student model on cleaner, shorter reasoning traces derived from its own rollouts, improving both initialization and termination quality. For teams deploying reasoning-heavy models at scale, this offers a path to substantially reducing inference-time token budgets without sacrificing accuracy.",
+        "url": "https://arxiv.org/abs/2607.15736",
+        "source": "arXiv",
+        "published": "2026-07-20T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Training",
+          "Inference"
+        ],
+        "affiliations": [
+          "Xi'an Jiaotong University",
+          "Peking University"
+        ]
+      },
+      {
+        "title": "AI Advice Made People Less Accurate but More Confident – Study",
+        "summary": "A new study finds that receiving AI-generated advice suppresses critical thinking, leaving users more confident in incorrect answers than they would be without AI assistance. This overconfidence-accuracy gap has direct product implications: AI tools deployed in high-stakes domains (medical, legal, financial) may systematically degrade decision quality if they don't actively prompt user verification. Designers of AI-assisted workflows should consider friction mechanisms that encourage skepticism.",
+        "url": "https://thenextweb.com/news/ai-advice-suppresses-critical-thinking-wrong-answers-study",
+        "source": "Hacker News",
+        "published": "2026-07-19T21:18:10.000Z",
+        "keywords": [
+          "Alignment",
+          "Evaluation"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Fine-tune Video and Image Models at Scale with NVIDIA NeMo Automodel and Diffusers",
+        "summary": "NVIDIA and Hugging Face have jointly released an integration between NVIDIA NeMo Automodel and the Diffusers library, enabling scalable fine-tuning of video and image diffusion models across multi-GPU and multi-node setups. The integration lowers the barrier for teams wanting to adapt large generative media models to custom datasets without building bespoke distributed training infrastructure. This is particularly relevant for product teams building visual content generation pipelines.",
+        "url": "https://huggingface.co/blog/nvidia/scale-diffusers-finetuning-nemo-automodel",
+        "source": "Hugging Face",
+        "published": "2026-07-17T15:57:54.000Z"
+      },
+      {
+        "title": "LoRA Speedrun – Public Wall-Clock Leaderboard for Fine-Tuning Techniques",
+        "summary": "LoRA Speedrun is an open-source leaderboard that benchmarks fine-tuning methods by real wall-clock time rather than theoretical FLOPs, giving practitioners a more honest comparison of training efficiency across hardware configurations. The project surfaces which LoRA variants and optimizations actually deliver faster results in practice, cutting through marketing claims. Teams regularly fine-tuning models will find this a useful reference when choosing between competing PEFT approaches.",
+        "url": "https://github.com/Saivineeth147/lora-speedrun",
+        "source": "Hacker News",
+        "published": "2026-07-20T04:24:48.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Claude Fable Reportedly Produces Counterexample to the Jacobian Conjecture",
+        "summary": "A viral post from mathematician Arnav Tripathy claims that Anthropic's Claude Fable model generated a valid counterexample to the Jacobian Conjecture, a 90-year-old open problem in algebraic geometry. If independently verified, this would represent one of the most significant AI-assisted mathematical discoveries to date and a concrete demonstration of frontier model reasoning in formal mathematics. The claim is circulating widely and has sparked significant community debate about verification.",
+        "url": "https://xcancel.com/__alpoge__/status/2079028340955197566",
+        "source": "Hacker News",
+        "published": "2026-07-20T02:51:16.000Z"
+      },
+      {
+        "title": "Big Tech Needs to Justify AI Spending as Investors Dump Stocks",
+        "summary": "Bloomberg reports growing investor impatience with big tech's massive AI capital expenditure, with stocks selling off amid demands for clearer revenue attribution to AI investments. This marks a potential inflection point where the 'invest now, monetize later' narrative is being scrutinized more aggressively, which could accelerate pressure on AI product teams to demonstrate measurable ROI. Consultants and AI product builders should expect clients to tighten procurement scrutiny accordingly.",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-19/big-tech-needs-to-justify-ai-spending-as-investors-dump-stocks",
+        "source": "Hacker News",
+        "published": "2026-07-20T04:41:10.000Z"
+      },
+      {
+        "title": "Power Companies Using Eminent Domain to Seize Land for Data Centers",
+        "summary": "Fortune reports that utilities are invoking eminent domain powers to acquire land for data center construction, reflecting the extraordinary infrastructure demand driven by AI workloads. This signals that AI compute expansion is now moving fast enough to collide with conventional land-use and regulatory processes, with potential delays and legal battles ahead. Teams planning on-premise or co-location expansions should factor in tightening power and land availability in key markets.",
+        "url": "https://fortune.com/2026/07/19/data-center-eminent-domain-public-use/",
+        "source": "Hacker News",
+        "published": "2026-07-20T04:19:22.000Z"
+      },
+      {
+        "title": "The Future of AI Infrastructure with CoreWeave (Practical AI Podcast)",
+        "summary": "CoreWeave SVP Corey Sanders discusses why AI workloads — particularly agentic and long-running inference jobs — require fundamentally different infrastructure than traditional cloud, covering GPU optimization, training vs. inference tradeoffs, and the emerging demands of agentic development. The episode is a useful orientation for practitioners evaluating AI-native cloud providers versus hyperscalers. Key takeaway: infrastructure choices made now will have outsized impact as agent complexity grows.",
+        "url": "https://share.transistor.fm/s/01c30767",
+        "source": "Practical AI",
+        "published": "2026-07-17T09:00:00.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Jul 17–20"
+}
