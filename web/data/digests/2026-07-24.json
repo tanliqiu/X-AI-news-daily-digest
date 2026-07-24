@@ -1,0 +1,126 @@
+{
+  "date": "2026-07-24",
+  "tldr": [
+    "Black Forest Labs launches FLUX 3, a multimodal flow model claimed to outperform Seedance 2.0, Gemini Omni, and Grok Imagine on image/video generation benchmarks",
+    "Stripe is reportedly in talks to acquire OpenRouter for ~$10B, a deal that would embed AI model routing into mainstream payment and developer infrastructure",
+    "Anthropic upgrades Claude voice mode to run on Opus/Sonnet and access connected tools mid-conversation, closing the gap with GPT-4o voice"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Knowledge Injection Exists in MoE? Exploring Expert-Aware Contrast Decoding in MoE for Mitigating LLMs' Hallucinations",
+        "summary": "This paper introduces Expert-Aware Contrast Decoding (EACD), a training-free method that exploits expert routing differences in MoE models to reduce hallucinations without prompt engineering or fine-tuning. By treating deactivated experts as a contrastive signal, EACD achieves better cross-domain generalization than prior contrastive decoding approaches. Practitioners deploying MoE models (e.g., Mixtral, DeepSeek) for factual tasks can potentially apply this at inference time with no model changes.",
+        "url": "https://arxiv.org/abs/2607.20426",
+        "source": "arXiv",
+        "published": "2026-07-24T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "College of Computer Science and Technology, National University of Defense Technology"
+        ]
+      },
+      {
+        "title": "Break Through the Compression Bottleneck: From Theory to Practice",
+        "summary": "This paper diagnoses why LLM compression methods like low-rank decomposition and quantization suffer steep performance cliffs at high compression ratios, and proposes a combined approach that mitigates this bottleneck. The work provides theoretical grounding alongside practical techniques, offering guidance for teams that need to deploy large models under tight memory or latency budgets. Results suggest meaningful quality can be preserved at compression ratios previously considered too aggressive.",
+        "url": "https://arxiv.org/abs/2607.20434",
+        "source": "arXiv",
+        "published": "2026-07-24T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Training"
+        ],
+        "affiliations": [
+          "School of Artificial Intelligence, University of Chinese Academy of Sciences",
+          "Beijing Academy of Artificial Intelligence"
+        ]
+      },
+      {
+        "title": "Human-in-the-Loop Large Language Model Framework for Identification of Cutaneous Immune-Related Adverse Events",
+        "summary": "A multi-agent RAG framework with human oversight improved clinical note classification accuracy (F1 0.88 vs 0.77) and cut review time roughly in half compared to unassisted manual review in a real healthcare setting. The strong inter-rater agreement improvement (kappa 0.82 vs 0.50) demonstrates that LLM-assisted workflows can meaningfully standardize expert judgment in high-stakes domains. This serves as a concrete case study for building human-in-the-loop AI products in regulated industries.",
+        "url": "https://arxiv.org/abs/2607.20428",
+        "source": "arXiv",
+        "published": "2026-07-24T04:00:00.000Z",
+        "keywords": [
+          "Application",
+          "RAG",
+          "Agents"
+        ],
+        "affiliations": [
+          "Harvard Medical School",
+          "Dana-Farber Cancer Institute",
+          "Massachusetts General Hospital"
+        ]
+      },
+      {
+        "title": "Is MoE Routing a Huffman Code? Discovering the Frequency-Diversity Law in Chain-of-Thought",
+        "summary": "This paper reveals that expert routing in state-of-the-art MoE models like Phi-3.5-MoE and Gemma-4-27B mirrors Huffman coding — common reasoning patterns are handled by fewer experts while rare ones engage more diverse expert sets. The Frequency-Diversity Law offers a new interpretability lens for understanding and potentially optimizing MoE routing, which has implications for both architecture design and efficient inference. Teams working on MoE fine-tuning or deployment may use these insights to better predict and control expert utilization.",
+        "url": "https://arxiv.org/abs/2607.20427",
+        "source": "arXiv",
+        "published": "2026-07-24T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Inference"
+        ],
+        "affiliations": [
+          "Nanyang Technological University",
+          "Institute for Infocomm Research (I2R), A*STAR"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Flux 3",
+        "summary": "Black Forest Labs released FLUX 3, a multimodal flow model covering text-to-image and video generation that reportedly outperforms Seedance 2.0, Gemini Omni, and Grok Imagine. For AI product builders relying on image/video generation APIs, FLUX 3 represents a significant new open-weights option to benchmark against incumbent commercial offerings. The release also includes a FLUX-mimic video-action model targeting robotics applications.",
+        "url": "https://bfl.ai/blog/flux-3",
+        "source": "Hacker News",
+        "published": "2026-07-24T06:17:08.000Z"
+      },
+      {
+        "title": "Claude Voice Mode Now Runs on Opus/Sonnet with Tool Access",
+        "summary": "Anthropic has upgraded Claude's voice mode to run on its more capable models (Opus and Sonnet) and to call connected tools like email and calendar mid-conversation. This closes a meaningful capability gap with GPT-4o voice and makes Claude a stronger candidate for voice-first AI product integrations. Expanded language support is also included, broadening addressable use cases.",
+        "url": "https://x.com/claudeai/status/2080376094939603366",
+        "source": "X (@claudeai)",
+        "published": "2026-07-23T19:34:47.000Z"
+      },
+      {
+        "title": "The State of Simulation for Physical AI: An Overview",
+        "summary": "NVIDIA's overview on Hugging Face covers the current landscape of simulation environments for training physical AI systems, including robotics and embodied agents. For teams building or evaluating AI for physical world applications, this serves as a practical reference for choosing simulation stacks and understanding the sim-to-real gap. The post is authored by NVIDIA and reflects their Isaac platform perspective.",
+        "url": "https://huggingface.co/blog/nvidia/state-of-simulation-for-physical-ai",
+        "source": "Hugging Face",
+        "published": "2026-07-21T20:00:27.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Stripe in Talks to Buy OpenRouter for ~$10B",
+        "summary": "Stripe is reportedly in advanced acquisition discussions for OpenRouter, the popular AI model routing marketplace, at a valuation around $10 billion. If completed, this would embed LLM access and routing directly into Stripe's developer and payments infrastructure, potentially reshaping how businesses purchase and route AI model calls. The deal signals that financial infrastructure players see model routing as critical plumbing for the AI economy.",
+        "url": "https://www.wsj.com/tech/ai/stripe-in-talks-to-buy-buzzy-ai-model-marketplace-openrouter-decc6a74",
+        "source": "Hacker News",
+        "published": "2026-07-23T20:59:22.000Z"
+      },
+      {
+        "title": "[AINews] Black Forest Labs FLUX 3 — Multimodal Flow Models",
+        "summary": "This Latent Space newsletter edition covers the FLUX 3 launch in depth, including benchmark comparisons against leading image and video generation models and the new FLUX-mimic robotics action model. It provides context on Black Forest Labs' positioning and technical approach, useful for teams evaluating generative media tooling. The edition also touches on the broader competitive implications for the multimodal model market.",
+        "url": "https://www.latent.space/p/ainews-black-forest-labs-flux-3-multimodal",
+        "source": "Latent Space",
+        "published": "2026-07-24T04:30:12.000Z"
+      },
+      {
+        "title": "Surviving the New Economics of a Post-Agentic World",
+        "summary": "This Practical AI episode examines how large-scale agent deployments are eroding traditional enterprise software moats and repricing human labor. For AI consultants and product builders, it frames the strategic landscape around agentic transformation — including how capital allocation and productivity measurement are shifting. Concrete examples of companies deploying thousands of agents add grounding to the economic analysis.",
+        "url": "https://share.transistor.fm/s/8a2e4fc0",
+        "source": "Practical AI",
+        "published": "2026-07-23T09:00:00.000Z"
+      },
+      {
+        "title": "Inside the Model Factory — Eiso Kant, Poolside AI",
+        "summary": "Poolside AI's co-CEO describes how a small research team built a model factory capable of training Laguna S, a 118B MoE model they claim beats larger open-weights rivals. The interview provides rare operational detail on compute strategy, team structure, and the economics of running a focused AI lab competing with much larger players. Relevant for anyone tracking the code-focused LLM space or evaluating Poolside as a potential API or tooling option.",
+        "url": "https://www.latent.space/p/poolside",
+        "source": "Latent Space",
+        "published": "2026-07-23T05:09:14.000Z"
+      }
+    ]
+  }
+}
