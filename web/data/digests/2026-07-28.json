@@ -1,0 +1,97 @@
+{
+  "date": "2026-07-28",
+  "tldr": [
+    "Frontier LLMs use semantically irrelevant filler tokens to perform 'invisible reasoning' not shown in chain-of-thought, raising significant AI safety and interpretability concerns",
+    "A $500 RL fine-tune of a 9B open-source model reportedly outperformed frontier models on a domain-specific catalog review task, demonstrating the cost-efficiency of targeted fine-tuning",
+    "Kimi K3 is now available via Telnyx Inference API, expanding access to Moonshot AI's latest model through a third-party provider"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Not All LLM Reasoning is Visible in the Chain-of-Thought",
+        "summary": "Researchers find that 13 frontier LLMs can leverage semantically irrelevant filler tokens to perform reasoning that never surfaces in their chain-of-thought outputs, with accuracy improvements observed on synthetic tasks. This 'invisible reasoning' phenomenon has direct implications for AI safety and auditability—builders relying on CoT for interpretability or oversight cannot assume the visible trace captures the full reasoning process. Teams building high-stakes applications should treat CoT explanations as incomplete artifacts rather than ground truth.",
+        "url": "https://arxiv.org/abs/2607.22925",
+        "source": "arXiv",
+        "published": "2026-07-28T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Security",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "New York University",
+          "University of Maryland",
+          "TogetherAI"
+        ]
+      },
+      {
+        "title": "Learning When to Reason for Text-to-SQL via SFT and DPO",
+        "summary": "AutoThinkSQL introduces an auto-thinking mechanism trained via SFT and DPO that selectively applies chain-of-thought reasoning only for complex SQL queries, skipping it for simple lookups. This hybrid approach achieves competitive benchmark accuracy while significantly reducing inference-time overhead—a practical pattern for any NL-to-code application where query complexity varies. Teams building text-to-SQL or similar structured-output pipelines can adopt this selective reasoning pattern to balance cost and quality.",
+        "url": "https://arxiv.org/abs/2607.22622",
+        "source": "arXiv",
+        "published": "2026-07-28T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Inference"
+        ],
+        "affiliations": [
+          "Seoul National University",
+          "Samsung Electronics"
+        ]
+      },
+      {
+        "title": "Toward Automated Detection of Documentation Inconsistencies in Electronic Health Records",
+        "summary": "A two-stage LLM pipeline using Gemini 2.5 Pro for candidate identification and Gemini 2.5 Flash for verification was applied to 3,000 real-world discharge summaries to surface internal documentation inconsistencies. The study characterizes both the types of inconsistencies detectable and the recurring failure modes that limit reliability at scale, providing a realistic picture for teams considering LLM deployment in high-stakes clinical workflows. The multi-stage verification architecture offers a reusable pattern for quality-control applications in regulated domains.",
+        "url": "https://arxiv.org/abs/2607.22954",
+        "source": "arXiv",
+        "published": "2026-07-28T04:00:00.000Z",
+        "keywords": [
+          "Application",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Duke University",
+          "Columbia University Medical Center",
+          "Vanderbilt University Medical Center"
+        ]
+      },
+      {
+        "title": "Benchmarking Opus 5 on SlopCodeBench",
+        "summary": "An independent benchmark evaluates Claude Opus 5 on SlopCodeBench, a coding agent evaluation designed to detect low-quality or repetitive ('sloppy') code generation patterns. The results provide a practical signal for teams choosing models for agentic coding tasks where output quality and consistency matter beyond raw correctness scores. This adds to the growing ecosystem of domain-specific coding benchmarks that go beyond pass@k metrics.",
+        "url": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/benchmarking-opus-5-on-slop-code-bench.md",
+        "source": "Hacker News",
+        "published": "2026-07-27T22:37:52.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Agents",
+          "Evaluation"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "A $500 RL Fine-Tune of a 9B Open Model Beat Frontier Models on Catalog Review",
+        "summary": "A blog post details how a 9B open-source model fine-tuned with reinforcement learning for roughly $500 outperformed frontier models on a product catalog review task. This is a concrete data point that domain-specific RL fine-tuning can be highly cost-effective for well-defined, structured tasks, challenging the assumption that frontier API costs are unavoidable. Practitioners with narrow, high-volume use cases should consider targeted fine-tuning as a serious alternative to general-purpose model APIs.",
+        "url": "https://fermisense.com/when-machines-take-the-wheel/",
+        "source": "Hacker News",
+        "published": "2026-07-28T02:18:53.000Z"
+      },
+      {
+        "title": "Kimi K3 Now Available via Telnyx Inference API",
+        "summary": "Moonshot AI's Kimi K3 model is now accessible through the Telnyx Inference API, giving developers another hosted inference option for this model alongside direct API access. Telnyx's infrastructure focus may offer competitive latency and pricing for production workloads. This expands the ecosystem of providers offering Kimi K3, useful for teams already using Telnyx for communications or inference.",
+        "url": "https://telnyx.com/release-notes/kimi-k3-telnyx-inference",
+        "source": "Hacker News",
+        "published": "2026-07-27T22:46:28.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Much Ado About Open Weights",
+        "summary": "Latent Space's daily AI news roundup notes that despite significant commentary and discussion about open-weight models, Kimi K3 was the only major model release of the day. The piece reflects ongoing debate in the AI community about the strategic and technical implications of open-weight model releases. Useful as a high-level market pulse for consultants tracking the open vs. closed model landscape.",
+        "url": "https://www.latent.space/p/ainews-much-ado-about-open-weights",
+        "source": "Latent Space",
+        "published": "2026-07-28T06:20:13.000Z"
+      }
+    ]
+  }
+}
