@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-29",
+  "tldr": [
+    "Major AI labs including OpenAI, Anthropic, Google DeepMind, and Meta co-signed a letter calling to 'pace' AI development amid fears of recursive self-improvement, while HuggingFace detailed machine-speed offensive cyberattack capabilities",
+    "Andrew Ng launched LearnVector, an AI company focused on personalized one-to-one learning experiences, signaling continued major investment in AI-driven education",
+    "OpenAI reset usage limits for ChatGPT Work and Codex users after GPT-5.6 Sol was consuming limits faster than expected, and released an open-source CLI/TypeScript SDK for AI-assisted security vulnerability scanning"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Measuring and Improving Behavioral Consistency in Large Language Models through Fact-Heuristic-Emotion State Enforcement",
+        "summary": "This paper introduces the Cognitive Kernel Model (CKM), a prompt-level technique that reduces LLM decision instability by requiring the model to categorize inputs into Fact, Heuristic, and Emotion roles before responding. Critically, it requires no weight changes, making it immediately applicable to any deployed LLM to reduce inconsistent outputs across runs or when prior answers are fed back as context. This has direct practical value for agentic and multi-turn applications where consistency is essential.",
+        "url": "https://arxiv.org/abs/2607.24765",
+        "source": "arXiv",
+        "published": "2026-07-29T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Agents"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Neuromorphic Diffusion Language Models: Addressing Compute and Memory Bottlenecks via Sparsity and Block Denoising",
+        "summary": "This paper addresses the inference inefficiency of autoregressive LLMs by extending masked diffusion language models (MDLMs) with sparsity and block denoising techniques inspired by neuromorphic computing, enabling more tokens per parameter access and lower energy consumption. For practitioners building cost-sensitive or edge-deployed AI products, this approach offers a potential path to significantly cheaper inference without sacrificing output quality. The work is relevant as inference costs remain a key constraint in scaling AI applications.",
+        "url": "https://arxiv.org/abs/2607.24841",
+        "source": "arXiv",
+        "published": "2026-07-29T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "King's College London",
+          "Northeastern University London"
+        ]
+      },
+      {
+        "title": "TabRank: Chain-of-Thought Distillation for Table Re-Rankers",
+        "summary": "TabRank proposes distilling chain-of-thought reasoning from large LLMs into smaller, efficient table re-rankers for structured information retrieval pipelines. This is directly applicable to RAG systems that need to retrieve relevant tables from databases or documents, improving precision in multi-stage retrieval without paying full LLM inference costs at re-ranking time. Teams building enterprise data Q&A or analytics products over tabular data will find this approach practically useful.",
+        "url": "https://arxiv.org/abs/2607.25182",
+        "source": "arXiv",
+        "published": "2026-07-29T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Arizona State University",
+          "Rensselaer Polytechnic Institute",
+          "Scale AI"
+        ]
+      },
+      {
+        "title": "Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-Design",
+        "summary": "This work presents a unified transformer-based model for simultaneously designing robot morphology and motion, conditioned on task objectives. The co-design framing — letting the model jointly optimize physical structure and control policy — could accelerate robotics product development by reducing the manual iteration between hardware and software teams. It represents a concrete step toward AI-assisted physical system design.",
+        "url": "https://transformer-transformer.github.io/",
+        "source": "Hacker News",
+        "published": "2026-07-29T03:52:29.000Z",
+        "keywords": [
+          "Agents",
+          "Framework"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
+        "summary": "Liquid AI released LFM2.5-Encoders, a new family of encoder models optimized for fast long-context inference on CPU hardware, removing the GPU dependency for embedding and encoding workloads. This is significant for teams deploying RAG pipelines or semantic search in cost-constrained or edge environments where GPU availability is limited. The CPU-first design lowers the barrier to production deployment of long-context retrieval systems.",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
+        "source": "Hugging Face",
+        "published": "2026-07-28T15:01:45.000Z"
+      },
+      {
+        "title": "OlmoEarth Platform: Geospatial Inference at Planetary Scale",
+        "summary": "AllenAI released details on the OlmoEarth platform, which enables large-scale geospatial inference using open foundation models trained on satellite and earth observation data. For AI product builders in climate tech, agriculture, urban planning, or logistics, this provides an open, scalable infrastructure reference for running vision models over planetary-scale geospatial datasets. The open nature of the platform makes it a practical starting point for geospatial AI applications.",
+        "url": "https://huggingface.co/blog/allenai/olmoearth-infrastructure",
+        "source": "Hugging Face",
+        "published": "2026-07-28T16:27:42.000Z"
+      },
+      {
+        "title": "OpenAI releases open-source CLI and TypeScript SDK for AI-assisted security vulnerability scanning",
+        "summary": "OpenAI published an open-source CLI and TypeScript SDK that can scan repositories, review code changes, track security findings over time, and integrate into CI pipelines for automated vulnerability detection. This gives development teams a ready-made tool to embed AI-powered security checks directly into their existing workflows without building custom integrations. It positions OpenAI's models as a practical layer in software supply chain security.",
+        "url": "https://x.com/thsottiaux/status/2082241164850364555",
+        "source": "X (@thsottiaux)",
+        "published": "2026-07-28T23:05:54.000Z"
+      },
+      {
+        "title": "Hubble: Open-source notetaking app for you and your agents",
+        "summary": "Hubble is a new open-source notetaking application designed to be used collaboratively by humans and AI agents, providing a shared persistent memory and knowledge store. For teams building multi-agent systems, this addresses the practical challenge of giving agents a structured, queryable place to write and retrieve information across sessions. It could serve as a lightweight alternative to building custom agent memory infrastructure.",
+        "url": "https://www.hubble.md/",
+        "source": "Hacker News",
+        "published": "2026-07-29T00:11:23.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Fearing RSI: OpenAI, Anthropic, GDM, Meta, Thinky cosign letter to \"Pace\" AI development, as HuggingFace details Machine-Speed Offensive Cyberattack",
+        "summary": "The leading AI labs — OpenAI, Anthropic, Google DeepMind, and Meta — have jointly signed a letter calling for pacing AI development in response to concerns about recursive self-improvement (RSI), marking a notable shift in public positioning from pure acceleration. Simultaneously, HuggingFace published research detailing machine-speed offensive cyberattack capabilities enabled by current AI systems, adding urgency to the safety debate. For AI consultants and product builders, this signals that regulatory and self-imposed constraints on frontier model deployment may accelerate, affecting product roadmap planning.",
+        "url": "https://www.latent.space/p/ainews-fearing-rsi-openai-anthropic",
+        "source": "Latent Space",
+        "published": "2026-07-29T00:46:52.000Z"
+      },
+      {
+        "title": "LearnVector – Andrew Ng's AI company building one-to-one learning experiences",
+        "summary": "Andrew Ng launched LearnVector, a new AI company focused on delivering personalized one-to-one learning experiences at scale using AI. Given Ng's track record with Coursera and DeepLearning.AI, this signals serious investment in AI-native education infrastructure and could become a significant platform for AI skills training. Product builders in edtech should watch this closely as a benchmark for what AI-personalized learning can achieve.",
+        "url": "https://learnvector.ai/",
+        "source": "Hacker News",
+        "published": "2026-07-29T01:49:19.000Z"
+      },
+      {
+        "title": "Codex from 0 to 10M Users: Building ChatGPT Work — Akshay Nathan, OpenAI",
+        "summary": "OpenAI's core product engineering lead details how ChatGPT Work scaled Codex to 10 million users, covering the development of features like Sites, Memory, Subagents, and no-code tooling. The episode offers rare inside-the-tent perspective on OpenAI's product strategy for enterprise and agentic workflows, with practical lessons on building AI products that reach mass adoption. Relevant for anyone designing multi-agent or enterprise AI products.",
+        "url": "https://www.latent.space/p/chatgpt-work",
+        "source": "Latent Space",
+        "published": "2026-07-28T15:26:50.000Z"
+      },
+      {
+        "title": "Chip stocks slide in US and Asia as AI jitters rattle investors",
+        "summary": "Semiconductor stocks fell across US and Asian markets as investor concerns about AI demand sustainability and near-term ROI on AI infrastructure spending intensified. This market signal is relevant for AI product builders and consultants as it may affect enterprise AI budget cycles and capital availability for AI startups in the near term. It reflects growing scrutiny of whether current AI deployment rates can justify continued hardware investment.",
+        "url": "https://www.bbc.com/news/articles/cly8zng43npo",
+        "source": "Hacker News",
+        "published": "2026-07-29T01:56:00.000Z"
+      }
+    ]
+  }
+}
