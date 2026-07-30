@@ -1,0 +1,118 @@
+{
+  "date": "2026-07-30",
+  "tldr": [
+    "OpenAI's GPT-5.6 Sol achieves state-of-the-art on ARC-AGI-3 with just two inference setting changes (enabling reasoning and multi-context-window operation), highlighting how inference configuration can dramatically shift benchmark performance.",
+    "A new training-free method (V-Steer) restores instruction hierarchy compliance in LLMs at inference time by editing cached value vectors, addressing a critical safety gap in deployed systems.",
+    "AI deployment in regulated/real-world settings is showing strain: a Vermont pharmacy chain's AI rollout led to delays, incorrect information, and privacy concerns—a cautionary tale for applied AI builders."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Steering Instruction Hierarchies at Inference Time",
+        "summary": "V-Steer is a training-free method that enforces system-prompt priority over user/tool inputs by editing cached value vectors at inference time using direct logit attribution. This directly addresses a well-known safety gap where frontier LLMs frequently ignore instruction hierarchies, with no retraining required. For product teams deploying LLMs with strict operator-level constraints, this offers a practical, low-friction mitigation path.",
+        "url": "https://arxiv.org/abs/2607.26228",
+        "source": "arXiv",
+        "published": "2026-07-30T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Inference",
+          "Alignment"
+        ],
+        "affiliations": [
+          "University of Illinois, Urbana-Champaign"
+        ]
+      },
+      {
+        "title": "Choosing Where and How to Moderate: End-to-End Trade-offs in Filter Placement and Response Rewriting",
+        "summary": "This paper evaluates content moderation architectures end-to-end using two customer-outcome metrics—Usefulness and Harmful Exposure—rather than isolated classifier accuracy. It compares input filtering, output filtering, and response rewriting strategies, providing concrete guidance on deployment trade-offs between safety and utility. Teams building production AI products will find the end-to-end framing particularly actionable for justifying moderation architecture decisions.",
+        "url": "https://arxiv.org/abs/2607.26200",
+        "source": "arXiv",
+        "published": "2026-07-30T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Evaluation",
+          "Application"
+        ],
+        "affiliations": [
+          "Microsoft Responsible AI",
+          "Goodfire"
+        ]
+      },
+      {
+        "title": "Large-Scale ChatBot Validation Through Customer Digital Twin Simulations",
+        "summary": "NatWest AI Research presents a methodology for creating synthetic customer agents (digital twins) grounded in real transactional and conversational data to enable scalable, automated chatbot validation in banking. This addresses a key barrier to safe LLM deployment in regulated industries where manual testing is prohibitively expensive. The approach could generalize to any domain where real user data can ground simulation agents for pre-deployment testing.",
+        "url": "https://arxiv.org/abs/2607.26060",
+        "source": "arXiv",
+        "published": "2026-07-30T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Agents",
+          "Application"
+        ],
+        "affiliations": [
+          "NatWest AI Research"
+        ]
+      },
+      {
+        "title": "AgentGUI: An Interface for Observing and Steering Long-Running AI Agents",
+        "summary": "AgentGUI is a locally hosted GUI from ETH Zürich that provides rich trajectory visualization and human-in-the-loop steering for multiple concurrent long-running agent sessions. As autonomous agents tackle increasingly complex tasks, the lack of human oversight tooling has become a practical bottleneck—this tool directly addresses that gap. Developers building multi-agent pipelines will benefit from the ability to inspect and intervene across parallel sessions.",
+        "url": "https://arxiv.org/abs/2607.26300",
+        "source": "arXiv",
+        "published": "2026-07-30T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "ETH Zürich"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "A local merge queue for parallel Claude Code agents",
+        "summary": "This open-source tool implements a local merge queue that coordinates multiple parallel Claude Code agents working on the same codebase, preventing conflicts when agents try to commit simultaneously. It's a practical infrastructure piece for teams experimenting with multi-agent coding workflows. The pattern of serializing concurrent agent writes is likely to become a standard requirement as agentic coding use increases.",
+        "url": "https://github.com/funador/claude-code-merge-queue",
+        "source": "Hacker News",
+        "published": "2026-07-30T00:20:16.000Z"
+      },
+      {
+        "title": "Kuna: Decompiler Development in the Age of Coding Agents",
+        "summary": "Kuna is a new decompiler project built with heavy use of coding agents, offering a practical case study in how AI-assisted development changes the economics of building complex systems-level tools. The release includes reflections on where coding agents accelerated development and where they fell short. Relevant for teams evaluating coding agents for infrastructure or tooling projects beyond typical application development.",
+        "url": "https://noelo.org/blog/kuna-release/",
+        "source": "Hacker News",
+        "published": "2026-07-30T02:41:16.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Enabling two settings tripled OpenAI's scores on the ARC-AGI-3 benchmark",
+        "summary": "OpenAI reports that GPT-5.6 Sol achieves state-of-the-art performance on ARC-AGI-3 simply by enabling extended reasoning and multi-context-window operation via canonical compaction—no model changes required. This underscores that inference configuration is now a first-class variable in benchmark performance and practical deployments alike. For AI product builders, it reinforces the importance of tuning inference-time settings rather than assuming default configurations are optimal.",
+        "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/",
+        "source": "Hacker News",
+        "published": "2026-07-29T22:58:23.000Z"
+      },
+      {
+        "title": "A pharmacy chain in Vermont implemented AI for efficiency—it led to delays, incorrect information, and privacy concerns",
+        "summary": "A Vermont pharmacy chain's AI deployment resulted in customer-facing problems including prescription delays, incorrect drug information, and data privacy issues, according to a VTDigger investigation. The case illustrates the real-world risks of deploying AI in high-stakes healthcare workflows without adequate validation and oversight. It's a timely reminder for AI consultants that domain-specific risk assessments and phased rollouts are non-negotiable in regulated industries.",
+        "url": "https://vtdigger.org/2026/07/29/a-pharmacy-chain-in-vermont-implemented-ai-for-efficiency-its-led-to-delays-incorrect-information-and-privacy-concerns/",
+        "source": "Hacker News",
+        "published": "2026-07-30T01:35:10.000Z"
+      },
+      {
+        "title": "Google DeepMind launches Lyria 3.5 in Google Flow Music",
+        "summary": "Google DeepMind's Lyria 3.5 music generation model is now live in Google Flow Music, with improvements to prompt adherence, vocal expressiveness, BPM control, and stem export for full-length songs. The update signals continued rapid iteration in generative media models and tighter integration between research and consumer product. For teams building creative AI applications, the new stem export and BPM control features point toward more composable, production-ready audio generation APIs.",
+        "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
+        "source": "Google DeepMind",
+        "published": "2026-07-29T16:02:10.000Z"
+      },
+      {
+        "title": "[AINews] AI is eating Finance: the next big vertical after coding",
+        "summary": "Latent Space's analysis covers how AI is rapidly permeating financial services—spanning trading, compliance, and customer workflows—positioning finance as the next major industry vertical after software development to be transformed by LLMs. The piece highlights specific product categories gaining traction and the regulatory dynamics shaping deployment. Relevant for consultants scoping opportunities or clients in financial services evaluating AI adoption strategies.",
+        "url": "https://www.latent.space/p/ainews-ai-is-eating-finance-aie-nyc",
+        "source": "Latent Space",
+        "published": "2026-07-29T23:32:12.000Z"
+      }
+    ]
+  }
+}
