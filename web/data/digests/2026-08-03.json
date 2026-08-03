@@ -1,0 +1,124 @@
+{
+  "date": "2026-08-03",
+  "tldr": [
+    "Qwen3.8-Max launches with a claimed new bar for coding and multi-agent collaboration, generating significant community discussion",
+    "OpenAI's super PAC reportedly funds an AI-generated news site to attack industry critics, raising AI-powered influence operation concerns",
+    "Research shows AI COBOL-to-Java migration faithfully reproduces legacy bugs, highlighting risks of automated code modernization"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Chain-of-Models: Cross-Model Auditing for Bias-Robust LLM Judges",
+        "summary": "This paper proposes Chain-of-Models (CoM), a pipeline where a second LLM audits the reasoning trace of a first LLM judge before producing a final verdict, reducing cognitive biases that prompt-engineering alone cannot reliably fix. For teams building evaluation pipelines or RLHF reward models, this offers a scalable alternative to human auditing that can catch position bias, verbosity bias, and similar failure modes. The key practical finding is that cross-model inspection—rather than same-model self-critique—is what drives robustness gains.",
+        "url": "https://arxiv.org/abs/2607.28636",
+        "source": "arXiv",
+        "published": "2026-08-03T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Agents"
+        ],
+        "affiliations": [
+          "National University of Singapore"
+        ]
+      },
+      {
+        "title": "TokenSwap: Benchmarking and Reducing the Modality Gap in Multimodal LLMs",
+        "summary": "TokenSwap introduces a benchmark that measures the performance gap between multimodal LLMs when given semantically equivalent text-only vs. image+text inputs, revealing a systematic inconsistency in current models. By replacing image tokens with their text descriptions at inference time, the method exposes where visual grounding fails and provides a path to targeted fine-tuning. Practitioners deploying vision-language models in production should account for this modality gap when designing evaluation suites.",
+        "url": "https://arxiv.org/abs/2607.28640",
+        "source": "arXiv",
+        "published": "2026-08-03T04:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of California, Santa Barbara",
+          "Google DeepMind"
+        ]
+      },
+      {
+        "title": "AI Migrated Legacy COBOL Programs to Java, Bugs Included",
+        "summary": "A study (arXiv:2607.28271, surfaced on HN) finds that LLM-driven COBOL-to-Java migration accurately transpiles both the logic and the bugs of legacy code, meaning automated modernization does not provide a free quality improvement pass. This is a concrete caution for enterprises treating AI-assisted migration as a path to cleaner codebases—human review of legacy defects must still precede or accompany the migration. The finding also underscores that LLMs optimize for behavioral fidelity, not correctness.",
+        "url": "https://arxiv.org/abs/2607.28271",
+        "source": "Hacker News",
+        "published": "2026-08-03T03:06:12.000Z",
+        "keywords": [
+          "Application",
+          "Benchmarks"
+        ]
+      },
+      {
+        "title": "Are the Financial Reasoning Capabilities of LLMs Credible? A Real-World Test over Long-Horizon Statements",
+        "summary": "Researchers from Alibaba's Qwen team and Tsinghua University test LLMs on complex, multi-step financial statement analysis—cross-statement dynamics, temporal reasoning, and numerical precision—finding that current models struggle beyond surface-level pattern matching. Existing benchmarks (MCQ, single-hop table QA) overstate real-world financial reasoning ability, which has direct implications for fintech applications relying on LLMs for analysis or compliance tasks. The paper introduces a harder benchmark closer to industrial complexity.",
+        "url": "https://arxiv.org/abs/2607.28661",
+        "source": "arXiv",
+        "published": "2026-08-03T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Reasoning",
+          "Application"
+        ],
+        "affiliations": [
+          "Qwen Team, Alibaba Group",
+          "Tsinghua University"
+        ]
+      },
+      {
+        "title": "The Asymmetric Effects of Knowledge Distillation on Bias in Small Language Models",
+        "summary": "Distilling from a Gemma-2-9B teacher into small instruction-tuned models (e.g., SmolLM2-1.7B) cuts context-overriding errors on unambiguous bias tasks but simultaneously collapses per-item refusal calibration on ambiguous tasks, with 15% of previously-refused items flipping to biased responses. This asymmetry means that distillation-based bias mitigation for edge-deployed small models can inadvertently worsen safety on harder, real-world ambiguous inputs. Practitioners fine-tuning small models for safety-sensitive applications should evaluate on both ambiguous and unambiguous slices.",
+        "url": "https://arxiv.org/abs/2607.28639",
+        "source": "arXiv",
+        "published": "2026-08-03T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Alignment"
+        ],
+        "affiliations": [
+          "Meta"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Qwen3.8-Max: A New Bar for Coding and Cowork",
+        "summary": "Alibaba's Qwen team released Qwen3.8-Max, positioning it as a top-tier model for coding tasks and multi-agent collaboration workflows. With 550+ HN upvotes and 270+ comments, early community reception is strongly positive, with many noting competitive coding benchmark performance. Developers building agentic coding pipelines should evaluate it as a potential drop-in upgrade, particularly given Qwen's track record of strong open-weight variants following flagship releases.",
+        "url": "https://qwen.ai/blog?id=qwen3.8",
+        "source": "Hacker News",
+        "published": "2026-08-03T02:16:09.000Z"
+      },
+      {
+        "title": "DeepSeek V4-Flash 0731",
+        "summary": "DeepSeek quietly released V4-Flash (dated July 31), a faster and lighter variant of their V4 model family, noted in the Latent Space AINews digest. This follows DeepSeek's pattern of releasing efficient inference-optimized variants alongside flagship models, making it relevant for cost-sensitive production deployments. Developers using DeepSeek APIs should benchmark V4-Flash for latency-critical applications.",
+        "url": "https://www.latent.space/p/ainews-not-much-happened-today-038",
+        "source": "Latent Space",
+        "published": "2026-08-01T01:38:09.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI's Super PAC Funding AI-Generated News Site Attacking Industry Critics",
+        "summary": "Investigative reporting reveals that a super PAC connected to OpenAI appears to be funding an AI-generated news site whose bot journalists publish content targeting critics of the AI industry. This represents a concrete and troubling example of AI being used for politically motivated influence operations by a major AI lab, and will likely intensify regulatory scrutiny around AI-generated media and political advertising. For AI product builders, this raises reputational and compliance questions around content provenance and attribution.",
+        "url": "https://www.modelrepublic.org/articles/the-reporters-at-this-news-site-are-ai-bots.-openai%E2%80%99s-super-pac-appears-to-be-using-it-to-advance-its-political-agenda",
+        "source": "Hacker News",
+        "published": "2026-08-03T02:30:30.000Z"
+      },
+      {
+        "title": "Building the Automated AGI Lab: Core Automation's Jerry Tworek and Rohan Anil",
+        "summary": "This Training Data podcast episode features two former OpenAI/Google researchers discussing the architecture of automated AI research labs, covering how RL and other learning-from-experience paradigms are being combined to push toward greater autonomy in the research pipeline. The conversation is practically relevant for teams designing AI agent infrastructure, particularly around how to structure feedback loops that go beyond trajectory-level reflection. Published July 29, within the coverage window for this weekend edition.",
+        "url": "https://www.youtube.com/watch?v=2RJiaf0SY8s",
+        "source": "Training Data",
+        "published": "2026-07-29T09:00:00.000Z"
+      },
+      {
+        "title": "Vercel's Internal AI Agent 'v' Powers All Company Operations",
+        "summary": "Vercel CEO Guillermo Rauch shared that the company built an internal agent called 'v' that is now embedded in every day-to-day job function—finance, comms, marketing, engineering, and business analytics—with exponentially growing daily interactions and token usage. This is a notable real-world data point on enterprise-wide AI agent adoption at a developer-infrastructure company, suggesting the pattern of a single internal agent replacing fragmented tool usage is gaining traction. It offers a practical reference architecture for AI product teams building internal automation.",
+        "url": "https://x.com/rauchg/status/2084042561690456157",
+        "source": "X (@rauchg)",
+        "published": "2026-08-02T22:24:01.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Jul 31–3"
+}
