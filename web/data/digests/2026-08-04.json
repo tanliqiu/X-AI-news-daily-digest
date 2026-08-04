@@ -1,0 +1,114 @@
+{
+  "date": "2026-08-04",
+  "tldr": [
+    "Qwen releases 3.8 Max (2.4T MoE) and 27B open-weight models focused on coding and collaboration, continuing the momentum of capable open-source alternatives",
+    "Baseten raises a $13B Series F and publishes an inference engineering masterclass covering autoregressive and diffusion model serving",
+    "New research shows cheap open-weight LLM judges (GPT-OSS 120B, DeepSeek-V4 Flash, Gemma-4 31B) can reliably replace expensive frontier models for grading math proofs, cutting evaluation costs significantly"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Cost-Effective Automated Judging of Natural-Language Mathematical Proofs",
+        "summary": "This paper evaluates whether small open-weight models can replace expensive frontier LLMs as judges for grading math proofs, testing against IMO-GradingBench. Three cheap judges (GPT-OSS 120B, DeepSeek-V4 Flash, Gemma-4 31B) achieved high agreement with human pass/fail decisions, directly reducing the cost of running math-reasoning evaluation pipelines. Practitioners building evaluation infrastructure for reasoning systems can potentially swap out frontier judges for significantly cheaper alternatives.",
+        "url": "https://arxiv.org/abs/2608.00004",
+        "source": "arXiv",
+        "published": "2026-08-04T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Dartmouth College"
+        ]
+      },
+      {
+        "title": "AgentMemBench: A Systematic Benchmark for Evaluating Long-Term Memory Management Strategies in Conversational AI Agents",
+        "summary": "AgentMemBench provides a unified benchmark comparing five memory management strategies for conversational agents—in-context windowing, external key-value stores, graph-based episodic memory, compression-based summarization, and web-augmented memory—under identical conditions. This gives developers building long-context or multi-turn agents a principled basis for choosing memory architectures. The benchmark directly addresses the practical bottleneck of coherent recall across thousands of conversation turns.",
+        "url": "https://arxiv.org/abs/2608.00009",
+        "source": "arXiv",
+        "published": "2026-08-04T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "RAG"
+        ],
+        "affiliations": [
+          "Sofrecom"
+        ]
+      },
+      {
+        "title": "What Transfers from Text to Vision? Capability Scaling Laws and Transfer Dynamics for VLMs",
+        "summary": "This paper introduces the Capability-Driven Multimodal Scaling Law, a cross-family framework for predicting VLM benchmark performance from the LLM backbone before training begins, addressing the lack of principled backbone selection. Unlike compute-based scaling laws that fail to generalize across model families, this approach gives VLM builders a way to forecast performance and reduce costly training experiments. The practical implication is faster, cheaper iteration when selecting LLM backbones for vision-language product development.",
+        "url": "https://arxiv.org/abs/2608.00013",
+        "source": "arXiv",
+        "published": "2026-08-04T04:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Benchmarks",
+          "Training"
+        ],
+        "affiliations": [
+          "Meituan",
+          "Tsinghua University"
+        ]
+      },
+      {
+        "title": "SLMs as Multi-Agent Routers: A Progressive SFT and Reinforcement Learning Approach",
+        "summary": "This paper trains small language models as dynamic routers in multi-agent retrieval systems, using post-retrieval content signals rather than just query intent to select the best specialized agent. A progressive SFT + RL training approach allows the router to detect when a topically aligned agent returns low-relevance results and reroute accordingly. For teams building RAG or agentic retrieval pipelines with multiple specialized backends, this offers a practical, lightweight routing layer that improves end-to-end relevance.",
+        "url": "https://arxiv.org/abs/2608.00030",
+        "source": "arXiv",
+        "published": "2026-08-04T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "RAG",
+          "Framework"
+        ],
+        "affiliations": [
+          "Valyu AI",
+          "University of Warwick",
+          "University College London"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "New in Claude Managed Agents: Self-Hosted Sandboxes and MCP Tunnels",
+        "summary": "Anthropic now allows Claude Managed Agents to run tool execution inside self-hosted sandboxes and connect to private MCP servers, keeping agent operations fully within enterprise security boundaries. This removes a key blocker for enterprise deployments where data sovereignty and network isolation are required, supporting providers like Cloudflare for managed infrastructure. Teams building internal agentic workflows can now integrate Claude with private services without routing sensitive data through Anthropic's infrastructure.",
+        "url": "https://claude.com/blog/claude-managed-agents-updates",
+        "source": "blog",
+        "published": "2026-05-19T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Qwen 3.8 Max (2.4T) and 27B: New Open Weights Models for Coding and Collaboration",
+        "summary": "Alibaba's Qwen team released Qwen 3.8 Max, a 2.4-trillion-parameter MoE model, alongside a 27B dense model, both targeting coding and multi-agent collaboration use cases. These open-weight releases continue to raise the ceiling for what's available without API costs, giving developers capable alternatives for self-hosted deployments. The scale of the MoE model in particular positions it as a serious competitor to proprietary frontier models for complex reasoning tasks.",
+        "url": "https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new",
+        "source": "Latent Space",
+        "published": "2026-08-04T03:49:14.000Z"
+      },
+      {
+        "title": "The Inference Engineering Masterclass — Baseten ($13B Series F)",
+        "summary": "Baseten, which just closed a $13B Series F, published a deep-dive masterclass on inference engineering covering both autoregressive and diffusion model serving at scale. The episode with Philip Kiely and Ali Taha covers practical techniques for optimizing throughput, latency, and cost across different model architectures. For teams running their own inference infrastructure or evaluating managed inference providers, this is a timely resource from one of the market leaders.",
+        "url": "https://www.latent.space/p/inference-eng",
+        "source": "Latent Space",
+        "published": "2026-08-03T21:44:03.000Z"
+      },
+      {
+        "title": "AI's Debt Binge Can't Last: Hidden Borrowing Reaches $1.65T",
+        "summary": "A Fortune analysis reveals that AI hyperscalers have accumulated $1.65 trillion in hidden debt through off-balance-sheet borrowing and bond issuance to fund capital expenditure on AI infrastructure. This level of financial leverage raises sustainability questions about the current pace of AI infrastructure buildout. For AI product builders, this signals potential volatility in cloud compute pricing and availability if capital markets tighten on hyperscaler spending.",
+        "url": "https://fortune.com/2026/07/31/ai-debt-hypescalers-capex-capital-spending-hidden-borrowing-bond-issuance/",
+        "source": "Hacker News",
+        "published": "2026-08-03T20:02:21.000Z"
+      },
+      {
+        "title": "AI Vibe Check: Chinese Open Models, Distillation & The Hugging Face Breach",
+        "summary": "This podcast episode from Unsupervised Learning covers three converging topics: the growing capability of Chinese open-source models, the role of distillation in closing the gap with frontier models, and the security implications of OpenAI agents reportedly accessing Hugging Face systems. The discussion on dependency risks of building on Chinese open-source AI substrate is particularly relevant for teams making long-term infrastructure choices. It offers a balanced industry perspective on geopolitical and security dimensions of the open-model ecosystem.",
+        "url": "https://www.youtube.com/watch?v=_GlSkJjRDMM",
+        "source": "Unsupervised Learning",
+        "published": "2026-08-03T12:55:21.000Z"
+      }
+    ]
+  }
+}
