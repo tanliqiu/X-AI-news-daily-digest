@@ -1,0 +1,134 @@
+{
+  "date": "2026-08-05",
+  "tldr": [
+    "OpenAI's Privacy Filter evaluated across 42 benchmarks shows strong general PII detection but weaknesses in medical and non-Latin-script languages, with concrete implications for compliance tooling decisions",
+    "Flowise, a popular open-source LLM orchestration UI, is shutting down—teams depending on it should plan migrations",
+    "New research shows clinician pairwise preferences are a poor proxy for clinical safety in LLM evaluation, challenging a common evaluation shortcut in medical AI"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Evaluating OpenAI's Privacy Filter: Cross-Lingual, Cross-Domain PII Detection Across 42 Benchmarks",
+        "summary": "OpenAI's 1.5B Privacy Filter (OPF) was independently benchmarked across 22 languages and 5 domains, outperforming Presidio and XLM-RoBERTa on general PII tasks (F1=0.855) but underperforming on medical data (F1=0.464) and non-Latin-script languages. For AI product teams, this signals OPF is a strong default for English/European PII pipelines but may require supplementation for healthcare or multilingual deployments. The 42-benchmark evaluation methodology itself is a useful reference for teams building their own compliance evaluation frameworks.",
+        "url": "https://arxiv.org/abs/2608.02616",
+        "source": "arXiv",
+        "published": "2026-08-05T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Security",
+          "Benchmarks"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Preferred, Not Safer: Pairwise Preference Is a Poor Proxy for Clinical Safety",
+        "summary": "Using the MOOVE clinician evaluation platform, this study finds that clinician pairwise preferences do not reliably indicate clinical safety in LLM outputs—a preferred response can still be clinically unsafe or misleading. For teams building medical AI products, this is a direct warning against using preference-based evaluation (e.g., RLHF-style feedback or A/B preference studies) as a stand-in for rigorous safety rubrics. Multi-criterion rubric ratings are shown to be a more reliable signal.",
+        "url": "https://arxiv.org/abs/2608.02617",
+        "source": "arXiv",
+        "published": "2026-08-05T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Alignment",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "EPFL"
+        ]
+      },
+      {
+        "title": "JudgeArena: A Unified Framework for Reproducible LLM-Judge Evaluation",
+        "summary": "JudgeArena provides a single, modular framework for running LLM-as-a-judge evaluations across multiple benchmarks, judge models, prompts, and inference backends—addressing the current fragmentation where each benchmark ships its own bespoke judge setup. This is directly useful for AI teams that rely on automated evaluation pipelines and want to understand how their choice of judge model or prompt affects quality conclusions. The reproducibility focus also makes it easier to audit and compare evaluation results across projects.",
+        "url": "https://arxiv.org/abs/2608.02620",
+        "source": "arXiv",
+        "published": "2026-08-05T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Framework",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "University of Freiburg",
+          "ELLIS Institute Tübingen",
+          "Microsoft AI",
+          "Cohere Labs"
+        ]
+      },
+      {
+        "title": "MemArena: An Ego-Centric Benchmark for On-Device Agentic Personal Memory Assistants at Scale",
+        "summary": "MemArena introduces a large-scale conversational benchmark (10.3M dialog tokens, 50 agents, 15 days) specifically designed to stress-test on-device personal memory assistants using open-weight models. Teams building privacy-preserving, edge-deployed AI assistants now have a standardized evaluation harness that captures the multi-session, ego-centric dynamics missing from prior benchmarks. The accompanying MASim agent simulator can also be repurposed for synthetic data generation in memory-intensive agent applications.",
+        "url": "https://arxiv.org/abs/2608.02613",
+        "source": "arXiv",
+        "published": "2026-08-05T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "MBZUAI"
+        ]
+      },
+      {
+        "title": "Speculative Correction: Draft-then-Refine Decoding for Diffusion Language Models",
+        "summary": "This paper demonstrates a plug-and-play inference pattern for diffusion language models (DLMs) where a full draft is generated first, then refined bidirectionally—improving output quality without architectural changes. Using LLaDA2.1 variants, the approach shows that using a stronger model for refinement (Mini-Flash configuration) yields further gains, suggesting a practical speculative decoding analogue for DLMs. Product teams exploring DLMs as alternatives to autoregressive models for structured or iterative generation tasks will find this a low-friction quality upgrade.",
+        "url": "https://arxiv.org/abs/2608.02625",
+        "source": "arXiv",
+        "published": "2026-08-05T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "National University of Singapore",
+          "City University of Hong Kong"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Deploy local agents everywhere with LFM2.5-2.6B",
+        "summary": "Liquid AI released LFM2.5-2.6B, a compact model designed for local, on-device agent deployments, with an accompanying HuggingFace blog detailing integration patterns. At 2.6B parameters, it targets scenarios where cloud inference latency or cost is prohibitive, making it relevant for edge AI products, mobile assistants, and privacy-sensitive applications. Teams evaluating small open-weight models for agentic workflows now have another strong candidate optimized explicitly for this use case.",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+        "source": "Hugging Face",
+        "published": "2026-08-04T13:58:29.000Z"
+      },
+      {
+        "title": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
+        "summary": "Zero-Mem proposes a memory management approach for LLM agents that avoids consuming context tokens for memory read/write operations, keeping the full context window available for task execution. This addresses a practical bottleneck in long-running agent workflows where memory overhead competes with task-relevant context. Teams building agents with persistent memory—such as assistants, copilots, or multi-step task runners—should evaluate this as a way to improve effective context utilization.",
+        "url": "https://arxiv.org/abs/2607.29377",
+        "source": "Hacker News",
+        "published": "2026-08-05T04:36:44.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Flowise is shutting down",
+        "summary": "Flowise, a widely-used open-source visual builder for LLM workflows and agents, has announced it is shutting down. Teams that built internal tooling or customer-facing products on top of Flowise will need to migrate to alternatives such as LangFlow, n8n, or custom implementations. This is a reminder of the operational risk of building on smaller open-source AI tooling projects without a clear sustainability model.",
+        "url": "https://flowiseai.com/sunset",
+        "source": "Hacker News",
+        "published": "2026-08-05T00:02:40.000Z"
+      },
+      {
+        "title": "Unpacking ChatGPT Work: the Agent for a Billion Users",
+        "summary": "Latent Space published an external technical reconstruction of ChatGPT Work, detailing how OpenAI has integrated Memory, Proactivity, Scheduling, Browser Use, Plugins, Skills, and Tools into a unified agent product targeting enterprise users. The analysis provides a practical map of the architectural decisions OpenAI made to ship agentic features at scale, which is directly useful for teams designing their own agent products or benchmarking against ChatGPT Work's capabilities. Understanding these design patterns is increasingly important as ChatGPT Work becomes a reference implementation for enterprise AI agents.",
+        "url": "https://www.latent.space/p/unpacking-chatgpt-work",
+        "source": "Latent Space",
+        "published": "2026-08-04T18:20:14.000Z"
+      },
+      {
+        "title": "Rust-lang/rust is adopting an LLM policy",
+        "summary": "The Rust programming language project has published an official policy governing LLM use within its core repository and contribution process, making it one of the first major open-source infrastructure projects to formalize such rules. This sets a notable precedent for how foundational software projects may handle AI-generated code contributions, which will have downstream implications for AI coding tools targeting open-source workflows. Teams building developer AI tools should monitor how similar policies spread across other major open-source projects.",
+        "url": "https://blog.rust-lang.org/inside-rust/2026/08/05/rust-langrust-is-adopting-an-llm-policy/",
+        "source": "Hacker News",
+        "published": "2026-08-05T05:52:24.000Z"
+      },
+      {
+        "title": "AI fuels more than half of cybercrime in Africa as scams surge – Interpol",
+        "summary": "Interpol reports that AI now underlies more than half of cybercrime activity in Africa, driven by AI-generated phishing, deepfake scams, and automated fraud at scale. For AI product teams, this underscores the urgency of building robust abuse detection and content moderation into products, particularly those deployed in emerging markets. It also signals growing regulatory and law enforcement attention on AI-enabled crime that could affect how AI products are governed globally.",
+        "url": "https://www.africanews.com/2026/08/04/ai-fuels-more-than-half-of-cybercrime-in-africa-as-digital-scams-surge-interpol/",
+        "source": "Hacker News",
+        "published": "2026-08-04T22:01:41.000Z"
+      }
+    ]
+  }
+}
