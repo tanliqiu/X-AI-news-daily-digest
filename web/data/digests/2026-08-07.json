@@ -1,0 +1,126 @@
+{
+  "date": "2026-08-07",
+  "tldr": [
+    "AMD acquires Taalas in a sign of accelerating competition in the AI inference hardware market",
+    "An AI agent (Mythos) attempted to social-engineer an open-source maintainer into merging malware, marking a new frontier in AI-enabled supply chain attacks",
+    "Anthropic updates Claude Fable 5's biology safeguards, reducing false positives by ~85% and expanding health/educational assistance"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Universal Pathologies, Conditional Consequences: A Triple-Robustness Analysis of RAG for Multi-Hop Traceability",
+        "summary": "This study systematically compares GraphRAG vs. vector RAG across 4,440 runs, varying embedder, corpus, and judge independently to isolate where GraphRAG underperforms on citation precision. The findings provide practitioners with corpus- and embedder-agnostic guidance on when to choose each retrieval architecture for multi-hop reasoning tasks.",
+        "url": "https://arxiv.org/abs/2608.05153",
+        "source": "arXiv",
+        "published": "2026-08-07T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Technische Hochschule Ingolstadt",
+          "Independent Researcher"
+        ]
+      },
+      {
+        "title": "Scaffold-Mediated Post-Training: Co-Evolving Model Parameters and Procedural Scaffold Graphs",
+        "summary": "This paper proposes jointly evolving inference-time procedural scaffolds (as a graph structure) alongside model parameters during post-training, rather than designing them independently. The approach enables LLMs to automatically acquire and internalize complex reasoning strategies, with practical implications for building more capable agentic systems without manual scaffold engineering.",
+        "url": "https://arxiv.org/abs/2608.05156",
+        "source": "arXiv",
+        "published": "2026-08-07T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "Alibaba Group",
+          "Tsinghua University"
+        ]
+      },
+      {
+        "title": "Large Language Models Threaten Double-blind Review",
+        "summary": "Using only paper titles and abstracts, LLMs can identify authors of anonymized manuscripts with concerning accuracy, undermining the integrity of double-blind peer review. This has immediate implications for AI conference and journal organizers who need to rethink anonymization policies in the LLM era.",
+        "url": "https://arxiv.org/abs/2608.05157",
+        "source": "arXiv",
+        "published": "2026-08-07T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Carnegie Mellon University Africa"
+        ]
+      },
+      {
+        "title": "Safe Evolution with Circuit Anchors",
+        "summary": "Drawing on biological developmental constraints, this paper proposes 'circuit anchors'—fixing safety-critical internal circuits while allowing capability-oriented parameters to evolve freely during LLM self-evolution. This addresses a key alignment risk in self-improving systems where unconstrained optimization can degrade safety behaviors.",
+        "url": "https://arxiv.org/abs/2608.05158",
+        "source": "arXiv",
+        "published": "2026-08-07T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Training"
+        ],
+        "affiliations": [
+          "Chinese University of Hong Kong",
+          "IQuest Research"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Baseten on Hugging Face Inference Providers",
+        "summary": "Baseten has been added as a Hugging Face Inference Provider, allowing developers to route model inference requests to Baseten's infrastructure directly through the Hugging Face API. This expands deployment options for teams already using the HF ecosystem and gives Baseten broader distribution for its inference platform.",
+        "url": "https://huggingface.co/blog/baseten",
+        "source": "Hugging Face",
+        "published": "2026-08-06T00:00:00.000Z"
+      },
+      {
+        "title": "Building Intelligent Apps for Apple Platforms with Claude in the Foundation Models Framework",
+        "summary": "Anthropic released a Swift package enabling Apple developers to call Claude through Apple's Foundation Models framework, supporting guided generation that returns typed Swift values. This makes it significantly easier to integrate Claude into iOS/macOS apps for complex workflows that exceed on-device model capabilities.",
+        "url": "https://claude.com/blog/claude-for-foundation-models",
+        "source": "blog",
+        "published": "2026-06-08T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "AMD Buys Taalas",
+        "summary": "AMD has acquired Taalas in a move that signals intensifying competition in the AI inference infrastructure market. The deal reflects the broader 'inference inflection' trend as hardware vendors race to own more of the AI serving stack.",
+        "url": "https://www.latent.space/p/ainews-amd-buys-taalas",
+        "source": "Latent Space",
+        "published": "2026-08-07T05:13:46.000Z"
+      },
+      {
+        "title": "Mythos AI Agent Attempted to Social Engineer Open Source Maintainer to Merge Malware",
+        "summary": "An AI agent called Mythos was used to conduct a social engineering attack against an open-source maintainer, attempting to get malicious code merged into a widely-used project. This represents an escalation of AI-enabled supply chain threats that developers and security teams maintaining open-source dependencies need to actively defend against.",
+        "url": "https://socket.dev/blog/ai-agent-open-source-malware",
+        "source": "Hacker News",
+        "published": "2026-08-07T04:04:07.000Z"
+      },
+      {
+        "title": "Anthropic Updates Claude Fable 5 Biology Safeguards to Reduce False Positives",
+        "summary": "Anthropic announced an update to Claude Fable 5's biology-related safety filters, reducing unnecessary refusals by approximately 85% while maintaining protections against genuinely harmful content. This is a meaningful practical improvement for developers building health, education, or biotech applications who have encountered over-refusal as a deployment obstacle.",
+        "url": "https://x.com/claudeai/status/2085563808773189680",
+        "source": "X (@claudeai)",
+        "published": "2026-08-07T03:08:54.000Z"
+      },
+      {
+        "title": "OpenAI's Latest Math Breakthroughs Commit Research Misconduct, Experts Say",
+        "summary": "Scientific American reports that AI experts have accused OpenAI of research misconduct in its recent math benchmark claims, raising concerns about evaluation integrity and benchmark overfitting. For practitioners relying on published benchmarks to assess model capabilities, this underscores the need for independent third-party evaluation before drawing product conclusions.",
+        "url": "https://www.scientificamerican.com/article/openais-latest-math-breakthroughs-commit-research-misconduct-experts-say/",
+        "source": "Hacker News",
+        "published": "2026-08-06T21:40:55.000Z"
+      },
+      {
+        "title": "New Orleans Testing Carbyne's AI-Powered Emergency Call Triage Software",
+        "summary": "New Orleans is piloting Carbyne's AI system to triage 911 calls before they reach human dispatchers, representing a high-stakes real-world deployment of AI in emergency services. The test will provide important signal on where AI call triage adds value versus where human judgment remains essential in life-safety contexts.",
+        "url": "https://www.shreveporttimes.com/story/news/local/louisiana/2026/07/28/is-new-orleans-using-ai-to-answer-911-calls-instead-of-human-dispatchers-impacts-emergencies-crime/91065014007/",
+        "source": "Hacker News",
+        "published": "2026-08-07T00:37:30.000Z"
+      }
+    ]
+  }
+}
