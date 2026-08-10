@@ -1,111 +1,131 @@
 {
   "date": "2026-08-10",
   "tldr": [
-    "Cloudflare enables AI agents to autonomously create accounts, purchase domains, and deploy services via Stripe integration",
-    "Anthropic releases Claude Code auto mode — a sandboxed approach to skipping per-action approval without full trust escalation",
-    "Reasoning models still struggle to challenge false user presuppositions, a critical gap for trustworthy AI product design"
+    "Meta released Muse Glimmer, a 30B open-weight model optimized for local agentic and multimodal AI workloads",
+    "A security researcher found 181,000+ AI meeting recordings publicly exposed in tl;dv, highlighting privacy risks in AI note-taking tools",
+    "GRASP introduces reinforcement-learning-based local text anonymization, addressing the privacy paradox of sending private text to third-party LLMs for anonymization"
   ],
   "sections": {
     "Research": [
       {
-        "title": "Evaluating Reasoning Models for Queries with Presuppositions",
-        "summary": "Even advanced reasoning models often fail to identify and challenge factually incorrect assumptions embedded in user queries, potentially reinforcing misinformation. This study revisits the problem in light of recent model improvements and finds significant remaining gaps, with direct implications for product teams deploying AI for information-sensitive use cases. Builders should consider explicit presupposition-checking steps in prompting pipelines or guardrails.",
-        "url": "https://arxiv.org/abs/2605.03050",
+        "title": "TEXAS: Task-Expert-Aware Supervision for Downstream Mixture-of-Experts LLM Adaptation",
+        "summary": "TEXAS improves fine-tuning of MoE language models by identifying task-relevant experts based on their association with successful task completion rather than raw routing frequency. This enables more targeted supervision signals during adaptation, potentially improving efficiency and performance when fine-tuning large MoE models for specific downstream tasks.",
+        "url": "https://arxiv.org/abs/2608.06396",
         "source": "arXiv",
-        "published": "2026-05-06T04:00:00.000Z",
+        "published": "2026-08-10T04:00:00.000Z",
         "keywords": [
-          "Evaluation",
-          "Reasoning",
-          "Benchmarks"
+          "Training",
+          "Framework"
         ],
         "affiliations": [
-          "Indian Institute of Science"
+          "City University of Hong Kong"
         ]
       },
       {
-        "title": "How Language Models Process Negation",
-        "summary": "Mechanistic analysis reveals that LLMs actually contain internal components that handle negation correctly, but late-layer attention shortcuts override them and produce wrong answers. Ablating those specific attention modules substantially improves negation accuracy, pointing to a tractable intervention for developers building fact-checking or logic-heavy applications. This finding suggests targeted architectural or fine-tuning fixes rather than wholesale model replacement.",
-        "url": "https://arxiv.org/abs/2605.03052",
+        "title": "GRASP: Reinforcing Language Model Anonymizers with Group Relative Policy Optimization",
+        "summary": "GRASP uses reinforcement learning (GRPO) to train a small, locally runnable LLM to rewrite text so that a powerful attacker model cannot infer sensitive personal attributes, removing the need to send private data to a third-party API. This directly addresses the core privacy paradox in adversarial anonymization and offers a practical path to on-device privacy-preserving text processing.",
+        "url": "https://arxiv.org/abs/2608.06526",
         "source": "arXiv",
-        "published": "2026-05-06T04:00:00.000Z",
+        "published": "2026-08-10T04:00:00.000Z",
         "keywords": [
-          "Reasoning",
-          "Inference"
+          "Security",
+          "Training"
         ],
         "affiliations": [
-          "University of Southern California",
-          "University of Maryland"
+          "UC Santa Barbara"
         ]
       },
       {
-        "title": "When Should a Language Model Trust Itself? Same-Model Self-Verification as a Conditional Confidence Signal",
-        "summary": "Self-verification — prompting a model to check its own answer — is a popular confidence heuristic, but this paper shows that simple likelihood-based baselines (LL-AVG, LL-SUM) are competitive or superior on ARC-Challenge and TruthfulQA-MC. Product teams using self-consistency or self-critique patterns for selective prediction should benchmark against these cheaper baselines before adding the extra inference cost. The results suggest the practical value of self-verification is narrower than commonly assumed.",
-        "url": "https://arxiv.org/abs/2605.02915",
+        "title": "Confidence Estimation for Financial Vision-Language Models in Chart and Document Understanding",
+        "summary": "This paper evaluates seven confidence estimation methods for large vision-language models reading financial charts and documents, comparing inference-only approaches against trained internal probes. The key practical finding is which estimators are reliable enough to route uncertain answers to human reviewers, directly informing trust-gating architectures for high-stakes financial AI applications.",
+        "url": "https://arxiv.org/abs/2608.06532",
         "source": "arXiv",
-        "published": "2026-05-06T04:00:00.000Z",
+        "published": "2026-08-10T04:00:00.000Z",
         "keywords": [
           "Evaluation",
-          "Inference",
-          "Benchmarks"
+          "Multimodal"
         ],
-        "affiliations": []
+        "affiliations": [
+          "Michigan State University",
+          "JPMorgan AI Research"
+        ]
       },
       {
-        "title": "Adding Benchmaxxer Repellant to the Open ASR Leaderboard",
-        "summary": "Hugging Face introduces private held-out test sets on the Open ASR Leaderboard to combat models that overfit or 'benchmaxx' public evaluation data. This is a meaningful infrastructure improvement for practitioners selecting ASR models, as leaderboard rankings become more trustworthy signals of real-world performance. Teams evaluating speech models for production should prioritize results from leaderboards with contamination controls.",
-        "url": "https://huggingface.co/blog/open-asr-leaderboard-private-data",
-        "source": "Hugging Face",
-        "published": "2026-05-06T00:00:00.000Z",
+        "title": "Measuring the Cross-Lingual Comprehension Gap: How the language of the evidence shapes what language models understand",
+        "summary": "The paper defines the Cross-Lingual Comprehension Gap (CLCG) as the measurable drop in LLM response quality when content is presented in a non-English language, while holding question, content, and evaluation constant. Practitioners building multilingual RAG or document-understanding products should account for significant capability degradation when source documents are not in English.",
+        "url": "https://arxiv.org/abs/2608.06506",
+        "source": "arXiv",
+        "published": "2026-08-10T04:00:00.000Z",
         "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "RAG"
+        ],
+        "affiliations": [
+          "Eastern University"
+        ]
+      },
+      {
+        "title": "Do AI Personas Grow? Analyzing and Benchmarking Personality Evolution in LLM Agents After Life Events",
+        "summary": "This paper introduces a benchmark for evaluating whether personality-conditioned LLM agents undergo psychologically plausible personality change over extended interactions involving life events. For teams building long-term companion, emotional support, or social simulation agents, the work provides a framework and evaluation criteria for ensuring character coherence and realistic evolution over time.",
+        "url": "https://arxiv.org/abs/2608.06485",
+        "source": "arXiv",
+        "published": "2026-08-10T04:00:00.000Z",
+        "keywords": [
+          "Agents",
           "Benchmarks",
           "Evaluation"
+        ],
+        "affiliations": [
+          "Northeastern University",
+          "Singapore Management University"
         ]
       }
     ],
     "Tools": [
       {
-        "title": "Agents can now create Cloudflare accounts, buy domains, and deploy",
-        "summary": "Cloudflare has integrated with Stripe to allow AI agents to autonomously provision Cloudflare accounts, purchase domains, and deploy applications without human intervention. This significantly lowers the barrier for fully automated software deployment pipelines and agentic workflows that need to self-provision infrastructure. Product builders working on autonomous coding or DevOps agents now have a concrete, production-ready path to end-to-end deployment.",
-        "url": "https://blog.cloudflare.com/agents-stripe-projects/",
-        "source": "Hacker News",
-        "published": "2026-05-06T03:10:33.000Z"
+        "title": "Meta Muse Glimmer – open-weights 30B local agentic model",
+        "summary": "Meta released Muse Glimmer, a 30B open-weight model designed for local deployment with strong agentic and multimodal capabilities, positioning it as a self-hostable alternative to frontier API models for coding and autonomous task workflows. Its open-weight nature means teams can fine-tune, self-host, and run it on local hardware without API costs or data exposure concerns, making it particularly relevant for enterprise and privacy-sensitive deployments.",
+        "url": "https://huggingface.co/blog/muse-glimmer",
+        "source": "Hugging Face",
+        "published": "2026-08-10T00:00:00.000Z"
       },
       {
-        "title": "Claude Code auto mode: a safer way to skip permissions",
-        "summary": "Anthropic's Claude Code now offers an auto mode that runs tool calls inside an isolated sandbox, reducing approval fatigue without granting the model unrestricted access to the host system. This is a practical safety improvement for developers using Claude Code in long-running or automated sessions where constant permission prompts degrade workflow. Teams evaluating agentic coding assistants should consider sandboxed auto modes as a baseline safety requirement.",
-        "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
-        "source": "blog",
-        "published": "2026-05-06T16:10:32.176Z"
+        "title": "Making Knowledge Distillation Cheap Enough to Run at Scale",
+        "summary": "Multiverse Computing's blog post outlines techniques for reducing the compute cost of knowledge distillation, making it more practical to compress large frontier models into smaller, deployable ones at production scale. Teams looking to build cost-efficient inference pipelines by distilling proprietary or open frontier models will find actionable guidance on reducing the overhead of the distillation process itself.",
+        "url": "https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation",
+        "source": "Hugging Face",
+        "published": "2026-08-10T10:05:36.000Z"
+      },
+      {
+        "title": "TutorMoments: Do AI tutors know when to help and when to hold back?",
+        "summary": "AllenAI introduces TutorMoments, a dataset and benchmark for evaluating whether AI tutoring systems can correctly identify when to intervene versus when to let learners struggle productively. This is directly applicable to teams building educational AI products where intervention timing is critical to learning outcomes and user experience.",
+        "url": "https://huggingface.co/blog/allenai/tutormoments",
+        "source": "Hugging Face",
+        "published": "2026-08-07T17:53:32.000Z"
       }
     ],
     "Industry News": [
       {
-        "title": "[AINews] Silicon Valley gets Serious about Services",
-        "summary": "A cluster of recent announcements points to AI-native services — where the AI performs knowledge work end-to-end rather than just augmenting humans — as the next major commercial frontier. Both Anthropic and OpenAI have launched enterprise agent deployment initiatives, accelerating pressure on incumbents in professional services. Consultants and SaaS builders should expect accelerating commoditization of task-layer AI and rising differentiation at the workflow-integration layer.",
-        "url": "https://www.latent.space/p/ainews-silicon-valley-gets-serious",
-        "source": "Latent Space",
-        "published": "2026-05-06T05:40:41.000Z"
-      },
-      {
-        "title": "🔬Doing Vibe Physics — Alex Lupsasca, OpenAI",
-        "summary": "An OpenAI researcher details how GPT-5.x contributed to deriving novel results in theoretical physics and quantum gravity, offering a concrete existence proof of AI as a collaborator in frontier scientific research. This is a signal for applied AI builders that domain-expert-level reasoning assistance is becoming viable beyond software engineering. The episode is relevant for teams exploring AI in high-expertise verticals like materials science, drug discovery, or advanced engineering.",
-        "url": "https://www.latent.space/p/lupsasca",
-        "source": "Latent Space",
-        "published": "2026-05-05T20:34:11.000Z"
-      },
-      {
-        "title": "Import AI 455: AI systems are about to start building themselves",
-        "summary": "Jack Clark's newsletter covers emerging research on automating AI research workflows, framing recursive self-improvement as a near-term rather than speculative concern. For product builders, the key implication is that the pace of model capability improvement may accelerate non-linearly, compressing product planning horizons. Teams should factor faster-than-expected capability jumps into roadmap and risk planning.",
-        "url": "https://importai.substack.com/p/import-ai-455-automating-ai-research",
-        "source": "Import AI",
-        "published": "2026-05-04T12:32:09.000Z"
-      },
-      {
-        "title": "OpenAI president forced to read his personal diary entries to jury",
-        "summary": "OpenAI president Greg Brockman's personal diary entries were admitted as evidence in an ongoing legal proceeding, surfacing internal candor about financial motivations at the company. The case adds to ongoing scrutiny of OpenAI's governance and nonprofit-to-capped-profit transition. Enterprises and investors evaluating long-term OpenAI dependency should monitor the legal and governance trajectory closely.",
-        "url": "https://arstechnica.com/tech-policy/2026/05/openai-president-explains-to-jury-why-his-diary-entries-sound-greedy/",
+        "title": "Over 181,000 AI meeting recordings left wide open in note-taking app",
+        "summary": "A security researcher discovered that tl;dv, an AI meeting recording and transcription service, left over 181,000 recordings publicly accessible without authentication. This is a significant reminder for AI product builders that sensitive enterprise data captured by AI tools requires robust access controls, and that customers should audit data retention and exposure policies for any AI SaaS they use.",
+        "url": "https://bobdahacker.com/blog/tldv-hack",
         "source": "Hacker News",
-        "published": "2026-05-06T13:25:42.000Z"
+        "published": "2026-08-10T12:26:05.000Z"
+      },
+      {
+        "title": "Mistral Patent for 'Code Implemented Tool Calls'",
+        "summary": "Mistral has been granted a US patent covering code-implemented tool calls, a foundational mechanism in modern LLM agent and function-calling architectures. This could have broad implications for the AI tooling ecosystem if Mistral chooses to enforce the patent against other model providers or framework developers building similar capabilities.",
+        "url": "https://patentsgazette.uspto.gov/week26/OG/html/1547-5/US12670045-20260630.html",
+        "source": "Hacker News",
+        "published": "2026-08-10T13:29:12.000Z"
+      },
+      {
+        "title": "Models, Harnesses, and Multi-Agent Systems",
+        "summary": "This Practical AI podcast episode breaks down the terminology and architecture distinctions between AI models, agents, harnesses, and multi-agent systems, and explains the enterprise shift toward fleets of coordinated agents. It offers a useful conceptual grounding for practitioners and decision-makers navigating the rapidly evolving agentic AI landscape.",
+        "url": "https://share.transistor.fm/s/063cfaad",
+        "source": "Practical AI",
+        "published": "2026-08-06T09:00:00.000Z"
       }
     ]
   }
