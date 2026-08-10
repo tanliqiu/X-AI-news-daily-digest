@@ -35,7 +35,9 @@ For Research items only, add two extra fields:
 - "keywords": array of 1–3 tags chosen from: Evaluation, Security, Framework, Application, Alignment, Inference, Training, Multimodal, Reasoning, Agents, RAG, Benchmarks, Survey
 - "affiliations": if the raw item has a non-empty "affiliations" array, pass it through unchanged. Otherwise infer up to 5 institution names from your training knowledge of the authors (ordered by contribution, omit unknowns). If none known, omit the field. Return only institution names, not author names.
 
-Return ONLY valid JSON. No markdown fences, no preamble. Schema:
+Your entire response must be a single valid JSON object and nothing else — do not think out loud, \
+explain your reasoning, or write any text before or after the JSON. Do not use markdown code fences. \
+The very first character of your response must be "{" and the very last must be "}". Schema:
 {
   "date": "YYYY-MM-DD",
   "tldr": ["most important development today", "second development", "third development"],
@@ -153,6 +155,21 @@ async function processFlaggedIssues() {
   return patched
 }
 
+async function callWithRetry(fn, maxAttempts = 5) {
+  let delay = 30_000
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await fn()
+    } catch (err) {
+      const status = err?.status ?? err?.statusCode
+      if (status !== 529 || attempt === maxAttempts) throw err
+      console.log(`[prepare-digest] API overloaded (529), retrying in ${delay / 1000}s (attempt ${attempt}/${maxAttempts})...`)
+      await new Promise((r) => setTimeout(r, delay))
+      delay = Math.min(delay * 2, 300_000)
+    }
+  }
+}
+
 async function main() {
   const client = new Anthropic()
 
@@ -208,33 +225,54 @@ async function main() {
     ? `\n\nNote: This is a Monday weekend edition covering ${dateRange}. Include items from Friday through Monday.`
     : ''
 
-  const response = await client.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 4096,
-    system: [
-      {
-        type: 'text',
-        text: SYSTEM_PROMPT,
-        cache_control: { type: 'ephemeral' },
-      },
-    ],
-    messages: [
-      {
-        role: 'user',
-        content: `Date: ${today}${weekendNote}\n\nItems:\n${JSON.stringify(items, null, 2)}`,
-      },
-    ],
-  })
-
-  const text =
-    response.content[0]?.type === 'text' ? response.content[0].text : ''
-
   let digest
-  try {
-    digest = JSON.parse(text.replace(/^```json\n?/, '').replace(/\n?```$/, '').trim())
-  } catch (err) {
-    console.error('[prepare-digest] Failed to parse response as JSON:', err.message)
-    console.error('First 300 chars:', text.slice(0, 300))
+  let usage
+  let lastParseError
+  const maxParseAttempts = 3
+  for (let attempt = 1; attempt <= maxParseAttempts; attempt++) {
+    const response = await callWithRetry(() => client.messages.create({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 4096,
+      system: [
+        {
+          type: 'text',
+          text: SYSTEM_PROMPT,
+          cache_control: { type: 'ephemeral' },
+        },
+      ],
+      messages: [
+        {
+          role: 'user',
+          content: `Date: ${today}${weekendNote}\n\nItems:\n${JSON.stringify(items, null, 2)}`,
+        },
+      ],
+    }))
+
+    const text = response.content[0]?.type === 'text' ? response.content[0].text : ''
+
+    try {
+      digest = JSON.parse(text.replace(/^```json\n?/, '').replace(/\n?```$/, '').trim())
+      usage = response.usage
+      break
+    } catch {
+      const match = text.match(/\{[\s\S]*\}/)
+      try {
+        if (!match) throw new Error('no JSON object found')
+        digest = JSON.parse(match[0])
+        usage = response.usage
+        break
+      } catch (err2) {
+        lastParseError = err2
+        console.error(
+          `[prepare-digest] Failed to parse response as JSON (attempt ${attempt}/${maxParseAttempts}): ${err2.message}`
+        )
+        console.error('First 300 chars:', text.slice(0, 300))
+      }
+    }
+  }
+
+  if (!digest) {
+    console.error('[prepare-digest] Giving up after repeated JSON parse failures:', lastParseError?.message)
     process.exit(1)
   }
 
@@ -248,7 +286,6 @@ async function main() {
   const outputPath = join(OUTPUT_DIR, `${today}.json`)
   await writeFile(outputPath, JSON.stringify(digest, null, 2))
 
-  const usage = response.usage
   console.log(`[prepare-digest] Written to ${outputPath}`)
   console.log(
     `[prepare-digest] Tokens — input: ${usage.input_tokens}, ` +
