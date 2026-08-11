@@ -1,0 +1,81 @@
+{
+  "date": "2026-08-11",
+  "tldr": [
+    "NVIDIA releases open-weight Magpie TTS for low-latency multilingual voice agents deployable on consumer hardware",
+    "Survey maps emerging security threats from cross-modal interactions in multimodal LLMs, critical for teams building with vision-language models",
+    "Claude introduces AI-generated content marking, signaling a shift toward provenance transparency in LLM outputs"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Evolving Safety Landscape of Multi-modal Large Language Models: A Survey of Emerging Threats and Safeguards",
+        "summary": "This survey systematically catalogs novel security threats that arise specifically from multimodal LLM architectures, including compromised modality integration and cross-modal safety bypasses that don't exist in text-only models. For teams building products on top of MLLMs, the findings highlight that standard text-safety guardrails are insufficient and that cross-modal attack surfaces require dedicated mitigation strategies. Practical defenders will find the taxonomy of threats and corresponding safeguards actionable for red-teaming and deployment risk assessment.",
+        "url": "https://arxiv.org/abs/2608.07535",
+        "source": "arXiv",
+        "published": "2026-08-11T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Multimodal",
+          "Survey"
+        ],
+        "affiliations": [
+          "University of Alabama at Birmingham",
+          "NVIDIA",
+          "Penn State University",
+          "Columbia University",
+          "University of Missouri-Kansas City"
+        ]
+      },
+      {
+        "title": "SkillConsist: Detecting Inconsistencies in Agent Skills via Bidirectional Graph Alignment",
+        "summary": "This paper addresses a practical safety and reliability gap in LLM agent systems: declared skill capabilities may be inconsistent with actual behavior, exposing undisclosed dangerous actions or causing incorrect skill routing. The proposed bidirectional graph alignment approach detects these inconsistencies more robustly than prior LLM-based or category-matching methods. For developers building multi-agent or tool-use systems, this offers a concrete technique to audit and validate agent skill registries before deployment.",
+        "url": "https://arxiv.org/abs/2608.07639",
+        "source": "arXiv",
+        "published": "2026-08-11T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Security"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS",
+        "summary": "NVIDIA has released Magpie TTS as open-weight models via Hugging Face, enabling developers to build multilingual voice agents with full on-premise deployment control and no vendor API dependency. The focus on low latency makes it directly applicable to real-time conversational AI products such as call center bots and voice assistants. Having open weights gives teams the flexibility to fine-tune on proprietary voice data, a significant advantage over closed TTS APIs.",
+        "url": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
+        "source": "Hugging Face",
+        "published": "2026-08-10T16:25:36.000Z"
+      },
+      {
+        "title": "[AINews] Muse Glimmer and Spark: Open Weights return Personal Superintelligence promise",
+        "summary": "New open-weight models under the Muse family (Glimmer and Spark) have been released, with Glimmer reportedly fitting on a single RTX 3090, lowering the hardware barrier for capable local AI significantly. This is a notable development for developers who need powerful models deployable without cloud inference costs or data-sharing concerns. The release is framed as a competitive win for American open-weight model efforts amid ongoing geopolitical AI competition.",
+        "url": "https://www.latent.space/p/ainews-muse-glimmer-and-spark-open",
+        "source": "Latent Space",
+        "published": "2026-08-11T05:16:41.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "How Claude marks AI-generated content",
+        "summary": "Anthropic has published documentation explaining how Claude marks or signals AI-generated content, indicating a move toward built-in provenance and transparency features in Claude's outputs. For product builders, this has implications for compliance, trust design, and how AI-assisted content pipelines may need to be restructured to surface or preserve these signals. The high HN engagement (86 comments) suggests this is a practically significant policy shift that the developer community is actively debating.",
+        "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
+        "source": "Hacker News",
+        "published": "2026-08-10T21:36:56.000Z"
+      },
+      {
+        "title": "As AI eats the web, the internet's collective memory is disappearing",
+        "summary": "This piece examines how AI-driven search and content generation is degrading the open web's role as a shared knowledge repository, with direct implications for RAG pipelines and web-crawl-based training data that many AI products depend on. As authoritative web content becomes scarcer or paywalled in response to AI scraping, the cost and complexity of maintaining high-quality retrieval corpora will increase. AI product teams should factor this trend into their long-term data sourcing and knowledge freshness strategies.",
+        "url": "https://thewalrus.ca/google-search-is-dying/",
+        "source": "Hacker News",
+        "published": "2026-08-10T22:36:30.000Z"
+      },
+      {
+        "title": "Claude advances Riemann Hypothesis bound from 41.6% to 67.2%",
+        "summary": "A report on social media claims Claude made a meaningful mathematical contribution by moving a known bound on the Riemann Hypothesis, suggesting frontier LLMs are beginning to contribute to unsolved problems in pure mathematics. While the claim requires independent verification, if confirmed it represents a milestone for AI as a research collaborator rather than just a tool. Applied AI builders should watch this space as it validates investment in using LLMs for formal reasoning and scientific discovery workflows.",
+        "url": "https://twitter.com/jarredsumner/status/2086869681785500011",
+        "source": "Hacker News",
+        "published": "2026-08-10T18:04:17.000Z"
+      }
+    ]
+  }
+}
