@@ -3,20 +3,20 @@ import BookmarkButton from './BookmarkButton'
 import AffiliationFlagButton from './AffiliationFlagButton'
 
 const SOURCE_STYLES: Record<string, string> = {
-  arXiv: 'bg-red-900/30 text-red-400',
-  'Hacker News': 'bg-orange-900/30 text-orange-400',
-  Anthropic: 'bg-violet-900/30 text-violet-400',
-  OpenAI: 'bg-emerald-900/30 text-emerald-400',
-  'Hugging Face': 'bg-yellow-900/30 text-yellow-400',
-  'Google DeepMind': 'bg-blue-900/30 text-blue-400',
-  'Meta AI': 'bg-sky-900/30 text-sky-400',
-  Mistral: 'bg-indigo-900/30 text-indigo-400',
-  'The Batch': 'bg-teal-900/30 text-teal-400',
-  'Import AI': 'bg-lime-900/30 text-lime-400',
+  arXiv: 'bg-red-100 text-red-700',
+  'Hacker News': 'bg-orange-100 text-orange-700',
+  Anthropic: 'bg-violet-100 text-violet-700',
+  OpenAI: 'bg-emerald-100 text-emerald-700',
+  'Hugging Face': 'bg-yellow-100 text-yellow-700',
+  'Google DeepMind': 'bg-blue-100 text-blue-700',
+  'Meta AI': 'bg-sky-100 text-sky-700',
+  Mistral: 'bg-indigo-100 text-indigo-700',
+  'The Batch': 'bg-teal-100 text-teal-700',
+  'Import AI': 'bg-lime-100 text-lime-700',
 }
 
 function sourceStyle(source: string): string {
-  return SOURCE_STYLES[source] ?? 'bg-zinc-800 text-gray-400'
+  return SOURCE_STYLES[source] ?? 'bg-zinc-100 text-zinc-600'
 }
 
 function relativeDay(published: string): string {
@@ -37,14 +37,14 @@ export default function ItemCard({ item, digestDate, section }: Props) {
   const isResearch = section === 'Research'
 
   return (
-    <article className="border-l-2 border-zinc-700 pl-4">
+    <article className="border-l-2 border-zinc-300 pl-4">
       <div className="flex items-start justify-between gap-2 mb-1.5">
         <div className="flex items-center gap-2 flex-wrap">
           <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sourceStyle(item.source)}`}>
             {item.source}
           </span>
           {item.published && (
-            <span className="text-xs text-gray-600">
+            <span className="text-xs text-zinc-400">
               {relativeDay(item.published)}
             </span>
           )}
@@ -66,7 +66,7 @@ export default function ItemCard({ item, digestDate, section }: Props) {
           />
         </div>
       </div>
-      <h3 className="text-sm font-semibold leading-snug mb-1 text-gray-100">
+      <h3 className="text-sm font-semibold leading-snug mb-1 text-zinc-900">
         <a
           href={item.url}
           target="_blank"
@@ -79,21 +79,21 @@ export default function ItemCard({ item, digestDate, section }: Props) {
       {item.keywords && item.keywords.length > 0 && (
         <div className="flex flex-wrap gap-1 mb-1.5">
           {item.keywords.map((kw) => (
-            <span key={kw} className="text-xs px-1.5 py-0.5 rounded bg-purple-900/30 text-purple-400 font-medium">
+            <span key={kw} className="text-xs px-1.5 py-0.5 rounded bg-purple-100 text-purple-700 font-medium">
               {kw}
             </span>
           ))}
         </div>
       )}
       {item.summary && (
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <p className="text-sm text-zinc-500 leading-relaxed">
           {item.summary}
         </p>
       )}
       {item.affiliations && item.affiliations.length > 0 && (
         <div className="flex flex-wrap gap-1 mt-1.5">
           {item.affiliations.map((aff) => (
-            <span key={aff} className="text-xs px-1.5 py-0.5 rounded bg-zinc-800 text-gray-500 font-medium">
+            <span key={aff} className="text-xs px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-600 font-medium">
               {aff}
             </span>
           ))}

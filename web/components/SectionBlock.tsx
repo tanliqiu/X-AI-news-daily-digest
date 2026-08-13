@@ -2,9 +2,9 @@ import { DigestItem } from '@/lib/digests'
 import ItemCard from './ItemCard'
 
 const SECTION_STYLES: Record<string, string> = {
-  Research: 'text-purple-400',
-  Tools: 'text-blue-400',
-  'Industry News': 'text-emerald-400',
+  Research: 'text-purple-600',
+  Tools: 'text-blue-600',
+  'Industry News': 'text-emerald-600',
 }
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function SectionBlock({ title, items, digestDate }: Props) {
-  const color = SECTION_STYLES[title] ?? 'text-gray-400'
+  const color = SECTION_STYLES[title] ?? 'text-zinc-500'
 
   return (
     <section>

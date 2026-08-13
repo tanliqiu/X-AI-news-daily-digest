@@ -7,9 +7,9 @@ interface Props {
 }
 
 const SECTION_COLORS = {
-  Research: 'text-purple-400',
-  Tools: 'text-blue-400',
-  'Industry News': 'text-emerald-400',
+  Research: 'text-purple-600',
+  Tools: 'text-blue-600',
+  'Industry News': 'text-emerald-600',
 }
 
 export default function DigestCard({ summary, isRead }: Props) {
@@ -24,14 +24,14 @@ export default function DigestCard({ summary, isRead }: Props) {
     <Link href={`/digest/${summary.date}`} className="block group flex-shrink-0 w-64">
       <div
         className="relative h-40 rounded-md overflow-hidden transition-transform duration-200 group-hover:scale-105 group-hover:z-10 cursor-pointer"
-        style={{ background: 'linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #f4f4f5 0%, #e4e4e7 100%)' }}
       >
         {/* Top row */}
         <div className="absolute top-0 left-0 right-0 p-3 flex items-center justify-between">
-          <span className="text-xs font-semibold text-gray-400 tracking-wide">{displayDate}</span>
+          <span className="text-xs font-semibold text-zinc-500 tracking-wide">{displayDate}</span>
           <div className="flex items-center gap-1.5">
             {summary.edition === 'weekend' && (
-              <span className="text-xs px-1.5 py-0.5 rounded font-medium bg-amber-500/20 text-amber-400">
+              <span className="text-xs px-1.5 py-0.5 rounded font-medium bg-amber-100 text-amber-700">
                 Weekend
               </span>
             )}
@@ -43,7 +43,7 @@ export default function DigestCard({ summary, isRead }: Props) {
 
         {/* TL;DR preview */}
         <div className="absolute inset-0 flex items-center px-3 pt-8 pb-10">
-          <p className="text-sm text-gray-200 leading-snug line-clamp-3">
+          <p className="text-sm text-zinc-700 leading-snug line-clamp-3">
             {summary.tldr[0] ?? 'No summary available'}
           </p>
         </div>

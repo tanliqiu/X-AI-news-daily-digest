@@ -49,7 +49,7 @@ export default function BookmarkButton({ url, title, source, digestDate }: Props
       className={`shrink-0 p-0.5 rounded transition-colors ${
         bookmarked
           ? 'text-amber-500 hover:text-amber-600'
-          : 'text-gray-300 hover:text-gray-500 dark:text-gray-600 dark:hover:text-gray-400'
+          : 'text-zinc-300 hover:text-zinc-500'
       }`}
     >
       <svg

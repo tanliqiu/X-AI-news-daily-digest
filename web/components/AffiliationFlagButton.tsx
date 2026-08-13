@@ -61,7 +61,7 @@ export default function AffiliationFlagButton({ arxivId, title, digestDate, curr
         target="_blank"
         rel="noopener noreferrer"
         title="Affiliation flagged — view issue"
-        className="text-amber-500 hover:text-amber-400 transition-colors"
+        className="text-amber-600 hover:text-amber-700 transition-colors"
       >
         <FlagIcon filled />
       </a>
@@ -73,23 +73,23 @@ export default function AffiliationFlagButton({ arxivId, title, digestDate, curr
       <button
         onClick={() => setOpen((v) => !v)}
         title="Flag incorrect affiliations"
-        className="text-zinc-600 hover:text-amber-500 transition-colors"
+        className="text-zinc-400 hover:text-amber-600 transition-colors"
       >
         <FlagIcon />
       </button>
 
       {open && (
-        <div className="absolute right-0 top-6 z-20 w-72 bg-zinc-900 border border-zinc-700 rounded-lg p-3 shadow-xl">
-          <p className="text-xs font-semibold text-gray-300 mb-2">Flag affiliation issue</p>
+        <div className="absolute right-0 top-6 z-20 w-72 bg-white border border-zinc-200 rounded-lg p-3 shadow-xl">
+          <p className="text-xs font-semibold text-zinc-700 mb-2">Flag affiliation issue</p>
 
           {currentAffiliations.length > 0 ? (
             <div className="flex flex-wrap gap-1 mb-2">
               {currentAffiliations.map((a) => (
-                <span key={a} className="text-xs px-1.5 py-0.5 rounded bg-zinc-800 text-gray-500">{a}</span>
+                <span key={a} className="text-xs px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-600">{a}</span>
               ))}
             </div>
           ) : (
-            <p className="text-xs text-gray-600 mb-2 italic">No affiliations extracted</p>
+            <p className="text-xs text-zinc-400 mb-2 italic">No affiliations extracted</p>
           )}
 
           <textarea
@@ -97,13 +97,13 @@ export default function AffiliationFlagButton({ arxivId, title, digestDate, curr
             onChange={(e) => setCorrection(e.target.value)}
             placeholder="Correct affiliations (optional)"
             rows={2}
-            className="w-full text-xs bg-zinc-800 border border-zinc-700 rounded px-2 py-1.5 text-gray-300 placeholder-gray-600 resize-none focus:outline-none focus:border-zinc-500 mb-2"
+            className="w-full text-xs bg-zinc-50 border border-zinc-300 rounded px-2 py-1.5 text-zinc-800 placeholder-zinc-400 resize-none focus:outline-none focus:border-zinc-500 mb-2"
           />
 
           <div className="flex gap-2 justify-end">
             <button
               onClick={() => setOpen(false)}
-              className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
+              className="text-xs text-zinc-400 hover:text-zinc-600 transition-colors"
             >
               Cancel
             </button>
