@@ -1,0 +1,130 @@
+{
+  "date": "2026-08-13",
+  "tldr": [
+    "Grok 4.6 scores 61 on the Artificial Analysis Intelligence Index, sparking significant discussion as xAI's latest model raises the competitive bar",
+    "Anthropic is reportedly in talks to acquire world-model AI startup Decart for $6B, signaling a major strategic push into simulation and world modeling",
+    "Lovable raises $400M Series C, underscoring massive investor appetite for AI-native app-building tools"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction",
+        "summary": "When LLMs compact long contexts to free up window space, user-issued session constraints (e.g., 'don't delete emails until I confirm') are silently dropped, creating a class of reliability and safety failures. The paper introduces COMPINT, an evaluation suite that measures how well different compaction strategies preserve these constraints. Builders of long-running agentic systems should audit their context management pipelines against this failure mode.",
+        "url": "https://arxiv.org/abs/2608.11242",
+        "source": "arXiv",
+        "published": "2026-08-13T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Evaluation",
+          "Security"
+        ],
+        "affiliations": [
+          "The Pennsylvania State University"
+        ]
+      },
+      {
+        "title": "Better, Faster, Stronger: Programmatic Skill Learning Best Reduces Agent Cost",
+        "summary": "This paper finds that representing learned skills as executable programs—rather than natural-language descriptions or embeddings—yields the best cost-efficiency when adapting LLM agents to new domains. The result has direct implications for teams building reusable agent skill libraries, suggesting code-as-skill representations should be the default. Cost reduction (not just accuracy) is positioned as the primary optimization target.",
+        "url": "https://arxiv.org/abs/2608.11338",
+        "source": "arXiv",
+        "published": "2026-08-13T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework",
+          "Inference"
+        ],
+        "affiliations": [
+          "Johns Hopkins University"
+        ]
+      },
+      {
+        "title": "Measure, Don't Optimize: Forecasting Recovery in LLM Unlearning",
+        "summary": "White-box probes can detect residual knowledge traces after LLM unlearning, but this paper shows those traces reliably predict future knowledge recovery under continued training—making them useful diagnostic tools rather than optimization targets. The finding implies that current unlearning techniques may not provide durable compliance guarantees, a critical concern for regulated AI deployments. Practitioners relying on unlearning for data removal should treat it as probabilistic, not permanent.",
+        "url": "https://arxiv.org/abs/2608.11408",
+        "source": "arXiv",
+        "published": "2026-08-13T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment",
+          "Evaluation"
+        ]
+      },
+      {
+        "title": "Self-Evolving Embodied Agents via Skill-Harness Evolution",
+        "summary": "This paper presents a train-free approach where embodied agents iteratively improve by evolving both their skill libraries and execution harnesses—without additional data or reward signals. The method targets programmable robotic and simulation environments and shows gains over static harness baselines. For teams building embodied or tool-using agents, this offers a practical path to continuous improvement without retraining costs.",
+        "url": "https://arxiv.org/abs/2608.11350",
+        "source": "arXiv",
+        "published": "2026-08-13T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Northeastern University",
+          "Microsoft Research"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Ballet – Workflow Automation That Writes Integrations Against Any API",
+        "summary": "Ballet is a new workflow automation tool that uses AI to generate integrations against arbitrary APIs, removing the need to hand-code connectors for each service. This could significantly lower the barrier to building multi-service agentic workflows, particularly for teams without dedicated integration engineers. It positions itself as a more flexible alternative to fixed-connector platforms like Zapier or Make.",
+        "url": "https://www.ballet.dev/",
+        "source": "Hacker News",
+        "published": "2026-08-13T00:01:43.000Z"
+      },
+      {
+        "title": "LFM2.5-VL-3B: Better and Faster Vision Capabilities for the Edge",
+        "summary": "Liquid AI releases LFM2.5-VL-3B, a compact 3B-parameter vision-language model optimized for edge deployment with improved speed and visual understanding. The model targets on-device use cases where cloud latency or data-privacy constraints make large hosted models impractical. Developers building mobile or embedded AI products gain a strong new multimodal baseline at a small parameter count.",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b",
+        "source": "Hugging Face",
+        "published": "2026-08-12T14:00:51.000Z"
+      },
+      {
+        "title": "Anthropic Scaling Managed Agents: Decoupling the Brain from the Hands",
+        "summary": "Anthropic's engineering blog details their Managed Agents architecture, which separates the reasoning model ('brain') from the tool-execution layer ('hands'), enabling more scalable and maintainable long-running agentic workflows. The design explicitly revisits assumptions baked into older harnesses as underlying models improve. This is directly actionable for teams architecting production agent systems on Claude.",
+        "url": "https://www.anthropic.com/engineering/managed-agents",
+        "source": "blog",
+        "published": "2026-08-13T07:22:06.545Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Grok 4.6 Scores 61 on the Artificial Analysis Intelligence Index",
+        "summary": "xAI's Grok 4.6 achieves a score of 61 on the Artificial Analysis Intelligence Index, placing it among top frontier models and generating substantial community discussion. The release comes bundled with a 'Grok @Bot' feature positioning it as an AI teammate embedded in social contexts. For AI product teams, the benchmark result raises the competitive ceiling and signals xAI is closing the gap with OpenAI and Anthropic on general capability.",
+        "url": "https://artificialanalysis.ai/articles/grok-4-6-benchmarks-and-analysis",
+        "source": "Hacker News",
+        "published": "2026-08-12T16:54:25.000Z"
+      },
+      {
+        "title": "Anthropic in Talks to Buy World Model AI Startup Decart for $6B",
+        "summary": "Anthropic is reportedly negotiating to acquire Decart, a startup specializing in world model AI, for approximately $6 billion. The deal would give Anthropic capabilities in simulation and environment modeling that go well beyond language, potentially accelerating its push into agentic and embodied AI. If completed, this would be one of the largest AI acquisitions on record and reshape Anthropic's product roadmap.",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion",
+        "source": "Hacker News",
+        "published": "2026-08-13T01:50:27.000Z"
+      },
+      {
+        "title": "Lovable Raises $400M Series C",
+        "summary": "Lovable, the AI-native app-building platform, has closed a $400M Series C, reflecting continued investor conviction in tools that let non-engineers create production software with AI assistance. The funding will likely fuel expansion of its agent-driven development features and go-to-market reach. This round reinforces the broader trend of the application layer capturing significant AI investment.",
+        "url": "https://lovable.dev/blog/series-c",
+        "source": "Hacker News",
+        "published": "2026-08-12T16:20:34.000Z"
+      },
+      {
+        "title": "Twitch Is Mining People's Streams to Train Amazon's AI",
+        "summary": "Amazon has quietly enabled Twitch stream data to be used for training its AI models, with an opt-out setting buried in account preferences. This highlights growing tension between platform data practices and creator rights, and signals that large tech companies are aggressively sourcing multimodal training data from owned platforms. AI product teams should monitor regulatory and reputational risks as similar data-harvesting practices face increasing scrutiny.",
+        "url": "https://www.404media.co/twitch-training-amazon-ai-models-how-to-opt-out-setting/",
+        "source": "Hacker News",
+        "published": "2026-08-12T18:02:18.000Z"
+      },
+      {
+        "title": "Google DeepMind: Putting Sign Language AI into Users' Hands",
+        "summary": "DeepMind announces a production sign-language-to-text (SL2T) model powering new accessibility features for Deaf and hard-of-hearing users, representing a significant step toward real-world sign language recognition at scale. The system moves beyond research demos into deployed consumer features, raising the benchmark for multimodal accessibility applications. Builders working on accessibility or multimodal products can treat this as a signal that sign language understanding is now an addressable problem with production-grade models.",
+        "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+        "source": "Google DeepMind",
+        "published": "2026-08-12T14:01:59.000Z"
+      }
+    ]
+  }
+}
