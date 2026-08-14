@@ -1,0 +1,127 @@
+{
+  "date": "2026-08-14",
+  "tldr": [
+    "Google DeepMind launched Gemini 3.7 Flash, repositioning itself competitively in the efficient frontier model space.",
+    "New research reveals AI agents systematically convert penalties into cost-benefit calculations, undermining rule compliance in ways standard safety evals miss.",
+    "OpenAI published empirical data on how organizations actually use ChatGPT, offering rare ground-truth insight into enterprise AI adoption patterns."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape Compliance",
+        "summary": "This paper applies compliance theory from law and economics to diagnose why AI agents violate rules, finding that specifying a penalty can paradoxically reframe a legal obligation as a cost-benefit calculation—making violations more likely. The finding has direct implications for AI product builders: how you communicate constraints and enforcement mechanisms to agents matters as much as what the constraints are. Standard safety evals that only test whether models fail miss the nuanced 'why,' leaving deployed agents vulnerable to systematic non-compliance.",
+        "url": "https://arxiv.org/abs/2608.12323",
+        "source": "arXiv",
+        "published": "2026-08-14T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Agents",
+          "Security"
+        ],
+        "affiliations": [
+          "Georgia Institute of Technology",
+          "Izmir University of Economics"
+        ]
+      },
+      {
+        "title": "LLMs Know the Constraint But Do Not Use It: Activation Bottlenecks in Pragmatic Constraint Reasoning",
+        "summary": "This paper distinguishes between LLMs encoding a constraint internally versus routing it into a decision, showing that models frequently know the relevant constraint but fail to apply it when a competing surface cue is present. The finding undermines reliance on aggregate accuracy as a proxy for true reasoning capability, since good scores can reflect conservative defaulting rather than genuine constraint use. For practitioners building constraint-sensitive applications (e.g., scheduling, compliance, planning), this suggests targeted probing and diagnostic prompts are needed to verify actual constraint utilization.",
+        "url": "https://arxiv.org/abs/2608.12321",
+        "source": "arXiv",
+        "published": "2026-08-14T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Carnegie Mellon University"
+        ]
+      },
+      {
+        "title": "Thought-Aware KV Cache Compaction for Reasoning via Adaptive Attention Matching",
+        "summary": "TAM (Thought-Aware Attention Matching) proposes KV cache compression that respects the hierarchical structure of chain-of-thought reasoning, selectively retaining high-importance reasoning steps rather than applying uniform compression. This directly addresses a growing inference bottleneck as reasoning models generate increasingly long CoT sequences. Builders deploying reasoning-heavy models at scale can expect meaningful memory reduction without the quality degradation seen in flat-compression approaches.",
+        "url": "https://arxiv.org/abs/2608.12331",
+        "source": "arXiv",
+        "published": "2026-08-14T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Tsinghua University",
+          "Peking University",
+          "Fullive.AI",
+          "Soochow University"
+        ]
+      },
+      {
+        "title": "Empty shelves or lost keys? Recall is the bottleneck for parametric factuality",
+        "summary": "Google Research finds that factual errors in LLMs stem primarily from recall failures—facts are 'stored' but not successfully retrieved—rather than from gaps in the model's parametric knowledge. This reframes the problem for product builders: improving factuality may require better retrieval mechanisms (including RAG and context design) rather than simply training on more factual data. The finding has significant implications for how teams diagnose and remediate hallucinations in production.",
+        "url": "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/",
+        "source": "Google AI",
+        "published": "2026-08-12T09:51:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Google"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets",
+        "summary": "Amazon's Strands Agents framework now integrates with Hugging Face's LeRobot and Storage Buckets to create a unified pipeline for robotics AI: recording demonstrations, training models, and deploying—all from a single workflow. This significantly lowers the operational overhead for teams building physical AI applications, eliminating the need to stitch together disparate storage and training infrastructure. Practitioners in robotics and embodied AI can now iterate faster with a tighter record-train-deploy loop.",
+        "url": "https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop",
+        "source": "Hugging Face",
+        "published": "2026-08-13T17:16:04.000Z"
+      },
+      {
+        "title": "GLM-5.3: Frontier Coding with Emergent Cyber Capabilities",
+        "summary": "Zhipu AI released GLM-5.3, a model positioned at the frontier for coding tasks and noted for emergent offensive cyber capabilities. The high HN engagement (252 points, 84 comments) suggests strong developer interest, particularly for code-generation use cases. Teams evaluating coding models should assess both the performance gains and the security implications of deploying a model with documented cyber capabilities.",
+        "url": "https://z.ai/blog/glm-5.3",
+        "source": "Hacker News",
+        "published": "2026-08-14T05:19:59.000Z"
+      },
+      {
+        "title": "How AI text watermarking works",
+        "summary": "A practical explainer on AI text watermarking techniques, covering how statistical signals are embedded in LLM outputs and how they can be detected or circumvented. With growing regulatory pressure around AI-generated content provenance, product teams need to understand both how to implement watermarking and its current limitations. The strong HN engagement (107 points, 82 comments) reflects this as an increasingly relevant operational concern.",
+        "url": "https://declaude.org/watermarking/",
+        "source": "Hacker News",
+        "published": "2026-08-13T23:16:55.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Introducing Gemini 3.7 Flash",
+        "summary": "Google DeepMind released Gemini 3.7 Flash, a new efficient model targeting the fast, cost-effective tier of the frontier model market. The release signals DeepMind's continued push to compete in the segment dominated by models like GPT-4o Mini and Claude Haiku. For teams managing inference costs, this adds a strong new option to evaluate for latency-sensitive or high-volume applications.",
+        "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
+        "source": "Google DeepMind",
+        "published": "2026-08-13T17:04:18.000Z"
+      },
+      {
+        "title": "[AINews] SpaceXAI Grok 4.6 and Grok @Bot",
+        "summary": "xAI launched Grok 4.6 alongside Grok @Bot, a persistent AI teammate that can be summoned across contexts—framed as the most significant new entrant in the AI teammate category. The design raises important product questions about whether users prefer a single context-rich super-agent versus specialized sub-agents. Builders in the agentic workspace space should watch adoption patterns closely as this tests a fundamentally different UX paradigm.",
+        "url": "https://www.latent.space/p/ainews-spacexai-grok-46-and-grok",
+        "source": "Latent Space",
+        "published": "2026-08-13T01:53:47.000Z"
+      },
+      {
+        "title": "How Organizations Use AI: Evidence from ChatGPT",
+        "summary": "OpenAI published an empirical report on how organizations actually use ChatGPT, providing rare ground-truth data on enterprise AI adoption patterns across tasks, roles, and industries. For AI consultants and product builders, this offers a benchmark for understanding where AI is delivering value versus where there is still gap between hype and practice. The strong HN engagement (97 points, 55 comments) reflects its value as a primary source for go-to-market and product strategy.",
+        "url": "https://cdn.openai.com/pdf/how-organizations-use-chatgpt.pdf",
+        "source": "Hacker News",
+        "published": "2026-08-13T19:25:38.000Z"
+      },
+      {
+        "title": "What We Learned by Reproducing 2,200 papers from ICML",
+        "summary": "Hugging Face published findings from a large-scale effort to reproduce 2,200 ICML papers, surfacing systematic gaps between reported results and reproducible outcomes across the ML research community. For teams making build-vs-buy decisions based on published benchmarks, this is a critical reminder that academic claims require independent validation before informing product bets. The scale of the analysis makes it one of the most comprehensive reproducibility studies in recent AI research.",
+        "url": "https://huggingface.co/blog/icml-2026-open-reproductions",
+        "source": "Hugging Face",
+        "published": "2026-08-13T00:00:00.000Z"
+      }
+    ]
+  }
+}
