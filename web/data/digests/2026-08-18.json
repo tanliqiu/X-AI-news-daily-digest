@@ -1,0 +1,118 @@
+{
+  "date": "2026-08-18",
+  "tldr": [
+    "Stripe acquires OpenRouter for $7B, consolidating AI model routing infrastructure under a major payments/fintech player",
+    "OpenAI cuts GPT-5.6 Sol pricing by 50% on OpenRouter, continuing the trend of frontier model commoditization",
+    "HarmProfile benchmark reveals systematic gaps in how frontier LLMs are evaluated for harmful output characteristics, moving beyond simple attack/defense framing"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "HarmProfile: Characterizing Harmful Distributions in Frontier LLMs",
+        "summary": "HarmProfile introduces a content-centric benchmark that analyzes the nature and distribution of harmful outputs from frontier LLMs, rather than simply measuring attack success rates. This reframing helps AI product teams understand what kinds of misbehavior their deployed models are actually producing, enabling more targeted safety mitigations. The dataset fills a critical gap by providing large-scale, high-quality examples of real frontier-LLM misbehavior for systematic study.",
+        "url": "https://arxiv.org/abs/2608.14577",
+        "source": "arXiv",
+        "published": "2026-08-18T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Fudan University",
+          "Deakin University",
+          "The University of Melbourne",
+          "City University of Hong Kong"
+        ]
+      },
+      {
+        "title": "AutoMem: A Text-Gradient Recursive Self-Improvement Framework for Automated Memory Architectures Search",
+        "summary": "AutoMem automates the search for optimal long-term memory configurations in LLM agents by exploring a discrete space of 5 encoders, 5 stores, 6 retrievers, and 4 managers. A key finding is that no single memory architecture dominates across tasks, meaning agent builders should treat memory design as a task-specific tunable rather than a one-size-fits-all decision. The text-gradient self-improvement loop allows the system to iteratively refine its own memory configuration without manual intervention.",
+        "url": "https://arxiv.org/abs/2608.14621",
+        "source": "arXiv",
+        "published": "2026-08-18T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "RAG",
+          "Framework"
+        ],
+        "affiliations": [
+          "East China Normal University",
+          "Shanghai AI Laboratory"
+        ]
+      },
+      {
+        "title": "LLM Safety Alignment in Low-Resource Languages: A Systematic Literature Review",
+        "summary": "This PRISMA-based systematic review of ~1,500 papers finds that LLM safety alignment is substantially weaker in low-resource and multilingual settings than in high-resource languages like English. For teams deploying AI products globally, this signals a concrete risk: safety guardrails trained predominantly on English data may fail silently in other languages. The review maps the current state of research and highlights where investment in multilingual safety is most urgently needed.",
+        "url": "https://arxiv.org/abs/2608.14626",
+        "source": "arXiv",
+        "published": "2026-08-18T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Survey",
+          "Security"
+        ],
+        "affiliations": [
+          "African Institute for Mathematical Sciences (AIMS), Cameroon",
+          "Bayero University Kano",
+          "Brown University",
+          "University of Pretoria"
+        ]
+      },
+      {
+        "title": "Characterizing Rhetorical Misalignment in Decision-Making with Language Models",
+        "summary": "This paper develops a decision-theoretic framework to study how LLM outputs can amplify human cognitive biases in high-stakes decision-making contexts, a phenomenon the authors call \"rhetorical misalignment.\" For AI product builders deploying LLMs in advisory or summarization roles, the work provides a concrete analytical lens for auditing whether model outputs systematically nudge users toward biased choices. The findings underscore that alignment evaluations need to account for downstream human behavior, not just model outputs in isolation.",
+        "url": "https://arxiv.org/abs/2608.14630",
+        "source": "arXiv",
+        "published": "2026-08-18T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of Illinois Urbana-Champaign",
+          "University of Chicago"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
+        "summary": "This Hugging Face blog post details how reordering GPU job scheduling on a shared cluster yielded a 33-percentage-point improvement in GPU utilization without adding hardware. For teams managing shared inference or training infrastructure, the practical implication is that scheduling order—not just resource allocation—is a high-leverage optimization lever. The post provides actionable patterns applicable to any multi-tenant GPU cluster setup.",
+        "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
+        "source": "Hugging Face",
+        "published": "2026-08-17T19:46:21.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Stripe Buys OpenRouter for $7B",
+        "summary": "Stripe has acquired OpenRouter, the popular LLM routing and aggregation platform, for $7 billion, signaling that AI model distribution and API infrastructure is now considered core fintech/payments territory. For AI product builders, this raises questions about OpenRouter's neutrality as a multi-model gateway now that it sits inside a payments company with its own platform incentives. The deal consolidates a critical piece of the AI supply chain—model access and billing—under a single corporate umbrella.",
+        "url": "https://www.latent.space/p/ainews-stripe-buys-openrouter-for",
+        "source": "Latent Space",
+        "published": "2026-08-17T23:13:41.000Z"
+      },
+      {
+        "title": "GPT-5.6 Sol Pricing Cut by 50%",
+        "summary": "OpenAI has halved the price of GPT-5.6 Sol on OpenRouter, continuing the rapid commoditization of frontier model inference that makes high-capability AI more accessible to cost-sensitive applications. For developers currently on GPT-4-class models, this price cut makes a strong case for evaluating a migration to the newer model family. The timing, coinciding with the Stripe/OpenRouter acquisition news, adds further significance to the pricing shift.",
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol",
+        "source": "Hacker News",
+        "published": "2026-08-17T21:03:18.000Z"
+      },
+      {
+        "title": "Expert Witness Used ChatGPT to Write Report Defending 3M in Deadly Explosion Lawsuit",
+        "summary": "An expert witness in a high-stakes liability case used ChatGPT to produce a report explicitly framed to exonerate 3M, raising serious questions about AI use in legal and expert testimony contexts. For AI product teams serving professional or compliance-sensitive markets, this incident illustrates how LLM outputs can be weaponized for advocacy rather than analysis, and underscores the need for disclosure and audit trails around AI-assisted work product. It is also likely to accelerate regulatory scrutiny of AI use in legal proceedings.",
+        "url": "https://www.404media.co/show-how-3m-is-0-at-fault-expert-witness-used-chatgpt-to-write-report-defending-company-in-deadly-explosion-lawsuit/",
+        "source": "Hacker News",
+        "published": "2026-08-18T03:44:41.000Z"
+      },
+      {
+        "title": "Israel Creates Fake Think Tank to Influence AI Chatbots",
+        "summary": "Reporting indicates that a state-linked operation created a fictitious think tank with the apparent goal of seeding content into LLM training data or retrieval systems to shape chatbot outputs on geopolitical topics. This is an early documented case of deliberate RAG/knowledge-poisoning as an influence operation, with direct implications for teams building products that rely on web-sourced retrieval or external knowledge bases. AI product builders should treat this as a signal to invest in provenance verification and source diversity for retrieval pipelines.",
+        "url": "https://responsiblestatecraft.org/israel-influence-chatgpt/",
+        "source": "Hacker News",
+        "published": "2026-08-17T20:46:10.000Z"
+      }
+    ]
+  }
+}
