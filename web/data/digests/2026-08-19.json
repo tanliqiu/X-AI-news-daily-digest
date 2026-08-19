@@ -1,0 +1,119 @@
+{
+  "date": "2026-08-19",
+  "tldr": [
+    "Cerebras launches CS-4, its next-generation AI accelerator chip, generating significant developer interest",
+    "OpenAI pauses frontier model training — a notable operational signal with potential product implications",
+    "New research shows LLM-based de-identification with institution-specific prompting catches PHI that standard systems miss, with direct implications for healthcare AI deployments"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Institution-Specific LLM Prompting Recovers PHI That De-identification Systems and Their Gold Standards Both Miss",
+        "summary": "LLMs with in-context learning can identify locally-specific protected health information — such as hospital abbreviations and internal codes — that standard de-identification pipelines miss entirely. The study tested this on 100 pediatric oncology notes, showing LLMs can also tune the precision-recall tradeoff via prompting. This has direct implications for teams building HIPAA-compliant AI pipelines over EHR data, suggesting LLM-based de-id should complement, not replace, rule-based systems.",
+        "url": "https://arxiv.org/abs/2608.17051",
+        "source": "arXiv",
+        "published": "2026-08-19T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Application"
+        ],
+        "affiliations": [
+          "Quantitative and Computational Biosciences, Baylor College of Medicine, Houston, Texas, USA",
+          "Department of Pediatrics, Baylor College of Medicine, Houston, Texas, USA",
+          "Jan and Dan Duncan Neurological Research Institute, Texas Children's Hospital, Houston, Texas, USA"
+        ]
+      },
+      {
+        "title": "Towards Safer RAG: Only Agents Capable of System 2 Thinking may Access Untrusted Documents",
+        "summary": "This paper identifies a critical RAG vulnerability: LLMs can correctly flag a document as containing misinformation yet still be influenced by it in their final output. The proposed mitigation requires agents to engage slower, more deliberate reasoning before incorporating retrieved content from untrusted sources. For practitioners building RAG systems over public or user-supplied documents, this highlights that detection alone is insufficient — architectural safeguards around reasoning are needed.",
+        "url": "https://arxiv.org/abs/2608.17153",
+        "source": "arXiv",
+        "published": "2026-08-19T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Security"
+        ],
+        "affiliations": [
+          "University of Isfahan"
+        ]
+      },
+      {
+        "title": "Uncertainty-Aware Decision Making in Multimodal Large Language Models",
+        "summary": "This survey covers how MLLMs fail across visual, audio, document, and embodied inputs — showing that fluent text output can mask perceptual errors, modality conflicts, or out-of-distribution inputs. It systematically categorizes sources of uncertainty and reviews mitigation strategies for production multimodal systems. Teams deploying MLLMs in high-stakes settings will find this a useful framework for building uncertainty-aware confidence checks.",
+        "url": "https://arxiv.org/abs/2608.17084",
+        "source": "arXiv",
+        "published": "2026-08-19T04:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Survey",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Khalifa University of Science and Technology, Abu Dhabi, United Arab Emirates"
+        ]
+      },
+      {
+        "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation",
+        "summary": "This paper proposes a middle path between RAG and full fine-tuning: Engram-style hashed memory that can be transferred across models without retraining. The approach aims to preserve the auditability and updatability of external retrieval while reducing inference-time latency and context overhead. For AI product builders managing knowledge-intensive applications, this could offer a more efficient and portable alternative to current parametric or retrieval approaches.",
+        "url": "https://arxiv.org/abs/2608.17050",
+        "source": "arXiv",
+        "published": "2026-08-19T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Inference"
+        ],
+        "affiliations": [
+          "ELLIS Institute Finland",
+          "University of Turku",
+          "University of Technology Sydney"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "fx: Tiny, Open, Native Coding Agent",
+        "summary": "fx.sh is a lightweight, open-source coding agent designed to run natively without heavy dependencies. With 90 HN upvotes and 54 comments, it is drawing developer attention as a minimal alternative to larger agent frameworks like Codex or Claude Code. Teams looking for a self-hosted, auditable coding agent with a small footprint may find it a useful starting point.",
+        "url": "https://fx.sh",
+        "source": "Hacker News",
+        "published": "2026-08-18T22:00:21.000Z"
+      },
+      {
+        "title": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
+        "summary": "Hugging Face published a guide on implementing multi-vector late-interaction models (à la ColBERT) with Sentence Transformers, enabling more expressive retrieval than single-vector embeddings. Late interaction models score query-document pairs at the token level at retrieval time, improving recall on complex queries. This is directly relevant for teams building production RAG pipelines where standard dense retrieval falls short.",
+        "url": "https://huggingface.co/blog/multi-vector-encoder",
+        "source": "Hugging Face",
+        "published": "2026-08-18T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Cerebras CS-4",
+        "summary": "Cerebras announced the CS-4, the latest generation of its wafer-scale AI accelerator, attracting nearly 200 upvotes and 139 comments on Hacker News. The CS-4 continues Cerebras's strategy of offering dramatically faster inference for large models compared to GPU clusters. This is significant for teams evaluating alternatives to NVIDIA for high-throughput LLM inference workloads.",
+        "url": "https://www.cerebras.ai/cs4",
+        "source": "Hacker News",
+        "published": "2026-08-19T00:28:18.000Z"
+      },
+      {
+        "title": "OpenAI Pauses Frontier Model Training",
+        "summary": "OpenAI CEO Sam Altman announced via Twitter that the company is pausing frontier model training, a rare and significant operational decision. While details are sparse, this could signal infrastructure, safety review, or strategic considerations that may affect the near-term model release roadmap. AI product teams dependent on OpenAI's latest models should monitor this development closely for potential delays.",
+        "url": "https://twitter.com/sama/status/2089787807611195475",
+        "source": "Hacker News",
+        "published": "2026-08-18T21:24:35.000Z"
+      },
+      {
+        "title": "Frontier Model Cost and Open-Weights Popularity is Driving Demand for Model Routing",
+        "summary": "Glean CEO Arvind Jain discusses how rising frontier model costs and improving open-weight models are pushing enterprises toward intelligent model routing — dynamically selecting cheaper or local models for simpler tasks. Glean uses human feedback at scale to continuously improve routing accuracy across its deployed workflows. This is a concrete blueprint for AI product teams seeking to reduce inference costs without sacrificing quality.",
+        "url": "https://www.latent.space/p/glean-model-routing",
+        "source": "Latent Space",
+        "published": "2026-08-18T21:41:10.000Z"
+      },
+      {
+        "title": "AI Usage Patterns in Software Teams",
+        "summary": "Linear published data on how software teams are integrating AI into their development workflows, including adoption rates and task distribution. With 108 HN upvotes and 56 comments, the dataset offers rare real-world signal on where AI coding tools are actually being used versus hyped. This is useful benchmarking data for consultants advising organizations on AI tooling adoption.",
+        "url": "https://linear.app/data",
+        "source": "Hacker News",
+        "published": "2026-08-18T22:08:07.000Z"
+      }
+    ]
+  }
+}
