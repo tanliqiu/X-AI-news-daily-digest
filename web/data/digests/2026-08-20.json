@@ -1,0 +1,134 @@
+{
+  "date": "2026-08-20",
+  "tldr": [
+    "Sam Altman announces OpenAI has paused some frontier RL training runs, citing the need to meet alignment, security, and monitoring standards for rapidly advancing capabilities",
+    "Claude gains Gmail and Google Drive integration, enabling autonomous email sending and file management on all paid plans",
+    "DFlash 2 introduces a parallel speculative decoding approach that keeps drafting concurrent with verification, promising significant inference throughput gains"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "LongNovel: A Multi-Scale Benchmark for Hallucination Detection in Long-Context Novel Summarization",
+        "summary": "This paper introduces a benchmark specifically targeting hallucination in long-context summarization of novels, which provide richer narrative detail than news or academic papers. Practitioners building summarization or RAG pipelines over long documents will gain a more realistic test bed for measuring faithfulness failures. The multi-scale design supports evaluation at different granularities of summary.",
+        "url": "https://arxiv.org/abs/2608.18082",
+        "source": "arXiv",
+        "published": "2026-08-20T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "RAG",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "East China Normal University",
+          "Tencent"
+        ]
+      },
+      {
+        "title": "Self- and Other-Labels Induce Bidirectional Bias in LLM Judges",
+        "summary": "This study isolates label-induced self-preference bias in LLM-as-a-judge setups by separating it from response quality and stylistic confounds, finding that bias operates bidirectionally depending on whether a model sees its own or another model's label. For teams using LLM judges in automated evaluation pipelines, this signals that evaluation results may be systematically skewed in ways that aren't visible when only comparing generated text. The findings suggest blind or label-stripped evaluation designs as a mitigation.",
+        "url": "https://arxiv.org/abs/2608.18091",
+        "source": "arXiv",
+        "published": "2026-08-20T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "KAIST"
+        ]
+      },
+      {
+        "title": "Latent Space Refusal Anchoring for Low-Resource African Languages: Mechanistic Safety Recovery Without Retraining",
+        "summary": "The paper demonstrates that safety refusal mechanisms present in models for English fail to activate for low-resource African languages like Yoruba, Igbo, Igala, and Hausa, and proposes Latent Space Refusal Anchoring (LSR) to recover refusal behavior without any labeled target-language data or retraining. This has direct implications for AI safety teams deploying multilingual products, since standard alignment procedures leave significant coverage gaps for low-resource languages. The no-retraining approach makes this feasible to apply to already-deployed models.",
+        "url": "https://arxiv.org/abs/2608.18089",
+        "source": "arXiv",
+        "published": "2026-08-20T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ]
+      },
+      {
+        "title": "Abliteration Mitigation via Refusal Aliases",
+        "summary": "This work addresses the attack vector where adversaries extract a model's refusal direction and project it out of weight matrices to bypass safety alignment, showing that existing defenses ignore how easily the refusal direction can be extracted in the first place. The proposed 'Refusal Aliases' approach makes the refusal direction harder to identify by obfuscating it, adding a layer of robustness against abliteration attacks. Teams shipping safety-tuned models should be aware this attack class remains a practical threat and consider this defense strategy.",
+        "url": "https://arxiv.org/abs/2608.18093",
+        "source": "arXiv",
+        "published": "2026-08-20T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "Independent"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "DFlash 2: Keep Drafting Parallel",
+        "summary": "DFlash 2 is a speculative decoding technique that keeps draft token generation running in parallel with the verification step, eliminating the serial bottleneck of prior approaches and improving GPU utilization during inference. Teams running high-throughput LLM inference workloads can adopt this to increase tokens-per-second without changing model weights or quality. The blog post on inco.ai describes implementation details and benchmark results.",
+        "url": "https://inco.ai/blog/dflash2/",
+        "source": "Hacker News",
+        "published": "2026-08-19T20:28:43.000Z"
+      },
+      {
+        "title": "Collaborative Human Agent Protocol (CHAP)",
+        "summary": "CHAP is an open-source protocol from BrightbeamAI defining a structured interface for human-agent collaboration, aiming to standardize how agents hand off to humans and request approvals. As agentic systems proliferate, having a shared protocol for human-in-the-loop interactions reduces integration friction across different agent frameworks and host applications. Developers building multi-agent or human-in-the-loop workflows can evaluate this as a coordination layer.",
+        "url": "https://github.com/BrightbeamAI/chap",
+        "source": "Hacker News",
+        "published": "2026-08-19T22:09:16.000Z"
+      },
+      {
+        "title": "LFM2.5 Q4_0 Checkpoints from Quantization-Aware Distillation",
+        "summary": "Liquid AI has released quantization-aware distillation (QAD) checkpoints for their LFM2.5 models at Q4_0 precision, designed to minimize quality loss at 4-bit quantization compared to post-training quantization. Practitioners looking to deploy efficient on-device or edge inference with Liquid's architecture can use these drop-in quantized checkpoints without the typical accuracy degradation. This is relevant for latency-sensitive or resource-constrained deployment scenarios.",
+        "url": "https://huggingface.co/blog/LiquidAI/qad",
+        "source": "Hugging Face",
+        "published": "2026-08-19T13:48:49.000Z"
+      },
+      {
+        "title": "Feature Request: Support AGENTS.md in Claude Code",
+        "summary": "A highly-upvoted GitHub issue (204 points, 115 comments) requests that Claude Code support the emerging AGENTS.md convention for defining agent behavior and project context, similar to how Codex and other agentic coding tools use it. This signals strong developer appetite for standardized agent configuration files across coding assistants, and is worth tracking for teams building multi-tool agentic coding workflows. If adopted, AGENTS.md support would improve consistency when switching between agent runtimes.",
+        "url": "https://github.com/anthropics/claude-code/issues/6235",
+        "source": "Hacker News",
+        "published": "2026-08-19T21:19:50.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Sam Altman: OpenAI Pauses Frontier RL Training Runs Over Alignment and Safety Standards",
+        "summary": "Sam Altman announced on X that OpenAI has paused some frontier reinforcement learning training runs because model capability progress is now 'extremely rapid' and is outpacing alignment, security, and monitoring readiness. He clarified near-term model releases are unaffected, but further-out releases will be delayed. This is a notable public signal from the CEO of the leading AI lab that capability-safety gaps are becoming operationally significant.",
+        "url": "https://x.com/sama/status/2089787807611195475",
+        "source": "X (@sama)",
+        "published": "2026-08-18T18:53:34.000Z"
+      },
+      {
+        "title": "Claude Gains Gmail and Google Drive Integration for Autonomous Actions",
+        "summary": "Anthropic has launched Gmail and Google Drive connectors for Claude, enabling it to draft and send emails and manage files autonomously, with user-configurable approval gates. This moves Claude from a chat assistant to an operational agent within mainstream productivity workflows, available to all paid plan subscribers. Product teams building agentic workflows on top of Claude now have native email and file management capabilities to work with.",
+        "url": "https://x.com/claudeai/status/2089806039088517356",
+        "source": "X (@claudeai)",
+        "published": "2026-08-18T20:06:01.000Z"
+      },
+      {
+        "title": "Asana Cleared 5 Years of Engineering Backlog in 2 Weeks with OpenAI Codex",
+        "summary": "OpenAI's case study with Asana claims the project management company used Codex to work through a five-year backlog of engineering tasks in approximately two weeks. This is a striking enterprise productivity claim that will resonate with engineering leaders evaluating AI coding tools at scale. The case study provides a concrete example of Codex deployed for sustained, high-volume software work rather than single-task completions.",
+        "url": "https://openai.com/index/asana/",
+        "source": "Hacker News",
+        "published": "2026-08-20T05:54:20.000Z"
+      },
+      {
+        "title": "[AINews] Death of Params: Z.ai CEO Jie Tang on GLM 5.3 and the New Post-training Scaling Law",
+        "summary": "The Latent Space newsletter covers Z.ai CEO Jie Tang's discussion of GLM 5.3 and the argument that post-training scaling — rather than raw parameter count — is becoming the dominant lever for frontier model improvement. This 'death of params' thesis has significant implications for how AI product teams should think about model selection and the value of fine-tuning versus scaling. It reflects a broader industry shift toward efficiency and alignment-focused training over brute-force pretraining compute.",
+        "url": "https://www.latent.space/p/ainews-death-of-params-zai-ceo-jie",
+        "source": "Latent Space",
+        "published": "2026-08-20T05:17:12.000Z"
+      },
+      {
+        "title": "[AINews] Memory Prices Up 500% in 12 Months",
+        "summary": "Latent Space reports that AI memory (HBM/GPU memory) prices have surged roughly 500% year-over-year, effectively reversing Moore's Law to 2007 levels for this critical infrastructure component. This crunch has direct implications for inference cost modeling and hardware procurement strategies for any team running large models at scale. It also reinforces the business case for inference efficiency techniques like quantization and speculative decoding.",
+        "url": "https://www.latent.space/p/ainews-memory-prices-up-500-in-12",
+        "source": "Latent Space",
+        "published": "2026-08-19T08:44:52.000Z"
+      }
+    ]
+  }
+}
