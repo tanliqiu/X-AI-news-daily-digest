@@ -1,0 +1,118 @@
+{
+  "date": "2026-08-21",
+  "tldr": [
+    "NVIDIA acquires Poolside in a $12B reverse-execuhire deal, with founders and employees splitting $7B and infrastructure scaling to 7GW",
+    "VSysBench reveals multimodal LLMs struggle to follow system-message constraints without sacrificing vision-language capabilities—critical gap for production deployments",
+    "Codex on AWS Bedrock reported to cause 10x billing overcharges, a significant operational risk for teams using it in production"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Compliance, Capability, and Conflict: Benchmarking Multimodal LLMs under System Messages",
+        "summary": "VSysBench is a new benchmark specifically measuring whether multimodal LLMs (MLLMs) follow operator-defined system-message constraints while preserving core vision-language performance. The study finds that current MLLMs often trade off compliance against capability—a critical finding for product builders who rely on system prompts to govern model behavior in multimodal applications. This is the first benchmark to isolate system-message adherence in truly multimodal contexts rather than text-only or user-turn settings.",
+        "url": "https://arxiv.org/abs/2608.19207",
+        "source": "arXiv",
+        "published": "2026-08-21T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Multimodal",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Graduate School of Data Science",
+          "Seoul National University",
+          "NAVER Cloud AI",
+          "KAIST AI"
+        ]
+      },
+      {
+        "title": "When Irrelevant Text Matters: Affine Margin Shifts in Multimodal Large Language Models",
+        "summary": "This paper demonstrates that task-irrelevant auxiliary text injected into MLLM prompts consistently biases model outputs on visual judgment tasks, a phenomenon the authors term \"affine margin shifts.\" For AI product builders, this is a concrete robustness warning: context pollution in RAG pipelines or chat histories can silently degrade vision-grounded reasoning without obvious failure signals. The findings underscore the importance of prompt hygiene and adversarial context testing in multimodal applications.",
+        "url": "https://arxiv.org/abs/2608.19208",
+        "source": "arXiv",
+        "published": "2026-08-21T04:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Evaluation",
+          "Security"
+        ],
+        "affiliations": [
+          "University of Science and Technology of China"
+        ]
+      },
+      {
+        "title": "A Virtual Member of a Community of Practice for the Society of Petroleum Engineers: From Prototype to Deployment",
+        "summary": "ATHENA is a deployed RAG-based virtual assistant evaluated by 75 petroleum engineering professionals, showing measurable improvements in both productivity and performance equality across skill levels on realistic well-planning tasks. The paper traces the full journey from prototype to production, offering practical lessons on deploying domain-specific knowledge assistants in professional communities. It represents a concrete case study for teams building expert-knowledge AI products in regulated or specialized industries.",
+        "url": "https://arxiv.org/abs/2608.19199",
+        "source": "arXiv",
+        "published": "2026-08-21T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Application",
+          "Agents"
+        ],
+        "affiliations": [
+          "SRI International"
+        ]
+      },
+      {
+        "title": "Time-Series Retrieval for Grounding Multimodal Language Models in Remaining Useful Life",
+        "summary": "This paper proposes grounding MLLMs in historical time-series data via retrieval to enable remaining useful life (RUL) estimation for industrial equipment—a domain where hallucinations carry real operational risk. The retrieval-augmented approach allows LLMs to reason over analogous degradation patterns without fine-tuning, making it practical for maintenance AI products with limited labeled data. Builders targeting predictive maintenance or industrial IoT applications will find this a viable RAG architecture blueprint.",
+        "url": "https://arxiv.org/abs/2608.19218",
+        "source": "arXiv",
+        "published": "2026-08-21T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Multimodal",
+          "Application"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
+        "summary": "Liquid AI has released LFM2.5-DSpark, achieving up to 3.2x inference throughput improvements over previous LFM2.5 models, with details published on Hugging Face. For teams running cost-sensitive inference workloads, this could meaningfully reduce serving costs or latency without switching model families. The release is directly accessible via Hugging Face, lowering the barrier for evaluation in existing pipelines.",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+        "source": "Hugging Face",
+        "published": "2026-08-20T16:52:57.000Z"
+      },
+      {
+        "title": "How Much Memory Does Your Agent Actually Need?",
+        "summary": "IBM Research's blog post introduces ALTK-Evolve with HMM (Hidden Markov Models), a framework for analytically sizing agent memory requirements rather than relying on ad hoc tuning. Practitioners building long-running or multi-step agentic systems can use this approach to right-size context and memory structures, reducing compute waste and improving reliability. The tooling is available via Hugging Face and targets applied agent developers looking for principled memory design.",
+        "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+        "source": "Hugging Face",
+        "published": "2026-08-18T18:09:38.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Poolside gets $12B reverse-execuhire to NVIDIA; founders stay for $1B, employees go for $6B, Infraco scaling to 7GW neocloud",
+        "summary": "NVIDIA has acquired Poolside in a $12B deal structured as a reverse-execuhire, with founders receiving approximately $1B and employees $6B, while a separate infrastructure company scales toward 7GW of compute capacity. This signals NVIDIA's continued aggressive move into AI model development beyond chips, with major implications for the competitive landscape of frontier model providers. The scale of the infrastructure buildout also underlines the ongoing capital intensity of the AI compute arms race.",
+        "url": "https://www.latent.space/p/ainews-poolside-gets-12b-reverse",
+        "source": "Latent Space",
+        "published": "2026-08-21T05:45:21.000Z"
+      },
+      {
+        "title": "Codex on AWS Bedrock bug causing 10x charges",
+        "summary": "A reported bug in the OpenAI Codex integration on AWS Bedrock is causing users to be billed at approximately 10 times the expected rate, with a live GitHub issue tracking the problem. Teams running Codex-based coding agents in production on Bedrock face significant unplanned cost exposure until a fix is confirmed. This is an immediate operational risk that warrants pausing or closely monitoring Bedrock Codex usage until the issue is resolved.",
+        "url": "https://github.com/openai/codex/issues/37674",
+        "source": "Hacker News",
+        "published": "2026-08-21T03:17:43.000Z"
+      },
+      {
+        "title": "Copyright does not protect AI-generated content in EU",
+        "summary": "A widely-circulated Mastodon post highlighting EU legal interpretation confirms that AI-generated content does not qualify for copyright protection under current EU law, consistent with the requirement for human authorship. For product builders shipping AI-generated creative or commercial content in European markets, this has direct implications for IP strategy, customer contracts, and content licensing models. Teams should audit any IP ownership claims in their terms of service that rely on AI-generated outputs.",
+        "url": "https://mathstodon.xyz/@maxpool/117128107757895678",
+        "source": "Hacker News",
+        "published": "2026-08-21T00:15:12.000Z"
+      },
+      {
+        "title": "Ox Alpha – New stealth model on OpenRouter",
+        "summary": "A new model called \"Ox Alpha\" from a stealth provider has appeared on OpenRouter, attracting significant community discussion. Early access via OpenRouter makes it immediately testable for developers evaluating frontier model alternatives, though the unknown provenance warrants caution for production use. The listing signals OpenRouter's continued role as a discovery platform for emerging or pre-announcement models.",
+        "url": "https://openrouter.ai/stealth/ox-alpha",
+        "source": "Hacker News",
+        "published": "2026-08-20T23:56:35.000Z"
+      }
+    ]
+  }
+}
