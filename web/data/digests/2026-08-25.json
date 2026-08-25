@@ -1,0 +1,95 @@
+{
+  "date": "2026-08-25",
+  "tldr": [
+    "Thomson Reuters launches its own frontier AI model trained on proprietary legal and financial data, signaling major domain-specific LLM competition",
+    "OpenAI announces ChatGPT Plus 5-hour session limits returning for Work and Codex, and teases DevDay 2026 as its biggest ever",
+    "Andrew Ng enters the AI Engineering space, and JetBrains makes Qwen 3.6 easier to run locally on Mac"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "BF1: A Causal Dyadic Sparse-Attention Retrofit for Efficient Long-Context Transformers",
+        "summary": "BF1 introduces a deterministic block-aligned sparse attention pattern combining local neighborhood, global first block, and logarithmically spaced historical blocks to reduce the cost of long-context inference. Crucially, the approach includes a correctness-gated retrofit mechanism allowing it to be applied to already-pretrained models without full retraining. This is directly useful for practitioners needing to extend context windows of existing deployed models without paying the full computational cost of dense attention.",
+        "url": "https://arxiv.org/abs/2608.20427",
+        "source": "arXiv",
+        "published": "2026-08-25T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Framework"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Wrong-Physics Backdoors in Neural PDE Operators",
+        "summary": "This paper identifies a novel security vulnerability in neural PDE operators trained on shared solver archives: 'cross-parameter relinking' allows an attacker to poison training data so that a triggered input returns a physically plausible but parametrically incorrect solution. This is particularly dangerous because standard validation metrics (prediction error, plausibility checks) fail to detect the attack. Teams deploying neural operator models for scientific simulation or engineering applications should be aware of this supply-chain risk.",
+        "url": "https://arxiv.org/abs/2608.20439",
+        "source": "arXiv",
+        "published": "2026-08-25T04:00:00.000Z",
+        "keywords": [
+          "Security"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Stored in Optimizer State, Valued by Later Training: A Causal Account of Subliminal Trait Transfer",
+        "summary": "This work explains how behavioral traits from a teacher model can persist in a student model even after the source data is removed, by propagating through optimizer momentum states rather than model weights alone. The causal framework provides a formal 'transport-valuation identity' that separates how traits enter from how they are amplified or suppressed by subsequent training. This has direct implications for AI alignment and safety auditing of distilled or fine-tuned models, where hidden behavioral dispositions may survive data scrubbing.",
+        "url": "https://arxiv.org/abs/2608.20442",
+        "source": "arXiv",
+        "published": "2026-08-25T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Training"
+        ],
+        "affiliations": [
+          "Xiamen University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Headlong: A Microharness for Persistent Agents",
+        "summary": "Headlong is a lightweight harness designed to support persistent, long-running AI agents with minimal infrastructure overhead. For practitioners building agentic systems, it offers a low-friction way to manage agent state and lifecycle without committing to a heavyweight orchestration framework. Worth evaluating as an alternative to heavier agent runtimes for simpler persistent-agent use cases.",
+        "url": "https://www.laude.org/updates/headlong-a-microharness-for-persistent-agents",
+        "source": "Hacker News",
+        "published": "2026-08-25T03:54:19.000Z"
+      },
+      {
+        "title": "Wire It, Run It, Deploy It: AI Workflows in Gradio",
+        "summary": "Hugging Face has published a guide covering how to build, connect, and deploy multi-step AI workflows using Gradio's native workflow primitives. This is practically useful for ML engineers who want to prototype and ship pipeline-style AI applications — combining models, data transforms, and UI — without a separate orchestration layer. The guide lowers the barrier to deploying composable AI workflows for demos and production-grade internal tools.",
+        "url": "https://huggingface.co/blog/gradio-workflow-guide",
+        "source": "Hugging Face",
+        "published": "2026-08-25T00:00:00.000Z"
+      },
+      {
+        "title": "Qwen 3.6 is now much easier to run locally on your Mac, thanks to JetBrains",
+        "summary": "JetBrains has added streamlined local support for Qwen 3.6 on macOS, reducing setup friction for developers wanting a capable open-weight model running on-device. This matters for AI product builders who need privacy-preserving or offline inference without cloud API costs. It also signals growing IDE-level integration of local LLMs as a first-class developer workflow.",
+        "url": "https://www.neowin.net/news/qwen-36-is-now-much-easier-to-run-locally-on-your-mac-thanks-to-jetbrains/",
+        "source": "Hacker News",
+        "published": "2026-08-24T19:47:51.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Thomson Reuters Launches Its Own Frontier Model",
+        "summary": "Thomson Reuters has announced a proprietary frontier AI model built on its world-class legal, financial, and regulatory data assets — positioning itself as a domain-specific AI provider rather than purely a data vendor. This is a significant move for the legal and financial AI market, as it combines deep curated data with model ownership in a way that pure API resellers cannot easily replicate. Competitors and AI consultants serving professional services verticals should pay close attention to this vertical integration strategy.",
+        "url": "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model",
+        "source": "Hacker News",
+        "published": "2026-08-25T02:11:39.000Z"
+      },
+      {
+        "title": "OpenAI reinstates 5-hour session limit for Plus accounts and teases DevDay 2026",
+        "summary": "OpenAI is reintroducing a 5-hour session limit for Plus-tier users of ChatGPT Work and Codex to manage compute load and protect capacity for more active users. Separately, an OpenAI executive teased that DevDay 2026 will be the company's biggest developer event yet, suggesting significant product announcements are forthcoming. Teams building on OpenAI APIs should factor potential compute constraint changes into their usage tier planning.",
+        "url": "https://x.com/thsottiaux/status/2092058556707344708",
+        "source": "X (@thsottiaux)",
+        "published": "2026-08-25T01:16:43.000Z"
+      },
+      {
+        "title": "[AINews] Andrew Ng gets into AI Engineering",
+        "summary": "Andrew Ng is reportedly entering the AI Engineering space, a notable signal that the discipline of building production AI systems is maturing into its own recognized field. Coverage from Latent Space frames this as validation of the AI engineering movement gaining mainstream legitimacy. For applied AI consultants, this shift in credentialing and visibility for the discipline may accelerate enterprise demand and raise the profile of the work.",
+        "url": "https://www.latent.space/p/ainews-andrew-ng-gets-into-ai-engineering",
+        "source": "Latent Space",
+        "published": "2026-08-25T02:50:57.000Z"
+      }
+    ]
+  }
+}
