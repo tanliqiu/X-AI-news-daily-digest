@@ -1,0 +1,107 @@
+{
+  "date": "2026-08-26",
+  "tldr": [
+    "Claude gains unified persistent memory across chat and its Cowork agentic product, letting users inspect and edit all stored topics",
+    "IBM releases Granite 4.2 with technical details on training and architecture; a companion post introduces quantization-aware healing that lets 4-bit compressed models outperform full-precision originals",
+    "OpenAI's Head of Data Centers has departed, raising questions about the company's infrastructure strategy amid massive AI buildout ambitions"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "From Causal Plausibility to Causal Reliability: Evaluating LLMs as Calibrated Direct Causal-Edge Classifiers",
+        "summary": "This paper systematically benchmarks 12 open-weight LLMs on causal graph edge prediction across five prompting strategies and four confidence sources, asking whether LLMs can be trusted as calibrated priors for causal discovery pipelines. Results reveal significant gaps between plausibility and reliability, with cross-prompt and cross-model agreement offering the most stable confidence signals. Practitioners building causal-discovery or data-analysis agents should treat LLM causal judgments as weakly calibrated priors rather than ground truth.",
+        "url": "https://arxiv.org/abs/2608.23660",
+        "source": "arXiv",
+        "published": "2026-08-26T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Mississippi State University, USA",
+          "Northern Illinois University, USA",
+          "Texas Christian University, USA"
+        ]
+      },
+      {
+        "title": "Agentic Context Management: Memory and Cost as Architecture Problems",
+        "summary": "This paper (surfaced on HN) frames memory and token-cost management in long-running AI agents as first-class architectural concerns rather than implementation details. It proposes structured patterns for context compression, retrieval, and cost-aware truncation that can be applied when building production agent systems. Engineers designing multi-step or long-horizon agents will find actionable design principles for keeping inference costs tractable.",
+        "url": "https://arxiv.org/abs/2607.21503",
+        "source": "Hacker News",
+        "published": "2026-08-26T02:35:25.000Z",
+        "keywords": [
+          "Agents",
+          "RAG",
+          "Inference"
+        ]
+      },
+      {
+        "title": "Calibration-Preserving Pruning: Compression as a Reliability Contract",
+        "summary": "This paper introduces Calibration-Preserving Pruning (CPP), which combines nonconformity-gradient saliency with split conformal prediction to ensure pruned models retain valid prediction-set coverage. The method enables model compression without sacrificing uncertainty quantification reliability, a critical property for deploying pruned models in risk-sensitive applications. AI product teams who need both smaller models and trustworthy confidence estimates will find this approach directly applicable.",
+        "url": "https://arxiv.org/abs/2608.23744",
+        "source": "arXiv",
+        "published": "2026-08-26T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Iowa State University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Granite 4.2 LLMs: How They're Built",
+        "summary": "IBM has published a detailed technical breakdown of the Granite 4.2 model family on Hugging Face, covering training data, architecture choices, and evaluation methodology. The post provides transparency useful for practitioners evaluating Granite as a base model for fine-tuning or enterprise deployment. It represents IBM's continued push to make Granite a credible open-weight alternative for regulated industries.",
+        "url": "https://huggingface.co/blog/ibm-granite/granite-4-2",
+        "source": "Hugging Face",
+        "published": "2026-08-25T15:14:14.000Z"
+      },
+      {
+        "title": "Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original",
+        "summary": "Multiverse Computing's quantization-aware healing technique recovers—and in benchmark tests exceeds—the accuracy of the original full-precision model after 4-bit quantization, using a targeted fine-tuning pass after compression. This challenges the conventional assumption that quantization always entails a quality trade-off, opening a practical path to deploying smaller, faster models without sacrificing task performance. Teams constrained by edge hardware or inference cost budgets should evaluate this approach as part of their model optimization pipeline.",
+        "url": "https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing",
+        "source": "Hugging Face",
+        "published": "2026-08-25T11:39:24.000Z"
+      },
+      {
+        "title": "Google Labs launches Play with Putty: collaborative real-time vibe coding tool",
+        "summary": "Google Labs has opened a waitlist for Play with Putty, a multiplayer collaborative coding tool that lets multiple users build web tools and sites together in real time using AI assistance. The experiment signals Google's interest in social/collaborative AI coding experiences beyond single-user copilot paradigms. Product teams exploring AI-native development workflows may want to track this as an indicator of where collaborative coding UX is heading.",
+        "url": "https://x.com/GoogleLabs/status/2092293667688173593",
+        "source": "X (@GoogleLabs)",
+        "published": "2026-08-25T16:50:57.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Claude Gets Unified Memory Across Chat and Cowork",
+        "summary": "Anthropic has shipped persistent, user-inspectable memory that now spans both Claude's chat interface and its Claude Cowork agentic product, so context from prior conversations automatically carries into long-running tasks. Users retain full control—every remembered topic is listed in Settings and can be edited or deleted, with real-time updates as conversations evolve. This is a meaningful UX and architecture step for anyone building on Claude, as cross-session memory significantly changes what kinds of stateful agent workflows become feasible.",
+        "url": "https://x.com/claudeai/status/2092299704864284888",
+        "source": "X (@claudeai)",
+        "published": "2026-08-25T17:14:57.000Z"
+      },
+      {
+        "title": "OpenAI's Head of Data Centers Has Left the Company",
+        "summary": "OpenAI's Head of Data Centers has departed according to a WSJ report, representing a notable leadership gap at a moment when the company is orchestrating some of the largest AI infrastructure build-outs in history. The exit could affect the pace and coordination of data center partnerships and construction timelines. For those building on OpenAI APIs, this is worth monitoring as infrastructure capacity directly impacts availability and pricing.",
+        "url": "https://www.wsj.com/tech/ai/openais-head-of-data-centers-has-left-company-6d24fd83",
+        "source": "Hacker News",
+        "published": "2026-08-25T19:37:39.000Z"
+      },
+      {
+        "title": "Parallel's Parag Agrawal: Building a New Web for AI Agents",
+        "summary": "Former Twitter CEO Parag Agrawal discusses his new company Parallel, which is building a search and web infrastructure layer designed specifically for AI agents rather than human users—arguing that human click-based ranking signals are fundamentally the wrong feedback loop for agent-driven search. The company proposes using agent-generated feedback to train ranking models, and sees agents as a distinct customer class that justifies a new indexing and retrieval architecture. Practitioners building agent-heavy products should pay attention to this emerging infrastructure layer that could replace or complement today's web search APIs.",
+        "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+        "source": "Training Data",
+        "published": "2026-08-25T09:00:00.000Z"
+      },
+      {
+        "title": "AI Proficiency: From Users to Builders",
+        "summary": "This Practical AI episode examines how organizations can define and develop AI proficiency across their workforce using an L0–L3 maturity framework, with a focus on moving employees from passive AI users to active builders without mandating adoption. The discussion is practically useful for consultants and team leads designing AI upskilling programs. It highlights the growing organizational challenge of turning AI tooling investment into measurable workforce capability.",
+        "url": "https://share.transistor.fm/s/0f57c0bc",
+        "source": "Practical AI",
+        "published": "2026-08-25T09:00:00.000Z"
+      }
+    ]
+  }
+}
