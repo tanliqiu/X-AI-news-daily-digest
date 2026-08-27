@@ -1,0 +1,119 @@
+{
+  "date": "2026-08-27",
+  "tldr": [
+    "NVIDIA acquires Hugging Face for $13B, cementing its position as the center of open-source AI infrastructure",
+    "Google DeepMind launches Gemini Omni 1.1 Flash and Gemini 3.5 Transcribe, expanding its multimodal API offerings for developers",
+    "Anthropic ships Claude browser integration (Chrome extension GA + built-in Cowork browser) enabling autonomous web actions with safety validation"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Unsupervised Post-Training of Foundation Models: A Survey",
+        "summary": "This survey catalogs 80 methods for adapting foundation models without human labels, preference data, or external oracles—using only signals derived from the model's own outputs. For AI product teams, this is a practical roadmap for continuing to improve deployed models cheaply, especially in domains where labeled data is scarce or expensive to collect.",
+        "url": "https://arxiv.org/abs/2608.24982",
+        "source": "arXiv",
+        "published": "2026-08-27T04:00:00.000Z",
+        "keywords": [
+          "Survey",
+          "Training"
+        ],
+        "affiliations": [
+          "HKUST(GZ)",
+          "HKUST",
+          "Xiaohongshu Inc.",
+          "WeChat, Tencent",
+          "CUHK"
+        ]
+      },
+      {
+        "title": "Does Fine-Tuning Undo Activation Steering? Behavioural Recovery Without Weight-Edit Reversal",
+        "summary": "Embedded activation steering (e.g., for refusal suppression or brevity) can be behaviorally reversed by subsequent fine-tuning even when the underlying weight edits persist—meaning safety constraints baked in pre-release may not survive post-deployment customization. This has direct implications for anyone relying on steering-based alignment techniques in models that customers or partners will fine-tune.",
+        "url": "https://arxiv.org/abs/2608.24988",
+        "source": "arXiv",
+        "published": "2026-08-27T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Security"
+        ],
+        "affiliations": [
+          "Department of Computer Science, Brunel University of London"
+        ]
+      },
+      {
+        "title": "DataKernelBench: Can LLMs Optimize Database Queries on GPUs?",
+        "summary": "DataKernelBench is a new benchmark evaluating whether LLMs can generate optimized GPU kernels for database-style SQL queries—an area untested by existing ML-focused kernel benchmarks. This matters for teams building AI-assisted data infrastructure tooling, as it highlights a meaningful capability gap in current models for heterogeneous, data-movement-heavy workloads.",
+        "url": "https://arxiv.org/abs/2608.25061",
+        "source": "arXiv",
+        "published": "2026-08-27T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "IBM Research, Zurich, Switzerland",
+          "TU Wien, Vienna, Austria"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers",
+        "summary": "Hugging Face has published a guide and tooling for training multi-vector embedding models (e.g., ColBERT-style) using Sentence Transformers, enabling richer late-interaction retrieval beyond single-vector approaches. This is directly actionable for teams building RAG pipelines who want to improve retrieval quality without switching to a fully different retrieval architecture.",
+        "url": "https://huggingface.co/blog/train-multi-vector-encoder",
+        "source": "Hugging Face",
+        "published": "2026-08-26T00:00:00.000Z"
+      },
+      {
+        "title": "Gemini Omni 1.1 Flash lets you build with more control",
+        "summary": "Google DeepMind released Gemini Omni 1.1 Flash, a multimodal model update emphasizing developer control features for production applications. Builders integrating Gemini into products get improved configurability alongside the speed and cost profile of the Flash model tier.",
+        "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
+        "source": "Google DeepMind",
+        "published": "2026-08-27T16:11:32.000Z"
+      },
+      {
+        "title": "Intelligent transcription with Gemini 3.5 Transcribe",
+        "summary": "Gemini 3.5 Transcribe is a new speech-to-text model from Google DeepMind positioned as an 'intelligent' transcription service—going beyond basic ASR with contextual understanding. This expands the options for voice-enabled AI products and competitive alternatives to Whisper-based pipelines.",
+        "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
+        "source": "Google DeepMind",
+        "published": "2026-08-26T17:01:00.000Z"
+      },
+      {
+        "title": "Claude gets its own browser in Cowork + Chrome extension GA",
+        "summary": "Anthropic shipped two browser automation milestones: Claude in Chrome is now generally available on all paid plans with autonomous action mode (a safety classifier validates each action), and Claude Cowork on desktop now has a built-in sandboxed browser for handling web tasks without any setup. These features meaningfully lower the bar for building browser-automation agents on top of Claude, particularly for internal tooling and legacy web portals.",
+        "url": "https://claude.com/blog/cowork-built-in-browser",
+        "source": "blog",
+        "published": "2026-08-26T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "NVIDIA acquires Hugging Face for $13B",
+        "summary": "NVIDIA has acquired Hugging Face for $13 billion, making it the dominant corporate steward of the open-source AI ecosystem alongside its existing Nemotron model line. For AI consultants and builders, this signals NVIDIA's deepening vertical integration—from silicon to model hub—and may affect the long-term neutrality and governance of Hugging Face's platform.",
+        "url": "https://www.latent.space/p/ainews-nvidia-buys-huggingface-for",
+        "source": "Latent Space",
+        "published": "2026-08-27T01:50:54.000Z"
+      },
+      {
+        "title": "Hot Chips: OpenAI's Jalapeño, Cerebras CS-5, Groq 3 LPX, Apple M6",
+        "summary": "The Hot Chips 2026 conference showcased a wave of new AI silicon including OpenAI's in-house 'Jalapeño' chip, Cerebras CS-5, Groq's third-generation LPX, and Apple's M6. The convergence of hyperscaler and startup custom silicon is accelerating inference cost reduction, with direct implications for pricing strategies in AI product businesses.",
+        "url": "https://www.latent.space/p/ainews-hot-chips-openais-jalapeno",
+        "source": "Latent Space",
+        "published": "2026-08-27T01:31:22.000Z"
+      },
+      {
+        "title": "Google DeepMind pilots world's first double-blind AI evaluations",
+        "summary": "DeepMind is running double-blind evaluation studies for AI models—where neither evaluators nor the evaluated party know which model produced which output—to reduce bias in human preference assessments. This methodology could become a new standard for rigorous third-party AI benchmarking and is relevant for teams designing trustworthy evaluation pipelines.",
+        "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+        "source": "Google DeepMind",
+        "published": "2026-08-27T12:59:16.000Z"
+      },
+      {
+        "title": "Nvidia projects $673B in sales as AI demand widens",
+        "summary": "Nvidia has issued a forward projection of $673 billion in sales, driven by continued explosive demand for AI compute infrastructure. This underscores the sustained capital flowing into AI infrastructure and the competitive pressure on teams to optimize for cost efficiency as GPU supply constraints evolve.",
+        "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast/",
+        "source": "Hacker News",
+        "published": "2026-08-27T15:04:16.000Z"
+      }
+    ]
+  }
+}
