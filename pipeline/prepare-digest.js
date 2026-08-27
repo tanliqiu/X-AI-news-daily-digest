@@ -162,8 +162,10 @@ async function callWithRetry(fn, maxAttempts = 5) {
       return await fn()
     } catch (err) {
       const status = err?.status ?? err?.statusCode
-      if (status !== 529 || attempt === maxAttempts) throw err
-      console.log(`[prepare-digest] API overloaded (529), retrying in ${delay / 1000}s (attempt ${attempt}/${maxAttempts})...`)
+      const isConnectionError = status === undefined && /connection|timeout/i.test(err?.name ?? '')
+      const retryable = isConnectionError || status === 408 || status === 429 || status >= 500
+      if (!retryable || attempt === maxAttempts) throw err
+      console.log(`[prepare-digest] Transient API failure (${status ?? 'network'}), retrying in ${delay / 1000}s (attempt ${attempt}/${maxAttempts})...`)
       await new Promise((r) => setTimeout(r, delay))
       delay = Math.min(delay * 2, 300_000)
     }
