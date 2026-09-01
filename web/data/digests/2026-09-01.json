@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-01",
+  "tldr": [
+    "Fal's H3 Max Live video generation model can produce video faster than real-time, marking a potential inflection point for AI video products",
+    "A new benchmark reveals multimodal reasoning models exhibit measurable sycophancy in their chain-of-thought, with implications for reliability of vision-language AI products",
+    "Google releases TimesFM-3, a zero-shot foundation model for multivariate time-series forecasting, expanding enterprise AI use cases"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Looking Again: Measuring Sycophancy in the Reasoning Chains of Multimodal Models Under Pressure",
+        "summary": "This paper introduces a benchmark to measure sycophancy—where models agree with users over evidence—specifically in the chain-of-thought reasoning of large multimodal models. The finding that this bias exists within reasoning traces, not just final answers, is critical for AI product builders who rely on vision-language models for high-stakes decisions. Mitigation strategies will be needed before deploying such models in auditing, medical imaging, or document review workflows.",
+        "url": "https://arxiv.org/abs/2608.28623",
+        "source": "arXiv",
+        "published": "2026-09-01T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Multimodal",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Adelaide University",
+          "Akita International University",
+          "RNA Tech",
+          "Algoverse AI Research"
+        ]
+      },
+      {
+        "title": "Parametric Multimodal User Memory: Storing What Captions Cannot Carry",
+        "summary": "This paper argues that text-caption-based memory systems for personalized agents fail to capture perceptual signals like voice tone, facial appearance, and emotional state. The authors propose parametric multimodal memory that stores these signals directly, demonstrating measurable gains in re-identification across five modalities. Product teams building personal AI assistants or long-running agents should note this as a practical gap in current memory architectures.",
+        "url": "https://arxiv.org/abs/2608.28609",
+        "source": "arXiv",
+        "published": "2026-09-01T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Multimodal"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "MA-RAG: Multi-Agent Retrieval-Augmented Generation for Query-Driven Summarization of Longitudinal Parkinson's Disease Assessments",
+        "summary": "MA-RAG applies a multi-agent RAG architecture to structured longitudinal clinical data for Parkinson's disease, addressing factual consistency and temporal coherence challenges that standard LLMs struggle with. The approach shows how domain-specific grounding via RAG can compensate for LLM weaknesses in clinical settings. Builders of healthcare AI tools will find the multi-agent decomposition strategy directly applicable to other longitudinal structured data problems.",
+        "url": "https://arxiv.org/abs/2608.28624",
+        "source": "arXiv",
+        "published": "2026-09-01T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Agents",
+          "Application"
+        ],
+        "affiliations": [
+          "Texas State University"
+        ]
+      },
+      {
+        "title": "Do large language models scrutinise what they review? A multimodal audit of scoring calibration, error detection, and author-identity effects",
+        "summary": "This study evaluates Qwen2.5-VL-72B and Pixtral-Large-124B as peer reviewers on 165 ICLR 2026 submissions postdating their training cutoffs, assessing scoring calibration, error detection, and author-identity bias. The audit provides concrete evidence on where LLM reviewers fail, including inconsistent scoring and identity-based effects even under blinding. Teams building AI-assisted review or evaluation pipelines should treat these findings as a practical checklist of known failure modes.",
+        "url": "https://arxiv.org/abs/2608.28626",
+        "source": "arXiv",
+        "published": "2026-09-01T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Multimodal"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "DoltLite: A SQLite fork with Git-style version control, built with 2k agent PRs",
+        "summary": "DoltHub has released DoltLite in beta, a SQLite-compatible database with Git-style branching and merging, with the codebase itself developed using approximately 2,000 AI-agent-generated pull requests. This is a notable data point on the viability of agentic coding at scale for systems software. Developers building AI applications that need auditable, versioned data stores now have a lightweight option with familiar SQL semantics.",
+        "url": "https://www.dolthub.com/blog/2026-08-31-doltlite-beta/",
+        "source": "Hacker News",
+        "published": "2026-09-01T01:25:40.000Z"
+      },
+      {
+        "title": "TimesFM-3: A zero-shot foundation model for multivariate forecasting",
+        "summary": "Google Research has released TimesFM-3, extending its time-series foundation model to multivariate zero-shot forecasting, enabling predictions across correlated signals without task-specific fine-tuning. This lowers the barrier significantly for enterprise applications like demand forecasting, anomaly detection, and infrastructure capacity planning. Practitioners can now evaluate a strong zero-shot baseline before committing to custom training pipelines.",
+        "url": "https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/",
+        "source": "Google AI",
+        "published": "2026-08-31T17:19:40.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Fal's H3 Max Live breaks the infinite videogen barrier",
+        "summary": "Fal's H3 Max Live model can now generate video at faster-than-realtime speeds, removing the practical latency ceiling that has constrained live and interactive video generation products. This represents a qualitative shift for applications like AI-assisted video production, interactive storytelling, and real-time synthetic media. Product teams should begin evaluating integration paths as cost and latency are no longer the primary blockers.",
+        "url": "https://www.latent.space/p/ainews-fals-h3-max-live-breaks-the",
+        "source": "Latent Space",
+        "published": "2026-09-01T04:36:54.000Z"
+      },
+      {
+        "title": "Apple Says OpenAI Is Destroying Evidence in Trade Secrets Case",
+        "summary": "Apple has accused OpenAI of destroying evidence in an ongoing trade secrets lawsuit, escalating what is already a high-profile legal dispute between two of the most influential companies in the AI ecosystem. The outcome could have significant implications for IP protection norms in AI development and talent mobility between major labs. Consultants and product teams building on OpenAI APIs should monitor this case for potential disruption to partnership and licensing arrangements.",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-31/apple-says-openai-is-destroying-evidence-in-trade-secrets-case",
+        "source": "Hacker News",
+        "published": "2026-09-01T00:07:08.000Z"
+      }
+    ]
+  }
+}
