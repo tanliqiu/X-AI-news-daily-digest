@@ -1,0 +1,138 @@
+{
+  "date": "2026-09-02",
+  "tldr": [
+    "Anthropic launched Claude Fable/Mythos 5.1 with SOTA performance, 75% cache price cuts, and significantly reduced false-positive safety interventions",
+    "Google DeepMind introduced agentic video understanding in Gemini, enabling multi-step reasoning over video content",
+    "Hugging Face released 200+ WebGPU kernels for local AI inference, lowering the barrier to on-device model deployment"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "trajectory-judge: What Outcome-Only LLM Judges Miss on Agent Trajectories",
+        "summary": "Outcome-only evaluation of LLM agents—judging only the final response—systematically misses process-level failures such as wrong tool use or policy violations that still yield correct-looking outputs. This paper quantifies the blind spot using a deterministic tool-using environment and fault injector, demonstrating that trajectory-aware judges catch errors invisible to outcome-only approaches. Teams building agent evaluation pipelines should consider trajectory-level review as a default rather than an add-on.",
+        "url": "https://arxiv.org/abs/2609.00038",
+        "source": "arXiv",
+        "published": "2026-09-02T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Agents"
+        ],
+        "affiliations": [
+          "Utrecht University"
+        ]
+      },
+      {
+        "title": "From Detection to Refusal: Safer LLMs via Circuit-Guided Weight Scaling",
+        "summary": "This paper reverse-engineers LLM refusal behavior into a multi-stage 'safety circuit' consisting of harmful-detection attention heads and downstream refusal execution components, then uses this mechanistic understanding to scale weights for more robust safety without full retraining. The approach offers a practical, interpretability-driven alternative to RLHF-based safety alignment for hardening deployed models against adversarial prompts. Practitioners building safety-critical LLM applications gain a new lightweight lever for improving refusal reliability.",
+        "url": "https://arxiv.org/abs/2609.00051",
+        "source": "arXiv",
+        "published": "2026-09-02T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "University of California San Diego"
+        ]
+      },
+      {
+        "title": "RePro: Proof-Verified Benchmark Rewriting for Reliable Evaluation of LLM Mathematical Problem Solving",
+        "summary": "RePro addresses benchmark data contamination by automatically rewriting math problems and verifying correctness via Lean-based neural theorem provers, ensuring rewritten problems are both novel and provably valid. This is the first framework to integrate automated theorem proving into the benchmark rewriting loop, closing the gap between contamination mitigation and result reliability. Teams evaluating LLMs on math tasks now have a principled way to generate contamination-resistant test sets with correctness guarantees.",
+        "url": "https://arxiv.org/abs/2609.00062",
+        "source": "arXiv",
+        "published": "2026-09-02T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Reasoning",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Nanyang Technological University",
+          "The Chinese University of Hong Kong, Shenzhen",
+          "INSAIT, Sofia University \"St. Kliment Ohridski\"",
+          "Shenzhen Loop Area Institute",
+          "AIRS"
+        ]
+      },
+      {
+        "title": "BenchMIRT: What are LLM benchmarks actually measuring?",
+        "summary": "AllenAI applies Item Response Theory (IRT) to dissect popular LLM benchmarks, revealing that many benchmark items cluster around overlapping latent skills and that headline accuracy scores conflate distinct capability dimensions. This has direct implications for anyone choosing benchmarks to evaluate model selection decisions—many popular leaderboard metrics may be measuring a narrower slice of capability than assumed. The work suggests practitioners should use IRT-calibrated item subsets for more diagnostic, efficient evaluation.",
+        "url": "https://huggingface.co/blog/allenai/benchmirt",
+        "source": "Hugging Face",
+        "published": "2026-09-01T21:39:07.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Allen Institute for AI"
+        ]
+      },
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "summary": "GUI-CC exposes a critical gap in how GUI world models are evaluated: existing benchmarks test single-step screen prediction, but multi-step agent use requires generated states to remain consistent across repeated interactions. The new benchmark reveals that models performing well on one-step metrics often degrade significantly in contextual consistency over longer agent trajectories. Developers building GUI automation agents should incorporate consistency-over-time checks rather than relying solely on one-step accuracy metrics.",
+        "url": "https://arxiv.org/abs/2609.00048",
+        "source": "arXiv",
+        "published": "2026-09-02T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Multimodal"
+        ],
+        "affiliations": [
+          "Zhejiang University",
+          "Tongji University",
+          "University of California, San Diego",
+          "Yale University",
+          "China University of Geosciences"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+        "summary": "Hugging Face has released a library of over 200 optimized WebGPU compute kernels, enabling high-performance local AI inference directly in browsers and edge environments without server-side infrastructure. This significantly lowers the barrier to building privacy-preserving, offline-capable AI applications on consumer hardware. Developers targeting local-first or edge AI products can now leverage a well-maintained, broad kernel library instead of writing custom WebGPU shaders.",
+        "url": "https://huggingface.co/blog/webgpu-kernels",
+        "source": "Hugging Face",
+        "published": "2026-09-01T00:00:00.000Z"
+      },
+      {
+        "title": "CUDA-Harness: Harnessing Agentic CUDA Kernel Generation and Optimization from Natural Language",
+        "summary": "CUDA-Harness is an agentic framework that takes natural language descriptions and produces validated, hardware-optimized CUDA kernels, handling correctness checks and parallel optimization automatically. This addresses a major expertise bottleneck for teams building custom GPU workloads without deep CUDA specialization. It could materially accelerate custom inference kernel development and hardware-specific optimization workflows.",
+        "url": "https://arxiv.org/abs/2609.00058",
+        "source": "arXiv",
+        "published": "2026-09-02T04:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens",
+        "summary": "Anthropic released Claude Fable 5.1 and Mythos 5.1 as new state-of-the-art models, with cache read prices slashed 75% to $0.25/M tokens—a significant cost reduction for high-throughput applications using prompt caching. The release also includes substantially reduced false-positive safety interventions: biology safeguards trigger 85% less on benign requests and Claude Code users see ~60% fewer cyber interventions per session. These changes together improve both economics and usability for production Claude deployments.",
+        "url": "https://www.latent.space/p/ainews-claude-fablemythos-51-new",
+        "source": "Latent Space",
+        "published": "2026-09-02T07:46:08.000Z"
+      },
+      {
+        "title": "Introducing agentic video understanding with Gemini",
+        "summary": "Google DeepMind announced agentic video understanding capabilities in Gemini, enabling the model to reason across long video content in multi-step workflows rather than just answering single-turn questions about clips. This opens practical use cases in video surveillance, media analysis, and automated content review where sustained reasoning over footage is required. Product teams building video-centric AI features now have a production-accessible multimodal agent foundation to build on.",
+        "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
+        "source": "Google DeepMind",
+        "published": "2026-09-01T17:08:51.000Z"
+      },
+      {
+        "title": "PRs NOT Welcome: How Top AI Open Source Projects Are Managing Thousands of Contributors",
+        "summary": "Major AI open-source projects including Vercel's AI SDK and tldraw are shifting from traditional community PR models to agent-driven 'software factories' where AI agents apply fixes and features at scale. This signals a structural change in how open-source AI tooling is maintained and could accelerate release velocity while concentrating control in core maintainer teams. Developers building on these ecosystems should monitor how agentic contribution pipelines affect stability and API change cadence.",
+        "url": "https://www.latent.space/p/pr-not-welcome",
+        "source": "Latent Space",
+        "published": "2026-09-01T16:17:15.000Z"
+      },
+      {
+        "title": "The efficient frontier of LLM inference",
+        "summary": "Baseten's analysis maps cost-latency trade-offs across major LLM inference configurations, providing practitioners with a framework for identifying optimal inference setups for specific throughput and latency requirements. The piece offers concrete guidance on where different serving strategies (batching, speculative decoding, hardware tiers) sit on the efficiency frontier. Teams optimizing inference spend will find this a useful decision-making reference.",
+        "url": "https://www.baseten.co/blog/the-efficient-frontier-of-llm-inference/",
+        "source": "Hacker News",
+        "published": "2026-09-01T23:48:05.000Z"
+      }
+    ]
+  }
+}
