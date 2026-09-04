@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-04",
+  "tldr": [
+    "OpenAI launches GPT-6 Astra, achieving SOTA on coding and computer use benchmarks including saturating ARC-AGI-3, at 2.5x token cost but significantly cheaper per task completed",
+    "Benchmark contamination research finds that while it inflates absolute scores, it rarely changes model rankings on leaderboards — suggesting leaderboards remain more reliable than feared",
+    "R²Adapter introduces a routing-and-rewriting layer for hybrid RAG that dynamically selects between standard vector retrieval and graph-based RAG based on query complexity"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Contamination Inflates Scores but Rarely Reorders Large Language Model Leaderboards",
+        "summary": "This paper separates two concerns about benchmark contamination: absolute score inflation versus model ranking changes. Using differential item functioning analysis, it finds that while contamination reliably inflates raw scores, relative rankings between models are largely preserved — meaning leaderboards remain useful for comparing models even when contamination is present.",
+        "url": "https://arxiv.org/abs/2609.02899",
+        "source": "arXiv",
+        "published": "2026-09-04T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "R²Adapter: A Routing and Rewriting Adapter for Efficient Hybrid RAG",
+        "summary": "R²Adapter is a lightweight adapter that dynamically routes queries between standard vector RAG and graph-based RAG depending on query complexity, while also rewriting queries to better suit the selected retrieval pathway. This approach avoids the latency overhead of always using graph RAG while retaining its advantage on multi-hop reasoning queries, offering a practical path to production hybrid RAG systems.",
+        "url": "https://arxiv.org/abs/2609.02894",
+        "source": "arXiv",
+        "published": "2026-09-04T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Inference"
+        ],
+        "affiliations": [
+          "Chinese Academy of Sciences"
+        ]
+      },
+      {
+        "title": "Margins, Not Windows: Training-Free Per-Step Lossy Speculative Decoding",
+        "summary": "This paper jointly relaxes two fixed constraints in tree-attention speculative decoding (like EAGLE-3): strict token-match verification and static draft-tree shape. By adapting both per decoding step in a training-free manner, it achieves better inference throughput without requiring model retraining, which is directly applicable to reducing serving costs for deployed LLMs.",
+        "url": "https://arxiv.org/abs/2609.02897",
+        "source": "arXiv",
+        "published": "2026-09-04T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "University of Cambridge",
+          "Samsung AI Center-Cambridge, UK"
+        ]
+      },
+      {
+        "title": "Probe Generalization as Subspace Selection for OOD Deception Detection",
+        "summary": "Linear probes for detecting deceptive behavior in LLM activations often fail on out-of-distribution inputs, but projecting activations onto a small subset of principal components from the training distribution enables cross-domain transfer that nearly matches in-distribution performance on Llama-3.1-8B-Instruct. This is a practically accessible technique for building more robust behavioral monitors without additional labeled data.",
+        "url": "https://arxiv.org/abs/2609.02893",
+        "source": "arXiv",
+        "published": "2026-09-04T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "Carnegie Mellon University",
+          "University of Manchester"
+        ]
+      },
+      {
+        "title": "Where Does Harness-Optimization Value Live? Localized Gains and the Budget-Splitting Trap in Self-Evolving LLM Agents",
+        "summary": "HARNESSEVO decomposes the LLM agent harness (persona, strategy, format rules, control heuristics) into four separately evolvable components rather than optimizing a single flat prompt string. The work identifies where prompt-evolution budget is best spent and reveals a budget-splitting trap when optimizing all components simultaneously, providing actionable guidance for teams building self-improving agent scaffolds.",
+        "url": "https://arxiv.org/abs/2609.02889",
+        "source": "arXiv",
+        "published": "2026-09-04T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "Universiti Sains Malaysia",
+          "Universiti Putra Malaysia",
+          "Monash University Malaysia"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "NeoMME: an efficient Multimodal-native and Multilingual Encoder",
+        "summary": "H Company releases NeoMME, a multimodal-native multilingual encoder designed for efficiency, supporting both visual and text modalities natively rather than through adapter layers. For practitioners building multilingual multimodal pipelines, this offers a potentially lighter-weight embedding backbone than composing separate vision and language encoders.",
+        "url": "https://huggingface.co/blog/Hcompany/neomme",
+        "source": "Hugging Face",
+        "published": "2026-09-03T13:13:48.000Z"
+      },
+      {
+        "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps",
+        "summary": "Hugging Face demonstrates that a 350M parameter model can be fine-tuned for reliable structured output generation using only 100 GRPO reinforcement learning steps via the TRL library. This provides a concrete, low-compute recipe for teams needing structured output compliance from small, deployable models.",
+        "url": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+        "source": "Hugging Face",
+        "published": "2026-09-03T00:00:00.000Z"
+      },
+      {
+        "title": "Give Your Coding Agents a Memory You Own",
+        "summary": "Hugging Face's Funes project provides an open, self-hosted memory layer for coding agents, letting developers store and retrieve agent interaction history without relying on proprietary memory APIs. This addresses a key production concern around data ownership and auditability when deploying persistent coding agents.",
+        "url": "https://huggingface.co/blog/funes",
+        "source": "Hugging Face",
+        "published": "2026-09-03T00:00:00.000Z"
+      },
+      {
+        "title": "Grep beats LSP? Why coding agents ignore your fancier tools",
+        "summary": "An empirical blog post finds that coding agents (Claude, Codex, Cursor) consistently prefer simple grep-based search over more sophisticated LSP tooling when navigating codebases. This has direct implications for tool design in coding agent harnesses: investing in LSP integration may be premature optimization compared to fast, reliable text search.",
+        "url": "https://www.agentconnect.md/blog/grep-beat-lsp-harness/",
+        "source": "Hacker News",
+        "published": "2026-09-04T03:40:26.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "GPT-6 Astra: OpenAI's biggest LLM launch of all time",
+        "summary": "OpenAI launches GPT-6 Astra with new SOTA performance on coding and computer use benchmarks, including saturating ARC-AGI-3 — a test frontier models could barely crack at launch. The model is 2.5x more expensive per token than its predecessor but reportedly far cheaper per completed task, and ships with reduced monitorability, raising new deployment risk considerations for enterprise users.",
+        "url": "https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest",
+        "source": "Latent Space",
+        "published": "2026-09-04T05:18:11.000Z"
+      },
+      {
+        "title": "GPT-6 Astra on ARC-AGI-3",
+        "summary": "ARC Prize publishes results showing GPT-6 Astra saturates ARC-AGI-3 using its native harness, a benchmark that frontier models scored only 0.5% on at launch in 2026. This milestone signals that ARC-AGI-3 is no longer a meaningful discriminator and the community will need a new capability ceiling benchmark.",
+        "url": "https://arcprize.org/blog/astra",
+        "source": "Hacker News",
+        "published": "2026-09-03T19:45:00.000Z"
+      },
+      {
+        "title": "Which tools do Claude, Codex and Cursor choose? We measured 17k runs to find out",
+        "summary": "Armature Tech publishes a large-scale empirical study of tool selection across 17,000 coding agent runs, revealing systematic patterns in how leading agents choose utilities during software tasks. The findings offer actionable intelligence for developers designing tool suites and scaffolds for coding agents.",
+        "url": "https://armature.tech/blog/which-tools-coding-agents-install",
+        "source": "Hacker News",
+        "published": "2026-09-03T21:20:34.000Z"
+      },
+      {
+        "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+        "summary": "Google DeepMind releases WeatherNext 3, its latest AI-driven global weather forecasting model, claiming advances in both accuracy and spatial resolution over prior versions. For practitioners in climate tech or enterprise applications requiring weather data, this signals continued maturation of AI-native forecasting as a replacement for traditional numerical models.",
+        "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+        "source": "Google DeepMind",
+        "published": "2026-09-03T15:02:08.000Z"
+      },
+      {
+        "title": "NYC mayor imposes 1-year ban on AI for schools through 8th grade",
+        "summary": "New York City's mayor has banned AI tool use in schools up to 8th grade for one year, reflecting growing regulatory pressure on AI in education at the municipal level. This is an early indicator of how local governments may move to restrict AI access in sensitive contexts ahead of any federal framework.",
+        "url": "https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat",
+        "source": "Hacker News",
+        "published": "2026-09-03T23:14:00.000Z"
+      }
+    ]
+  }
+}
