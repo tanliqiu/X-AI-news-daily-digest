@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-11",
+  "tldr": [
+    "OpenAI launches GPT-Live-1 in the API, bringing real-time conversational capabilities to developers",
+    "Google's ToolGrad framework enables efficient tool-use training dataset generation using textual gradients, reducing data curation costs for agentic AI",
+    "Richard Socher's Recursive raises $650M for recursive self-improvement AI, signaling major investment in AI-builds-AI paradigm"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction",
+        "summary": "NCP-ArchPreview extends standard next-token prediction with a 'Next Concept Prediction' objective, training models to predict discrete multi-token concepts in a learned latent space while preserving normal autoregressive generation. This dual-objective pretraining approach could improve model reasoning and generalization without requiring inference-time changes. Practitioners building on top of pretrained models should watch this architecture as a potential successor to pure NTP pretraining.",
+        "url": "https://arxiv.org/abs/2609.10715",
+        "source": "arXiv",
+        "published": "2026-09-11T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Shanghai AI Lab",
+          "Shanghai Jiao Tong University"
+        ]
+      },
+      {
+        "title": "Detectable Only Where It Is Confounded: What Verified Duplication Counts Say About Membership Evidence in Language Models",
+        "summary": "Using OLMo-2 and Pythia—models with fully public training corpora—this paper rigorously tests whether low perplexity reliably signals training membership, finding that membership inference signals only emerge for heavily duplicated text and are otherwise confounded. This undermines the reliability of loss-based membership inference attacks, with direct implications for copyright auditing and privacy compliance tools built on these assumptions. Teams conducting training data audits should revisit their methodology in light of these findings.",
+        "url": "https://arxiv.org/abs/2609.10830",
+        "source": "arXiv",
+        "published": "2026-09-11T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Evaluation"
+        ]
+      },
+      {
+        "title": "Data-Efficient Language Modeling: From Frontier Advancement to Principle-Guided Model Improvement",
+        "summary": "Using the BabyLM 2026 Strict-Small challenge (10M word corpus), this work demonstrates an autonomous, multi-stage research pipeline that discovers training principles and applies them to iteratively improve model performance under tight data budgets. The approach—combining compact restatements and structured curriculum stages—offers practical guidance for teams training smaller, specialized models where data is scarce. It also showcases how AI-driven research automation can accelerate empirical discovery cycles.",
+        "url": "https://arxiv.org/abs/2609.10702",
+        "source": "arXiv",
+        "published": "2026-09-11T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Agents"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "ToolGrad: Efficient tool-use dataset generation with textual \"gradients\"",
+        "summary": "Google Research's ToolGrad generates high-quality tool-use training datasets by applying textual gradient feedback to iteratively refine synthetic examples, dramatically reducing the manual effort needed to build agentic fine-tuning data. This is directly useful for teams building LLM-powered agents that rely on function calling or tool orchestration, as it lowers the barrier to creating domain-specific training corpora. The method could accelerate fine-tuning pipelines for production agent systems.",
+        "url": "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/",
+        "source": "Google AI",
+        "published": "2026-09-10T22:50:22.000Z"
+      },
+      {
+        "title": "Rebuilding AUTOMATIC1111 with Gradio Workflow",
+        "summary": "Hugging Face demonstrates rebuilding the popular AUTOMATIC1111 Stable Diffusion UI using Gradio Workflow, showcasing how the new composable pipeline abstraction can replicate complex image-generation interfaces with less code. This is a practical guide for AI product builders wanting to create or migrate image-generation front-ends using modern Gradio tooling. The post highlights how Gradio Workflow reduces boilerplate for multi-step generative pipelines.",
+        "url": "https://huggingface.co/blog/gradio-workflow-1111",
+        "source": "Hugging Face",
+        "published": "2026-09-10T00:00:00.000Z"
+      },
+      {
+        "title": "Setting up OpenCode with Ollama and sbx on Mac",
+        "summary": "A practical walkthrough for running OpenCode—an open-source AI coding assistant—locally on Mac using Ollama for model inference and the sbx sandboxing layer for code execution safety. This setup gives developers a fully local, privacy-preserving alternative to cloud-based coding agents with execution sandboxing out of the box. Useful for teams with data residency constraints or those wanting to evaluate local coding agent stacks.",
+        "url": "https://tensorsandtokens.com/posts/opencode-ollama/",
+        "source": "Hacker News",
+        "published": "2026-09-11T00:45:26.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "GPT-Live-1 in the API",
+        "summary": "OpenAI is releasing GPT-Live-1 via API, bringing real-time, low-latency conversational AI capabilities to developers building voice and live interaction products. This expands the programmable surface for real-time AI applications beyond the existing Realtime API, with implications for voice assistants, live customer support, and interactive AI products. Developers should evaluate latency and pricing characteristics relative to existing WebSocket-based solutions.",
+        "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api/",
+        "source": "Hacker News",
+        "published": "2026-09-11T05:45:19.000Z"
+      },
+      {
+        "title": "When AI Improves Itself | Richard Socher (Recursive)",
+        "summary": "Richard Socher's new company Recursive has raised $650M to pursue recursive self-improvement—AI systems that autonomously generate better AI—marking one of the largest bets on AI-driven scientific and model research automation. Socher argues that simulation-based environments will unlock RSI loops capable of accelerating scientific discovery far beyond human pace. This fundraise signals that RSI is moving from a theoretical concern to a funded, near-term engineering priority.",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "source": "The MAD Podcast with Matt Turck",
+        "published": "2026-09-10T11:30:00.000Z"
+      },
+      {
+        "title": "Astra for Coding: Why Are We Doing This Again?",
+        "summary": "A high-engagement Hacker News discussion (338 points, 244 comments) sparked by a critical essay questioning the design rationale behind Astra's coding agent approach, raising concerns about whether current agentic coding tools address the right problems. The piece reflects growing practitioner skepticism about agentic coding complexity versus simpler, more targeted AI coding assistance. Product builders should read the community debate to calibrate user expectations around autonomous coding agents.",
+        "url": "https://lucumr.pocoo.org/2026/9/7/astra-why/",
+        "source": "Hacker News",
+        "published": "2026-09-11T06:23:06.000Z"
+      },
+      {
+        "title": "The Gemini app is now available for Windows",
+        "summary": "Google has launched a native Gemini app for Windows, extending its AI assistant footprint to desktop beyond the existing web and mobile clients. This increases the competitive pressure on Microsoft's Copilot integration in Windows and signals Google's intent to capture daily desktop AI usage. For developers building on Gemini APIs, broader consumer adoption may expand the ecosystem and drive demand for Gemini-powered integrations.",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
+        "source": "Hacker News",
+        "published": "2026-09-11T04:52:20.000Z"
+      }
+    ]
+  }
+}
