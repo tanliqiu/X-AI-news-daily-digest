@@ -1,0 +1,129 @@
+{
+  "date": "2026-09-14",
+  "tldr": [
+    "DeepSeek v4.1-Flash debuts a novel 763B causal Encoder–Decoder architecture with vision, marking a major new model release from the Chinese lab",
+    "OpenAI's Sam Altman publicly backs a federal AI safety framework, signaling frontier labs may accept regulatory oversight",
+    "GAUGE framework from Amazon reveals LLM-as-a-judge evaluation pipelines frequently disagree with grounded task rewards, undermining agent selection reliability"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "GAUGE: When Not to Trust LLM-as-a-Judge in User-Simulated Evaluation of Task-Oriented Agents",
+        "summary": "Amazon researchers introduce GAUGE, a protocol that benchmarks the popular offline evaluation setup—LLM user simulators plus LLM-as-a-judge—against grounded verifiable rewards across 25 agents from six providers. They find significant ranking disagreements, meaning teams relying solely on this cheap offline gate may promote the wrong agents to production. Practitioners should validate LLM-judge pipelines against task-completion ground truth before using them to gate deployment decisions.",
+        "url": "https://arxiv.org/abs/2609.12191",
+        "source": "arXiv",
+        "published": "2026-09-14T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Agents",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Amazon"
+        ]
+      },
+      {
+        "title": "R2VC: Modular Fact-Checking with Retrieval, Verification, and Confidence Calibration",
+        "summary": "R2VC proposes a four-stage modular pipeline—retrieve, reason, verify, calibrate—for evidence-grounded fact checking that separates retrieval from reasoning and uncertainty estimation, making failures easier to diagnose. The system combines hybrid sparse+dense retrieval over Wikipedia with explicit abstention support and citation grounding, directly addressing the opacity of end-to-end LLM prompting for fact verification. Builders of RAG-based fact-checking or trust-and-safety tools will find the modular decomposition useful for debugging and auditing.",
+        "url": "https://arxiv.org/abs/2609.11955",
+        "source": "arXiv",
+        "published": "2026-09-14T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Stevens Institute of Technology",
+          "University of North Carolina"
+        ]
+      },
+      {
+        "title": "Chopthin-Consensus Power Sampling: A Diversity-Preserving Approach to LLM Decoding",
+        "summary": "This paper introduces a Sequential Monte Carlo decoding method that replaces standard equal-weight resampling with a diversity-preserving strategy called Chopthin-Consensus, preventing premature pruning of low-weight but potentially correct reasoning paths. The approach improves LLM reasoning at inference time without any additional training or fine-tuning. Teams looking to squeeze more reasoning performance from existing models without retraining costs should take note.",
+        "url": "https://arxiv.org/abs/2609.12243",
+        "source": "arXiv",
+        "published": "2026-09-14T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "University of Southern California"
+        ]
+      },
+      {
+        "title": "Local Edits, Global Ripples: Replay-Informed Policy Adaptation for Workflow Synthesis",
+        "summary": "Amazon researchers study how prompt-policy edits to one segment of an agent workflow can unexpectedly cascade through downstream execution steps, degrading overall behavior in composition-sensitive ways. They propose a replay-informed adaptation approach that uses execution history to predict and contain ripple effects from edits. This has direct implications for teams iterating on multi-step agentic pipelines, where prompt changes often produce surprising downstream regressions.",
+        "url": "https://arxiv.org/abs/2609.12127",
+        "source": "arXiv",
+        "published": "2026-09-14T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "Amazon"
+        ]
+      },
+      {
+        "title": "The Cost of Compression: A Rate-Distortion Limit on Factual Hallucination",
+        "summary": "This theoretical paper models LLM hallucination through a rate-distortion lens, showing that even when a model has seen a fact during training, finite memory capacity forces lossy compression that introduces a fundamental floor on factual recall errors. The framework predicts that hallucination cannot be fully eliminated by scaling coverage of training data alone. For product builders, it reinforces the case for retrieval augmentation over relying on parametric memory for high-stakes factual queries.",
+        "url": "https://arxiv.org/abs/2609.12111",
+        "source": "arXiv",
+        "published": "2026-09-14T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "RAG"
+        ],
+        "affiliations": [
+          "Hefei Institutes of Physical Science, Chinese Academy of Sciences",
+          "University of Science and Technology of China",
+          "Chongqing University",
+          "Shenzhen University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "OpenArch – PyTorch Implementations of Modern LLM Architectures",
+        "summary": "OpenArch is an open-source GitHub repository providing clean PyTorch implementations of contemporary large language model architectures, making it easier for practitioners to study, experiment with, and adapt recent designs. It lowers the barrier to reproducing and building on frontier model research without needing to reverse-engineer official codebases. Useful for teams prototyping new model variants or running architecture ablations.",
+        "url": "https://github.com/anuj0456/OpenArch",
+        "source": "Hacker News",
+        "published": "2026-09-14T07:55:19.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] DeepSeek v4.1-Flash: 763B Novel Causal Encoder–Decoder Architecture with Vision",
+        "summary": "DeepSeek released v4.1-Flash, a 763B parameter model with a novel causal Encoder–Decoder architecture that also incorporates vision capabilities, representing a significant architectural departure from standard decoder-only designs. Commentators note this is substantial enough to arguably warrant a v5 designation. For AI product teams, this signals continued rapid architectural innovation from DeepSeek and a new frontier multimodal model to evaluate for cost-performance tradeoffs.",
+        "url": "https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b",
+        "source": "Latent Space",
+        "published": "2026-09-12T05:56:05.000Z"
+      },
+      {
+        "title": "The Rise of the Forward Deployed Engineer — and How To Do the Job Right",
+        "summary": "Vinoo Ganesh, who built Palantir's Forward Deployed Engineer program and later co-founded Kepler, shares operational best practices for the FDE role—embedding technical AI practitioners directly with enterprise customers to drive deployment and adoption. The episode is a practical guide for AI consultants and service firms on structuring client engagements, scoping projects, and delivering outcomes rather than prototypes. Particularly relevant as more AI consultancies adopt the FDE model to close the gap between AI capabilities and enterprise value realization.",
+        "url": "https://www.latent.space/p/forward-deployed-engineer-best-practices",
+        "source": "Latent Space",
+        "published": "2026-09-12T15:01:19.000Z"
+      },
+      {
+        "title": "Sam Altman and Frontier Labs Back Federal AI Safety Framework",
+        "summary": "OpenAI CEO Sam Altman publicly stated that frontier AI labs must demonstrate responsible development and welcomed a federal regulatory framework setting consistent safety requirements, while cautioning against waiting for legislation before acting. The statement comes amid broader debate—also involving Anthropic CEO Dario Amusig's comments on AI pacing—about governance of increasingly capable systems. This signals a possible shift toward acceptance of federal oversight among leading US AI labs, with significant implications for compliance costs and product timelines.",
+        "url": "https://x.com/sama/status/2099348812305473766",
+        "source": "X (@sama)",
+        "published": "2026-09-14T04:05:35.000Z"
+      },
+      {
+        "title": "Cohere Blog: Who Gets to Define the Rules for AI?",
+        "summary": "Cohere's blog post examines the governance question of which actors—governments, companies, civil society, or international bodies—should have authority to set norms and rules for AI development and deployment. This is a practically important question for AI product builders navigating a fragmented and rapidly evolving regulatory landscape across jurisdictions. The post contributes to an active week of public debate on AI governance triggered by statements from Anthropic and OpenAI leadership.",
+        "url": "https://cohere.com/blog/who-gets-to-define-the-rules-for-ai",
+        "source": "Hacker News",
+        "published": "2026-09-14T04:49:51.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Sep 11–14"
+}
