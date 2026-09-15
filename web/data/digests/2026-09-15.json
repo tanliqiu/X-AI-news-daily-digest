@@ -1,0 +1,126 @@
+{
+  "date": "2026-09-15",
+  "tldr": [
+    "xAI, OpenAI, and Anthropic co-sign the AEF-1 standard for third-party AI evaluators, marking a significant governance milestone",
+    "Anthropic publishes engineering details on how they safely contain Claude across internal products, plus a postmortem on recent Claude Code quality regressions",
+    "ZGCM-1, a fully open 7B model coupling chain-of-thought reasoning with active tool use over 256K context, demonstrates that compact models can rival larger ones via agentic search"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search",
+        "summary": "ZGCM-1 is a fully open 7B dense model trained from scratch that combines deliberate internal reasoning with active external tool use to overcome the memory limitations of compact models. Supporting a 256K context window, it demonstrates that small models can punch above their weight for math and agentic search tasks when paired with efficient system design. This is directly relevant for practitioners looking to deploy capable open models without large-scale infrastructure.",
+        "url": "https://arxiv.org/abs/2609.13356",
+        "source": "arXiv",
+        "published": "2026-09-15T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Reasoning",
+          "Inference"
+        ],
+        "affiliations": [
+          "Zhongguancun Academy",
+          "Zhongguancun Institute of Artificial Intelligence"
+        ]
+      },
+      {
+        "title": "Vibe Patenting: Evaluating LLM Judges for Professional Patent-Drafting Agents",
+        "summary": "This paper introduces a patent-drafting testbed to assess whether LLM judges can reliably evaluate and iteratively improve complex professional outputs. The study finds that judge-guided revision shows meaningful gains, but also exposes failure modes relevant to any high-stakes agentic workflow using LLM-as-judge feedback loops. Product builders deploying AI for professional document generation should pay close attention to the reliability constraints surfaced here.",
+        "url": "https://arxiv.org/abs/2609.13422",
+        "source": "arXiv",
+        "published": "2026-09-15T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Agents",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Mitsubishi Electric Research Laboratories (MERL)"
+        ]
+      },
+      {
+        "title": "Root-Cause Attribution Is a Search Problem: Continual Search for Long-Horizon Agent Failures",
+        "summary": "As AI agents are deployed on long-horizon tasks, their execution logs grow too large for human review, and existing LLM-based automated root-cause attribution (RCA) methods suffer from low accuracy at scale. This paper from Scale AI reframes RCA as a continual search problem, offering a more reliable automated diagnostic framework. For teams running production agents, this work provides actionable direction for building better failure analysis pipelines.",
+        "url": "https://arxiv.org/abs/2609.13463",
+        "source": "arXiv",
+        "published": "2026-09-15T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Evaluation",
+          "Framework"
+        ],
+        "affiliations": [
+          "Scale AI"
+        ]
+      },
+      {
+        "title": "OrchSLM: Probing the Dynamics of Small Language Model Orchestration",
+        "summary": "This Harvard study investigates using small language models (SLMs) as drop-in replacements for LLMs on repetitive, narrowly scoped subtasks within agentic pipelines, targeting reductions in latency, cost, and privacy exposure. The research maps when SLM orchestration succeeds or degrades, providing practical guidance for hybrid LLM/SLM system design. Developers building multi-step agent systems will find this directly applicable to optimizing inference cost without sacrificing capability.",
+        "url": "https://arxiv.org/abs/2609.13470",
+        "source": "arXiv",
+        "published": "2026-09-15T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Inference",
+          "Framework"
+        ],
+        "affiliations": [
+          "Harvard University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Claude Mods Launch — Community Already Building Games Inside Claude",
+        "summary": "Anthropic has shipped Claude Mods, a plugin/extension system for Claude that lets developers customize the Claude interface and behavior, with community members already building playable Tetris within hours of launch. This opens a new surface for product builders to embed custom AI-powered experiences directly into the Claude client. Early adopters have an opportunity to establish presence in a new ecosystem before it matures.",
+        "url": "https://x.com/bcherny/status/2099551291601248485",
+        "source": "X (@bcherny)",
+        "published": "2026-09-14T17:30:10.000Z"
+      },
+      {
+        "title": "Sunk Cost: Calculator for Local LLM Rig ROI",
+        "summary": "A new web tool lets developers input hardware specs and usage patterns to estimate how long until a local LLM setup pays for itself versus ongoing API costs. This is a practical decision-support tool for engineers and teams evaluating the build-vs-buy tradeoff for inference infrastructure. Given rising API costs and improving open model quality, the timing is relevant for many organizations.",
+        "url": "https://sunkcost.ai/",
+        "source": "Hacker News",
+        "published": "2026-09-15T01:37:43.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "AEF-1 Standard Emerges for Third-Party AI Evaluators, Co-signed by xAI, OpenAI, and Anthropic",
+        "summary": "A new AI Evaluation Framework standard (AEF-1) has been co-signed by the three dominant frontier AI labs, creating a shared baseline for how independent third-party evaluators assess AI systems. This is a significant governance development that could shape how AI products are audited for safety, capability, and compliance going forward. Consultants and enterprises building on these platforms should track AEF-1 as it is likely to influence procurement and deployment requirements.",
+        "url": "https://www.latent.space/p/ainews-aef-1-standard-emerges-for",
+        "source": "Latent Space",
+        "published": "2026-09-15T04:50:36.000Z"
+      },
+      {
+        "title": "How Anthropic Contains Claude Across Products — Engineering Deep Dive",
+        "summary": "Anthropic has published a detailed engineering post explaining the safeguards and containment strategies used as Claude is granted progressively higher access to internal systems, including access that could affect live services. The post frames risk as a function of both failure likelihood and blast radius, and describes how model training and tooling have evolved together to enable safer agentic deployments. This is essential reading for teams designing safe deployment architectures for powerful AI agents.",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "blog",
+        "published": "2026-09-15T11:02:23.626Z"
+      },
+      {
+        "title": "Anthropic Postmortem: Recent Claude Code Quality Regressions Traced to Three Separate Issues",
+        "summary": "Anthropic has published a postmortem on user-reported quality degradations in Claude Code, the Claude Agent SDK, and Claude Cowork, tracing them to three distinct changes that have since been resolved as of April 20 (v2.1.116). The API was unaffected. Teams relying on Claude Code for production workflows should review this post to understand what changed and what process improvements Anthropic is committing to going forward.",
+        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+        "source": "blog",
+        "published": "2026-09-15T11:02:23.626Z"
+      },
+      {
+        "title": "Ex-FTC Boss Lina Khan Calls for Criminal Accountability for AI CEOs",
+        "summary": "Former FTC Chair Lina Khan has publicly argued that AI executives should face criminal liability for harms caused by their systems, citing a 1934 regulatory precedent. This signals a potential hardening of regulatory posture toward AI leadership that could materially affect how AI companies structure liability and governance. Practitioners advising enterprises on AI adoption should factor escalating regulatory risk into their compliance strategies.",
+        "url": "https://www.theregister.com/ai-and-ml/2026/09/14/ex-ftc-boss-khan-urges-uncle-sam-to-break-out-the-handcuffs-for-ai-ceos-citing-1934-precedent/5296325",
+        "source": "Hacker News",
+        "published": "2026-09-15T00:40:14.000Z"
+      },
+      {
+        "title": "Humanity's Last Invention — Richard Socher Launches Recursive, a $5B RSI Startup",
+        "summary": "NLP pioneer and You.com CEO Richard Socher has spun out a new startup called Recursive focused on recursive self-improvement (RSI) in AI systems, already valued at $5B. The Latent Space podcast episode covers the technical and strategic vision behind the venture. For AI product builders, this represents a bet that near-term RSI is commercially viable and may reshape the competitive landscape for foundation model development.",
+        "url": "https://www.latent.space/p/recursive",
+        "source": "Latent Space",
+        "published": "2026-09-14T16:04:16.000Z"
+      }
+    ]
+  }
+}
