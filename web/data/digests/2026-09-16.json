@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-16",
+  "tldr": [
+    "Typesafe AI launches System One Models and Jev to significant community interest (1,446 HN points), signaling a notable new entrant in the AI model space",
+    "Google DeepMind releases Gemini 3.8 Live and 3.8 Live Extended Thinking, adding real-time multimodal and extended reasoning capabilities to the Gemini family",
+    "Cloudflare introduces granular crawler controls letting publishers stay discoverable in search while blocking AI training crawlers specifically"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Few-Shot Degradation Is Not What It Seems: Behavioral Evidence, Representation Analysis, and a Random-Text Control Across 12 Models, 2 Tasks, and 2 Architectures",
+        "summary": "Few-shot prompting can hurt model performance in task-dependent ways — models gaining +24pp on news classification showed only +3.4pp on legal text, with some models degrading entirely. The study uses representation analysis across 12 open-weight models to investigate why, offering AI product builders concrete evidence that few-shot prompting should be validated per task type rather than assumed universally beneficial.",
+        "url": "https://arxiv.org/abs/2609.15990",
+        "source": "arXiv",
+        "published": "2026-09-16T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "LEX AI Platform, legal.org.ua",
+          "Kyiv, Ukraine"
+        ]
+      },
+      {
+        "title": "Latent Undertow: How Ordinary Typos Break Probes",
+        "summary": "Hidden-state probes used to detect malicious or injected prompts are highly fragile: stacking ~3 common typos per message can cut detection accuracy of prompt-injection probes by over 85%. This has direct implications for AI security teams relying on representation-space monitoring as a defense layer, as adversaries can trivially bypass it with near-natural text perturbations.",
+        "url": "https://arxiv.org/abs/2609.15994",
+        "source": "arXiv",
+        "published": "2026-09-16T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Evaluation"
+        ]
+      },
+      {
+        "title": "Bias Audits Detect Bias but Disagree on Ranking: Evidence from Ten Instruments and Ten Frontier Models",
+        "summary": "Running ten established bias audit instruments across ten frontier LLMs reveals that different tools frequently disagree on model rankings, undermining the assumption that audit scores are interchangeable. For builders and compliance teams navigating AI regulation, this means audit methodology choice significantly affects reported outcomes — selecting instruments carefully and using multiple tools is critical.",
+        "url": "https://arxiv.org/abs/2609.15995",
+        "source": "arXiv",
+        "published": "2026-09-16T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Alignment"
+        ],
+        "affiliations": [
+          "Department of Industrial Engineering, Tsinghua University, Beijing, China",
+          "School of Social Sciences, Tsinghua University, Beijing, China",
+          "Department of Industrial Engineering, Federal University of Rio de Janeiro, Brazil"
+        ]
+      },
+      {
+        "title": "Optimal Model Activation Policies for Inference Networks of Large Language Models",
+        "summary": "This paper proposes a principled framework for routing queries across multiple LLMs in ensemble or series configurations, adaptively directing simpler queries to cheaper models to optimize cost-performance trade-offs. Practitioners building multi-model inference pipelines can use this approach to substantially reduce inference costs without sacrificing output quality.",
+        "url": "https://arxiv.org/abs/2609.15992",
+        "source": "arXiv",
+        "published": "2026-09-16T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Framework"
+        ],
+        "affiliations": [
+          "Athens University of Economics and Business",
+          "Yale University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Cloudflare: Stay Discoverable in Search While Disallowing AI Training",
+        "summary": "Cloudflare has introduced new crawler controls that let website owners block AI training crawlers while still permitting search indexing crawlers — a distinction that was previously difficult to enforce. This gives content publishers a practical way to opt out of training data collection without sacrificing SEO, and is relevant for any AI product relying on web-scraped data pipelines.",
+        "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
+        "source": "Hacker News",
+        "published": "2026-09-16T02:25:18.000Z"
+      },
+      {
+        "title": "Datamimic – Don't Let Your Coding Agent Invent Its Own Test World",
+        "summary": "Datamimic is an open-source tool designed to generate realistic, structured test data for coding agents and automated testing pipelines, preventing agents from hallucinating or improvising unrealistic test scenarios. For teams building or evaluating AI coding agents, this addresses a real reliability gap by ensuring agents operate on coherent, representative data environments.",
+        "url": "https://github.com/rapiddweller/datamimic",
+        "source": "Hacker News",
+        "published": "2026-09-16T04:58:36.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Introducing System One Models and Jev",
+        "summary": "Typesafe AI has announced System One Models and a new model called Jev, generating substantial community interest with over 1,400 HN upvotes and 400+ comments. The launch signals a potentially significant new competitor in the AI model space, and practitioners should monitor capability benchmarks and API availability as details emerge.",
+        "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+        "source": "Hacker News",
+        "published": "2026-09-15T19:25:03.000Z"
+      },
+      {
+        "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+        "summary": "Google DeepMind has released Gemini 3.8 Live, enabling real-time multimodal interactions, alongside a 3.8 Live Extended Thinking variant that applies deliberative reasoning to live sessions. For product builders, this expands the design space for real-time AI applications that need both responsiveness and deeper reasoning without switching models.",
+        "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+        "source": "Google DeepMind",
+        "published": "2026-09-15T17:05:57.000Z"
+      },
+      {
+        "title": "Mistral X Mozilla: Private, Multilingual AI Browsing",
+        "summary": "Mistral AI and Mozilla have partnered to bring private, multilingual AI capabilities directly into browser-based browsing experiences, likely leveraging on-device or privacy-preserving inference. This is a meaningful move for AI product builders focused on privacy-first deployments and signals growing momentum for local or browser-native AI as a distribution channel.",
+        "url": "https://mistral.ai/news/mistral-x-mozilla/",
+        "source": "Hacker News",
+        "published": "2026-09-16T08:08:57.000Z"
+      },
+      {
+        "title": "Claude for Small Business Launches New Workflows, Integrations, and Training Programs",
+        "summary": "Anthropic has expanded Claude for Small Business with 43 workflows and 27 new integrations including Shopify, Salesforce, TikTok, Stripe, and Zapier, plus free in-person workshops. This substantially lowers the integration barrier for SMBs adopting Claude, and positions Anthropic more directly against Microsoft Copilot and Google Workspace AI in the SMB market.",
+        "url": "https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs",
+        "source": "blog",
+        "published": "2026-09-15T00:00:00.000Z"
+      },
+      {
+        "title": "Bypassing Inference Bottlenecks: Accelerating Complex AI Search with Retrieve-for-Train",
+        "summary": "Google Research has published a Retrieve-for-Train technique that sidesteps inference-time bottlenecks in complex AI search by shifting retrieval computation to training, significantly accelerating query-time performance. Teams building retrieval-heavy AI systems or search-augmented products should evaluate whether this training paradigm can reduce their live inference latency and costs.",
+        "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+        "source": "Google AI",
+        "published": "2026-09-15T20:00:35.000Z"
+      }
+    ]
+  }
+}
