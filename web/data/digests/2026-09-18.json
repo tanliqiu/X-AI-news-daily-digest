@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-18",
+  "tldr": [
+    "Alibaba releases Qwen 3.8 Omni Flash, a compact multimodal model drawing significant community attention with 229 HN points",
+    "Security researchers disclosed a heap overflow + SSO misconfiguration chain that compromised OpenAI internal repositories, a critical reminder of AI infrastructure attack surfaces",
+    "Unredacted legal filings reveal a Microsoft executive internally described AI training data scraping as 'the largest theft of labor in human history', with major implications for AI IP litigation"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Reflective Recovery: A Self-Supervised Method for Reasoning by Learning from Mistakes",
+        "summary": "This paper addresses 'Scaling Collapse' in LLM reasoning fine-tuning, where adding more perfect training trajectories stops improving performance. The proposed Reflective Recovery method trains models on their own erroneous intermediate steps and self-corrections, enabling continuous improvement without requiring additional problem data. Practitioners building reasoning-focused AI products may find this a practical alternative to expensive curated dataset expansion.",
+        "url": "https://arxiv.org/abs/2609.19156",
+        "source": "arXiv",
+        "published": "2026-09-18T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Training"
+        ],
+        "affiliations": [
+          "Zhejiang University",
+          "The University of Hong Kong",
+          "The Hong Kong University of Science and Technology"
+        ]
+      },
+      {
+        "title": "Subliminal Prompting Beyond Static Geometry: Causal Depth and Multi-Token Confounds",
+        "summary": "This paper rigorously dissects the 'subliminal learning' phenomenon in LLMs, where hidden traits can be transmitted through seemingly unrelated model outputs. By separately measuring output co-variance, alignment, hidden-state readability, and causal control, the authors clarify which explanations (e.g., token entanglement) are actually valid. Security-conscious AI product builders should take note: this work refines understanding of how models can covertly encode and leak information.",
+        "url": "https://arxiv.org/abs/2609.19149",
+        "source": "arXiv",
+        "published": "2026-09-18T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ]
+      },
+      {
+        "title": "What Users Think of Generative AI: A Cross-Platform NLP Analysis of Trust and Friction in App Store Reviews",
+        "summary": "Analyzing 17,012 app store reviews across ChatGPT, Gemini, Copilot, Claude, DeepSeek, and Perplexity, this study identifies the primary trust barriers and friction points that drive user adoption or churn. The findings offer product teams concrete, data-backed signals on where GenAI apps are failing user expectations. This is directly actionable for anyone designing or iterating on consumer-facing AI products.",
+        "url": "https://arxiv.org/abs/2609.19151",
+        "source": "arXiv",
+        "published": "2026-09-18T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Application"
+        ],
+        "affiliations": [
+          "Florida International University",
+          "Bangladesh University of Engineering and Technology"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Qwen 3.8 Omni Flash",
+        "summary": "Alibaba's Qwen team has released Qwen 3.8 Omni Flash, a lightweight multimodal model designed for fast, efficient inference across modalities. The release drew strong community interest (229 HN points, 82 comments), suggesting it is competitive with larger models at a fraction of the cost. Developers building latency-sensitive or cost-constrained multimodal applications should evaluate this as a viable open-weight option.",
+        "url": "https://qwen.ai/blog?id=qwen3.8-omni-flash",
+        "source": "Hacker News",
+        "published": "2026-09-17T23:05:48.000Z"
+      },
+      {
+        "title": "Google Labs launches CC: an AI family scheduling agent",
+        "summary": "Google Labs announced CC, a multi-member AI agent integrated with Google Calendar, Tasks, and Chat to help families coordinate logistics automatically. The agent supports up to 5 members, sends shared daily briefings, and autosync schedules, demonstrating a concrete agentic product pattern for household coordination. This is a useful reference architecture for builders developing multi-user, calendar-aware agent products.",
+        "url": "https://x.com/GoogleLabs/status/2100653821907366366",
+        "source": "X (@GoogleLabs)",
+        "published": "2026-09-17T18:31:14.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "A heap overflow and SSO misconfiguration to compromise OpenAI internal repos",
+        "summary": "Security researchers at Hacktron detailed a two-stage attack chain combining a heap overflow vulnerability with an SSO misconfiguration to gain access to OpenAI's internal code repositories. The disclosure (361 HN points, 155 comments) highlights that AI labs' internal infrastructure remains a high-value target and that foundational security hygiene—particularly around SSO and memory safety—is critical. AI product and platform teams should treat this as a prompt to audit their own identity and access configurations.",
+        "url": "https://www.hacktron.ai/blog/hacking-openai",
+        "source": "Hacker News",
+        "published": "2026-09-18T02:47:24.000Z"
+      },
+      {
+        "title": "Microsoft exec called AI scraping 'the largest theft of labor in human history'",
+        "summary": "Newly unredacted court filings reveal that a Microsoft executive privately described AI training data scraping in terms that dramatically contradict the company's public positions on fair use and AI development. This admission could strengthen plaintiffs' cases in ongoing copyright and data rights litigation and signals that legal exposure for AI training data practices is escalating significantly. Builders and investors relying on web-scraped training data should closely monitor how this shapes forthcoming legal precedents.",
+        "url": "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/",
+        "source": "Hacker News",
+        "published": "2026-09-18T09:45:07.000Z"
+      },
+      {
+        "title": "The FAA's plan to fix air traffic? $875M worth of AI",
+        "summary": "The FAA has announced an $875M investment in AI systems aimed at modernizing US air traffic control infrastructure, representing one of the largest government AI procurement commitments in safety-critical operations. This signals growing institutional confidence in deploying AI in high-stakes, real-time environments—and a major market opportunity for AI systems integrators and infrastructure providers. It also raises important questions about evaluation, certification, and human-AI teaming standards for regulated industries.",
+        "url": "https://techcrunch.com/2026/09/17/the-faas-plan-to-fix-air-traffic-875-million-worth-of-ai/",
+        "source": "Hacker News",
+        "published": "2026-09-17T23:49:35.000Z"
+      },
+      {
+        "title": "How to get discovered in AI search (Practical AI podcast)",
+        "summary": "This episode with Discovered Labs co-founders covers the mechanics of AI search visibility—how LLMs retrieve, rank, and cite sources—and why traditional SEO strategies no longer translate directly. The discussion offers practical framing for product and marketing teams trying to maintain brand discoverability as AI-generated answers increasingly displace direct search clicks. Key takeaway: retrieval and citation patterns in LLM pipelines require a fundamentally different optimization approach than link-based SEO.",
+        "url": "https://share.transistor.fm/s/66185604",
+        "source": "Practical AI",
+        "published": "2026-09-17T09:00:00.000Z"
+      }
+    ]
+  }
+}
