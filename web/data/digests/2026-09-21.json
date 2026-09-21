@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-21",
+  "tldr": [
+    "Jev decision model clones are proliferating rapidly, with at least 6 open-source variants emerging in 48 hours including 'Kev' built on Qwen3.5, signaling a new pattern for lightweight structured AI decision-making",
+    "AI chatbots give wrong answers to financial queries 'most of the time' according to FT reporting, reinforcing the need for domain-specific validation before deploying LLMs in high-stakes financial contexts",
+    "Research shows entropy-based confidence signals can meaningfully improve small language models under 3B parameters, enabling smarter uncertainty-aware routing on consumer hardware"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Do small language models know what they don't know?",
+        "summary": "This paper evaluates seven entropy-based confidence techniques—including token-level entropy early stopping, semantic entropy estimation, and uncertainty-aware routing—across 7 model pairs and 5 NLU benchmarks for sub-3B parameter models running on consumer hardware. The key practical takeaway is that uncertainty-aware routing to a larger expert model can recover accuracy lost by using a small model, enabling cost-efficient hybrid inference pipelines. Builders of on-device or edge AI products can use these findings to decide when to escalate inference to a larger model.",
+        "url": "https://arxiv.org/abs/2609.20824",
+        "source": "arXiv",
+        "published": "2026-09-21T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Recursive Language Models Generalize Out of Domain",
+        "summary": "This paper compares standard chain-of-thought (CoT) reasoning with recursive language models that solve each subtask in an isolated context, finding that recursion offers no advantage in-distribution but significantly improves out-of-distribution generalization. The implication for AI product builders is that structured, modular reasoning architectures may be more robust when deployed across diverse real-world inputs that differ from training data. This has direct relevance for agentic systems that must handle novel task decompositions reliably.",
+        "url": "https://arxiv.org/abs/2609.20831",
+        "source": "arXiv",
+        "published": "2026-09-21T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Agents",
+          "Framework"
+        ],
+        "affiliations": [
+          "Toyota Technological Institute at Chicago"
+        ]
+      },
+      {
+        "title": "SAGE: Schema-Guided LLMs for Grant Review",
+        "summary": "SAGE translates grant rubrics into structured evaluation checks and grounds its judgments in evidence from application documents, evaluated across 35 nonprofit grant applications against 105 human reviewer decisions. This schema-guided approach to document review is directly transferable to any high-stakes evaluation workflow—such as procurement, compliance review, or hiring—where LLM outputs must be auditable and criteria-aligned. The structured output design reduces hallucination risk by constraining generation to rubric-defined aspects.",
+        "url": "https://arxiv.org/abs/2609.20829",
+        "source": "arXiv",
+        "published": "2026-09-21T04:00:00.000Z",
+        "keywords": [
+          "Application",
+          "RAG",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "ITMO University, St. Petersburg, Russia",
+          "Russian Presidential Academy of National Economy and Public Administration, Moscow, Russia",
+          "Ivannikov Institute for System Programming of the Russian Academy of Sciences, Moscow, Russia"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Kev: Tiny Jev-like family of decision models built on top of Qwen3.5",
+        "summary": "Kev is a lightweight open-source family of decision models built on Qwen3.5, designed as a minimal alternative to Jev-style structured decision-making. Its emergence—alongside at least 5 other Jev clones in the same 48-hour window—suggests that typed, compact decision models are becoming a practical building block for agentic pipelines. Developers can drop Kev into workflows where a full LLM is overkill but a structured yes/no or categorical decision is needed.",
+        "url": "https://github.com/jaredpalmer/kev/tree/main",
+        "source": "Hacker News",
+        "published": "2026-09-21T07:11:55.000Z"
+      },
+      {
+        "title": "Show HN: jevals – replacing LLM judges with typed Jev decisions",
+        "summary": "jevals is an open-source library from Openlayer that replaces freeform LLM-as-judge scoring with typed Jev decision outputs, making evaluation pipelines more deterministic and inspectable. This is a practical tool for teams building LLM evaluation harnesses who want structured pass/fail or categorical verdicts rather than unstructured natural language judgments. It reduces variance in automated evals and makes quality gates easier to integrate into CI/CD workflows.",
+        "url": "https://github.com/openlayer-ai/jevals",
+        "source": "Hacker News",
+        "published": "2026-09-20T22:39:47.000Z"
+      },
+      {
+        "title": "Show HN: Mini-AGI – Dynamic continual learning model trained on 8GB VRAM",
+        "summary": "Mini-AGI is an open-source project demonstrating continual learning on a single consumer GPU with 8GB VRAM, targeting practitioners who want models that adapt over time without full retraining. While the 'AGI' branding is aspirational, the practical contribution is a working continual learning loop runnable on commodity hardware. Developers building personalized or adaptive AI applications on edge devices may find the architecture patterns useful.",
+        "url": "https://github.com/volotat/mini-AGI/",
+        "source": "Hacker News",
+        "published": "2026-09-21T04:42:37.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "AI chatbots give wrong answers to financial queries 'most of the time'",
+        "summary": "Financial Times reporting finds that leading AI chatbots produce incorrect responses to financial queries the majority of the time, raising serious reliability concerns for fintech and wealth management applications. This is a concrete warning for product teams deploying general-purpose LLMs in financial advisory, planning, or data lookup contexts without domain-specific grounding or validation layers. The findings reinforce the need for RAG, tool use, or fine-tuned specialist models before going live in high-stakes financial workflows.",
+        "url": "https://www.ft.com/content/c0cd359d-df84-4208-a789-ffa864b43666",
+        "source": "Hacker News",
+        "published": "2026-09-21T04:28:44.000Z"
+      },
+      {
+        "title": "In September, AI-generated code has made up 17.25% of all Linux Kernel patches",
+        "summary": "Data shared by the Lunduke Journal indicates that AI-generated contributions now account for over one-in-six Linux kernel patches in September 2026, a significant milestone for open-source infrastructure. This signals that AI coding tools are increasingly being used in even the most quality-sensitive and review-intensive software projects. For AI product builders, it highlights both the growing acceptance of AI-assisted development and the emerging need for robust review processes as AI code enters critical codebases.",
+        "url": "https://twitter.com/LundukeJournal/status/2101841277432070210",
+        "source": "Hacker News",
+        "published": "2026-09-21T07:59:18.000Z"
+      },
+      {
+        "title": "[AINews] Here are 6 Clones of Jev in 2 days",
+        "summary": "Within 48 hours of Jev's release, at least six open-source clones emerged across the AI community, reflecting intense developer interest in compact, typed decision models for agentic use cases. The rapid proliferation suggests Jev-style structured outputs are filling a real gap between heavyweight LLMs and hardcoded rule systems. For teams building agentic pipelines, this ecosystem momentum means more tooling options—but also fragmentation risk as standards compete.",
+        "url": "https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in",
+        "source": "Latent Space",
+        "published": "2026-09-19T05:48:28.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Sep 18–21"
+}
