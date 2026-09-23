@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-23",
+  "tldr": [
+    "Claude Opus 5.5 launches as a major frontier model, with broad industry price cuts of 40-50% across AI providers including OpenAI's GPT-6 line",
+    "UK AISI and EvalEval partner to standardize and reproduce AI benchmark results, addressing reproducibility gaps critical for model selection decisions",
+    "Google Labs expands its CC AI agent to family groups, signaling a push toward persistent multi-user AI assistants"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "\"As a Language Model...\": Chat Template Switches LLM Self-Referential Voice and Activation Steering Reproduces It",
+        "summary": "This paper reveals that chat templates—not intrinsic model properties—are the primary driver of LLMs producing 'I'm just an AI' disclaimers, acting as a behavioral switch. Activation steering can reproduce this effect, meaning self-referential outputs reflect deployment configuration more than genuine self-knowledge. This has direct implications for product teams: system prompt and template design significantly shapes model persona and compliance behavior.",
+        "url": "https://arxiv.org/abs/2609.25021",
+        "source": "arXiv",
+        "published": "2026-09-23T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Inference"
+        ],
+        "affiliations": [
+          "Independent Researcher"
+        ]
+      },
+      {
+        "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
+        "summary": "UK AISI and EvalEval have collaborated to create tooling and protocols that make AI benchmark results reproducible across different evaluation runs and organizations. This matters practically for teams doing model selection: unreproducible benchmarks make it hard to trust public leaderboard numbers when deciding which model to deploy. The initiative provides a framework for verifying that evaluation setups are comparable apples-to-apples.",
+        "url": "https://huggingface.co/blog/evaleval-aisi",
+        "source": "Hugging Face",
+        "published": "2026-09-22T00:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ]
+      },
+      {
+        "title": "Mitigating Sequential Reappearance in Diffusion Data-Point Unlearning",
+        "summary": "This paper identifies a previously overlooked failure mode in machine unlearning for diffusion models: deleted data can 'reappear' in model outputs after subsequent unlearning requests, even without reintroduction of the data. The authors introduce a target-level evaluation protocol that detects this drift. For AI product teams handling data deletion requests (e.g., for GDPR compliance), this research suggests current unlearning pipelines may provide false assurance.",
+        "url": "https://arxiv.org/abs/2609.25166",
+        "source": "arXiv",
+        "published": "2026-09-23T04:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Evaluation"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Jev in 25 Lines of Python",
+        "summary": "This post from nobodywho.ai demonstrates implementing a structured JSON extraction and validation workflow (Jev) in just 25 lines of Python, suggesting a lightweight, dependency-minimal approach to LLM output parsing. For developers building pipelines that require reliable structured outputs, this could offer a practical alternative to heavier frameworks. The brevity implies low integration overhead for adding structured generation to existing Python projects.",
+        "url": "https://www.nobodywho.ai/posts/jev-in-25-lines/",
+        "source": "Hacker News",
+        "published": "2026-09-23T07:26:23.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Claude Opus 5.5, the new default model for AINews — and everybody cuts prices 40-50%",
+        "summary": "Anthropic's Claude Opus 5.5 has launched and is being positioned as a top frontier model, reportedly outpacing OpenAI's more efficiency-focused GPT-6 offerings. Concurrently, major AI providers have slashed token prices by 40-50%, dramatically changing the cost calculus for production AI applications. Builders relying on cost-per-token budgets should revisit their architecture assumptions as these price drops open the door to previously cost-prohibitive use cases.",
+        "url": "https://www.latent.space/p/ainews-claude-opus-55-the-new-default",
+        "source": "Latent Space",
+        "published": "2026-09-23T06:41:41.000Z"
+      },
+      {
+        "title": "The new CC, an AI agent built for families",
+        "summary": "Google Labs is expanding its CC AI agent from individual use to shared family group contexts, making it one of the first major consumer AI agents designed explicitly for multi-user persistent interactions. This signals a product design direction where AI agents must manage context, permissions, and preferences across multiple distinct users rather than a single principal. Developers building consumer AI products should pay attention to the UX and safety patterns Google establishes here.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
+        "source": "Hacker News",
+        "published": "2026-09-22T23:46:07.000Z"
+      },
+      {
+        "title": "The current balance of power in open models",
+        "summary": "This Interconnects analysis surveys the current competitive landscape among open-weight AI models, assessing which organizations are leading and where capability gaps are widening or narrowing. For teams evaluating open-source alternatives to frontier APIs, this provides a practical market overview for making build-vs-buy decisions. High engagement on Hacker News (92 points) suggests strong practitioner interest in the state of open model competition.",
+        "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+        "source": "Hacker News",
+        "published": "2026-09-22T22:03:46.000Z"
+      },
+      {
+        "title": "🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science",
+        "summary": "This Latent Space podcast episode features Google's John Platt discussing AI for scientific discovery, including automation of science and AI's role in addressing climate change. Platt's perspective on how human experts will continue contributing alongside superintelligent AI is relevant for teams building scientific or research-augmentation products. The episode draws on deep practical experience given Platt's contributions to foundational ML algorithms still in wide production use.",
+        "url": "https://www.latent.space/p/john-platt",
+        "source": "Latent Space",
+        "published": "2026-09-22T21:07:39.000Z"
+      }
+    ]
+  }
+}
