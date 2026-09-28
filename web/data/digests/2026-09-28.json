@@ -1,0 +1,128 @@
+{
+  "date": "2026-09-28",
+  "tldr": [
+    "Stripe acquired OpenRouter for $7B, signaling that model routing/aggregation infrastructure has become a major asset class as the frontier model ecosystem matures",
+    "Anthropic published detailed prompting guidance for Claude Opus 5.5, offering practical techniques for builders working with its most capable model",
+    "Spotify released a paper detailing how synthetic data and self-improvement loops can bootstrap conversational recommendation agents from cold-start—a replicable blueprint for AI product teams"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Auditing and Repairing LLM-as-Judge Failures in a Production Text-to-SQL Pipeline",
+        "summary": "A study of a deployed gpt-4o-mini judge found Cohen's kappa of just 0.04 on a disagreement-enriched evaluation set, with the judge over-flagging 77% of human-faithful SQL responses due to a specific failure mode. The authors developed a repair methodology that significantly improves agreement with human annotators, providing a concrete audit-and-fix workflow applicable to any LLM-as-judge setup in production pipelines. This is a must-read for teams relying on LLM judges for automated evaluation of text-to-SQL or similar structured-output tasks.",
+        "url": "https://arxiv.org/abs/2609.30290",
+        "source": "arXiv",
+        "published": "2026-09-28T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Santa Clara University"
+        ]
+      },
+      {
+        "title": "Bootstrapping Conversational Recommendation Agents At Spotify: Synthetic Data Generation and Self-Improvement Loops",
+        "summary": "Spotify researchers present a pipeline for training conversational recommendation agents using synthetic data to overcome cold-start limitations, with self-improvement loops that refine agent planning—tool selection, sequencing, and invocation—without requiring real user interactions. The approach is directly transferable to any team building agentic products where initial interaction data is scarce. It provides a practical blueprint for bootstrapping agent capabilities before real traffic is available.",
+        "url": "https://arxiv.org/abs/2609.30297",
+        "source": "arXiv",
+        "published": "2026-09-28T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Training"
+        ],
+        "affiliations": [
+          "Spotify"
+        ]
+      },
+      {
+        "title": "Not All Memories Are Equal: Hierarchical Collaborative Memory for Validity-Aware Retrieval in LLM Agents",
+        "summary": "This paper introduces a hierarchical memory architecture for multi-agent systems that distinguishes between team-level memories (shared decisions, protocols) and individual agent memories (execution traces, observations), enabling validity-aware retrieval rather than flat semantic ranking. The approach addresses a key failure mode in multi-agent collaboration where outdated or irrelevant memories can mislead agent behavior. Teams building complex agentic workflows with shared memory stores will find the hierarchical validity model directly applicable.",
+        "url": "https://arxiv.org/abs/2609.30289",
+        "source": "arXiv",
+        "published": "2026-09-28T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "RAG"
+        ],
+        "affiliations": [
+          "Nanyang Technological University, Singapore",
+          "University of Macau, China",
+          "Zhejiang University, China",
+          "Worcester Polytechnic Institute, USA"
+        ]
+      },
+      {
+        "title": "Cartograph: Federated Tool Discovery with Operator-Attested Retrieval for AI Agents",
+        "summary": "Cartograph is a federated MCP proxy that reduces agent tool discovery from O(n) full-catalog traversal to O(k) progressive disclosure using Ed25519-signed capability cards and semantic retrieval. As MCP-connected tool catalogs grow into the hundreds or thousands, this kind of lazy-loading and trust-attestation layer becomes critical infrastructure for production agent deployments. The paper offers a concrete architectural pattern for anyone managing large or multi-tenant MCP environments.",
+        "url": "https://arxiv.org/abs/2609.30293",
+        "source": "arXiv",
+        "published": "2026-09-28T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework",
+          "Security"
+        ],
+        "affiliations": [
+          "Kwame Nkrumah University of Science and Technology"
+        ]
+      },
+      {
+        "title": "A Mechanistic Study of AI-Text Detection Neurons in Frozen BERT",
+        "summary": "Using sparse probing and activation patching on the RAID benchmark, this study identifies which specific neurons in frozen BERT-base-uncased drive AI-text detection across six generator families including both base and instruction-tuned models. The mechanistic findings help explain why detectors succeed or fail in particular cases, informing more robust detector design and adversarial testing strategies. Practitioners building or evaluating AI-content detection systems will benefit from understanding these internal representations.",
+        "url": "https://arxiv.org/abs/2609.30287",
+        "source": "arXiv",
+        "published": "2026-09-28T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Security"
+        ],
+        "affiliations": [
+          "Gradient PG",
+          "Gdańsk University of Technology"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Holo4: Powering Generalist Computer-Use Agents",
+        "summary": "H Company released Holo4, a model designed for generalist computer-use agent tasks, published via Hugging Face. This joins a growing set of purpose-built computer-use models and is relevant for teams evaluating agent foundations for desktop and browser automation products. The Hugging Face release suggests weights or APIs are accessible for experimentation.",
+        "url": "https://huggingface.co/blog/Hcompany/holo4",
+        "source": "Hugging Face",
+        "published": "2026-09-28T09:44:05.000Z"
+      },
+      {
+        "title": "Prompting Claude Opus 5.5",
+        "summary": "Anthropic published official prompting documentation specifically for Claude Opus 5.5, covering techniques and patterns optimized for their most capable model. This is directly actionable for developers building on Claude, as Opus 5.5 likely has different prompting dynamics than earlier versions. The HN discussion generated 146 comments, suggesting significant practitioner interest.",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+        "source": "Hacker News",
+        "published": "2026-09-28T07:33:29.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenRouter: From Seed to Stripe — The $7B Acquisition Story",
+        "summary": "Stripe acquired OpenRouter for $7B, a remarkable outcome for a model-routing and aggregation layer that was initially skeptically received. The Latent Space podcast with OpenRouter's Alex Atallah and AMP's Anjney Midha covers the company's trajectory as the frontier model ecosystem expanded from a handful of labs to dozens. This validates the thesis that infrastructure enabling multi-model access and routing is a high-value category independent of the underlying models.",
+        "url": "https://www.latent.space/p/openrouter",
+        "source": "Latent Space",
+        "published": "2026-09-25T23:14:41.000Z"
+      },
+      {
+        "title": "Microsoft Drops Copilot+ Branding from New Laptops",
+        "summary": "Microsoft and PC manufacturers are quietly retiring the 'Copilot+' branding that was central to their AI PC marketing push, signaling that the brand failed to resonate with consumers. This is a meaningful signal for AI product builders that feature-level AI marketing tied to branded hardware tiers may not drive purchasing decisions. Expect Microsoft to reposition AI PC capabilities under different framing going forward.",
+        "url": "https://www.windowscentral.com/microsoft/windows-11/the-copilot-pc-brand-is-dead-microsoft-and-pc-makers-quietly-pull-back-on-tarnished-windows-11-ai-pc-branding",
+        "source": "Hacker News",
+        "published": "2026-09-28T02:46:27.000Z"
+      },
+      {
+        "title": "Google Research: Automating Coherent Long-Form Video Generation",
+        "summary": "Google Research published work on generating coherent long-form video using generative AI, addressing the continuity and consistency challenges that have limited practical video generation to short clips. This is relevant for teams building video production, marketing, or media automation products where longer output duration is a hard requirement. The blog post from Google's research division suggests this capability is moving toward productization.",
+        "url": "https://research.google/blog/coherent-long-form-video-generation/",
+        "source": "Google AI",
+        "published": "2026-09-24T19:40:00.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Sep 25–28"
+}
