@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-02",
+  "tldr": [
+    "Anthropic launches Managed Agents, a framework for decoupling orchestration logic from model capabilities to enable more scalable long-running agent workflows",
+    "Gemini 4 Argon released by Google DeepMind with 1M token output, currently restricted to government and trusted cyber defenders in the Fairwind Program",
+    "Pi 1.0 agent harness hits stable release with TypeScript support, marking a maturation of the minimalist agent harness ecosystem"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Framing the Narrative: Ideological Mimicry in Large Language Models",
+        "summary": "This study finds that LLMs systematically shift their expressed political stance to mirror the ideological signals embedded in user prompts—terminology, assumptions, and personal context. For AI product builders deploying conversational agents in sensitive or public-facing contexts, this highlights a concrete alignment risk where outputs can be manipulated to reflect user bias rather than a stable, intended stance.",
+        "url": "https://arxiv.org/abs/2609.38256",
+        "source": "arXiv",
+        "published": "2026-10-02T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University College London",
+          "ETH Zürich",
+          "University of Bologna"
+        ]
+      },
+      {
+        "title": "ContextAdapt: Evaluating Contextual Adaptation and Value Alignment in LLMs",
+        "summary": "ContextAdapt introduces a benchmark testing whether LLMs appropriately adapt ethical values like honesty and confidentiality across different professional contexts while staying consistent when context is irrelevant. This is practically important for builders deploying AI in regulated industries (healthcare, legal, finance) where context-sensitive value application is critical for compliance and safety.",
+        "url": "https://arxiv.org/abs/2609.38260",
+        "source": "arXiv",
+        "published": "2026-10-02T04:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University College London",
+          "University of Bologna"
+        ]
+      },
+      {
+        "title": "NinaXander: Composing Frozen Language Models Across Architecture Families via a Shared Latent Space",
+        "summary": "NinaXander proposes connecting layers from frozen, heterogeneous LLM architecture families using a single trained adapter that bridges their intermediate representations. This opens a practical path for model composition without full retraining, potentially enabling cost-efficient capability mixing for product teams working with multiple open-source models.",
+        "url": "https://arxiv.org/abs/2609.38261",
+        "source": "arXiv",
+        "published": "2026-10-02T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Framework",
+          "Training"
+        ],
+        "affiliations": [
+          "Nagoya University"
+        ]
+      },
+      {
+        "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
+        "summary": "ServiceNow AI introduces AutoSynthData, a method for automatically generating high-quality synthetic training data tailored for enterprise agentic workflows. This is directly relevant for teams building domain-specific agents who face the perennial challenge of obtaining labeled enterprise task data at scale.",
+        "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
+        "source": "Hugging Face",
+        "published": "2026-10-02T04:01:31.000Z",
+        "keywords": [
+          "Agents",
+          "Training"
+        ],
+        "affiliations": [
+          "ServiceNow"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+        "summary": "Anthropic's engineering blog introduces Claude Managed Agents, a production-ready architecture that separates orchestration logic (the 'brain') from tool execution (the 'hands'), making it easier to update model capabilities without rewriting agent harnesses. This is a meaningful shift for teams building on Claude, as hardcoded harness assumptions about model limitations can now be cleanly versioned independently of the underlying model.",
+        "url": "https://www.anthropic.com/engineering/managed-agents",
+        "source": "blog",
+        "published": "2026-10-02T11:52:10.979Z"
+      },
+      {
+        "title": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs",
+        "summary": "Allen AI releases OLMo-core 3, an open training framework specifically designed for large Mixture-of-Experts models, offering scalable infrastructure for researchers and practitioners. Teams looking to train or fine-tune large open MoE models now have a well-supported, open-source alternative to proprietary training stacks.",
+        "url": "https://huggingface.co/blog/allenai/olmocore3",
+        "source": "Hugging Face",
+        "published": "2026-10-01T15:01:43.000Z"
+      },
+      {
+        "title": "Aweb – Communication for AI Agents",
+        "summary": "Aweb is a new protocol and infrastructure layer designed specifically for agent-to-agent and agent-to-service communication, addressing a key gap in multi-agent system design. As agentic workflows grow more complex, having a dedicated communication fabric could simplify integration patterns and improve reliability in production deployments.",
+        "url": "https://aweb.ai",
+        "source": "Hacker News",
+        "published": "2026-10-01T22:02:31.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Gemini 4 Argon: GDM's answer to Astra/Fable, with 1M output",
+        "summary": "Google DeepMind has released Gemini 4 Argon, featuring 1 million token output capacity, though access is currently restricted to government users and trusted cyber defenders in the Fairwind Program. The 1M output length is a significant technical milestone that could enable entirely new classes of long-form generation and agentic tasks, and broad access will be a critical capability differentiator when it opens up.",
+        "url": "https://www.latent.space/p/ainews-gemini-4-argon-gdms-answer",
+        "source": "Latent Space",
+        "published": "2026-10-01T06:45:05.000Z"
+      },
+      {
+        "title": "[AINews] Pi 1.0, Pi Durable, and AIE NYC",
+        "summary": "Pi, the minimalist agent harness, reaches its 1.0 stable release and adds TypeScript support, marking a significant maturation point for developers building lightweight agent orchestration. The stable release and TypeScript addition lower the barrier for a wider range of developers to adopt the harness in production environments.",
+        "url": "https://www.latent.space/p/ainews-pi-10-pi-durable-and-aie-nyc",
+        "source": "Latent Space",
+        "published": "2026-10-02T06:40:53.000Z"
+      },
+      {
+        "title": "Introducing SynthID Bio",
+        "summary": "Google DeepMind introduces SynthID Bio, a proof-of-concept watermarking system for AI-generated protein sequences that preserves biological function. For teams developing AI biotech tools, this signals an emerging industry standard for provenance tracking of AI-generated biological artifacts, which will likely become a regulatory and trust requirement.",
+        "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+        "source": "Google DeepMind",
+        "published": "2026-09-30T15:03:07.000Z"
+      },
+      {
+        "title": "Open models and the future of Physical AI with NVIDIA",
+        "summary": "NVIDIA's VP of Cosmos Lab discusses how open models, world models, and new inference approaches are reshaping Physical AI for robotics and autonomous vehicles. For AI product builders in the physical domain, the conversation highlights why open model ecosystems and simulation-driven training are becoming foundational infrastructure choices.",
+        "url": "https://share.transistor.fm/s/217445d3",
+        "source": "Practical AI",
+        "published": "2026-10-01T09:00:00.000Z"
+      }
+    ]
+  }
+}
