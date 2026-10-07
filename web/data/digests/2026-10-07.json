@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-07",
+  "tldr": [
+    "OpenAI publishes 722 math papers solving 90 of the top 500 open math problems, described as the most significant mathematical moment in over 100 years",
+    "Google DeepMind releases EmbeddingGemma 2, an open lightweight multimodal embedding model for practical retrieval and similarity tasks",
+    "Strands Decider 2B, a small open-source decision model, launches with strong HN interest for agentic applications"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "FluidPD: In-Place Elasticity for SLO-Aware Prefill-Decode Disaggregated LLM Serving",
+        "summary": "FluidPD addresses a key operational challenge in production LLM serving: fixed prefill/decode worker ratios fail under bursty or shifting real-world workloads. The system introduces in-place elasticity that dynamically reassigns workers between prefill and decode roles without request rerouting, improving SLO compliance and resource utilization. This is directly relevant for teams building or operating high-throughput LLM inference infrastructure.",
+        "url": "https://arxiv.org/abs/2610.06917",
+        "source": "arXiv",
+        "published": "2026-10-07T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "University of Illinois Urbana-Champaign",
+          "IBM Research"
+        ]
+      },
+      {
+        "title": "GAMEGO: Training Game-Dev Agents with Synthetic Trajectories Anchored in Real-World Assets",
+        "summary": "GAMEGO trains coding agents to synthesize browser-based games end-to-end by grounding synthetic training trajectories in real-world game assets, bypassing the need for complex multi-turn workflows. The approach demonstrates a practical recipe for building domain-specific coding agents where real annotated data is scarce. Teams building code-generation or creative AI products may find the synthetic trajectory anchoring technique broadly applicable.",
+        "url": "https://arxiv.org/abs/2610.06910",
+        "source": "arXiv",
+        "published": "2026-10-07T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Training"
+        ],
+        "affiliations": [
+          "Institute of Automation, Chinese Academy of Sciences",
+          "Baidu Inc., Beijing, China"
+        ]
+      },
+      {
+        "title": "Principles that Guide, Actions that Inform: Agent Evolution via Knowledge Abstraction",
+        "summary": "This paper proposes a framework enabling LLM agents to continually improve from experience by abstracting accumulated interactions into reusable principles and action memories, without requiring fine-tuning or model weight access. This is especially useful for closed-source LLMs where parameter updates are impossible. Practitioners building long-running or iteratively deployed agents can adopt this pattern to achieve compounding performance gains over time.",
+        "url": "https://arxiv.org/abs/2610.06964",
+        "source": "arXiv",
+        "published": "2026-10-07T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "RAG"
+        ],
+        "affiliations": [
+          "Alibaba Group, Hangzhou, China",
+          "School of Automation and Intelligent Sensing, Shanghai Jiao Tong University, Shanghai 200240, China",
+          "University of Science and Technology of China, Hefei, China"
+        ]
+      },
+      {
+        "title": "RadOnc-Agent: An LLM-Orchestrated Framework for AI Workflows Across the Radiotherapy Care Pathway",
+        "summary": "RadOnc-Agent formalizes the full radiotherapy clinical workflow into four phases and exposes 26 callable AI tools orchestrated by an LLM, unifying previously siloed AI capabilities across data modalities and software environments. The architecture illustrates a scalable pattern for deploying multi-tool clinical agents that span an entire care pathway rather than isolated tasks. Builders of enterprise healthcare AI can study this as a concrete template for domain-specific agentic orchestration.",
+        "url": "https://arxiv.org/abs/2610.06923",
+        "source": "arXiv",
+        "published": "2026-10-07T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Application"
+        ],
+        "affiliations": [
+          "Department of Radiation Oncology, Mayo Clinic Arizona, Phoenix, AZ, USA."
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+        "summary": "Google DeepMind has released EmbeddingGemma 2, an open and lightweight model designed to produce embeddings across multiple modalities. Its open availability makes it immediately practical for teams building retrieval, semantic search, or multimodal RAG systems without relying on proprietary embedding APIs. The lightweight footprint lowers deployment costs compared to larger alternatives.",
+        "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+        "source": "Google DeepMind",
+        "published": "2026-10-06T19:57:04.000Z"
+      },
+      {
+        "title": "Strands Decider 2B: a small, open-source, decision model",
+        "summary": "Strands has released Decider 2B, a compact 2-billion-parameter open-source model specialized for decision-making within agentic pipelines. Its small size makes it viable for on-device or low-latency deployment as a routing or planning component inside larger agent systems. The strong HN reception (215 points, 59 comments) suggests meaningful community interest for practical integration.",
+        "url": "https://strandsagents.com/blog/introducing-strands-decider/",
+        "source": "Hacker News",
+        "published": "2026-10-07T02:02:11.000Z"
+      },
+      {
+        "title": "NanoMuse – An open-source AI agent for your phone and computer",
+        "summary": "NanoMuse is a newly released open-source AI agent designed to run locally across both mobile and desktop environments. For builders, it represents a reference implementation for cross-device personal AI agents without cloud dependency. The Show HN format suggests it is early-stage but available for immediate experimentation.",
+        "url": "https://github.com/nano-muse/nanoMuse",
+        "source": "Hacker News",
+        "published": "2026-10-07T03:30:44.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] OpenAI publishes 722 math papers solving 90 of the top 500 open math problems",
+        "summary": "OpenAI has released 722 mathematical research papers in which its models have reportedly solved 90 of the world's top 500 open math problems, a result being described as the most significant moment in over a century of mathematics. If verified, this marks a qualitative shift in AI's ability to perform frontier scientific discovery rather than merely assist human researchers. Applied AI consultants should track this closely as it signals that autonomous research agents may be approaching practical deployment for hard technical domains.",
+        "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai",
+        "source": "Latent Space",
+        "published": "2026-10-07T04:55:44.000Z"
+      },
+      {
+        "title": "Ep 94: Applied Compute CEO on the Limits of RL, the New AI Hyperscaler & Why Post-Training Wins Inference",
+        "summary": "In this podcast episode, the Applied Compute CEO argues that reinforcement learning is fundamentally a hill-climbing machine whose value depends entirely on the quality of your evaluation function, making evals a critical strategic asset to protect. The conversation also covers why post-training techniques increasingly determine inference-time performance, relevant for teams deciding how to allocate ML investment. The framing of models as non-fungible proprietary intelligence has direct implications for enterprise AI strategy.",
+        "url": "https://www.youtube.com/@RedpointAI",
+        "source": "Unsupervised Learning",
+        "published": "2026-10-06T12:50:23.000Z"
+      },
+      {
+        "title": "Google Earth AI: Planetary Geospatial Foundation Models for Global Public Health",
+        "summary": "Google has opened access to Earth AI's planetary-scale geospatial foundation models, targeting applications in global public health such as disease surveillance and environmental monitoring. This expands the practical toolkit for AI product builders working in climate, health, or logistics domains that require large-scale geospatial reasoning. The public availability lowers the barrier to building geospatial AI applications that previously required prohibitive data collection and modeling effort.",
+        "url": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
+        "source": "Google AI",
+        "published": "2026-10-06T15:05:11.000Z"
+      }
+    ]
+  }
+}
