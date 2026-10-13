@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-13",
+  "tldr": [
+    "Character.ai has filed for Chapter 11 bankruptcy, marking a significant consolidation in the consumer AI companion space",
+    "Meta's MSL lab releases Muse Wonder Full, a Claude 5.5-tier frontier model, signaling a new competitive entrant at the frontier",
+    "Anthropic warns AI models may soon self-replicate without data center access, raising urgent safety and containment concerns"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "One Model to Loop Them All: Elastic Latent Recurrence for Language Models",
+        "summary": "Elastic Latent Recurrence (ELR) proposes a training recipe for looped language models that eliminates the 'one-loop tax'—the accuracy gap that normally makes single-pass recurrent models inferior to standard transformers. This means a single model checkpoint can now serve both low-latency and high-accuracy use cases by adjusting loop count at inference time, reducing deployment complexity for AI product teams. Practical upside: fewer model variants to maintain while still hitting latency SLAs.",
+        "url": "https://arxiv.org/abs/2610.12582",
+        "source": "arXiv",
+        "published": "2026-10-13T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Training"
+        ],
+        "affiliations": [
+          "NVIDIA",
+          "Columbia University"
+        ]
+      },
+      {
+        "title": "DishwasherBench – Can Frontier Models Stack a Dishwasher?",
+        "summary": "DishwasherBench is a new evaluation that tests frontier models on a practical, embodied spatial-reasoning task—optimally loading a dishwasher—which requires multi-step planning, constraint satisfaction, and common-sense physical reasoning. The benchmark surfaces gaps in models that score well on standard reasoning benchmarks but struggle with real-world, grounded task execution. Useful for teams building robotic or home-automation AI products to gauge actual planning capability.",
+        "url": "https://github.com/composo-ai/DishwasherBench",
+        "source": "Hacker News",
+        "published": "2026-10-13T08:24:06.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Reasoning",
+          "Agents"
+        ]
+      },
+      {
+        "title": "Self-Preservation in Language Models",
+        "summary": "This paper investigates whether language models can actively contribute to their own continual learning by selecting what knowledge to preserve during fine-tuning, using self-generated replay data. The findings have direct implications for teams iteratively updating production models: models that participate in preservation decisions show reduced catastrophic forgetting beyond the tasks explicitly covered. This opens a practical path to cheaper, more robust model updates without full retraining.",
+        "url": "https://arxiv.org/abs/2610.12602",
+        "source": "arXiv",
+        "published": "2026-10-13T04:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Alignment"
+        ],
+        "affiliations": [
+          "New York University",
+          "Google Research",
+          "Cornell University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "An hour of audio transcribed in about 13s on MacBook Air",
+        "summary": "A new local transcription tool achieves roughly 275x real-time audio transcription speed on consumer Apple Silicon hardware, making high-throughput speech-to-text viable entirely on-device without API calls. For AI product builders, this dramatically lowers the cost and latency of transcription pipelines and eliminates privacy concerns associated with sending audio to cloud APIs. Worth evaluating as a drop-in replacement for Whisper-based cloud workflows.",
+        "url": "https://eg2.haku.sh/",
+        "source": "Hacker News",
+        "published": "2026-10-13T11:27:14.000Z"
+      },
+      {
+        "title": "How Anthropic's Dynamic Workflows Coordinate Claude Agents",
+        "summary": "Anthropic shared architectural lessons from Unix/Linux at AI Engineer New York, detailing how Dynamic Workflows enable Claude agents to coordinate on larger projects through composable, asynchronous task pipelines. The talk offers concrete design patterns for orchestrating multi-agent systems without overwhelming developer tooling or creating brittle hard-coded flows. Highly relevant for teams building production agentic applications on Claude.",
+        "url": "https://www.latent.space/p/claude-dynamic-workflows",
+        "source": "Latent Space",
+        "published": "2026-10-12T18:18:17.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Character.ai Files for Bankruptcy",
+        "summary": "Character.ai has filed for Chapter 11 bankruptcy protection, representing a major contraction in the consumer AI companion and roleplay market after rapid early growth. The failure underscores the difficulty of monetizing high-engagement but low-willingness-to-pay consumer AI use cases at scale, and will likely accelerate consolidation around a smaller number of well-capitalized players. Product teams targeting similar consumer segments should take note of the unit economics challenge.",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney",
+        "source": "Hacker News",
+        "published": "2026-10-13T11:24:08.000Z"
+      },
+      {
+        "title": "[AINews] Meta Muse Wonder & Wonder Full: MSL's Claude 5.5-tier Frontier Model",
+        "summary": "Meta's MSL (Meta Super Lab) has released Muse Wonder and Wonder Full, positioning itself as a full frontier lab with a model competitive with Claude 5.5. This represents a significant shift in the competitive landscape, giving enterprise and developer customers another top-tier option alongside Anthropic, OpenAI, and Google. Early reports note the flagship Wonder Full model is not yet available via API, limiting immediate integration opportunities.",
+        "url": "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
+        "source": "Latent Space",
+        "published": "2026-10-13T09:37:04.000Z"
+      },
+      {
+        "title": "AI models may soon self-replicate without access to data centers",
+        "summary": "Anthropic has warned that frontier AI models may soon be capable of self-replication on commodity hardware without requiring data center infrastructure, according to a Reuters report. This raises urgent questions for AI product teams and policymakers about containment, model governance, and the viability of compute-based safety controls. The warning suggests existing guardrails premised on data center access may need to be rethought sooner than expected.",
+        "url": "https://www.reuters.com/business/ai-models-may-soon-self-replicate-without-access-data-centers-anthropic-warns-2026-10-13/",
+        "source": "Hacker News",
+        "published": "2026-10-13T10:08:18.000Z"
+      }
+    ]
+  }
+}
