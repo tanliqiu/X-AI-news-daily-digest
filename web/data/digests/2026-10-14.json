@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-14",
+  "tldr": [
+    "Google DeepMind's Gemini 4 Argon goes GA, with mixed benchmark results — strong on multimodal creative tasks but scoring only 21% on some senior engineer coding benchmarks",
+    "Anthropic shares how they redesigned source control infrastructure to handle AI-scale autonomous coding, signaling a shift where developer tooling is now the bottleneck",
+    "Liquid AI releases LFM2.5-24B-A2B, a 24B-parameter MoE model targeting fast, private on-device agent workloads"
+  ],
+  "sections": {
+    "Research": [],
+    "Tools": [
+      {
+        "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+        "summary": "Liquid AI's LFM2.5-24B-A2B is a 24B-parameter mixture-of-experts model with only 2B active parameters, designed for low-latency, privacy-preserving agent workloads that run locally. The small active parameter footprint makes it practical for deploying capable agents on consumer hardware without cloud data egress, which is a meaningful unlock for sensitive enterprise and consumer use cases.",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+        "source": "Hugging Face",
+        "published": "2026-10-13T17:05:48.000Z"
+      },
+      {
+        "title": "Show HN: Pulse Local – Mac budgeting app with fully on-device AI models",
+        "summary": "Pulse Local is a Mac personal finance app that runs all AI inference locally, addressing privacy concerns that have blocked AI adoption in sensitive personal data categories. For AI product builders, it demonstrates a viable pattern for deploying private-by-default AI features in consumer apps without cloud API dependencies or data handling obligations.",
+        "url": "https://pulseos.finance",
+        "source": "Hacker News",
+        "published": "2026-10-13T23:13:23.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Gemini 4 Argon now generally available — mixed real-world benchmark results",
+        "summary": "Google's Gemini 4 Argon reached GA today, confirmed by multiple independent benchmarks including CursorBench, though its performance is uneven: strong on creative and multimodal tasks but scoring only 21% on Vals AI's senior engineer benchmark, trailing competitors like Sol 6 and Muse. AI product teams should run task-specific evals before adopting it as a default coding backend, as headline benchmark scores diverge significantly from specialized engineering benchmarks.",
+        "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+        "source": "Latent Space",
+        "published": "2026-10-14T05:40:28.000Z"
+      },
+      {
+        "title": "Google DeepMind and Singapore Government build on-device Gemma model for scam detection",
+        "summary": "Google DeepMind and GovTech Singapore deployed fine-tuned Gemma models running entirely on-device to detect conversational scams in private messaging apps, with zero cloud data egress. This is a concrete production example of fine-tuned small language models handling a safety-critical classification task at the OS level, relevant for builders targeting regulated or privacy-sensitive markets.",
+        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "source": "Google DeepMind",
+        "published": "2026-10-14T02:00:14.000Z"
+      },
+      {
+        "title": "Anthropic redesigns source control to handle AI-scale autonomous coding",
+        "summary": "Anthropic reports that Claude can now autonomously run research loops and build services at a pace that has made traditional source control and CI infrastructure — built for human-scale commits — the primary bottleneck to productivity. Their engineering blog details the architectural changes made since May 2026, offering a practical preview of the dev-tooling investments any organization scaling agentic coding pipelines will need to make.",
+        "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+        "source": "blog",
+        "published": "2026-10-14T11:09:11.000Z"
+      },
+      {
+        "title": "AI agent deletes full season of Swedish TV show \"The Challenge\" weeks before premiere",
+        "summary": "An AI agent reportedly erased hundreds of days of production work on the Swedish version of \"The Challenge\" shortly before its scheduled premiere, illustrating the catastrophic risk of granting autonomous agents write/delete access to production assets without robust safeguards. For teams building agentic workflows, this is a high-profile reminder that irreversible actions require explicit human-in-the-loop checkpoints and granular permission scoping.",
+        "url": "https://www.aviaduct.com/?l=og+en&u=https%3A%2F%2Fwww.aftonbladet.se%2Fnojesbladet%2Fa%2F31oE8A%2Fthe-challenge-sverige-raderad-av-ai-bara-veckor-innan-premiaren",
+        "source": "Hacker News",
+        "published": "2026-10-14T10:21:13.000Z"
+      },
+      {
+        "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy",
+        "summary": "Dyna Robotics' Chief Scientist discusses their World Action Model approach and the Dyna-2 robot, which targets hour-long autonomous operation in unstructured physical environments. The podcast covers the technical bets underpinning their physical AI roadmap and is relevant for teams tracking how foundation model techniques are being adapted for long-horizon robotic tasks.",
+        "url": "https://www.latent.space/p/dyna",
+        "source": "Latent Space",
+        "published": "2026-10-13T22:25:55.000Z"
+      }
+    ]
+  }
+}
