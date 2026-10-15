@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-15",
+  "tldr": [
+    "Anthropic reaches $16.8B quarterly revenue and claims profitability, marking a major commercial milestone for frontier AI",
+    "Liquid AI releases LFM2.5-24B-A2B, a 24B MoE model optimized for fast on-device agent workloads",
+    "Google DeepMind launches Gemini 4 Argon with dedicated robotics and responsible AI safety documentation"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Following the Flow the Law Requires: Training Voice Agents to Transfer to Unseen Regulated Procedures in Debt Collection",
+        "summary": "This paper addresses the challenge of building LLM-based voice agents that must comply with legally mandated conversational flows—not just complete tasks. The authors focus on debt collection, where agents must follow strict sequencing rules (confirm debtor identity before mentioning debt, disclose creditor, state amount, avoid prohibited language) that vary by creditor and change over time. The work is directly relevant to anyone building regulated voice AI in financial services, healthcare, or legal contexts where procedural compliance is as critical as task accuracy.",
+        "url": "https://arxiv.org/abs/2610.18881",
+        "source": "arXiv",
+        "published": "2026-10-15T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Application",
+          "Framework"
+        ],
+        "affiliations": [
+          "Amity Research and Application Center (ARAC)",
+          "Amity AI Holdings Co.,Ltd., Bangkok, Thailand"
+        ]
+      },
+      {
+        "title": "Can LLMs Access their World Knowledge for Event Prediction?",
+        "summary": "This study finds that LLMs underperform on temporal event forecasting not because they lack relevant knowledge, but because standard interfaces don't surface it effectively. When the task is reframed around the LLM's natural knowledge structure, performance improves significantly over simpler specialized models. This has practical implications for anyone building forecasting or planning tools on top of LLMs—prompt and interface design may matter more than model selection.",
+        "url": "https://arxiv.org/abs/2610.19021",
+        "source": "arXiv",
+        "published": "2026-10-15T04:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Evaluation",
+          "Application"
+        ],
+        "affiliations": [
+          "RBC Borealis",
+          "University of Alberta"
+        ]
+      },
+      {
+        "title": "Joint Subspace Sparse Attention for Efficient Long-Context Decoding",
+        "summary": "JSSA introduces a token-level sparse attention mechanism that addresses two key bottlenecks in long-context LLM inference: preserving query-key structure during low-dimensional scoring and efficiently gathering scattered selected tokens. The method targets the KV-cache memory bandwidth problem that dominates decoding latency at long contexts. Practitioners deploying long-context models in production will find this relevant as a potential drop-in efficiency improvement.",
+        "url": "https://arxiv.org/abs/2610.19026",
+        "source": "arXiv",
+        "published": "2026-10-15T04:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "Seoul National University"
+        ]
+      },
+      {
+        "title": "Similar Models, Broken Odds: Where Luce's Axiom Fails in Chatbot Arena",
+        "summary": "Analyzing 1.8 million Chatbot Arena votes, this paper shows that the Bradley-Terry ranking model systematically misjudges head-to-head comparisons between similar models (e.g., versions of the same model are judged 1.37× more decisively than scores predict). This means leaderboard rankings may misrepresent true capability differences, especially between model variants from the same lab. Teams using Arena-style evaluations to select or compare models should account for this structural bias.",
+        "url": "https://arxiv.org/abs/2610.19095",
+        "source": "arXiv",
+        "published": "2026-10-15T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Independent Researcher"
+        ]
+      },
+      {
+        "title": "DecisionRobust: Benchmarking Robustness for JEV Style Decision Models Across Text and Vision",
+        "summary": "DecisionRobust introduces a systematic benchmark for evaluating how decision models (which map instructions and observations directly to choices, judgments, or scores) hold up under adversarial manipulation across text and vision inputs. As LLM-based decision models are increasingly embedded in automated pipelines, understanding their failure modes under adversarial conditions is critical for production reliability. This is particularly relevant for teams building LLM-as-judge or automated scoring systems.",
+        "url": "https://arxiv.org/abs/2610.19118",
+        "source": "arXiv",
+        "published": "2026-10-15T04:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Security",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "The Pennsylvania State University"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+        "summary": "Liquid AI has released LFM2.5-24B-A2B, a 24B mixture-of-experts model specifically designed for low-latency, on-device agent workloads. The model targets the growing need for capable AI agents that can run efficiently on edge hardware without cloud round-trips. This is significant for developers building autonomous agents in latency-sensitive or privacy-constrained environments.",
+        "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+        "source": "Hacker News",
+        "published": "2026-10-14T23:59:37.000Z"
+      },
+      {
+        "title": "Jev 1.14.0 with Experimental Features",
+        "summary": "Typesafe AI has released Jev 1.14.0, including experimental features aimed at developers building typed decision and judgment interfaces on top of LLMs. With 301 HN points and 93 comments, this release appears to have significant community traction among AI application developers. The JEV interface pattern—mapping instructions and observations to typed outputs—is gaining momentum as a structured alternative to free-form LLM outputs.",
+        "url": "https://typesafe.ai/blog/jev-1-14",
+        "source": "Hacker News",
+        "published": "2026-10-14T21:11:03.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic revenue jumps to $16.8B in third quarter, claims profitable",
+        "summary": "Anthropic has reported $16.8B in Q3 revenue and declared profitability, a dramatic acceleration that signals the commercial AI market is maturing rapidly. This milestone positions Anthropic as a major independent AI company alongside OpenAI and validates the enterprise demand for frontier model APIs. For consultants and product builders, it underscores that Claude-based products now have a financially stable and scaling infrastructure behind them.",
+        "url": "https://www.ft.com/content/11632d03-358c-454b-af95-d06d4072932b",
+        "source": "Hacker News",
+        "published": "2026-10-14T22:37:26.000Z"
+      },
+      {
+        "title": "Developing Gemini 4 Argon responsibly and safely",
+        "summary": "Google DeepMind has published its responsible development documentation for Gemini 4 Argon, its latest frontier model, alongside a dedicated robotics deployment blog. The dual release of safety guidelines and robotics-specific applications signals that DeepMind is positioning Gemini 4 Argon for high-stakes physical-world deployments. Product teams evaluating frontier models for agentic or robotics use cases should review the safety framework for deployment constraints and evaluation criteria.",
+        "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+        "source": "Google DeepMind",
+        "published": "2026-10-13T19:43:07.000Z"
+      },
+      {
+        "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+        "summary": "At AI Engineer New York, representatives from OpenAI, Anthropic, and financial institutions discussed frameworks for granting agents meaningful autonomy over consequential financial actions while preserving human oversight. The session surfaces emerging best practices around approval thresholds, reversibility, and audit trails for financial AI agents. This is essential reading for teams building or deploying agents in regulated financial workflows.",
+        "url": "https://www.latent.space/p/crossing-the-threshold",
+        "source": "Latent Space",
+        "published": "2026-10-14T21:40:52.000Z"
+      },
+      {
+        "title": "Modal's $1B ARR, $16B Series D makes it NYC's newest AI Infra Decacorn",
+        "summary": "Modal has closed a $16B Series D on $1B ARR, tripling both usage and valuation in five months and achieving 15× growth in one year, driven by demand for its cloud sandbox infrastructure for AI workloads. The raise reflects surging developer appetite for scalable, on-demand compute environments purpose-built for AI applications and agents. For AI product builders, Modal's trajectory highlights sandboxed compute as a critical infrastructure layer for agentic and training workflows.",
+        "url": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
+        "source": "Latent Space",
+        "published": "2026-10-15T10:08:08.000Z"
+      }
+    ]
+  }
+}
