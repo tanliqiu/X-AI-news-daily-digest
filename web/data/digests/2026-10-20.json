@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20",
+  "tldr": [
+    "DeepSeek open-sourced its inference engine (DeepInfer), giving developers a new production-grade option for self-hosted LLM serving",
+    "WhatsApp's help pages were found to contain hidden LLM system prompt instructions telling the AI not to recommend regulators, raising serious transparency and trust concerns for AI product builders",
+    "Hugging Face and AWS released TorchNeuron integration, making it significantly easier to run HuggingFace models on Trainium hardware"
+  ],
+  "sections": {
+    "Research": [],
+    "Tools": [
+      {
+        "title": "DeepSeek open-sources its inference engine (DeepInfer)",
+        "summary": "DeepSeek has released DeepInfer, its internal inference engine, as an open-source project. This gives AI product teams a production-tested alternative for self-hosted LLM serving, potentially reducing reliance on commercial inference providers and offering more control over latency, cost, and customization.",
+        "url": "https://github.com/deepseek-ai/DeepInfer",
+        "source": "Hacker News",
+        "published": "2026-10-20T09:08:54.000Z"
+      },
+      {
+        "title": "TorchNeuron: Running HuggingFace Models on AWS Trainium Is Easier Than Ever",
+        "summary": "Hugging Face and AWS have deepened their integration with TorchNeuron, streamlining the process of deploying HuggingFace models on AWS Trainium accelerators. For teams looking to reduce GPU costs or diversify their hardware stack, this lowers the engineering barrier to using Trainium in production workloads.",
+        "url": "https://huggingface.co/blog/hf-torchneuron",
+        "source": "Hugging Face",
+        "published": "2026-10-19T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "WhatsApp's Help Pages Hid LLM Instructions: 'Don't Recommend a Regulator'",
+        "summary": "Researchers discovered that WhatsApp embedded hidden system prompt instructions in its help pages directing its LLM-powered assistant to avoid recommending regulatory bodies to users. This is a significant red flag for AI transparency and trust, and highlights how opaque system-prompt engineering can quietly shape user-facing AI behavior in commercially or legally convenient ways.",
+        "url": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
+        "source": "Hacker News",
+        "published": "2026-10-19T23:22:18.000Z"
+      },
+      {
+        "title": "New Model Releases: DeepSeek V4.1 Flash, MiniMax M3.1 Flash, Mercury 3",
+        "summary": "A cluster of new model releases landed — DeepSeek V4.1 Flash 1017, MiniMax M3.1 Flash, and Mercury 3 — though adoption is expected to be gradual. Builders evaluating frontier-adjacent models for cost-performance trade-offs should track these, as flash-tier models continue to improve for latency-sensitive applications.",
+        "url": "https://www.latent.space/p/ainews-not-much-happened-today-f09",
+        "source": "Latent Space",
+        "published": "2026-10-20T05:21:52.000Z"
+      },
+      {
+        "title": "OpenRouter Token Usage Plateaus, Suggesting 'Token-Maxxing' Era May Be Ending",
+        "summary": "Data from OpenRouter shows that aggregate token usage has plateaued, sparking discussion about whether the trend of maximizing context length and token throughput is losing steam. For AI product teams, this may signal a shift toward more targeted, efficient model usage patterns rather than brute-force context stuffing.",
+        "url": "https://openrouter.ai/rankings",
+        "source": "Hacker News",
+        "published": "2026-10-19T23:40:15.000Z"
+      }
+    ]
+  }
+}
