@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-21",
+  "tldr": [
+    "DeepSeek releases DeepInfer as open-source SOTA inference, reportedly running 155T tokens/day/cluster at ~80% margin — a major disruption to the inference market",
+    "Anthropic reported an $80B+ net loss in H1 2026, raising serious questions about the economics of frontier AI development",
+    "New RAG research finds retrieval is the core bottleneck in long-context QA, not the LLM's reading ability — with practical implications for RAG system design"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "The Bottleneck Is Retrieval, Not Reading: Diagnosing Evidence-Based Generation with RAG for Long Context Question Answering",
+        "summary": "This paper introduces 'evidence-based generation' (EBG), a stricter RAG evaluation requiring line-level citations alongside answers, and finds that similarity-driven chunked retrieval is the primary failure mode — not the LLM's reading comprehension. The work exposes structural limits of standard RAG pipelines (inability to anticipate needed passages, loss of cross-passage context) that product builders should address at the retrieval architecture level. This has direct implications for anyone building RAG systems on long or multi-document corpora.",
+        "url": "https://arxiv.org/abs/2610.26951",
+        "source": "arXiv",
+        "published": "2026-10-21T04:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Inception42",
+          "MBZUAI"
+        ]
+      },
+      {
+        "title": "AtomSD: Procedural Atom-Guided Self-Distillation for LLM Agents",
+        "summary": "AtomSD decomposes procedural knowledge for LLM agents into fine-grained 'Procedural Atoms' (intent, conditions, actions, outcomes) that are independently reusable across tasks, then uses self-distillation to train agents on these units. This approach addresses the brittleness of trajectory-based agent training, where bundled skills don't transfer well. Practitioners building multi-task agents may find this decomposition scheme useful for improving cross-task generalization without full re-training.",
+        "url": "https://arxiv.org/abs/2610.26926",
+        "source": "arXiv",
+        "published": "2026-10-21T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "School of Advanced Interdisciplinary Sciences, University of Chinese Academy of Sciences",
+          "The Key Laboratory of Cognition and Decision Intelligence for Complex Systems",
+          "School of Artificial Intelligence, University of Chinese Academy of Sciences",
+          "Meituan"
+        ]
+      },
+      {
+        "title": "Do We Need the Largest LLMs for Every Clinical Decision?",
+        "summary": "CERTA is a statistical certification framework that determines when a quantized (smaller, cheaper) model can safely substitute for a full-precision reference model on clinical decisions, escalating only uncertain cases. Evaluated across 11 models from 7B to 72B on 2,500 clinical verification tasks, it enables significant cost reduction without sacrificing safety on high-stakes decisions. This adaptive routing approach is applicable beyond healthcare to any domain requiring reliability guarantees with cost constraints.",
+        "url": "https://arxiv.org/abs/2610.26937",
+        "source": "arXiv",
+        "published": "2026-10-21T04:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Application",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of Thi-Qar"
+        ]
+      },
+      {
+        "title": "FairStress: A deeper evaluation of fairness in LLM decision-making",
+        "summary": "Allen AI's FairStress introduces a more rigorous stress-testing framework for evaluating bias in LLM decision-making, probing for fairness failures under adversarial and edge-case conditions beyond standard benchmarks. For AI product builders deploying LLMs in consequential decision contexts (hiring, lending, content moderation), this offers a more actionable evaluation methodology than existing fairness benchmarks. The framework is released via Hugging Face.",
+        "url": "https://huggingface.co/blog/allenai/fairstress",
+        "source": "Hugging Face",
+        "published": "2026-10-20T16:09:19.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Alignment"
+        ],
+        "affiliations": [
+          "Allen Institute for AI"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "ALTK-Evolve: How learned memory tops the τ²-bench leaderboard on customer service tasks without a frontier model",
+        "summary": "IBM Research's ALTK-Evolve uses an evolved memory mechanism to achieve top performance on the τ²-bench customer service benchmark without relying on a frontier model, making it practically deployable at lower cost. The approach demonstrates that task-specific learned memory can outcompete raw model scale for structured enterprise workflows. This is a strong signal for teams building customer service agents who are currently over-investing in expensive frontier model calls.",
+        "url": "https://huggingface.co/blog/ibm-research/altk-evolve-bc",
+        "source": "Hugging Face",
+        "published": "2026-10-20T15:19:48.000Z"
+      },
+      {
+        "title": "Announcing SimReady Central: An Open Library of Simulation-Ready 3D Assets for Robotics and AI Factories",
+        "summary": "NVIDIA and Hugging Face are launching SimReady Central, an open library of simulation-ready 3D assets targeted at robotics training and AI factory simulation environments. This lowers a key data preparation barrier for teams building synthetic training pipelines for physical AI and robotics applications. The open availability makes it especially relevant for startups that previously lacked access to high-quality simulation assets.",
+        "url": "https://huggingface.co/blog/nvidia/simready-central-assets-robotics-ai-factories",
+        "source": "Hugging Face",
+        "published": "2026-10-21T10:59:42.000Z"
+      },
+      {
+        "title": "Using Claude to reduce the attack surface of code",
+        "summary": "Anthropic published research demonstrating how Claude can be used to systematically identify and reduce code attack surface — going beyond bug-finding to architectural security improvements. This represents a practical application of LLMs in security-hardening workflows, relevant to any team using AI-assisted coding. The post includes methodology details that engineering teams can adapt for their own codebases.",
+        "url": "https://www.anthropic.com/research/attack-surface-reduction",
+        "source": "Hacker News",
+        "published": "2026-10-21T03:36:43.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "DeepSeek DeepInfer: Open Source SOTA Inference running 155T tokens/day/cluster at ~80% margin",
+        "summary": "DeepSeek has open-sourced DeepInfer, a state-of-the-art inference system reportedly running 155 trillion tokens per day per cluster and generating ~$22M/day at approximately 80% gross margin with an 81-day hardware payback period. This is a significant disruption to the inference-as-a-service market, putting pressure on commercial inference providers and potentially driving down API prices industry-wide. Teams building on third-party inference APIs should monitor how this reshapes the competitive landscape.",
+        "url": "https://www.latent.space/p/ainews-deepseek-deepinfer-open-source",
+        "source": "Latent Space",
+        "published": "2026-10-21T06:54:09.000Z"
+      },
+      {
+        "title": "Anthropic logged net loss of over $80B in first half of 2026",
+        "summary": "Reuters confirmed that Anthropic recorded a net loss exceeding $80 billion in the first six months of 2026, underscoring the extreme capital intensity of frontier AI development. This raises critical questions about the long-term sustainability of the current compute investment cycle and could accelerate pressure on Anthropic to monetize more aggressively or raise additional capital. For enterprise customers and API users, this signals potential pricing changes or product strategy shifts ahead.",
+        "url": "https://www.reuters.com/business/anthropic-recorded-net-loss-over-80-billion-first-half-this-year-wsj-reports-2026-10-20/",
+        "source": "Hacker News",
+        "published": "2026-10-20T20:09:46.000Z"
+      },
+      {
+        "title": "Alibaba hikes DeepSeek V4 Flash 0731 output prices by 230%",
+        "summary": "Alibaba has quietly raised prices on its DeepSeek V4 Flash 0731 model by 230%, a significant increase for a model that attracted users partly on cost competitiveness. This is an important signal for teams that built cost models around Alibaba-hosted DeepSeek inference, who now need to re-evaluate provider economics. Combined with DeepSeek's own DeepInfer release, the inference pricing landscape is shifting rapidly.",
+        "url": "https://www.stork.ai/newsletter/2026-10-20-alibaba-quietly-tripled-deepseek-prices#lead",
+        "source": "Hacker News",
+        "published": "2026-10-21T05:17:15.000Z"
+      },
+      {
+        "title": "AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC",
+        "summary": "This podcast episode covers how Tenex is building an AI-native software development lifecycle for large enterprises, with a focus on outcome-based pricing and using agents for the 'last mile' of enterprise AI adoption. The discussion highlights the practical challenges of selling and deploying AI agents at scale in large organizations. Useful listening for consultants and product builders targeting enterprise AI transformation.",
+        "url": "https://www.latent.space/p/tenex",
+        "source": "Latent Space",
+        "published": "2026-10-21T05:01:26.000Z"
+      }
+    ]
+  }
+}
