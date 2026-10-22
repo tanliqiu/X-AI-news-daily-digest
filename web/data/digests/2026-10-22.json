@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-22",
+  "tldr": [
+    "Anthropic launched Claude Duet, an always-on personal agent built on Claude Opus 5.5, available as an early research preview for Pro and Max plan users in the US",
+    "OpenAI's 'Patch the Planet' program used GPT-5.6 Sol to discover critical PHP2Shell vulnerabilities affecting ~70% of the web, signaling AI as a serious offensive/defensive security tool",
+    "OpenAI released an official CLI tool, and Claude gained native Google Docs/Sheets/Slides integration — lowering the barrier for AI-assisted workflows"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "SkillEval: Learning Interpretable Ability Profiles of LLMs via Cognitive Diagnosis Models",
+        "summary": "SkillEval proposes moving beyond single-scalar benchmark scores by applying cognitive diagnosis models from psychometrics to extract per-skill ability profiles for LLMs. This cross-model, skill-level analysis gives product teams a richer picture of where a model excels or falls short, enabling more targeted model selection and fine-tuning decisions. The framework reuses existing benchmark data without requiring new test creation.",
+        "url": "https://arxiv.org/abs/2610.28767",
+        "source": "arXiv",
+        "published": "2026-10-22T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "ETH Zurich"
+        ]
+      },
+      {
+        "title": "LIFT: Scoped Constraints for Evaluating and Training Instruction Following",
+        "summary": "LIFT introduces 'scoped constraints' that tightly couple evaluation criteria to specific parts of a response, addressing reward hacking and task-drift problems seen in benchmarks like IFEval when used as RL reward signals. The framework enables more faithful instruction-following training without pushing models away from core task quality. This is directly relevant to teams using RLHF or RLAIF to improve model compliance with user constraints.",
+        "url": "https://arxiv.org/abs/2610.28819",
+        "source": "arXiv",
+        "published": "2026-10-22T04:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Training",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "AI21 Labs"
+        ]
+      },
+      {
+        "title": "Is Anyone Enforcing the Cartel? What Reinforcement Learning Teaches LLM Agents in Markets",
+        "summary": "This paper introduces an audit methodology to test whether RL-trained LLM pricing agents can actually enforce collusion through punishment of defectors — a key legal distinction for antitrust risk. Results show RL teaches agents market behaviors that go beyond what zero-shot LLMs exhibit, with significant implications for deploying AI agents in pricing and trading contexts. Builders of autonomous market-facing agents should factor in regulatory and collusion-risk testing.",
+        "url": "https://arxiv.org/abs/2610.28787",
+        "source": "arXiv",
+        "published": "2026-10-22T04:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Alignment"
+        ],
+        "affiliations": [
+          "University of Massachusetts Amherst",
+          "University of Massachusetts Lowell"
+        ]
+      },
+      {
+        "title": "Scaling Therapy Supervision: Assessing Psychotherapy Fidelity Using Large Language Models",
+        "summary": "This paper demonstrates an LLM pipeline that automates psychotherapy fidelity assessment — evaluating how closely therapists follow treatment protocols — replacing bottlenecked manual expert review. The system is framed as a scalable tool for clinician self-learning and supervision, offering a concrete blueprint for high-stakes NLP applications in healthcare. Teams building clinical AI products will find the compliance and auditability framing useful.",
+        "url": "https://arxiv.org/abs/2610.28772",
+        "source": "arXiv",
+        "published": "2026-10-22T04:00:00.000Z",
+        "keywords": [
+          "Application"
+        ],
+        "affiliations": [
+          "Dartmouth College",
+          "University of California, San Diego",
+          "University of Virginia"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "OpenAI CLI",
+        "summary": "OpenAI has released an official command-line interface for interacting with its APIs, garnering significant developer interest on Hacker News. This gives developers a native, scriptable way to call OpenAI services from terminals and automation pipelines without writing bespoke API wrappers. It is likely to become a standard part of AI engineering workflows for prototyping and batch processing.",
+        "url": "https://github.com/openai/openai-cli",
+        "source": "Hacker News",
+        "published": "2026-10-22T05:23:11.000Z"
+      },
+      {
+        "title": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
+        "summary": "Dharma AI's VocabX technique specializes the tokenizer vocabulary of small language models for domain-specific deployments, reportedly cutting inference cost by up to 77% in real applications by reducing token sequence lengths. For teams running high-throughput, domain-specific SLM deployments, this is a practical optimization that requires no architectural changes to the model itself. The post on Hugging Face includes implementation guidance.",
+        "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+        "source": "Hugging Face",
+        "published": "2026-10-21T17:35:36.000Z"
+      },
+      {
+        "title": "NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required",
+        "summary": "NVIDIA's Kumo Relational model claims to outperform traditionally trained supervised ML models on relational database tasks without requiring any task-specific training. This is a significant practical claim for enterprises with structured data and limited ML engineering resources, potentially displacing bespoke feature engineering pipelines. The Hugging Face post provides benchmark comparisons and integration details.",
+        "url": "https://huggingface.co/blog/nvidia/kumo-relational",
+        "source": "Hugging Face",
+        "published": "2026-10-21T18:26:30.000Z"
+      },
+      {
+        "title": "Ensemble Forecasting with IBM Granite Time-Series Models",
+        "summary": "IBM Research released a blog detailing ensemble forecasting approaches using their Granite time-series foundation models, including an R1-style reasoning variant. This is directly applicable for teams building forecasting products on structured temporal data who want to leverage pre-trained models rather than training from scratch. The post covers practical ensemble construction and evaluation methodology.",
+        "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
+        "source": "Hugging Face",
+        "published": "2026-10-22T07:51:31.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic Launches Claude Duet: Always-On Personal Agent",
+        "summary": "Anthropic launched Claude Duet, a standalone always-on personal agent app (iOS, Android, web) powered by Claude Opus 5.5, separate from the main Claude product. It inherits memory, skills, and connected apps from a user's Claude account, and proactively decides what actions to take versus when to check with the user first. Currently an early research preview on a US waitlist for Pro and Max subscribers, it represents Anthropic's most direct move into the proactive agent market competing with ChatGPT.",
+        "url": "https://x.com/claudeai/status/2112984666437546104",
+        "source": "X (@claudeai)",
+        "published": "2026-10-21T19:09:36.000Z"
+      },
+      {
+        "title": "Claude Now Works with Google Docs, Sheets, and Slides",
+        "summary": "Anthropic announced native Claude integration with Google Workspace — Docs, Sheets, and Slides — enabling in-context AI assistance without leaving Google's productivity suite. This significantly lowers the friction for enterprise users adopting Claude in existing workflows and positions Anthropic more directly against Microsoft Copilot's deep Office integration. Developers building on top of Google Workspace should expect new API surface area for Claude-powered add-ons.",
+        "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+        "source": "Hacker News",
+        "published": "2026-10-22T02:17:58.000Z"
+      },
+      {
+        "title": "OpenAI's 'Patch the Planet' Program Discovers Critical PHP Vulnerabilities Using GPT-5.6 Sol",
+        "summary": "OpenAI's Patch the Planet security initiative, co-discovering PHP2Shell vulnerabilities in core PHP alongside one other party, represents the first major public demonstration of frontier AI (GPT-5.6 Sol) performing coordinated, responsible vulnerability disclosure at infrastructure scale. The flaws affect an estimated 70% of the web and required a two-month coordinated response. This raises both the promise and the stakes of AI-assisted offensive security research for the industry.",
+        "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program",
+        "source": "Latent Space",
+        "published": "2026-10-22T07:42:44.000Z"
+      },
+      {
+        "title": "Claude Mods: Flipping the Harness Inside Out",
+        "summary": "Latent Space analyzes Claude Mods as a new paradigm that reorients agent harnesses toward human interaction rather than machine orchestration, framing it as an early form of an 'Attention Interface.' This architectural shift has direct implications for how developers should think about building human-in-the-loop agent products, moving control surfaces closer to the user. The piece is a useful conceptual framework for teams designing agentic UX.",
+        "url": "https://www.latent.space/p/claude-mods",
+        "source": "Latent Space",
+        "published": "2026-10-21T13:04:19.000Z"
+      },
+      {
+        "title": "Exploit Development, Agentic Vulnerability Discovery, and Fake PoCs (Practical AI Podcast)",
+        "summary": "This episode features VulnCheck's Spencer McIntyre on how AI agents are accelerating vulnerability research and exploit development, and why many proof-of-concept exploits circulating online fail to deliver. Timely given the OpenAI PHP disclosure news, it provides a practitioner's grounded view of where AI-assisted security tooling actually works versus where it overpromises. Relevant for teams assessing AI-powered security products or building in security-sensitive environments.",
+        "url": "https://share.transistor.fm/s/9a42098b",
+        "source": "Practical AI",
+        "published": "2026-10-22T09:00:00.000Z"
+      }
+    ]
+  }
+}
