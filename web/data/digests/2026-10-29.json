@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-29",
+  "tldr": [
+    "Google DeepMind launches Gemini 4 Carbon, its next frontier model topping independent leaderboards with initial access focused on cyber defenders",
+    "Claude Code's multi-agent architecture revealed: background agent transcripts are routinely shared with the orchestrating model, raising context and privacy considerations for agentic workflows",
+    "Google Research introduces the SLEEP framework for continual learning in LLMs, addressing catastrophic forgetting when updating deployed models"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
+        "summary": "Google Research proposes the SLEEP framework, which enables LLMs to retain previously learned knowledge while incorporating new information — analogous to how biological sleep consolidates memory. This tackles catastrophic forgetting, a key obstacle when fine-tuning or updating deployed models on new data. For teams building AI products that require periodic retraining or domain adaptation, this could reduce the cost and complexity of maintaining knowledge quality over time.",
+        "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+        "source": "Google AI",
+        "published": "2026-10-27T17:35:00.000Z",
+        "keywords": [
+          "Training",
+          "Framework"
+        ],
+        "affiliations": [
+          "Google"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+        "summary": "Hugging Face is releasing open models optimized for Apple Silicon targeting on-device speech recognition and decision-making tasks. These models are designed to run locally on Apple platforms, making them relevant for developers building privacy-preserving or latency-sensitive AI features in iOS/macOS apps. The open release lowers the barrier to deploying capable speech and decision models without cloud dependencies.",
+        "url": "https://huggingface.co/blog/anydecisionmodel",
+        "source": "Hugging Face",
+        "published": "2026-10-29T00:00:00.000Z"
+      },
+      {
+        "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
+        "summary": "NVIDIA releases Nemotron 3.5 Transcribe alongside Granary v2, offering promptable and fine-tunable multilingual speech transcription models. The ability to steer transcription behavior via prompts and adapt models to specific domains makes these practical tools for building production transcription pipelines across languages. Developers can access these through Hugging Face, lowering integration overhead.",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+        "source": "Hugging Face",
+        "published": "2026-10-28T14:58:17.000Z"
+      },
+      {
+        "title": "Why Agents Love Supabase",
+        "summary": "Supabase co-founders Paul Copplestone and Ant Wilson discuss why their open-source backend platform has become a go-to choice for AI agent architectures, covering persistence, real-time capabilities, and vector search. For developers building agentic applications, the episode highlights practical patterns around state management and tool use that Supabase's stack is well-suited to support. This is a useful reference for teams evaluating backend infrastructure for multi-agent systems.",
+        "url": "https://latent.space/p/supabase/",
+        "source": "Latent Space",
+        "published": "2026-10-28T19:48:05.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Gemini 4 Carbon: Our next frontier model",
+        "summary": "Google DeepMind has announced Gemini 4 Carbon, its latest frontier model, which reportedly tops independent evaluation leaderboards. Initial access is being prioritized for cybersecurity defenders, suggesting Google is positioning the model for high-stakes professional use cases before broader rollout. Product teams should monitor capability benchmarks closely as this will likely shift competitive expectations across coding, reasoning, and multimodal tasks.",
+        "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+        "source": "Google DeepMind",
+        "published": "2026-10-28T17:00:58.000Z"
+      },
+      {
+        "title": "Claude Code regularly sends each background agent's transcript to its model",
+        "summary": "A widely circulated GitHub gist reveals that Claude Code's agentic orchestration passes the full transcript of each background sub-agent back to the main model, enabling richer coordination but also significantly increasing token consumption and exposing sensitive task context to the model provider. This has practical implications for teams using Claude Code in enterprise or regulated environments where data minimization matters. Developers building similar multi-agent systems should consider transcript scoping and summarization strategies to manage cost and privacy risk.",
+        "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
+        "source": "Hacker News",
+        "published": "2026-10-29T03:33:42.000Z"
+      },
+      {
+        "title": "New York Times adds more AI features to its Cooking app. Users aren't thrilled",
+        "summary": "The NYT Cooking app's integration of AI features has generated significant user backlash, with subscribers expressing frustration that AI-generated content is being surfaced alongside or instead of trusted editorial recipes. The episode serves as a concrete case study in AI feature adoption failure: users who pay for a curated human experience perceive AI additions as a quality dilution rather than an enhancement. Builders adding AI to established consumer products should weigh the trust and brand expectations of existing user bases carefully.",
+        "url": "https://www.niemanlab.org/2026/10/the-new-york-times-is-adding-more-ai-features-to-its-cooking-app-and-users-arent-thrilled/",
+        "source": "Hacker News",
+        "published": "2026-10-29T00:16:08.000Z"
+      },
+      {
+        "title": "AI execs may be too out of touch to build for the general public",
+        "summary": "A TechCrunch analysis argues that AI company leadership — largely composed of highly technical, high-income individuals — may be systematically miscalibrating product priorities for mainstream users who have different workflows, literacy levels, and needs. This disconnect could explain persistent gaps between AI product hype and real-world adoption rates outside of developer and knowledge-worker demographics. Consultants and product teams should treat user research and diverse feedback channels as a strategic priority, not an afterthought.",
+        "url": "https://techcrunch.com/2026/10/28/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/",
+        "source": "Hacker News",
+        "published": "2026-10-28T22:27:46.000Z"
+      }
+    ]
+  }
+}
