@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-30",
+  "tldr": [
+    "Anthropic suffered a supply-chain attack delivering a remote access trojan via compromised official Claude Code extensions — a critical security incident for teams using Claude Code in their dev workflows",
+    "Mistral Large 4 ('Le Chonk') launches on Hugging Face, adding a major new open-weight frontier model option for AI product builders",
+    "Gemini 4 Carbon tops independent leaderboards; Google's State of AI 2026 report signals cyber risk now outranks extinction risk as top AI concern among experts"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning",
+        "summary": "A new decoy counting benchmark from Elorian reveals a systematic gap between visual perception and reasoning in frontier multimodal models, showing they can be reliably fooled by salient distractors. The proposed Glimpse approach attempts to close this gap by integrating visual information directly into the reasoning chain rather than treating perception and reasoning as separate stages. For practitioners building vision-based AI products, this highlights that standard multimodal models may fail non-obviously on structured visual tasks requiring counting or attention control.",
+        "url": "https://latent.space/p/elorian/",
+        "source": "Latent Space",
+        "published": "2026-10-29T16:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Reasoning",
+          "Benchmarks"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Granite Switch 4.1.1 — Update models like you update software",
+        "summary": "IBM's Granite Switch 4.1.1 introduces a versioned, software-style update mechanism for AI models, allowing teams to adopt incremental model improvements without full redeployment cycles. This approach lowers the operational overhead of keeping production AI systems current and signals a maturing MLOps pattern for enterprise model management. Builders maintaining long-running AI services should evaluate whether this versioning paradigm fits their update and rollback requirements.",
+        "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+        "source": "Hugging Face",
+        "published": "2026-10-29T13:37:07.000Z"
+      },
+      {
+        "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
+        "summary": "Mistral Large 4 is now available on Hugging Face, providing access to a new large open-weight frontier model that can be self-hosted or fine-tuned for enterprise use cases. The release expands viable options for teams that need frontier-class capability without API dependency or data-sharing concerns. Practitioners should benchmark it against proprietary alternatives given Mistral's track record of competitive performance at lower inference cost.",
+        "url": "https://huggingface.co/blog/mistral-large4",
+        "source": "Hugging Face",
+        "published": "2026-10-29T00:00:00.000Z"
+      },
+      {
+        "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
+        "summary": "Hugging Face's Project ProtoStar aims to structure and surface publicly funded scientific datasets so they are ready for AI training and retrieval pipelines. For teams building domain-specific research or science AI products, this could significantly reduce the data acquisition and cleaning burden for scientific corpora. It also reflects a broader push to ensure public research investments yield accessible, AI-compatible artifacts.",
+        "url": "https://huggingface.co/blog/announcing-project-protostar",
+        "source": "Hugging Face",
+        "published": "2026-10-29T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic hacked to deliver remote access trojan via Claude Code extensions",
+        "summary": "Anthropic's infrastructure was compromised in a supply-chain attack that backdoored official Claude Code VS Code extensions, deploying a remote access trojan to developer machines worldwide. Teams using Claude Code in their development pipelines should treat this as an active security incident, audit installed extensions, and review endpoint security posture immediately. This attack vector — targeting AI developer tooling as a supply-chain entry point — is a significant emerging threat pattern for any team relying on AI-native IDEs or extensions.",
+        "url": "https://doublepulsar.com/anthropic-hacked-to-deliver-remote-access-trojan-to-claude-developer-laptops-worldwide-1148a92baae2",
+        "source": "Hacker News",
+        "published": "2026-10-30T10:22:51.000Z"
+      },
+      {
+        "title": "Gemini 4 Carbon tops leaderboards, launches for cyber defenders",
+        "summary": "Google's Gemini 4 Carbon has taken the top spot on independent AI evaluations, with initial access gated to trusted cybersecurity defenders — suggesting Google is positioning frontier model access as a strategic lever in security contexts. For AI product builders, this indicates the competitive frontier model landscape continues to shift rapidly and that sector-specific access tiers may become a common go-to-market pattern. Teams building security tooling should monitor access program developments closely.",
+        "url": "https://latent.space/p/ainews-gemini-4-carbon/",
+        "source": "Latent Space",
+        "published": "2026-10-29T05:55:19.000Z"
+      },
+      {
+        "title": "State of AI 2026: The Biggest Stories of the Year (and AGI in 2027?) | Nathan Benaich",
+        "summary": "Nathan Benaich's annual State of AI report highlights key 2026 trends including Claude leading 26% of Anthropic's own research, a shift in expert concern toward cyber risk over existential risk, and the prediction that frontier model weights will be stolen in the near term. For applied AI consultants, the report's framing of a widening capability gap between frontier practitioners and the broader market underscores the growing value of hands-on AI product expertise. The AGI-in-2027 debate and the supply-chain compromise news this week add urgency to the security and governance themes in the report.",
+        "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+        "source": "The MAD Podcast with Matt Turck",
+        "published": "2026-10-29T14:11:54.000Z"
+      },
+      {
+        "title": "Google NotebookLM unlocks 700+ publisher textbooks for free",
+        "summary": "Google has partnered with leading publishers to make over 700 textbooks freely available inside NotebookLM as part of its Expert Intelligence program, dramatically expanding the grounded knowledge base accessible to users. For teams building educational or research AI products, this signals that curated, high-quality content partnerships are becoming a key competitive differentiator for RAG-style applications. It also raises the bar for what users will expect from knowledge-grounded AI tools.",
+        "url": "https://x.com/joshwoodward/status/2115953461108023400",
+        "source": "X (@joshwoodward)",
+        "published": "2026-10-29T23:46:32.000Z"
+      },
+      {
+        "title": "Abundant Intelligence at the Midwest AI Summit",
+        "summary": "Highlights from the Midwest AI Summit cover practical themes including reliable AI-augmented workflow design with proper evaluations and guardrails, and the importance of co-designing AI tools with frontline workers to drive adoption. The talks reflect a maturing practitioner focus on trust-building and continuous feedback loops rather than raw capability. Applied AI consultants will find the guardrails and change management framing directly applicable to enterprise deployment engagements.",
+        "url": "https://share.transistor.fm/s/37a0c3e9",
+        "source": "Practical AI",
+        "published": "2026-10-29T09:00:00.000Z"
+      }
+    ]
+  }
+}
