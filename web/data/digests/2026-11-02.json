@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-02",
+  "tldr": [
+    "Google admits AI Mode is cannibalizing Search revenue, triggering a $500B market cap drop — the sharpest since the 2004 IPO",
+    "China issues its first frontier AI export controls (Mofcom No. 48), restricting outbound transfer of advanced AI models and weights",
+    "Apollo economist's analysis finds AI delivers zero measurable financial payoff to most companies, intensifying the ROI debate"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "CoFiBreak: A Coarse-to-Fine Diversity Reward for Effective Multi-Turn Jailbreak",
+        "summary": "Automated red-teaming LLMs tend to collapse onto near-duplicate attack prompts when trained only on success signals, biasing safety evaluations. CoFiBreak introduces a coarse-to-fine diversity reward that maintains broad attack coverage without sacrificing success rates, producing more representative red-team evaluations. Teams building LLM safety pipelines should consider diversity-aware RL objectives to avoid blind spots in their threat models.",
+        "url": "https://arxiv.org/abs/2610.40926",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Simon Fraser University",
+          "Microsoft Research"
+        ]
+      },
+      {
+        "title": "Language Models Show Conformity Bias in RAG: When the Majority Endorses a Poisoned Claim",
+        "summary": "Increasing the number of mutually-agreeing poisoned documents in a RAG context sharply degrades a model's ability to reject misinformation, revealing a conformity bias analogous to human social pressure. Even retrieval pipelines with mostly healthy documents become unreliable when a minority of poisoned documents present a unified false front. Builders of RAG-based products should treat document-count consensus as a vulnerability and add adversarial-document stress testing to their evaluation suites.",
+        "url": "https://arxiv.org/abs/2610.41012",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Security"
+        ],
+        "affiliations": [
+          "University of Isfahan",
+          "University of Texas at Dallas",
+          "New York Institute of Technology"
+        ]
+      },
+      {
+        "title": "Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses",
+        "summary": "Mage-VL-Cowork is a 4B-parameter computer-use agent trained end-to-end through a five-stage curriculum (midtraining → SFT → RL) that combines GUI interaction with code and terminal execution in a single policy. The companion Mage-CUA-Forge tooling replaces per-task agent scaffolding with reusable, skill-conditioned harnesses, significantly lowering the cost of building training environments at scale. This offers a concrete recipe for teams aiming to build compact, capable computer-use agents without frontier-scale compute.",
+        "url": "https://arxiv.org/abs/2610.40747",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Multimodal",
+          "Training"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Better Retrievers, Worse Labels: How Incomplete Relevance Judgments Distort Abstention Evaluation in Conversational RAG",
+        "summary": "A re-analysis of MTRAG and RETECO benchmarks finds that using relevance judgments as a proxy for context sufficiency systematically mislabels answerable questions as unanswerable, inflating abstention scores for stronger retrievers. This means leaderboard rankings for conversational RAG systems may be unreliable, particularly for models that retrieve non-gold-but-sufficient documents. Teams evaluating production RAG pipelines should independently audit sufficiency annotations rather than relying on standard benchmark labels.",
+        "url": "https://arxiv.org/abs/2610.40966",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Letovo School, Moscow, Russia"
+        ]
+      },
+      {
+        "title": "Fewer Heads, Fewer Memories: Pruning Redundant Attention Heads Suppresses Verbatim Memorisation",
+        "summary": "This paper shows that pruning redundant attention heads in LLMs measurably reduces verbatim reproduction of training data, connecting theoretical work on attention-as-associative-memory to a practical privacy mitigation technique. The approach requires no retraining and can be applied post-hoc, making it accessible for teams needing to reduce IP or PII leakage risk in deployed models. It complements existing unlearning and differential-privacy methods with a lightweight structural intervention.",
+        "url": "https://arxiv.org/abs/2610.40974",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Inference"
+        ],
+        "affiliations": [
+          "University of Manchester"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "HackerTube — AI-filtered YouTube recommendations via 43M HN comments",
+        "summary": "Andrej Karpathy built a weekend project using Claude Opus 5.5 to distill 43M Hacker News comments spanning 20 years down to 6,454 high-signal YouTube videos, delivering a stateless, login-free recommendation feed stored in the local browser session. The entire pipeline was built in roughly two hours, illustrating how frontier models can turn large unstructured corpora into useful curation products with minimal engineering overhead. It's a practical demonstration of LLM-powered content filtering as a lightweight alternative to algorithmic recommendation systems.",
+        "url": "https://x.com/karpathy/status/2116957135661945283",
+        "source": "X (@karpathy)",
+        "published": "2026-11-01T18:14:46.000Z"
+      },
+      {
+        "title": "Particle-1: Cost-Efficient Model for Agentic Retrieval",
+        "summary": "Particle-1 is claimed to match much larger models on agentic retrieval tasks at 1/23rd the inference cost, making it potentially viable as a drop-in retrieval backbone for agent pipelines where budget matters. The extreme cost differential suggests a specialized, smaller model can close the gap with general-purpose frontier models on narrow retrieval workloads. Builders of RAG or agentic search products should benchmark Particle-1 as a cost-reduction candidate before defaulting to larger general models.",
+        "url": "https://x.com/garrytan/status/2117137390016073977",
+        "source": "X (@garrytan)",
+        "published": "2026-11-02T06:11:02.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Google admits AI Mode hurts Search revenue; -15% $500B market cap drop worst since 2004 IPO",
+        "summary": "Google publicly acknowledged that its AI-powered search mode is cannibalizing traditional Search ad revenue, triggering the largest single-day market cap drop since the company's 2004 IPO. This confirms the long-anticipated tension between AI-native answer interfaces and the click-through ad model that funds Google's core business. For AI product builders, it signals that monetization models for AI-first interfaces remain unresolved even at the largest scale.",
+        "url": "https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/",
+        "source": "Latent Space",
+        "published": "2026-10-31T05:00:48.000Z"
+      },
+      {
+        "title": "China's First Frontier AI Export Controls: Mofcom Announcement No. 48",
+        "summary": "China's Ministry of Commerce issued its first export control regime specifically targeting frontier AI, restricting outbound transfers of advanced AI models, weights, and related technology. This mirrors and counters US export control strategy and creates new compliance obligations for multinational AI labs and cloud providers operating across both markets. Consultants advising clients on AI supply chains or cross-border model deployment need to assess exposure immediately.",
+        "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-china-ai-export-controls-announcement-48-2/",
+        "source": "Hacker News",
+        "published": "2026-11-02T07:27:28.000Z"
+      },
+      {
+        "title": "AI delivers 'zero financial payoff' to most companies, Apollo economist says",
+        "summary": "An Apollo Global economist's analysis finds that the majority of enterprises deploying AI have not yet seen measurable financial returns, reigniting debate about productivity timelines and the gap between AI capability demonstrations and bottom-line impact. The finding echoes historical patterns with previous general-purpose technologies but carries urgency given the scale of current AI capex. Applied AI consultants should anticipate increased client scrutiny on ROI and prepare concrete measurement frameworks.",
+        "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+        "source": "Hacker News",
+        "published": "2026-11-01T22:10:45.000Z"
+      },
+      {
+        "title": "Google DeepMind and UK Government Partner to Speed Up Planning Decisions with AI",
+        "summary": "Google DeepMind is collaborating with the UK government to apply AI to planning assessment processes, with the goal of reducing the time required for infrastructure and development approvals. The project represents one of the more concrete government-level deployments of frontier AI to bureaucratic bottlenecks, with direct implications for housing and infrastructure delivery timelines. It positions DeepMind as a key player in public-sector AI deployment beyond pure research.",
+        "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+        "source": "Google DeepMind",
+        "published": "2026-10-30T14:18:30.000Z"
+      },
+      {
+        "title": "Agents Prompt People: Using Agents for Long-Horizon Financial Work (Latent Space Podcast)",
+        "summary": "Arca's head of AI describes production agentic workflows that persist across multiple days, covering how persistent memory and custom harnesses outperform off-the-shelf agent frameworks for complex financial analysis tasks. The conversation surfaces practical lessons on where standard orchestration breaks down and why domain-specific scaffolding pays off for long-horizon work. Relevant for teams building agents in regulated or high-stakes industries where multi-session continuity is required.",
+        "url": "https://latent.space/p/arca/",
+        "source": "Latent Space",
+        "published": "2026-10-31T16:05:00.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Oct 30–2"
+}
