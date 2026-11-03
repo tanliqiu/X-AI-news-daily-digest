@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-03",
+  "tldr": [
+    "Anthropic's IPO filing reveals $1.7B quarterly payroll and flattening growth, sparking debate over whether the SEC should block the offering",
+    "New research shows CoT monitoring reliability hinges on entropy collapse in the first few tokens after the thinking tag — with inference-time fixes available",
+    "Hugging Face introduces Model Integration Contracts for the Transformers library, formalizing how new models are added and tested"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "The First Few Tokens Matter: Understanding Chain-of-Thought Controllability",
+        "summary": "This paper identifies that an entropy collapse in the first few tokens after a model's 'thinking' tag is the key mechanism limiting how much models can manipulate their own chain-of-thought traces — which is relevant for safety monitoring. The authors demonstrate two inference-time interventions that can restore CoT controllability, a finding that has direct implications for anyone relying on reasoning traces for oversight or auditing of AI agents.",
+        "url": "https://arxiv.org/abs/2610.40939",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Reasoning",
+          "Agents"
+        ],
+        "affiliations": [
+          "Harvard University",
+          "Cambridge Boston Alignment Initiative"
+        ]
+      },
+      {
+        "title": "Beyond Plausible Prediction: Safety Sufficiency in Web World Models",
+        "summary": "Even though 86.1% of predictions from web world models are judged semantically plausible by humans, many models show highly asymmetric authorization behavior — catching unsafe actions inconsistently. For teams building agentic systems that use world models as safety gatekeepers, plausibility alone is an unreliable proxy for correct safety decisions.",
+        "url": "https://arxiv.org/abs/2610.40798",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Agents",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Durham University",
+          "University of Oxford"
+        ]
+      },
+      {
+        "title": "More Rules, Longer Lists? Benchmarking Self-Evolving Agents on a Hidden-Rule Curriculum",
+        "summary": "CLR-Bench introduces a curriculum of latent rules to test whether self-evolving agents genuinely learn hidden rules or simply accumulate growing exception lists. The benchmark reveals a key failure mode for agents that update persistent state from feedback — a practical concern for any product using memory-augmented or self-improving agent loops.",
+        "url": "https://arxiv.org/abs/2610.40758",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Singapore Management University, Guangzhou, Singapore",
+          "Guangdong University of Technology, Guangzhou, China",
+          "Singapore Management University, Singapore"
+        ]
+      },
+      {
+        "title": "Agentic World Modeling for Agent Test-time Scaling without Environment Replica",
+        "summary": "Test-time scaling for agents typically requires running multiple candidate trajectories in parallel, but this is impractical in shared enterprise or cloud environments where actions are irreversible. This paper proposes using an internal world model to simulate candidate trajectories without environment replicas, making test-time compute scaling feasible for real-world deployments.",
+        "url": "https://arxiv.org/abs/2610.40927",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Inference",
+          "Framework"
+        ],
+        "affiliations": [
+          "University of Wisconsin--Madison",
+          "Microsoft"
+        ]
+      },
+      {
+        "title": "Circumventing the Computational Hardness of Computational Arbitrage",
+        "summary": "This paper formalizes computational arbitrage in AI model marketplaces — where an intermediary profits by routing queries across a portfolio of models with heterogeneous costs and capabilities. The authors identify tractable approximations to the otherwise NP-hard routing problem, with direct relevance to building cost-efficient inference layers or model routing services.",
+        "url": "https://arxiv.org/abs/2610.40831",
+        "source": "arXiv",
+        "published": "2026-11-02T05:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Framework"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Transformers Model Integration Contracts",
+        "summary": "Hugging Face has introduced Model Integration Contracts (MICs) for the Transformers library, establishing a formalized specification for how new model architectures are integrated, tested, and maintained. This reduces friction for contributors and gives product teams clearer guarantees about model compatibility and behavior when upgrading library versions.",
+        "url": "https://huggingface.co/blog/transformers-mic",
+        "source": "Hugging Face",
+        "published": "2026-11-03T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic IPO Filing: $1.7B Quarterly Payroll and Calls for SEC to Block the Offering",
+        "summary": "Anthropic's IPO filing reveals a $1.7B quarterly personnel bill (roughly $107K per employee per month) and $900B in AI spending commitments, while a concurrent analysis flags that the company's revenue growth has flattened. The filing has triggered a public debate, with some commentators urging the SEC to block the IPO on public-interest grounds — a signal that regulatory scrutiny of frontier AI companies is intensifying ahead of major liquidity events.",
+        "url": "https://www.techspot.com/news/114428-anthropic-ipo-filing-reveals-17-billion-quarterly-personnel.html",
+        "source": "Hacker News",
+        "published": "2026-11-03T11:16:07.000Z"
+      },
+      {
+        "title": "Oracle Files to Sell $20B in Stock and Bonds to Finance AI Infrastructure Buildout",
+        "summary": "Oracle is raising $20B through new equity and debt to fund AI infrastructure expansion, underscoring the continued massive capital requirements at the infrastructure layer of the AI stack. For AI product builders, this signals ongoing investment in cloud compute capacity but also raises questions about the sustainability of current pricing and supply dynamics.",
+        "url": "https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html",
+        "source": "Hacker News",
+        "published": "2026-11-02T19:27:37.000Z"
+      },
+      {
+        "title": "Building Legal Agents When You Can't See the Data — Legora CTO Jacob Lauritzen",
+        "summary": "Legora's CTO describes the unique engineering challenges of building AI agents for law firms where client confidentiality prevents access to any trace data, forcing the team to develop evaluation strategies that don't rely on observing agent outputs. Key practical takeaways include how to run evals blind, handle million-cell tabular document reviews, and why the billable-hour model is starting to crack under agentic AI adoption.",
+        "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/",
+        "source": "Latent Space",
+        "published": "2026-11-02T23:01:02.000Z"
+      }
+    ]
+  }
+}
