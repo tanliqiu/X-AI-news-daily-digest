@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-04",
+  "tldr": [
+    "MEMENTO introduces a training approach for long-context agents to write effective context-compaction notes, addressing a core failure mode in deployed agentic systems",
+    "Nvidia RTX Spark's encrypted firmware cuts Linux inference speed to 35% of rated performance, a critical hardware constraint for on-device AI deployments",
+    "Google DeepMind's Antigravity platform demonstrates agentic cheminformatics for drug discovery, including novel macrocycle proposals"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "MEMENTO: Learning Context Management for Long Context Processing Agents",
+        "summary": "MEMENTO addresses a critical gap in deployed LLM agents: even frontier models like GPT-5.5 write poor context-compaction notes when operating over long inputs, causing information loss across turns. The paper combines behavioral cloning from expert demonstrations with reinforcement learning to teach reliable note-taking, outperforming off-the-shelf agents on long-horizon tasks. This directly impacts any agentic product that must manage context windows across extended multi-turn interactions.",
+        "url": "https://arxiv.org/abs/2611.00244",
+        "source": "arXiv",
+        "published": "2026-11-04T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Reasoning",
+          "Training"
+        ],
+        "affiliations": [
+          "Columbia University"
+        ]
+      },
+      {
+        "title": "Fidelity Collapses with Table Size, Not Turn Count: Delivery Architecture in a Deployed Tool-Using Agent",
+        "summary": "A production study of an award-travel agent finds that re-emitting large structured tool outputs into the model context each turn introduces data corruption that scales with table size, not conversation length. A 'BYPASS' architecture that routes structured data around the model context and answers follow-ups via direct lookup dramatically reduces fidelity loss. This is a concrete, actionable finding for teams building tool-using agents that handle structured records.",
+        "url": "https://arxiv.org/abs/2611.00442",
+        "source": "arXiv",
+        "published": "2026-11-04T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Inference"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "StateBench: Testing how language models track state changes over long documents",
+        "summary": "AllenAI's StateBench evaluates whether LLMs can accurately track how entities and attributes change state across long documents, a capability critical for agents processing contracts, medical records, or codebases. The benchmark exposes systematic failures in state tracking that standard QA metrics miss, providing a more diagnostic signal for long-context product development. Teams building RAG or document-processing pipelines should consider this as a targeted evaluation tool.",
+        "url": "https://huggingface.co/blog/allenai/statebench",
+        "source": "Hugging Face",
+        "published": "2026-11-03T17:15:21.000Z",
+        "keywords": [
+          "Benchmarks",
+          "RAG",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Allen Institute for AI"
+        ]
+      },
+      {
+        "title": "CWE-bench v2: More coverage, quality, and transparency",
+        "summary": "CWE-bench v2 expands the security vulnerability benchmark with broader CWE coverage, improved patch quality, and open methodology, making it more suitable for rigorously evaluating AI-assisted vulnerability detection and remediation tools. The updated benchmark addresses gaps in prior versions that allowed inflated scores from noisy or low-quality samples. Security teams and AI developers building code-scanning products now have a more credible evaluation baseline.",
+        "url": "https://huggingface.co/blog/cwe-bench",
+        "source": "Hugging Face",
+        "published": "2026-11-03T00:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Circuit Oracle: Automating Attribution Graph Analysis via Natural-Language Queries",
+        "summary": "Circuit Oracle wraps a multi-agent LLM harness around mechanistic interpretability attribution graphs, enabling natural-language querying of sparse feature-level circuits that previously required hours of expert analysis. The system uses task-specific authored skills to automate safety-relevant insight extraction from transcoder-based decompositions. This lowers the barrier for teams wanting to apply mechanistic interpretability findings to real model safety workflows.",
+        "url": "https://arxiv.org/abs/2611.00420",
+        "source": "arXiv",
+        "published": "2026-11-04T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Alignment",
+          "Security"
+        ],
+        "affiliations": [
+          "University of California, Los Angeles, CA, USA",
+          "The University of Maryland, College Park, MD, USA"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Palette: teaching a small model to build decks in your design language",
+        "summary": "IBM Research's Palette fine-tunes a small language model to generate presentation decks that conform to a specific organization's design language, reducing reliance on large general-purpose models for structured creative output. The approach demonstrates that domain-specific fine-tuning on layout and visual conventions can yield production-quality results at lower inference cost. Teams building enterprise content generation tools will find this a practical template for brand-constrained generation.",
+        "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+        "source": "Hugging Face",
+        "published": "2026-11-03T16:35:36.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
+        "summary": "MindStudio's investigation reveals that Nvidia's RTX Spark laptop GPU ships with encrypted firmware that restricts Linux inference throughput to roughly 35% of rated performance, with no equivalent limitation on Windows. This is a significant constraint for developers and organizations running local AI inference workloads on Linux, effectively forcing a platform choice for edge deployment. Hardware procurement decisions for on-device AI need to account for this until Nvidia releases a fix.",
+        "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
+        "source": "Hacker News",
+        "published": "2026-11-04T08:46:29.000Z"
+      },
+      {
+        "title": "Agentic cheminformatics with Google Antigravity",
+        "summary": "Google DeepMind's Antigravity platform combines agentic orchestration with specialized cheminformatics skills to automate drug discovery workflows, including compound search and novel rigidified macrocycle proposal. The system demonstrates how domain-specific tool libraries paired with agent planning can compress weeks of expert chemistry work into automated pipelines. This is an early concrete example of production agentic systems delivering value in regulated, high-stakes scientific domains.",
+        "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+        "source": "Google DeepMind",
+        "published": "2026-11-03T17:01:49.000Z"
+      },
+      {
+        "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
+        "summary": "Users report that Google's Gemini uses chat history for model training even for paid personal subscribers, with opt-out buried in account settings—a contrast to Workspace accounts where training use is disabled by default. This is a material data privacy consideration for consultants or developers using Gemini with client-sensitive information on personal accounts. Any team evaluating Gemini for professional use should audit their account type and data-use settings immediately.",
+        "url": "https://news.ycombinator.com/item?id=50363461",
+        "source": "Hacker News",
+        "published": "2026-11-04T10:10:27.000Z"
+      },
+      {
+        "title": "Geoffrey Hinton: it might turn out we were better off without AI",
+        "summary": "AI pioneer Geoffrey Hinton publicly stated that humanity might ultimately have been better off without AI development, escalating his previously expressed safety concerns into a more fundamental critique. While speculative in nature, statements from Hinton carry outsized influence on policy discussions and public trust in AI systems. Product builders and consultants should anticipate this comment shaping regulatory and enterprise risk conversations in the near term.",
+        "url": "https://www.theguardian.com/uk-news/2026/nov/03/ai-godfather-geoffrey-hinton-better-off-without-ai",
+        "source": "Hacker News",
+        "published": "2026-11-04T10:23:34.000Z"
+      },
+      {
+        "title": "Building Legal Agents When You Can't See the Data - Jacob Lauritzen, CTO of Legora",
+        "summary": "Legora's CTO describes how they build and test legal AI agents without being able to access any client data traces, since all data belongs to law firm clients under strict privilege rules. The episode covers synthetic testing strategies, evaluation without ground truth, and trust-building with law firms—hard-won lessons directly applicable to any AI product operating in regulated or privacy-sensitive verticals. Practitioners building agents in healthcare, finance, or legal domains will find the operational constraints discussed here particularly relevant.",
+        "url": "https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/",
+        "source": "Latent Space",
+        "published": "2026-11-02T22:54:03.000Z"
+      }
+    ]
+  }
+}
