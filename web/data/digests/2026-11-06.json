@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-06",
+  "tldr": [
+    "Anthropic launches Claude Personal Finance in beta, allowing US users to connect bank accounts for read-only AI-powered money Q&A",
+    "NVIDIA releases Cosmos 3 open models for interactive world simulation on Hugging Face",
+    "New multilingual agent benchmark (τ-bench-LILT) exposes critical gaps in non-English tool-use evaluation across airline, retail, telecom, and banking domains"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "τ-bench-LILT: Evaluating Conversational Agents on Realistic Multilingual Tool-Use Tasks",
+        "summary": "This benchmark extends the τ³-bench framework to German, Korean, Turkish, and Farsi across four industry domains, natively localizing customer databases, policies, and interactions rather than simply translating English content. For teams deploying customer-facing agents internationally, the work surfaces concrete performance gaps that English-only evaluations mask. It provides a practical auditing tool for organizations who need region-specific reliability guarantees before production deployment.",
+        "url": "https://arxiv.org/abs/2611.07203",
+        "source": "arXiv",
+        "published": "2026-11-06T05:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Agents",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "LILT",
+          "Technische Universität Berlin"
+        ]
+      },
+      {
+        "title": "Follow the Policy, Fail the Benchmark: Auditing and Revising Policy-Based Decision Benchmarks",
+        "summary": "An audit of nine public policy-based decision benchmarks finds systemic errors including unsupported targets, propagating reference mistakes, and flawed evaluators—meaning models that correctly follow rules can still be penalized. For AI product teams using these benchmarks to validate compliance or decision-automation systems, the findings are a direct warning that benchmark scores may not reflect real-world policy adherence. The paper calls for systematic source tracing and execution-level validation before trusting leaderboard results in high-stakes domains.",
+        "url": "https://arxiv.org/abs/2611.07042",
+        "source": "arXiv",
+        "published": "2026-11-06T05:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "Amazon Web Services",
+          "Iowa State University"
+        ]
+      },
+      {
+        "title": "Interactive Backdoor Attacks in LLM-Based Proactive Dialogue Systems",
+        "summary": "This paper introduces a multi-turn backdoor attack framework targeting fine-tuned dialogue agents: rather than triggering a single malicious response, poisoned training data steers entire post-trigger conversation trajectories toward attacker goals. For teams fine-tuning models on third-party or crowd-sourced dialogue data—common in customer support and coaching applications—this expands the threat model significantly beyond single-turn detection. Defenders will need to evaluate behavioral consistency across full conversation flows, not just isolated outputs.",
+        "url": "https://arxiv.org/abs/2611.06969",
+        "source": "arXiv",
+        "published": "2026-11-06T05:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Agents"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Adapting LLM Judges to Observed Human Annotation Policy through Soft Prompt Tuning",
+        "summary": "The paper investigates whether soft prompt tuning can close the agreement gap between lightweight open-source LLM judges and expensive proprietary models when aligned to specific human annotation policies. This is directly relevant for teams building evaluation pipelines who want cost-effective automated scoring that reflects their organization's particular quality standards rather than generic preferences. Results suggest this approach offers a practical middle ground between costly API-based judges and miscalibrated off-the-shelf open models.",
+        "url": "https://arxiv.org/abs/2611.07126",
+        "source": "arXiv",
+        "published": "2026-11-06T05:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Training"
+        ],
+        "affiliations": [
+          "Hochschule für Technik und Wirtschaft Dresden"
+        ]
+      },
+      {
+        "title": "On the Opportunities and Challenges of Prefill-to-Autoregressive Cross-Model Transfer",
+        "summary": "PACT (Prefill-to-Autoregressive Cross-model Transfer) enables a large model's prompt representations to be used by a smaller model for generation, offering a way to get near-large-model quality at smaller-model inference costs. The paper provides an evaluation framework to independently measure whether collaboration actually improves task performance or whether gains are illusory. For practitioners designing multi-model inference pipelines, this framework helps validate whether the added complexity of model pairing is genuinely justified.",
+        "url": "https://arxiv.org/abs/2611.06976",
+        "source": "arXiv",
+        "published": "2026-11-06T05:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "Framework"
+        ],
+        "affiliations": [
+          "King's College London, UK",
+          "Tencent Youtu Lab, China",
+          "National Physical Laboratory, UK"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
+        "summary": "NVIDIA has released Cosmos 3 open models on Hugging Face, targeting interactive world simulation use cases such as robotics, autonomous driving, and game development. The open release lowers the barrier for teams building simulation-driven training pipelines or synthetic data generation workflows that require physically grounded video generation. Practitioners can now fine-tune or integrate these models directly without proprietary API dependencies.",
+        "url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+        "source": "Hugging Face",
+        "published": "2026-11-05T19:35:16.000Z"
+      },
+      {
+        "title": "Egyptian and Nigerian English Join the Open ASR Leaderboard",
+        "summary": "Hugging Face's Open ASR Leaderboard has expanded to include Egyptian Arabic and Nigerian English, providing standardized evaluation data for speech recognition in two underrepresented but commercially significant language varieties. Teams building voice products for African or Middle Eastern markets now have a public benchmark to evaluate model performance before deployment. This also signals growing infrastructure support for dialect-aware ASR evaluation beyond standard benchmark languages.",
+        "url": "https://huggingface.co/blog/open-asr-leaderboard-liva",
+        "source": "Hugging Face",
+        "published": "2026-11-06T00:00:00.000Z"
+      },
+      {
+        "title": "Gemini Omni 1.2 Flash: Fast and Cost-Effective with Longer Clips",
+        "summary": "Google DeepMind has released Gemini Omni 1.2 Flash, an updated multimodal model optimized for speed, cost efficiency, and extended video clip processing. For product teams building video understanding, transcription, or media analysis features, the longer context window and reduced cost make real-time or batch video pipelines more economically viable. This positions it as a practical upgrade path for applications currently rate-limited by clip length or API costs.",
+        "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
+        "source": "Google DeepMind",
+        "published": "2026-11-05T17:05:16.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic Launches Claude Personal Finance Beta in the US",
+        "summary": "Anthropic is rolling out a read-only Personal Finance feature for Claude Pro, Max, and Ultra subscribers in the US, allowing users to connect bank accounts and ask natural language questions about their balances and transactions. The feature explicitly excludes investment advice and has no ads or sponsored recommendations, positioning Claude as a neutral financial assistant rather than a lead-generation tool. This marks a significant expansion of Claude's agentic capabilities into regulated personal data domains and signals growing confidence in AI-financial data integrations.",
+        "url": "https://x.com/claudeai/status/2118403114890137895",
+        "source": "X (@claudeai)",
+        "published": "2026-11-05T18:00:35.000Z"
+      },
+      {
+        "title": "Inkling 2 Small: 17A-594B MoE Trained in 68 Hours on 12T Tokens, Beating Muse Spark",
+        "summary": "The AINews digest covers Inkling 2 Small, a 17-active/594B-parameter mixture-of-experts model whose training run completed in just 68 hours on 12 trillion tokens, outperforming competing models like Muse Spark on key benchmarks. The report also covers METR's study of AI research productivity at Anthropic, offering rare empirical data on how AI tools affect research workflows. For practitioners tracking the frontier of efficient large-scale training and AI-assisted R&D, both developments are concrete data points worth monitoring.",
+        "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/",
+        "source": "Latent Space",
+        "published": "2026-11-06T10:35:21.000Z"
+      },
+      {
+        "title": "Global Stocks Tumble as AI Panic Grips Markets After Democrats' Midterm Success",
+        "summary": "Financial markets saw significant volatility tied to AI sector concerns following the 2026 US midterm elections, with investors reacting to anticipated policy shifts around AI regulation and Big Tech market power. The political outcome raises the likelihood of renewed antitrust scrutiny of dominant AI platform providers, which could reshape competitive dynamics for AI product builders dependent on a small number of infrastructure providers. Consultants advising enterprises on AI vendor strategy should factor in potential regulatory disruption to current platform concentration.",
+        "url": "https://www.theguardian.com/business/live/2026/nov/06/global-stocks-tumble-ai-panic-markets-democrats-midterms-success-jobs-oil-dollar-latest-news-updates",
+        "source": "Hacker News",
+        "published": "2026-11-06T07:52:53.000Z"
+      }
+    ]
+  }
+}
