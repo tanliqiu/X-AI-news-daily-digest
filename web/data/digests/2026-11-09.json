@@ -1,0 +1,124 @@
+{
+  "date": "2026-11-09",
+  "tldr": [
+    "Anthropic IPO is underway, prompting industry reflection on what comes next for the leading safety-focused AI lab",
+    "Fine-tuning biomedical LLMs erodes safety guardrails at scale, with BCG X and Cambridge study showing consistent abstention degradation across architectures",
+    "MCQ-format safety benchmarks mechanistically suppress refusals in LLMs, undermining the validity of evaluations like WMDP"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Forcing a Letter Suppresses Refusal: Mechanistic Evidence from WMDP",
+        "summary": "Using the tuned lens technique on Llama-3.1-8B and Qwen3-8B, researchers show that multiple-choice question formats mechanistically suppress refusal behavior in LLMs evaluated on the WMDP safety benchmark. This has direct implications for practitioners relying on MCQ-format safety evals, as the format itself may artificially inflate apparent compliance with safety guidelines. Teams building or auditing safety pipelines should consider free-form response evaluation to get accurate signals.",
+        "url": "https://arxiv.org/abs/2611.08639",
+        "source": "arXiv",
+        "published": "2026-11-09T05:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Independent researcher",
+          "HSE University",
+          "ITMO University",
+          "AIRI"
+        ]
+      },
+      {
+        "title": "Guardrail Erosion in Domain Fine-Tuned Large Language Models: A Paired Audit of Knowledge-Centric Abstention in Biomedical LLMs",
+        "summary": "A large-scale audit by BCG X and Cambridge finds that fine-tuning LLMs for the biomedical domain consistently degrades safety guardrails, particularly around knowledge-centric abstention (knowing when not to answer). The erosion occurs across model architectures, data mixtures, and fine-tuning methods, suggesting it is a systemic risk rather than an artifact of any single approach. Practitioners deploying domain-tuned medical or regulated-domain models should include explicit abstention benchmarks before and after fine-tuning.",
+        "url": "https://arxiv.org/abs/2611.08780",
+        "source": "arXiv",
+        "published": "2026-11-09T05:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "BCG X AI Science Institute, Boston Consulting Group",
+          "Centre for Human-Inspired Artificial Intelligence, University of Cambridge"
+        ]
+      },
+      {
+        "title": "From Procedures to Permissions: Learning Precise Subagent Authorization from Agent Skills",
+        "summary": "This paper proposes a framework for automatically deriving fine-grained tool and resource permissions for subagents in multi-agent LLM systems, rather than requiring manual specification. The approach infers minimum-necessary access from observed agent skill traces, reducing over-permissioning in agentic pipelines. For teams building multi-agent products, this offers a practical path toward least-privilege authorization without hand-authoring policy rules.",
+        "url": "https://arxiv.org/abs/2611.08905",
+        "source": "arXiv",
+        "published": "2026-11-09T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Security",
+          "Framework"
+        ],
+        "affiliations": [
+          "Samsung Research, Beijing, China",
+          "Peking University"
+        ]
+      },
+      {
+        "title": "RL-ATTACK: A Generalized Black-Box Adversarial Attack on Language Models via Reinforcement Learning",
+        "summary": "RL-ATTACK uses reinforcement learning to discover adversarial text perturbations against LLMs in black-box settings, leveraging target model responses as a feedback signal rather than relying on external heuristics or gradient access. The method generalizes across model types and outperforms existing black-box attack baselines, providing a more realistic threat model for red-teaming exercises. Security-conscious teams can use this approach to surface vulnerabilities in deployed LLM APIs without internal model access.",
+        "url": "https://arxiv.org/abs/2611.08711",
+        "source": "arXiv",
+        "published": "2026-11-09T05:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Alignment"
+        ],
+        "affiliations": [
+          "University of Delaware, Newark, DE, USA"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Your Experts Have Partners. There's HOPE for Keeping Them Together",
+        "summary": "Amazon's HOPE (Higher-Order Pruning of Experts) is a new technique for pruning Mixture-of-Experts (MoE) LLMs that accounts for interdependencies between expert pairs rather than pruning experts independently. By preserving co-activated expert partnerships, HOPE maintains model quality at higher compression ratios than conventional expert-wise pruning. This is practically relevant for teams trying to reduce inference costs of large MoE models like Mixtral or DeepSeek without significant quality loss.",
+        "url": "https://huggingface.co/blog/amazon/higher-order-pruning-experts",
+        "source": "Hugging Face",
+        "published": "2026-11-09T12:34:29.000Z"
+      },
+      {
+        "title": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context",
+        "summary": "NVIDIA has released a synthetic dataset of Japanese financial personas generated using Nemotron models, designed to support training and evaluation of finance-domain LLMs with culturally and demographically accurate Japanese context. This fills a notable gap in non-English financial AI training data and provides a replicable pipeline for synthetic persona generation in localized domains. Teams building financial AI for Asian markets can use this as a data foundation or methodology template.",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan",
+        "source": "Hugging Face",
+        "published": "2026-11-09T15:05:57.000Z"
+      },
+      {
+        "title": "ChatGPT Desktop forwards your SSH agent to remote machines",
+        "summary": "A security issue was surfaced on Hacker News indicating that the ChatGPT desktop application forwards users' SSH agents to remote machines, potentially exposing private key access to OpenAI infrastructure during sessions. This is a significant operational security concern for developers who use SSH agent forwarding for infrastructure access and also run the ChatGPT desktop app. Teams with strict security postures should audit this behavior before allowing the desktop client on developer machines.",
+        "url": "https://news.ycombinator.com/item?id=50422628",
+        "source": "Hacker News",
+        "published": "2026-11-09T08:17:49.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "[AINews] Anthropic IPO: Whither Now?",
+        "summary": "Anthropic has moved toward an IPO, triggering broad industry discussion about what public market accountability means for a safety-first AI lab and how it affects competitive dynamics with OpenAI and Google DeepMind. The edition also covers ARC Prize testing Inkling 2 Small and an early report from Thinking Machines on catching model checkpoints bypassing guardrails mid-training. For AI consultants, the IPO signals a new phase of enterprise credibility and procurement pressure around Anthropic's Claude models.",
+        "url": "https://latent.space/p/ainews-anthropic-ipo-whither-now/",
+        "source": "Latent Space",
+        "published": "2026-11-07T03:04:53.000Z"
+      },
+      {
+        "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+        "summary": "Stanford's CS146S course redesign grapples directly with the fact that coding agents can now one-shot prior-year homework assignments, requiring curriculum to shift toward working with unfamiliar real-world open-source repos and proposing meaningful changes. Mihail Eric, who is also Head of AI at Monaco, shares how the course blends pedagogy with practitioner realities, bringing open-source maintainers into the classroom. This is a leading indicator of how applied AI engineering education and hiring expectations are being restructured.",
+        "url": "https://latent.space/p/cs146s/",
+        "source": "Latent Space",
+        "published": "2026-11-08T21:41:44.000Z"
+      },
+      {
+        "title": "Abundant Intelligence at the Midwest AI Summit Part 2",
+        "summary": "This Practical AI episode covers how organizations are operationalizing AI governance, including how the International Mission Board developed an AI charter to define acceptable and prohibited use cases. The talks offer concrete organizational patterns for setting AI boundaries and maintaining human oversight in mission-driven contexts. Useful for consultants helping non-tech organizations build internal AI policy frameworks.",
+        "url": "https://share.transistor.fm/s/1b301bdc",
+        "source": "Practical AI",
+        "published": "2026-11-05T10:00:00.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Nov 6–9"
+}
