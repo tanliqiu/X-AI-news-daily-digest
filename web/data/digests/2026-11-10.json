@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-10",
+  "tldr": [
+    "Google DeepMind launches AlphaProof Code, using AI agents to write 3M lines of Lean proofs to verify Signal's core encryption — a major milestone for formal software verification at scale.",
+    "Anthropic's Claude Fable 5.2 launches on IPO roadshow day, reclaiming the top LLM benchmark spot, with Mythos 5.2 available for cybersecurity and biomedical research organizations.",
+    "A Fireworks AI security breach impacted Notion and its customers, highlighting supply-chain risk when integrating third-party AI inference vendors."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "FinEvolveKG: Controlled and Attributable Prompt Evolution for Financial Knowledge Graph Construction",
+        "summary": "FinEvolveKG applies weight-free prompt optimization to extract persona-specific knowledge graphs from SEC 10-K filings without fine-tuning or hand-authored prompts. The approach constrains prompt evolution to preserve shared typing and temporal rules while adapting to different analytical personas (risk, portfolio, investment). This offers a practical, low-cost path for financial AI products that need customized structured extraction without fragmenting a shared ontology.",
+        "url": "https://arxiv.org/abs/2611.08643",
+        "source": "arXiv",
+        "published": "2026-11-10T05:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Application",
+          "Framework"
+        ],
+        "affiliations": [
+          "Domyn, New York, USA",
+          "Domyn, Bengaluru, India",
+          "Domyn, Gurugram, India"
+        ]
+      },
+      {
+        "title": "Richness Is Not Evenness: Ordered Renyi Crossings under Self-Training",
+        "summary": "This study tracks model collapse through nine generations of GPT-2 self-training, showing that recursive fine-tuning on model outputs reduces vocabulary diversity in complex ways that depend on training temperature. Notably, higher temperatures can partially counteract entropy loss, offering a nuanced picture of how data flywheel loops degrade model quality. Teams building synthetic data pipelines or iterative RLHF loops should account for these collapse dynamics when selecting training temperatures.",
+        "url": "https://arxiv.org/abs/2611.08892",
+        "source": "arXiv",
+        "published": "2026-11-10T05:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "University of Michigan"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+        "summary": "Google DeepMind's AlphaProof Code agents autonomously wrote three million lines of Lean proofs to formally verify Signal's core encryption library, demonstrating AI-driven formal verification at previously impractical scale. This represents a concrete step toward using AI to certify correctness of production security-critical codebases. Teams building high-assurance software products should track this capability as it matures toward broader applicability.",
+        "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+        "source": "Google DeepMind",
+        "published": "2026-11-10T12:02:28.000Z"
+      },
+      {
+        "title": "Amazon saves millions by replacing Sonnet 4.6 with Strands Decider",
+        "summary": "Amazon reportedly replaced Claude Sonnet 4.6 with Strands Decider, a task-routing component from the Strands Agents framework, achieving significant cost reductions in agentic workflows. This suggests that specialized lightweight decision models can outperform general frontier models on routing and orchestration tasks at a fraction of the cost. AI product teams running high-volume agentic pipelines should evaluate purpose-built orchestration models as an alternative to frontier LLMs for control-plane decisions.",
+        "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/",
+        "source": "Hacker News",
+        "published": "2026-11-10T06:01:08.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Fireworks AI security breach impacts Notion and their customers",
+        "summary": "A security incident at Fireworks AI, a third-party AI inference vendor, exposed data belonging to Notion and its customers, underscoring supply-chain risk in AI-powered SaaS stacks. As more products integrate external AI inference providers, vendor security posture and data isolation become critical due-diligence criteria. Teams evaluating AI infrastructure vendors should audit data handling, isolation guarantees, and breach notification commitments.",
+        "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor",
+        "source": "Hacker News",
+        "published": "2026-11-10T07:19:38.000Z"
+      },
+      {
+        "title": "Anthropic to Seek $1.3T Valuation in IPO",
+        "summary": "Anthropic is pursuing a $1.3 trillion valuation in its IPO, coinciding with the launch of Claude Fable 5.2 reclaiming the top benchmark spot. The roadshow signals that frontier AI labs are entering a new phase of public market scrutiny, with investors pricing in sustained demand for cutting-edge model capabilities. For AI product builders, Anthropic's public financials will offer rare transparency into frontier model development economics.",
+        "url": "https://www.wsj.com/finance/stocks/anthropic-to-seek-1-3-trillion-valuation-in-ipo-8337b669",
+        "source": "Hacker News",
+        "published": "2026-11-10T12:49:32.000Z"
+      },
+      {
+        "title": "[AINews] Fable 5.2 retakes World #1 LLM spot as $ANT IPO roadshow begins",
+        "summary": "Claude Fable 5.2 and Mythos 5.2 launched on November 9, 2026, with Fable 5.2 available on all paid plans and Mythos 5.2 gated for cybersecurity and biomedical research use cases. The models reclaim the top leaderboard position and introduce notable reasoning advances, including solving a 15-year-old open problem in theoretical physics. The simultaneous IPO roadshow makes this a defining moment for Anthropic's commercial positioning against OpenAI and Google.",
+        "url": "https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/",
+        "source": "Latent Space",
+        "published": "2026-11-10T06:34:44.000Z"
+      },
+      {
+        "title": "CoreWeave bond yield tops 16% as AI credit stress rises",
+        "summary": "CoreWeave's bond yields have climbed above 16%, reflecting growing investor concern about credit risk in AI infrastructure financing. This signals potential tightening in the capital available to GPU cloud providers, which could affect pricing and availability of compute for AI builders. Teams with significant CoreWeave or similar AI cloud dependencies should monitor counterparty risk and consider diversifying infrastructure relationships.",
+        "url": "https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html",
+        "source": "Hacker News",
+        "published": "2026-11-10T03:20:06.000Z"
+      }
+    ]
+  }
+}
