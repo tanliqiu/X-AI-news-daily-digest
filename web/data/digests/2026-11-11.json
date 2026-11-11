@@ -1,0 +1,147 @@
+{
+  "date": "2026-11-11",
+  "tldr": [
+    "Google releases Gemini 4 Carbon, described as a significantly stronger coding model than its predecessor Argon, now available to Ultra subscribers",
+    "Anthropic launches Claude Data (GA) and interactive connectors enabling embedded third-party tools (Adobe, Atlassian, Box) directly within Claude conversations",
+    "Mercor raises $750M Series D at a $20B valuation with a $3B run rate, signaling continued outsized investment in AI-native hiring and workforce platforms"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "SELD: Detecting Silent Evidence Loss in Context Compression beyond the Answer",
+        "summary": "Context compression can silently remove key evidence while still producing the correct answer, leaving compressed contexts unreliable for downstream models. This paper introduces SELD, a method to detect this 'silent evidence loss' by checking whether the evidence supporting an answer survives compression—not just whether the answer itself is preserved. Practitioners building RAG pipelines or long-context summarization systems should consider this failure mode when evaluating compression quality.",
+        "url": "https://arxiv.org/abs/2611.12903",
+        "source": "arXiv",
+        "published": "2026-11-11T05:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation"
+        ],
+        "affiliations": [
+          "The Hong Kong University of Science and Technology (Guangzhou), China"
+        ]
+      },
+      {
+        "title": "Actionable Feedback: Improving Model Capabilities from User Edit Data on Clinical Documentation",
+        "summary": "Real-world clinician edits on AI-generated clinical notes are a potentially scalable training signal, but over 45% of edits in production data are non-actionable (e.g., stylistic or erroneous). This paper presents a framework to filter and utilize only actionable edits for fine-tuning, improving model quality without introducing noise. Builders of AI-assisted documentation products should consider explicit edit-filtering pipelines before using user corrections as training data.",
+        "url": "https://arxiv.org/abs/2611.12904",
+        "source": "arXiv",
+        "published": "2026-11-11T05:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Application"
+        ],
+        "affiliations": [
+          "Carnegie Mellon University",
+          "Abridge AI",
+          "Johns Hopkins University"
+        ]
+      },
+      {
+        "title": "The Surprising Effectiveness of Deleting Weights in LLM Post-Training",
+        "summary": "This paper finds that selectively pruning weights during or after post-training (fine-tuning, RLHF, etc.) can improve model performance and generalization rather than simply degrading it. The finding challenges assumptions about weight preservation in post-training pipelines and could inform more efficient fine-tuning strategies. Teams building custom fine-tuned models should explore weight deletion as a regularization or capability-enhancement technique.",
+        "url": "https://arxiv.org/abs/2611.10866",
+        "source": "Hacker News",
+        "published": "2026-11-10T22:44:49.000Z",
+        "keywords": [
+          "Training",
+          "Inference"
+        ],
+        "affiliations": [
+          "New York University",
+          "University of Calgary"
+        ]
+      },
+      {
+        "title": "Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding",
+        "summary": "Multimodal diffusion language models exhibit localized entropy spikes during iterative denoising that correlate strongly with hallucinations. This paper proposes a step-aware decoding strategy that identifies and corrects these anomalous steps, reducing hallucinations without retraining. Developers working with diffusion-based multimodal models gain a practical inference-time intervention to improve output reliability.",
+        "url": "https://arxiv.org/abs/2611.12901",
+        "source": "arXiv",
+        "published": "2026-11-11T05:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Inference"
+        ],
+        "affiliations": [
+          "Monash University",
+          "Cornell University",
+          "UC Santa Cruz",
+          "Northeastern University",
+          "University of Minnesota"
+        ]
+      },
+      {
+        "title": "The Indic Token Tax in 2026: Measuring Tokenizer Disparity and Its Cost for the Languages of India",
+        "summary": "This study benchmarks nine major tokenizers (GPT-4, GPT-4o, Qwen2.5, DeepSeek-V3, Mistral-Nemo, and Sarvam models) across all 25 Indian languages in FLORES-200, quantifying the per-token cost and context-window disadvantage relative to English. The results reveal significant and persistent tokenization disparities that make Indian-language AI products measurably more expensive and slower. Developers building multilingual or Indic-language applications should factor tokenizer efficiency into model selection and cost projections.",
+        "url": "https://arxiv.org/abs/2611.13058",
+        "source": "arXiv",
+        "published": "2026-11-11T05:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation"
+        ],
+        "affiliations": []
+      }
+    ],
+    "Tools": [
+      {
+        "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+        "summary": "BotPsy demonstrates a fully on-device personal assistant powered by a sub-billion-parameter agentic LLM, enabling private, low-latency interactions without cloud dependencies. This is a practical reference architecture for builders targeting privacy-sensitive or offline-capable AI assistant applications on consumer hardware. The sub-1B parameter scale suggests viable deployment on mobile and edge devices.",
+        "url": "https://huggingface.co/blog/qvac/botpsy",
+        "source": "Hugging Face",
+        "published": "2026-11-11T05:01:16.000Z"
+      },
+      {
+        "title": "Pay for Hugging Face Hub with your Google Cloud Account",
+        "summary": "Hugging Face Hub is now available on the Google Cloud Marketplace, allowing teams to consolidate AI infrastructure spending under existing GCP billing and committed use agreements. This reduces procurement friction for enterprises already standardized on GCP, making it easier to access Hugging Face models, datasets, and compute. Teams with GCP spend commitments can now apply those credits toward Hugging Face Hub subscriptions.",
+        "url": "https://huggingface.co/blog/hub-gcp-marketplace",
+        "source": "Hugging Face",
+        "published": "2026-11-10T00:00:00.000Z"
+      },
+      {
+        "title": "Decision Models in Hugging Face",
+        "summary": "Hugging Face introduces a new 'Decision Models' category on the Hub, providing a standardized home for models designed to make structured decisions or take actions rather than generate free-form text. This is particularly relevant for developers building agentic systems that require reliable, constrained outputs for routing, classification, or tool selection. The integration into the Hub ecosystem means easier discovery, versioning, and deployment of decision-focused models.",
+        "url": "https://huggingface.co/blog/decision",
+        "source": "Hugging Face",
+        "published": "2026-11-10T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Gemini 4 Carbon is now available",
+        "summary": "Google DeepMind has released Gemini 4 Carbon, now available to Gemini Ultra subscribers, with early benchmarks suggesting substantially stronger coding performance than predecessor model Argon. The model is described as capable of sustained multi-hour autonomous work on complex projects, though with noted tendencies to over-run task boundaries. AI product builders should evaluate Carbon as a likely new baseline for coding and long-horizon agentic tasks.",
+        "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
+        "source": "Google DeepMind",
+        "published": "2026-11-10T16:03:47.000Z"
+      },
+      {
+        "title": "Claude Data and Interactive Connectors Now Available",
+        "summary": "Anthropic has launched Claude Data (formerly Dashboards) for GA on paid plans, enabling automated data stories and narrated video reports from metrics with certified queries entering beta. Simultaneously, interactive connectors let users embed and operate full versions of tools like Adobe, Atlassian, and Box directly within Claude conversations. These releases significantly expand Claude's viability as an enterprise workflow hub rather than a standalone assistant.",
+        "url": "https://x.com/claudeai/status/2120206375137484875",
+        "source": "X (@claudeai)",
+        "published": "2026-11-10T17:26:06.000Z"
+      },
+      {
+        "title": "Mercor $750M Series D at $20B Valuation, $3B Run Rate",
+        "summary": "Mercor has raised $750M in a Series D round at a $20B valuation, reporting a $3B annualized revenue run rate, making it one of the fastest-growing AI-native companies in the hiring and workforce space. The round signals that AI-powered talent matching and staffing infrastructure is attracting major capital at scale. For AI product builders, Mercor represents a blueprint for vertical AI applications achieving rapid enterprise revenue growth.",
+        "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/",
+        "source": "Latent Space",
+        "published": "2026-11-11T09:34:28.000Z"
+      },
+      {
+        "title": "AI Engineer Code Summit: OpenAI on New Ways of Working With Codex",
+        "summary": "At the AI Engineer Code Summit, OpenAI showcased new interaction modalities for Codex including voice steering, cloud task handoff, and a novel 'dots' feature for managing parallel async workstreams. The demos highlight OpenAI's push to make Codex a persistent, cloud-native coding agent rather than a single-turn assistant. Developers building coding workflows should track these interaction patterns as they signal the near-term direction of AI-assisted software development.",
+        "url": "https://latent.space/p/codex-work/",
+        "source": "Latent Space",
+        "published": "2026-11-11T04:49:48.000Z"
+      },
+      {
+        "title": "OSS Projects Banning AI-Generated Contributions",
+        "summary": "A growing number of open-source projects are adopting explicit policies that ban or heavily restrict AI-generated code contributions, citing concerns about code quality, license provenance, and maintainer burden. This trend has practical implications for AI-assisted development tools targeting open-source workflows, and may force teams to adopt attribution or disclosure mechanisms. Builders of AI coding assistants should monitor evolving OSS community norms as they may affect enterprise adoption policies as well.",
+        "url": "https://osssaysno.com",
+        "source": "Hacker News",
+        "published": "2026-11-11T08:51:45.000Z"
+      }
+    ]
+  }
+}
