@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-12",
+  "tldr": [
+    "Jensen Huang resigns as Nvidia CEO immediately following reports of a second affair, creating major leadership uncertainty at the world's most valuable AI hardware company.",
+    "Anthropic launches its IPO, marking a significant milestone for one of the leading AI safety-focused frontier model companies.",
+    "Google enters the decision model market and releases A2UI 1.0, a new framework for building agentic UI experiences."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Token Pooling-Aware Training for Multi-Vector Embedding Models",
+        "summary": "Hugging Face introduces a training approach that makes multi-vector embedding models aware of token pooling, improving retrieval quality while reducing the number of stored vectors. This has direct implications for RAG pipelines where storage costs and retrieval latency are bottlenecks. Practitioners building semantic search or document retrieval systems can use this to get better accuracy at lower infrastructure cost.",
+        "url": "https://huggingface.co/blog/token-pooling",
+        "source": "Hugging Face",
+        "published": "2026-11-11T00:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Training",
+          "Inference"
+        ],
+        "affiliations": [
+          "Hugging Face"
+        ]
+      },
+      {
+        "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+        "summary": "Google DeepMind's AlphaGenome 2 predicts how DNA sequence variations impact gene expression across specific human cell types, advancing AI-driven genomics for disease research. The model represents a significant step in applying deep learning to precision medicine and drug target identification. For AI product builders in biotech, this signals growing viability of foundation models for high-stakes biological prediction tasks.",
+        "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+        "source": "Google DeepMind",
+        "published": "2026-11-11T15:00:15.000Z",
+        "keywords": [
+          "Application",
+          "Multimodal"
+        ],
+        "affiliations": [
+          "Google DeepMind"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "A2UI 1.0",
+        "summary": "Google has released A2UI 1.0, a framework designed to help developers build agentic UI experiences that are delightful, fast, and reliable. This provides a structured foundation for teams building AI-driven interfaces where agents take actions on behalf of users. It signals Google's push to standardize patterns for agentic front-end development alongside its broader decision model push.",
+        "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
+        "source": "Hacker News",
+        "published": "2026-11-12T01:42:01.000Z"
+      },
+      {
+        "title": "The Definitive Fine-Tuning Guide for 3D Generation Models",
+        "summary": "Hugging Face publishes a comprehensive guide for fine-tuning 3D generation models using LoRA, covering dataset preparation, training configurations, and evaluation for 3D outputs. This lowers the barrier for teams wanting to adapt generative 3D models to domain-specific assets, relevant for gaming, simulation, and design tooling. Practical code examples and best practices make this immediately actionable for ML engineers.",
+        "url": "https://huggingface.co/blog/3d-lora-finetuning",
+        "source": "Hugging Face",
+        "published": "2026-11-12T00:00:00.000Z"
+      },
+      {
+        "title": "Modern Web Guidance 1.0: The web platform expertise your coding agent is missing",
+        "summary": "Google Chrome team releases Modern Web Guidance 1.0, a curated knowledge resource designed to fill gaps in coding agents' understanding of current web platform best practices. This is directly useful for teams building or deploying coding agents that generate front-end code, as it provides authoritative, up-to-date guidance agents can be grounded in. It reflects a broader trend of teams packaging domain expertise specifically to improve AI-assisted development quality.",
+        "url": "https://developer.chrome.com/blog/modern-web-guidance-v1",
+        "source": "Hacker News",
+        "published": "2026-11-11T23:22:29.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Jensen Huang resigns as Nvidia CEO immediately",
+        "summary": "Nvidia CEO Jensen Huang has resigned immediately following reports of a second affair that deepened an ongoing personal scandal, with the board acting swiftly. This creates significant leadership uncertainty at the company most central to AI hardware supply chains and GPU compute for the industry. Enterprises and AI infrastructure teams should monitor for potential impact on Nvidia's strategic direction, partnerships, and roadmap execution.",
+        "url": "https://www.reuters.com/live/nvidia-live-board-meets-fate-ceo-jensen-huang-after-affair-reports-2026-11-12/",
+        "source": "Hacker News",
+        "published": "2026-11-12T13:56:11.000Z"
+      },
+      {
+        "title": "Anthropic IPO",
+        "summary": "Anthropic has launched its IPO, making one of the most prominent frontier AI safety companies publicly traded for the first time. This provides a new avenue for broader investment in safety-focused AI development and increases scrutiny of Anthropic's financials, model roadmap, and competitive positioning against OpenAI and Google. For teams building on Claude APIs, public company status may bring changes to pricing transparency, SLAs, and enterprise sales motion.",
+        "url": "https://ipo.anthropic.com/us/",
+        "source": "Hacker News",
+        "published": "2026-11-12T11:46:41.000Z"
+      },
+      {
+        "title": "[AINews] D-Day (Decision Models Day)",
+        "summary": "Google entered the decision model market on November 11, 2026, with Cloudflare and TypeSafe AI also demonstrating production-grade classifier and decision systems at the AI Engineer conference. Decision models — purpose-built for routing, triage, and classification at scale — are emerging as a distinct product category alongside generative models. This signals a maturation of the AI product landscape where specialized, cost-efficient models handle structured decision tasks rather than defaulting to large generative LLMs.",
+        "url": "https://latent.space/p/ainews-d-day-decision-models-day/",
+        "source": "Latent Space",
+        "published": "2026-11-12T05:26:54.000Z"
+      },
+      {
+        "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+        "summary": "At the AI Engineer Code Summit, Jev creator Diogo Almeida and companies like Glean showcased production use cases built on System One models, advocating for broad automation of engineering workflows. The talks highlight a growing movement among practitioners to treat fast, cheap inference models as a default substrate for automating repetitive development tasks. For consultants and product teams, this underscores the opportunity in building opinionated tooling and workflows on top of these efficient model tiers.",
+        "url": "https://latent.space/p/jev-revolution/",
+        "source": "Latent Space",
+        "published": "2026-11-12T05:08:20.000Z"
+      }
+    ]
+  }
+}
