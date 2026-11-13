@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-13",
+  "tldr": [
+    "Jensen Huang resigns as NVIDIA CEO after 33 years, with CFO Colette Kress taking over as interim CEO amid reported foreign ties inquiry",
+    "Google DeepMind launches Gemini 4 Hydrogen, described as a major capability jump now available in the Gemini app",
+    "Anthropic's Claude suffers a significant outage affecting claude.ai, Claude Code, and the API platform simultaneously"
+  ],
+  "sections": {
+    "Research": [],
+    "Tools": [
+      {
+        "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+        "summary": "IBM introduces LLMON, a markup language designed specifically for LLM inputs and outputs, now integrated into the Granite 4.1 3B and 8B model series. This aims to improve structured communication between LLMs and downstream systems, potentially reducing parsing errors and improving reliability in production pipelines. Developers building on smaller, deployable models may find LLMON useful for tighter control over model output formatting.",
+        "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+        "source": "Hugging Face",
+        "published": "2026-11-12T19:07:35.000Z"
+      },
+      {
+        "title": "Claude joins meetings as a visible participant (Anthropic)",
+        "summary": "Anthropic announced a new integration allowing Claude to join video calls as a visible participant, enabling teams to query it verbally or via chat and watch it build documents in real time. This collaborative, visible-agent pattern lowers the barrier for non-technical team members to interact with AI during live workflows. Teams evaluating AI for meeting assistance or real-time document generation have a concrete new option to assess.",
+        "url": "https://x.com/claudeai/status/2120973996304830859",
+        "source": "X (@claudeai)",
+        "published": "2026-11-12T20:16:21.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Jensen Huang Resigns as NVIDIA CEO After 33 Years; Colette Kress Named Interim CEO",
+        "summary": "Jensen Huang has stepped down from NVIDIA's top role amid a congressional inquiry into alleged foreign ties, with CFO Colette Kress stepping in as interim CEO. The leadership transition raises significant questions about NVIDIA's strategic direction on chip export controls, open-source AI commitments, and its competitive position against AMD and custom silicon from hyperscalers. AI practitioners dependent on NVIDIA infrastructure should monitor any shifts in roadmap priorities or partner relationships under new leadership.",
+        "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/",
+        "source": "Latent Space",
+        "published": "2026-11-13T09:04:13.000Z"
+      },
+      {
+        "title": "Introducing Gemini 4 Hydrogen",
+        "summary": "Google DeepMind has launched Gemini 4 Hydrogen, its latest flagship model, now rolling out in the Gemini app and described as a significant capability leap in speed and intelligence. For teams building on Google's AI stack, this release warrants immediate benchmarking against current production models to assess upgrade potential. It also intensifies the competitive pressure on Anthropic and OpenAI heading into the holiday product cycle.",
+        "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+        "source": "Google DeepMind",
+        "published": "2026-11-12T18:00:50.000Z"
+      },
+      {
+        "title": "Claude.ai, Claude Code, and API Platform Suffer Major Simultaneous Outage",
+        "summary": "Anthropic experienced a broad service disruption affecting claude.ai, Claude Code, and platform.claude.com, including OAuth authentication failures, drawing hundreds of comments on Hacker News. The incident highlights the operational risk for teams running critical workflows exclusively on a single AI provider's infrastructure. Practitioners should consider multi-provider fallback strategies or rate-limit-aware retry logic for production AI systems.",
+        "url": "https://status.claude.com/incidents/nn11wk485zfn",
+        "source": "Hacker News",
+        "published": "2026-11-13T10:18:13.000Z"
+      },
+      {
+        "title": "ArtCraft Used AI to Clone Photoshop as Open Source and Plans to 'Rebuild Everything'",
+        "summary": "ArtCraft CEO Brandon Thomas describes how the company leveraged AI coding tools to rewrite Photoshop functionality as open-source software, and is now targeting a broader rebuilding of internet infrastructure. The case study is a concrete example of AI-accelerated software development compressing what would have been years of engineering work into a much shorter timeline. It signals growing competitive pressure on established SaaS incumbents from AI-native teams willing to replicate and open-source proprietary tools.",
+        "url": "https://latent.space/p/artcraft/",
+        "source": "Latent Space",
+        "published": "2026-11-13T04:17:25.000Z"
+      }
+    ]
+  }
+}
