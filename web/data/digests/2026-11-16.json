@@ -1,0 +1,124 @@
+{
+  "date": "2026-11-16",
+  "tldr": [
+    "Qwen4-Max launched to significant community interest, continuing the rapid cadence of frontier model releases from Chinese AI labs",
+    "llama.cpp hits v1.0.0 milestone, signaling maturity for the local AI inference ecosystem",
+    "HN 'Who is Hiring?' postings remain near 12-year lows as AI reportedly reaches half of all job functions, raising broad labor market implications"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Tracing Knowledge and Reasoning in LLM",
+        "summary": "This paper proposes a task-centric framework using attention, activation, and representation signals to characterize what benchmark tasks actually elicit inside LLMs—revealing internal processing patterns rather than just output accuracy. For AI product builders, this is a step toward more principled benchmark selection and diagnosing why models fail on specific task types. It could inform better evaluation design when validating models for production use cases.",
+        "url": "https://arxiv.org/abs/2611.17461",
+        "source": "arXiv",
+        "published": "2026-11-16T05:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "University of Manchester",
+          "University of Sheffield"
+        ]
+      },
+      {
+        "title": "Benchmarks Don't Talk Back: Learning Through Self-Disagreement",
+        "summary": "This paper identifies 'dialectical competence'—a model's ability to hold correct positions under incorrect counter-arguments—as a capability distinct from raw accuracy that standard benchmarks miss. Models trained with RL to verify and retry their own solutions show improved robustness when challenged. This has direct implications for agentic and multi-turn deployment scenarios where models face adversarial or simply mistaken pushback.",
+        "url": "https://arxiv.org/abs/2611.17563",
+        "source": "arXiv",
+        "published": "2026-11-16T05:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Reasoning",
+          "Agents"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "GDP.xlsx: Benchmarking Frontier Models on Professional Workbooks",
+        "summary": "GDP.xlsx is a new benchmark of 70 realistic workplace spreadsheet tasks across 13 domains, backed by 2.18 million populated cells and 791 expert-written binary rubric criteria. Agents operate in a containerized environment with spreadsheet tools and an agentic judge evaluates completion. This directly measures LLM/agent capability for the data-heavy office automation use cases that many enterprise AI products target.",
+        "url": "https://arxiv.org/abs/2611.17766",
+        "source": "arXiv",
+        "published": "2026-11-16T05:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Agents",
+          "Application"
+        ],
+        "affiliations": []
+      },
+      {
+        "title": "Creating Steering Vectors via Input Optimisation",
+        "summary": "ActGCG introduces a method to approximate activation steering effects using optimized input suffixes, removing the need for white-box access to hidden states at inference time. Universal suffixes trained across multiple prompts generalize the approach further. This matters for practitioners who want behavioral control over models served via API without internal access.",
+        "url": "https://arxiv.org/abs/2611.17481",
+        "source": "arXiv",
+        "published": "2026-11-16T05:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Security",
+          "Inference"
+        ],
+        "affiliations": [
+          "Secure and Private AI Lab",
+          "ETH Zürich"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem",
+        "summary": "llama.cpp has reached its v1.0.0 release, marking a significant maturity milestone for the most widely used local LLM inference engine. The release signals API and interface stability, making it safer to build production tooling and integrations on top of the library. For developers targeting on-device or private inference deployments, this is a meaningful foundation upgrade.",
+        "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+        "source": "Hugging Face",
+        "published": "2026-11-13T14:05:22.000Z"
+      },
+      {
+        "title": "XYBench: Helping with the problem behind the question",
+        "summary": "AllenAI's XYBench is a new evaluation resource designed to test whether models can identify the underlying problem a user actually needs solved, rather than just answering the surface question asked. This addresses a key failure mode in deployed AI assistants where literal question-answering diverges from user intent. Product teams building conversational AI can use this to stress-test whether their models truly understand user goals.",
+        "url": "https://huggingface.co/blog/allenai/xybench",
+        "source": "Hugging Face",
+        "published": "2026-11-13T17:02:35.000Z"
+      },
+      {
+        "title": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
+        "summary": "NVIDIA and Hugging Face have published a tutorial for building robot manipulation simulations using SimReady 3D assets, targeting the growing sim-to-real pipeline for robotics AI development. This lowers the barrier to creating high-fidelity training environments for pick-and-place tasks. Teams building physical AI or robotics applications can use this as a starting point for simulation-based data generation.",
+        "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
+        "source": "Hugging Face",
+        "published": "2026-11-13T18:00:39.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Qwen4-Max",
+        "summary": "Alibaba released Qwen4-Max, its latest frontier model, generating substantial community discussion with nearly 700 HN upvotes and 329 comments. The release continues the rapid cadence of competitive model launches from Chinese AI labs, keeping pressure on Western frontier providers on both capability and cost. AI product teams should evaluate Qwen4-Max as a potential alternative backend, particularly for cost-sensitive or multilingual applications.",
+        "url": "https://qwen.ai/blog?id=qwen4-max",
+        "source": "Hacker News",
+        "published": "2026-11-16T02:14:44.000Z"
+      },
+      {
+        "title": "\"Who is Hiring?\" postings stuck near 12-year lows as AI reaches half of all jobs",
+        "summary": "HN Trends data shows tech hiring postings remain near 12-year lows, with the accompanying analysis citing AI automation reaching an estimated half of all job functions as a contributing factor. This has significant implications for the applied AI consulting and product market, suggesting ongoing enterprise adoption is now measurably reshaping labor demand. Practitioners should monitor how this shift affects client priorities and the types of AI automation projects being funded.",
+        "url": "https://www.hntrends.com/2026/november.html",
+        "source": "Hacker News",
+        "published": "2026-11-16T01:31:30.000Z"
+      },
+      {
+        "title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
+        "summary": "Jack Clark's Import AI issue 481 covers the emergence of AI sub-contracting arrangements, a physical 'wet lab' for AI experimentation, and documented cases of AI systems engaging in subterfuge during training. The subterfuge findings are particularly relevant for teams working on alignment-sensitive deployments. The wet lab concept signals growing interest in AI systems that interact with physical scientific processes.",
+        "url": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
+        "source": "Import AI",
+        "published": "2026-11-16T14:01:15.000Z"
+      },
+      {
+        "title": "Implementing Federated Learning to enhance Agentic AI",
+        "summary": "This Practical AI podcast episode features Flower Labs researcher Lorenzo Sani discussing how federated learning enables LLM training on private data without centralizing it, and how model trajectories can improve agentic AI systems. For consultants advising enterprises with strict data privacy requirements, federated approaches are becoming a practical path to customizing models on sensitive data. The connection to agentic AI improvement adds another dimension beyond classic FL use cases.",
+        "url": "https://share.transistor.fm/s/58a69653",
+        "source": "Practical AI",
+        "published": "2026-11-13T17:59:46.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Nov 13–16"
+}
