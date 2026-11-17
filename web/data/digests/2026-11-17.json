@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-17",
+  "tldr": [
+    "Anthropic's Claude Mythos agent reduced AMD GPU onboarding time from up to 12 months to ~3 days by autonomously writing nearly 100% of CUDA-equivalent kernels, posing a real challenge to Nvidia's moat",
+    "Perplexity hits $1B annual revenue run rate (4x growth in 2026) as AI-native products begin showing genuine commercial traction",
+    "Hugging Face and OpenRouter partner to streamline deployment of open-weight models, lowering the barrier for teams evaluating alternatives to closed APIs"
+  ],
+  "sections": {
+    "Research": [],
+    "Tools": [
+      {
+        "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
+        "summary": "Hugging Face and OpenRouter are integrating their platforms so developers can discover, access, and serve open-weight models through a unified interface. This reduces the operational overhead of evaluating and switching between open-source models versus closed-API providers, which is a practical win for teams building cost-sensitive or latency-sensitive AI products.",
+        "url": "https://huggingface.co/blog/openrouter",
+        "source": "Hugging Face",
+        "published": "2026-11-16T00:00:00.000Z"
+      },
+      {
+        "title": "Tokendoctor – See what your Claude Code use overpays",
+        "summary": "Tokendoctor is an open-source tool that analyzes Claude Code usage to surface token inefficiencies and cost overruns. For teams running Claude Code at scale, this provides actionable visibility into where prompt engineering or workflow changes could meaningfully reduce API spend.",
+        "url": "https://github.com/localixai/tokendoctor",
+        "source": "Hacker News",
+        "published": "2026-11-17T02:19:50.000Z"
+      },
+      {
+        "title": "How the Claude Code team thinks about verification",
+        "summary": "Anthropic's Claude Code team published their internal framework for verifying AI-generated code outputs, covering approaches to testing, sandboxing, and human-in-the-loop checkpoints. This is directly applicable to teams building agentic coding workflows who need to decide where to place trust boundaries and automated checks.",
+        "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+        "source": "Hacker News",
+        "published": "2026-11-17T10:20:40.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Claude Mythos slashed software work to onboard AMD GPUs to around three days",
+        "summary": "Anthropic's Claude Mythos agent autonomously wrote nearly 100% of the low-level GPU kernels needed to bring AMD hardware online, compressing a process that previously took up to 12 months into roughly three days. This is a concrete demonstration of AI agents eroding Nvidia's CUDA software moat and signals that hardware diversification in AI infrastructure is becoming more tractable.",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-mythos-slashed-software-work-to-onboard-amd-gpus-from-up-to-12-months-to-around-three-days-writing-almost-100-percent-of-kernels-autonomously-chips-away-at-nvidias-cuda-moat",
+        "source": "Hacker News",
+        "published": "2026-11-17T01:35:16.000Z"
+      },
+      {
+        "title": "[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026",
+        "summary": "Perplexity has reached $1B in annualized revenue, growing 4x within 2026, alongside new product launches including a Monitor API and expanded agent capabilities. This validates the AI-native search and research assistant category as a commercially viable segment and raises the competitive bar for similar products.",
+        "url": "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/",
+        "source": "Latent Space",
+        "published": "2026-11-17T09:24:56.000Z"
+      },
+      {
+        "title": "Baidu, Xiaomi CEOs warn of growing gap between AI hype and returns",
+        "summary": "The CEOs of Baidu and Xiaomi publicly flagged that enterprise AI investment is not yet translating into proportional revenue or productivity gains, echoing similar caution from Western tech leaders. For AI product builders, this underscores the importance of demonstrating measurable ROI rather than capability benchmarks when selling to enterprise customers.",
+        "url": "https://www.scmp.com/tech/big-tech/article/3374774/baidu-xiaomi-ceos-warn-growing-gap-between-ai-hype-and-returns",
+        "source": "Hacker News",
+        "published": "2026-11-17T14:19:59.000Z"
+      },
+      {
+        "title": "Cloudflare Joins the Jevolution and Labels Itself a Neolab",
+        "summary": "Cloudflare is positioning itself as an AI-native infrastructure provider, building low-latency 'System One' models designed to make real-time decisions at the edge. This signals that CDN and network infrastructure players are moving up the stack, competing with cloud AI services on latency-sensitive inference use cases.",
+        "url": "https://latent.space/p/cloudflare/",
+        "source": "Latent Space",
+        "published": "2026-11-17T15:00:00.000Z"
+      },
+      {
+        "title": "Mem Is Shutting Down",
+        "summary": "Mem, one of the early AI-native note-taking and knowledge management startups, is shutting down after failing to achieve sustainable growth. This is a notable data point for the AI productivity app category, suggesting that early mover advantage and AI differentiation alone have not been sufficient to build durable consumer businesses in the face of well-resourced incumbents.",
+        "url": "https://get.mem.ai/blog/mem-is-shutting-down",
+        "source": "Hacker News",
+        "published": "2026-11-17T02:13:41.000Z"
+      }
+    ]
+  }
+}
