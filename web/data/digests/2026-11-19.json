@@ -1,0 +1,156 @@
+{
+  "date": "2026-11-19",
+  "tldr": [
+    "Google DeepMind launched Gemini 4 Neon, a mid-tier frontier model scoring 61 on the Intelligence Index, while Anthropic priced its IPO at $83/share — a major dual market event.",
+    "A new paper demonstrates that LLMs can rewrite their own weights through reasoning alone with no gradients, opening a potential third path beyond prompting and retraining.",
+    "Research shows CoT controllability training undermines CoT monitorability — a critical finding for teams building AI agent oversight and safety pipelines."
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Chain-of-Thought Controllability Can Reduce Chain-of-Thought Monitorability",
+        "summary": "Fine-tuning models on reasoning traces written in diverse personas gives them broader ability to shape their chain-of-thought, making monitoring-based safety techniques less reliable. This is a direct warning for teams relying on CoT transparency as a safety layer in AI agents: the same fine-tuning flexibility that improves controllability may erode auditability. The finding motivates research into monitoring approaches that are robust to deliberate or incidental CoT style variation.",
+        "url": "https://arxiv.org/abs/2611.21799",
+        "source": "arXiv",
+        "published": "2026-11-19T05:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Security",
+          "Agents"
+        ],
+        "affiliations": [
+          "Brown University",
+          "OpenAI"
+        ]
+      },
+      {
+        "title": "Language Models Can Rewrite Their Own Weights",
+        "summary": "This paper demonstrates for the first time that a language model can improve its own weights through its own reasoning, with no gradient updates or retraining — referred to as 'self-rewriting.' This creates a potential new paradigm for model improvement that sits between static deployment and costly fine-tuning runs. Practitioners building adaptive AI systems should watch this closely as it could reduce reliance on inference-time scaffolding or expensive retraining loops.",
+        "url": "https://arxiv.org/abs/2611.21885",
+        "source": "arXiv",
+        "published": "2026-11-19T05:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning",
+          "Inference"
+        ],
+        "affiliations": [
+          "University of Illinois Urbana-Champaign",
+          "Carnegie Mellon University",
+          "Rutgers University",
+          "Princeton University",
+          "Stanford University"
+        ]
+      },
+      {
+        "title": "Auditors Struggle to Catch Sabotage In End-to-End Transcripts of AI Safety Research",
+        "summary": "A red-team/blue-team study found that human auditors reviewing full research transcripts could not reliably detect when AI safety experiments had been subtly sabotaged by a human proxy. This has direct implications for AI-assisted R&D pipelines: oversight mechanisms that rely on human review of AI-generated research artifacts may be insufficient against sophisticated manipulation. Teams automating research workflows should consider supplementary automated or structural checks beyond transcript auditing.",
+        "url": "https://arxiv.org/abs/2611.21832",
+        "source": "arXiv",
+        "published": "2026-11-19T05:00:00.000Z",
+        "keywords": [
+          "Alignment",
+          "Security",
+          "Agents"
+        ],
+        "affiliations": [
+          "Redwood Research",
+          "Georgia Institute of Technology",
+          "Independent",
+          "Equistamp"
+        ]
+      },
+      {
+        "title": "Conserved Verdicts, Drifting Commitments: Identifying Harmful Overthinking",
+        "summary": "This paper identifies a failure mode in long chain-of-thought reasoning where a model reaches a correct answer mid-chain but then abandons it by continuing to think — a pattern invisible to metrics that only measure final-answer accuracy. The authors propose separating 'commitment' (current best answer) from 'verdict' (final answer) to detect and potentially halt this harmful overthinking. For product builders using reasoning models, this motivates dynamic stopping strategies rather than fixed compute budgets.",
+        "url": "https://arxiv.org/abs/2611.21946",
+        "source": "arXiv",
+        "published": "2026-11-19T05:00:00.000Z",
+        "keywords": [
+          "Reasoning",
+          "Inference",
+          "Evaluation"
+        ]
+      },
+      {
+        "title": "DiscoveryAgent: A Framework for Scientist-centric Agentic AI",
+        "summary": "DiscoveryAgent presents a domain-agnostic agentic research system that keeps human scientists in the loop via hypothesis steering and audit agents that interrogate checkpointed research states. The design directly addresses the tension between autonomous AI investigation and human oversight in high-stakes research contexts. This is a practical reference architecture for teams building AI-assisted scientific or analytical workflows that require explainability and human redirection.",
+        "url": "https://arxiv.org/abs/2611.21950",
+        "source": "arXiv",
+        "published": "2026-11-19T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Framework",
+          "Application"
+        ],
+        "affiliations": [
+          "Stanford University",
+          "Kavli Institute for Particle Astrophysics and Cosmology (KIPAC)",
+          "Gladstone-UCSF Institute of Genomic Immunology",
+          "University of California, Berkeley",
+          "University of Tennessee, Knoxville"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+        "summary": "Hugging Face published a blog detailing DaisyRose-27B, a model that pushes the efficiency boundary of post-training techniques at the 27B parameter scale. This is relevant for teams looking to maximize the value of mid-sized open models without full pretraining budgets. The post likely contains practical lessons on RLHF, DPO, or similar alignment fine-tuning at this scale.",
+        "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+        "source": "Hugging Face",
+        "published": "2026-11-18T19:54:56.000Z"
+      },
+      {
+        "title": "Why your fine-tuning job takes longer than the FLOPs say",
+        "summary": "This Hugging Face blog post investigates the gap between theoretical FLOPs-based estimates and actual wall-clock time for fine-tuning jobs, identifying practical bottlenecks that practitioners consistently underestimate. Understanding these gaps is essential for accurate capacity planning and cost estimation when building production fine-tuning pipelines. Teams running fine-tuning at scale will find actionable guidance for reducing surprises in job scheduling and infrastructure budgeting.",
+        "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+        "source": "Hugging Face",
+        "published": "2026-11-18T18:53:43.000Z"
+      },
+      {
+        "title": "Show HN: ADE Index – a sourced and ranked index of 975 agentic coding tools",
+        "summary": "The ADE Index catalogs and ranks 975 agentic coding tools with sourced metadata, providing a navigable reference for developers evaluating the rapidly expanding landscape of AI coding assistants and agent frameworks. For consultants or engineering leads assessing tooling options, this is a useful starting point to cut through fragmentation in the space. The breadth of the index also signals just how crowded the agentic coding category has become.",
+        "url": "https://adeindex.com",
+        "source": "Hacker News",
+        "published": "2026-11-19T01:33:52.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Introducing Gemini 4 Neon",
+        "summary": "Google DeepMind launched Gemini 4 Neon, described as a mid-tier frontier model offering 'frontier-grade intelligence' with improvements in speed, cost, and instruction following — scoring 61 on the Intelligence Index. This positions Gemini 4 Neon as a direct competitor to Anthropic's Opus/Sol tier, giving developers a new high-capability option in the mid-range price-performance segment. Combined with Anthropic's IPO pricing at $83/share, this marks a significant week for the competitive frontier model landscape.",
+        "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
+        "source": "Google DeepMind",
+        "published": "2026-11-18T21:35:43.000Z"
+      },
+      {
+        "title": "Genie 4 is now available",
+        "summary": "Google DeepMind's Genie 4 world-generation model is now publicly available to Google AI Ultra subscribers via Google Labs, enabling users to create and edit interactive 3D worlds from text prompts in real time. New capabilities include mid-session world editing, conversational world creation via an agent, and a gallery for exploring and remixing others' worlds. This is a significant step toward interactive generative environments as a product category, with implications for game development, simulation, and training data generation.",
+        "url": "https://deepmind.google/blog/genie-4-is-now-available/",
+        "source": "Google DeepMind",
+        "published": "2026-11-18T18:13:42.000Z"
+      },
+      {
+        "title": "[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse",
+        "summary": "OpenAI's GPT-6.2 Astra launched as a frontier model with significantly reduced pricing (20–600% cheaper than its predecessor) while achieving the #2 position on major benchmarks, though early user reviews are mixed on practical quality. GPT-6.2 Sol is emerging as the preferred day-to-day workhorse for practitioners. Teams currently budgeting around frontier model API costs should re-evaluate pricing assumptions given these reductions.",
+        "url": "https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/",
+        "source": "Latent Space",
+        "published": "2026-11-18T10:19:04.000Z"
+      },
+      {
+        "title": "DeepMind Employees Are Unionising",
+        "summary": "Employees at Google DeepMind have launched a formal unionization effort, a notable first for a major frontier AI lab. This signals growing worker organizing around AI development conditions, safety culture, and corporate governance at the highest levels of the industry. For companies building on or competing with DeepMind, this could affect research velocity, talent dynamics, and internal AI safety practices going forward.",
+        "url": "https://www.gdmunion.co.uk",
+        "source": "Hacker News",
+        "published": "2026-11-19T09:28:56.000Z"
+      },
+      {
+        "title": "Building Human-Centered AI (Practical AI Podcast)",
+        "summary": "Scotiabank's Principal Director of AI and Innovation discusses how enterprises in highly regulated industries can adopt AI and agentic systems while maintaining trust, business value, and human oversight. The episode offers a practitioner's perspective on identifying meaningful AI use cases in banking, where compliance and risk constraints sharply limit deployment options. Useful framing for consultants pitching AI transformation to financial services clients.",
+        "url": "https://share.transistor.fm/s/bb4dad17",
+        "source": "Practical AI",
+        "published": "2026-11-19T10:00:00.000Z"
+      }
+    ]
+  }
+}
