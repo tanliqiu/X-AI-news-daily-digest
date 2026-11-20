@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-20",
+  "tldr": [
+    "Anthropic completes the largest IPO in history at a $1.5T valuation, with shares closing at $97.17 after opening at $111.50",
+    "Google opens Genie 4 to developers and releases Gemini 4 Neon, its mid-tier model scoring 61 on the Intelligence Index",
+    "AI designs a new CPU architecture end-to-end (Frostbite), signaling a new frontier for AI applied to hardware engineering"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Global Importance Estimation for KV Cache Eviction",
+        "summary": "PRKV is a training-free KV cache eviction method that uses Personalized PageRank over attention graphs to propagate token importance globally, going beyond simple recency or single-step attention scores. It reduces memory consumption for long-context LLM inference without any model modifications, making it immediately applicable to production deployments. Benchmarks show competitive performance on long-context understanding and sparse retrieval tasks.",
+        "url": "https://arxiv.org/abs/2611.24969",
+        "source": "arXiv",
+        "published": "2026-11-20T05:00:00.000Z",
+        "keywords": [
+          "Inference"
+        ],
+        "affiliations": [
+          "KAIST"
+        ]
+      },
+      {
+        "title": "HireWatch: Evaluating LLM Compliance with U.S. Employment Law Under Contextual Pressure",
+        "summary": "HireWatch introduces a 200-item benchmark of lawful and unlawful interview questions to test whether LLMs deployed in hiring pipelines comply with U.S. employment law, including under adversarial contextual pressure. This is a critical compliance gap for any AI product touching HR workflows, where legal liability for discriminatory or unlawful questioning is real. Results highlight that current LLMs are not reliably safe for autonomous use in recruiting contexts.",
+        "url": "https://arxiv.org/abs/2611.24970",
+        "source": "arXiv",
+        "published": "2026-11-20T05:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks",
+          "Alignment"
+        ],
+        "affiliations": [
+          "MATS Research, University of Maryland",
+          "MATS Research",
+          "Hebrew University of Jerusalem"
+        ]
+      },
+      {
+        "title": "The ROI of Small Examples: Optimizing In-Context Learning Under Token Budgets",
+        "summary": "This paper reframes ICL prompt construction as a resource-allocation problem, studying not just how many examples to include but how long each example should be under a fixed token budget. Findings suggest that shorter, more numerous examples can outperform fewer, longer ones, with direct implications for reducing inference costs in production LLM applications. Practitioners building RAG or few-shot pipelines can use these insights to tune prompts for better cost-performance trade-offs.",
+        "url": "https://arxiv.org/abs/2611.24971",
+        "source": "arXiv",
+        "published": "2026-11-20T05:00:00.000Z",
+        "keywords": [
+          "Inference",
+          "RAG"
+        ],
+        "affiliations": [
+          "IRLab, CITIC",
+          "Universidade da Coruña"
+        ]
+      },
+      {
+        "title": "Physics of Language Models Part 4.2: Canon Layers at Scale where Synthetic Pretraining Resonates in Reality",
+        "summary": "This large-scale study (64 pretraining runs, up to 8B parameters on 1-2T tokens) finds that architectural differences between Transformers and linear model families are negligible at academic scale but become measurable and significant at production-scale token counts. This has direct implications for model architecture decisions: benchmarks run at small scale may mislead practitioners about which architectures will perform best in real deployments. The work provides empirical grounding for architecture selection when planning expensive large-scale training runs.",
+        "url": "https://arxiv.org/abs/2611.24963",
+        "source": "arXiv",
+        "published": "2026-11-20T05:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Allen-Zhu Research"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Introducing Harness Adapters: Adapt Your Favorite Model to Your Harness to Improve Performance and Cost",
+        "summary": "Hugging Face has released harness adapters, enabling developers to plug their preferred models into evaluation and deployment harnesses to improve both performance and cost efficiency at scale. This provides a practical abstraction layer for teams managing multiple models across different inference and evaluation pipelines. The release is particularly relevant for teams running systematic model evaluations or serving diverse model families in production.",
+        "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+        "source": "Hugging Face",
+        "published": "2026-11-20T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic Successfully Completes Largest IPO in History, Valued at $1.5T",
+        "summary": "Anthropic's IPO (ticker: ANT) priced at $83, opened at $111.50, and closed at $97.17, marking the largest IPO in history by valuation at $1.5 trillion. The event signals a major maturation moment for the AI industry, with significant implications for AI startup valuations, investor appetite, and the competitive landscape among frontier model labs. Google also opened Genie 4 to developers on the same day, suggesting accelerating platform competition.",
+        "url": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/",
+        "source": "Latent Space",
+        "published": "2026-11-20T07:12:24.000Z"
+      },
+      {
+        "title": "Global Stock Markets Slump as Anthropic's Record IPO Fails to Stem AI Sell-Off",
+        "summary": "Despite Anthropic's record-breaking IPO, broader global markets declined amid an AI sector sell-off, suggesting investor sentiment around AI valuations remains volatile even at historic milestones. This divergence between individual company success and sector-wide market pressure is an important signal for AI consultants advising clients on investment timing and vendor stability. The dynamics may also affect enterprise AI procurement decisions as buyers assess long-term vendor viability.",
+        "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
+        "source": "Hacker News",
+        "published": "2026-11-20T13:29:59.000Z"
+      },
+      {
+        "title": "Frostbite: A New CPU Architecture Discovered, Designed, and Verified by AI",
+        "summary": "Architect Labs claims to have used AI to discover, design, and formally verify an entirely new CPU architecture called Frostbite, with no human-driven architectural decisions in the loop. If validated, this represents a qualitative leap in AI's ability to operate in highly constrained, safety-critical engineering domains beyond software. Applied AI consultants should monitor this closely as it signals potential disruption to EDA, chip design, and hardware verification workflows.",
+        "url": "https://architectlabs.com/blog/frostbite",
+        "source": "Hacker News",
+        "published": "2026-11-20T10:01:41.000Z"
+      },
+      {
+        "title": "Gemini 4 Neon: Google DeepMind's Mid-Tier Model Scores 61 on Intelligence Index",
+        "summary": "Google's Gemini 4 Neon, the middle tier of the Gemini 4 family, is receiving strong early reviews and scores 61 on the Intelligence Index, positioning it as a competitive alternative to Anthropic's Opus and Sol models. Early user comparisons suggest Neon matches or beats frontier models on writing and personality tasks while being significantly faster. For product builders, Neon's speed and competitive capability make it a strong candidate for latency-sensitive applications.",
+        "url": "https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender/",
+        "source": "Latent Space",
+        "published": "2026-11-19T07:07:43.000Z"
+      },
+      {
+        "title": "Epic Games Turns to AI Coding for the Unreal Engine",
+        "summary": "Epic Games is integrating AI coding tools into Unreal Engine development, applying AI-assisted programming to one of the most complex and widely-used game engines in the industry. This signals growing enterprise confidence in AI coding tools for large, mission-critical codebases beyond greenfield projects. For AI product builders targeting developer tools, this validates demand in the game/simulation vertical and in codebases with millions of lines of legacy C++.",
+        "url": "https://spectrum.ieee.org/epic-games-unreal-engine-ai",
+        "source": "Hacker News",
+        "published": "2026-11-20T12:16:36.000Z"
+      }
+    ]
+  }
+}
