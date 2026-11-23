@@ -1,0 +1,147 @@
+{
+  "date": "2026-11-23",
+  "tldr": [
+    "GLM-5.4, z.ai's first 'Loop Transformer' architecture, launches with strong coding benchmarks and high community interest on Hacker News",
+    "Sam Altman publicly proposes frontier labs adopt shared perplexity-based safety limits under a White House Accords framework",
+    "AI agents using formal verification helped Google DeepMind discover faster quantum algorithms for fusion and chemistry problems"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "SkillPrivus: Uncovering Privacy-of-Use Harms in Agentic Skills",
+        "summary": "This paper introduces a static audit framework that analyzes AI agent skills (installable plugins/tools) before execution to surface privacy risks such as sensitive attribute inference, unnecessary data retention, and unexpected data disclosure. For teams building or deploying agent marketplaces, this provides a pre-installation screening layer that doesn't require running potentially harmful code. The framework is practically relevant as plugin ecosystems grow across major AI assistant platforms.",
+        "url": "https://arxiv.org/abs/2611.26747",
+        "source": "arXiv",
+        "published": "2026-11-23T05:00:00.000Z",
+        "keywords": [
+          "Security",
+          "Agents"
+        ],
+        "affiliations": [
+          "University of Notre Dame",
+          "IBM Research"
+        ]
+      },
+      {
+        "title": "Reinforcement Learning Unlearns Corrupted SFT Reasoning",
+        "summary": "Researchers show that RL-based fine-tuning on reasoning tasks can recover strong performance even when 100% of the supervised fine-tuning data contains realistic errors, while SFT-only training degrades steadily with corruption. This has practical implications for teams training reasoning models on noisy or programmatically-generated datasets, suggesting RL stages can serve as a robustness backstop against imperfect training data pipelines.",
+        "url": "https://arxiv.org/abs/2611.26756",
+        "source": "arXiv",
+        "published": "2026-11-23T05:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "University of Michigan"
+        ]
+      },
+      {
+        "title": "Know Your Context Bank: Repairing Inconsistency in Context-Aware Text-to-SQL",
+        "summary": "This paper identifies a critical but under-studied failure mode in enterprise Text-to-SQL systems: context banks (curated query libraries) accumulate inconsistent entries over time, degrading model performance even when individual entries are locally correct. The authors propose methods to detect and repair inter-entry inconsistencies and measure generalization, which is directly actionable for teams building NL-to-SQL products on top of company-specific query repositories.",
+        "url": "https://arxiv.org/abs/2611.26775",
+        "source": "arXiv",
+        "published": "2026-11-23T05:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Application"
+        ],
+        "affiliations": [
+          "Google"
+        ]
+      },
+      {
+        "title": "MedicalRSI: Medical Recursive Self-Improving Agents via Clinical Model-Harness Co-Evolution",
+        "summary": "This work presents a medical AI agent that continuously learns from its own clinical experience by co-evolving both its model weights and its harness (tool/prompt configuration), rather than keeping either fixed post-deployment. The recursive self-improvement loop reduces recurring error types across patients, offering a template for building production AI systems in high-stakes domains that need to improve without full retraining cycles.",
+        "url": "https://arxiv.org/abs/2611.26806",
+        "source": "arXiv",
+        "published": "2026-11-23T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "Application"
+        ],
+        "affiliations": [
+          "Northwestern University",
+          "University of Washington"
+        ]
+      },
+      {
+        "title": "Search From the Start: Search-Native Pretraining for Language Models",
+        "summary": "The authors propose augmenting pretraining corpora with synthetic web-search queries and results so that models develop search-use capabilities during pretraining rather than only during post-training RLHF/instruction-tuning stages. This approach could reduce the gap between base and instruction-tuned models on retrieval-augmented tasks and lowers the data requirements for teaching search tool use. Practitioners building search-augmented LLM pipelines may find this architecture shift relevant for future base model selection.",
+        "url": "https://arxiv.org/abs/2611.26809",
+        "source": "arXiv",
+        "published": "2026-11-23T05:00:00.000Z",
+        "keywords": [
+          "Training",
+          "RAG"
+        ],
+        "affiliations": [
+          "University of Toronto",
+          "EPFL"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "GLM-5.4: Toward Generalized Coding with the First Loop Transformer",
+        "summary": "z.ai released GLM-5.4, introducing a novel 'Loop Transformer' architecture aimed at generalized coding tasks, with availability rolling out to GLM Coding Plan users. The release generated substantial community excitement on Hacker News (752 points, 267 comments), suggesting meaningful benchmark gains over prior GLM versions. Developers building coding assistants or agentic coding pipelines have a new strong open-weight competitor to evaluate.",
+        "url": "https://z.ai/blog/glm-5.4",
+        "source": "Hacker News",
+        "published": "2026-11-23T10:06:43.000Z"
+      },
+      {
+        "title": "RoboTrack: Point Tracking for Real-World Robotic Manipulation",
+        "summary": "Allen AI released RoboTrack on Hugging Face, a point-tracking model designed specifically for the visual challenges of real-world robotic manipulation (occlusion, motion blur, cluttered scenes). Teams building robot learning pipelines or embodied AI systems can use this as a drop-in perception component for tracking object keypoints across manipulation sequences. The model and weights are publicly available via the Hugging Face hub.",
+        "url": "https://huggingface.co/blog/allenai/robotrack",
+        "source": "Hugging Face",
+        "published": "2026-11-23T17:20:37.000Z"
+      },
+      {
+        "title": "How to Build and Maintain an Agentic Evaluation",
+        "summary": "Hugging Face published a practical guide covering the full lifecycle of evaluating agentic AI systems, from designing task environments and scoring rubrics to maintaining eval suites as agents and underlying models evolve. This is a high-signal resource for teams whose agents have moved past simple benchmarks and need reproducible, longitudinal measurement frameworks. The post addresses common failure modes like reward hacking and distribution shift in agentic evals.",
+        "url": "https://huggingface.co/blog/agentic-evals",
+        "source": "Hugging Face",
+        "published": "2026-11-23T00:00:00.000Z"
+      },
+      {
+        "title": "Inkling 2 Mini: Cutting-Edge Performance for Local Setup",
+        "summary": "Inkling 2 Mini launched on Hugging Face as a small, locally-runnable model targeting competitive performance relative to its size class. For practitioners needing capable on-device or low-latency inference without cloud API costs, this expands the roster of viable local deployment options. Details on parameter count and benchmark comparisons are available in the model card.",
+        "url": "https://huggingface.co/blog/inkling2mini",
+        "source": "Hugging Face",
+        "published": "2026-11-20T00:00:00.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Sam Altman Proposes Shared Perplexity-Based Safety Limits for Frontier Labs",
+        "summary": "OpenAI CEO Sam Altman publicly called for frontier model developers to establish shared evaluation norms and red-teaming standards, proposing common limits based on perplexity and other measurements that labs would commit not to cross until AI monitoring capabilities mature. He framed this as a natural extension of the White House Accords commitments. This signals growing industry momentum toward voluntary self-regulation mechanisms before government mandates arrive.",
+        "url": "https://x.com/sama/status/2124551883130114403",
+        "source": "X (@sama)",
+        "published": "2026-11-22T17:13:35.000Z"
+      },
+      {
+        "title": "Google DeepMind Uses AI Agents and Formal Verification to Find Faster Quantum Algorithms",
+        "summary": "DeepMind researchers deployed agent teams paired with formal verification tools to discover improved quantum algorithms relevant to fusion energy and chemistry simulations, extending their AlphaTensor line of work. The combination of generative search with proof-based verification prevents the agents from proposing plausible-but-wrong algorithm variants—a template applicable to other formal domains. This demonstrates a production-ready use case for AI-assisted mathematical and scientific discovery.",
+        "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+        "source": "Google DeepMind",
+        "published": "2026-11-23T16:59:40.000Z"
+      },
+      {
+        "title": "Formal Verification Emerges as a Weapon Against AI-Generated Slop",
+        "summary": "Latent Space published an in-depth piece arguing that AI-assisted formal verification via tools like Lean is maturing into a practical quality gate for software correctness, directly countering the reliability problems introduced by LLM-generated code at scale. The article covers the current tooling landscape and how teams are beginning to integrate verification into CI pipelines alongside AI coding assistants. This is timely context for engineering leads evaluating how to maintain code quality in high-AI-usage development environments.",
+        "url": "https://latent.space/p/formal-verification/",
+        "source": "Latent Space",
+        "published": "2026-11-20T21:18:41.000Z"
+      },
+      {
+        "title": "Riemann Hypothesis Proved Twice Independently — AI Role Under Scrutiny",
+        "summary": "Two independent proofs of the Riemann Hypothesis emerged in the same week, sparking significant discussion about the role AI-assisted mathematical reasoning played in each. The AINews digest covers community reactions, verification efforts underway in Lean, and what the event means for the broader trajectory of AI in formal mathematics. Whether or not AI was a primary driver, the episode underscores the accelerating intersection of LLMs, proof assistants, and frontier mathematics.",
+        "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/",
+        "source": "Latent Space",
+        "published": "2026-11-21T05:02:13.000Z"
+      }
+    ]
+  },
+  "edition": "weekend",
+  "dateRange": "Nov 20–23"
+}
