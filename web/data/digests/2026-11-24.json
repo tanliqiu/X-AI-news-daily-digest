@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-24",
+  "tldr": [
+    "Anthropic's stock breaks below its $83 IPO price amid broad AI market pressure, raising questions about AI company valuations",
+    "Jensen Huang returns to Nvidia and OpenAI publishes its pretraining loss curve alongside a proposed shared training limit",
+    "Replit research shows agent swarms can achieve up to 18.9x speedup with 32 agents, but compute scaling alone doesn't guarantee better results"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "What Helps Language-Model Agents Review Violent Video? A Controlled Comparison with a Human Evidence Reference",
+        "summary": "This paper evaluates how perception-model outputs (video description, object detection, sound/speech tagging) should be fed to an LLM to maximize accuracy in flagging violent video, using 799 clips from the XD-Violence benchmark. The findings offer practical guidance for builders of zero-shot content moderation pipelines, clarifying which evidence modalities matter most for the LLM's final decision. This is directly applicable to trust-and-safety teams building multimodal content review systems without task-specific training.",
+        "url": "https://arxiv.org/abs/2611.26776",
+        "source": "arXiv",
+        "published": "2026-11-23T05:00:00.000Z",
+        "keywords": [
+          "Multimodal",
+          "Agents",
+          "Application"
+        ],
+        "affiliations": [
+          "University of Mons"
+        ]
+      },
+      {
+        "title": "Neural Geometry as a Learning Signal",
+        "summary": "Researchers demonstrate that fine-tuning LLMs by supervising the geometric structure of internal representations—rather than model outputs—can improve reasoning on structured tasks like temporal arithmetic. This opens a new direction for training without labeled output data, potentially reducing annotation costs for specialized applications. The approach was validated on Llama-3.1-8B, making it accessible for practitioners working with open-weight models.",
+        "url": "https://arxiv.org/abs/2611.26832",
+        "source": "arXiv",
+        "published": "2026-11-23T05:00:00.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Northeastern University",
+          "MIT",
+          "Harvard University"
+        ]
+      },
+      {
+        "title": "Supercharging transformer residual connections",
+        "summary": "Google Research presents architectural improvements to transformer residual connections that enhance model expressivity and training efficiency. For teams designing or fine-tuning transformer-based models, this work suggests concrete modifications that could improve performance without increasing parameter count. The blog post accompanies a formal research paper from Google's algorithms and theory group.",
+        "url": "https://research.google/blog/supercharging-transformer-residual-connections/",
+        "source": "Google AI",
+        "published": "2026-11-23T17:21:12.000Z",
+        "keywords": [
+          "Training",
+          "Framework"
+        ],
+        "affiliations": [
+          "Google"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Songe: A training engine for local models using idle compute",
+        "summary": "Songe is an open-source tool that lets developers run model fine-tuning jobs on local hardware during idle periods, lowering the barrier to on-device training without cloud costs. This is particularly useful for teams wanting to adapt smaller models to proprietary data without sending it to external APIs. Early community interest on HN suggests appetite for privacy-preserving, cost-efficient local training workflows.",
+        "url": "https://github.com/sous-labs/songe",
+        "source": "Hacker News",
+        "published": "2026-11-24T15:03:40.000Z"
+      },
+      {
+        "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+        "summary": "NVIDIA and Hugging Face detail a sim-to-real robotics pipeline using Isaac Lab and the Newton physics engine to train obstacle avoidance policies that transfer to physical robots. The workflow provides a reproducible reference for practitioners building embodied AI applications, reducing the gap between simulation training and real-world deployment. This is a concrete example of how modern simulation tooling can accelerate robotics product development.",
+        "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+        "source": "Hugging Face",
+        "published": "2026-11-24T16:34:13.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Anthropic Breaks Below $83 IPO Price in Premarket Trading",
+        "summary": "Anthropic's stock fell below its IPO price shortly after going public, reflecting broader investor skepticism about near-term AI profitability and the high capital intensity of frontier model development. For AI consultants and product builders, this signals that the market is beginning to scrutinize AI revenue models more critically. The drop may also affect enterprise procurement confidence and competitive dynamics among major AI providers.",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-24/anthropic-breaks-below-83-ipo-price-in-premarket-trading",
+        "source": "Hacker News",
+        "published": "2026-11-24T13:23:47.000Z"
+      },
+      {
+        "title": "[AINews] Jensen Is Back! and OpenAI Shows Its Pretraining Curve, joined by Microsoft",
+        "summary": "Nvidia reinstates Jensen Huang as CEO while OpenAI publicly releases its internal pretraining loss curve and proposes a shared training compute limit backed by Microsoft. The pretraining curve disclosure is notable as a rare moment of transparency that could influence how the industry benchmarks scaling progress. The proposed training limit, if adopted, would have significant implications for competitive dynamics among frontier labs.",
+        "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/",
+        "source": "Latent Space",
+        "published": "2026-11-24T04:14:16.000Z"
+      },
+      {
+        "title": "LLM agents work for their parent companies, not for you",
+        "summary": "A widely-circulated essay argues that LLM agents embedded in commercial products are structurally incentivized to serve their parent companies' interests over end-users', particularly around data collection, upselling, and engagement optimization. This is a high-signal trust and alignment concern for anyone building or deploying agent-based products, especially in contexts with fiduciary or compliance obligations. The piece is generating significant discussion (578 points, 242 comments) among practitioners.",
+        "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+        "source": "Hacker News",
+        "published": "2026-11-24T12:40:15.000Z"
+      },
+      {
+        "title": "Tidal Bans AI-Generated Music",
+        "summary": "Music streaming platform Tidal has updated its content policy to prohibit AI-generated music, positioning itself as a pro-artist alternative amid growing industry tension over synthetic content. This is an early example of platform-level enforcement of AI content restrictions, which may set a precedent for other media platforms and raises questions for companies building AI content generation tools. Developers in the audio AI space should monitor how other platforms respond.",
+        "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+        "source": "Hacker News",
+        "published": "2026-11-24T16:12:38.000Z"
+      }
+    ]
+  }
+}
