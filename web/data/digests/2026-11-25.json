@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-25",
+  "tldr": [
+    "OpenAI researchers publish preprint claiming matrix multiplication exponent is 9/4 (Θ(n^2.25)), a major theoretical advance with potential implications for AI training efficiency",
+    "Gemini 4 Neon launches as a frontier-class model, outperforming rivals on LiveBench and cutting coding benchmark runtimes by nearly half",
+    "IBM Research releases CUGA, an Indic voice agent framework supporting multilingual voice AI for underserved language markets"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "Matrix Multiplication is Θ(n^2.25)",
+        "summary": "OpenAI mathematicians have published a preprint claiming the matrix multiplication exponent ω equals 9/4 (2.25), a significant theoretical breakthrough over the long-standing best of ~2.371. If verified, this result could eventually influence the design of more efficient neural network training and inference algorithms, though practical hardware gains may take years to materialize.",
+        "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+        "source": "Hacker News",
+        "published": "2026-11-25T01:19:26.000Z",
+        "keywords": [
+          "Training",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "OpenAI"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "An Indic Voice Agent with CUGA",
+        "summary": "IBM Research has released CUGA, a framework for building voice agents optimized for Indic languages, addressing a significant gap in multilingual voice AI coverage. The system enables developers to construct end-to-end voice pipelines for South Asian languages, expanding the addressable market for voice-based AI products in the region. This is practically relevant for teams building conversational AI for India and diaspora users.",
+        "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+        "source": "Hugging Face",
+        "published": "2026-11-25T10:22:09.000Z"
+      },
+      {
+        "title": "Carry – Save every AI conversation as Markdown, in a folder you own",
+        "summary": "Carry is a new tool that automatically saves AI chat conversations from major providers as local Markdown files, giving developers and consultants full ownership and portability of their AI interaction history. This addresses a real pain point for practitioners who want to build personal knowledge bases or audit AI-assisted work without vendor lock-in.",
+        "url": "https://carry.md/",
+        "source": "Hacker News",
+        "published": "2026-11-25T03:19:02.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "Gemini 4 Neon marks GDM's full return as a Frontier Lab",
+        "summary": "Google DeepMind's Gemini 4 Neon has launched and is reportedly beating competing frontier models (Astra, Fable) on LiveBench while cutting a TypeScript-to-Rust coding benchmark runtime by 48.6%, signaling a significant competitive re-entry for GDM. For AI product builders, this expands the set of truly capable frontier models available via API and intensifies competition among providers on coding and agentic tasks.",
+        "url": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/",
+        "source": "Latent Space",
+        "published": "2026-11-25T04:29:07.000Z"
+      },
+      {
+        "title": "ChatGPT Business gets banked reset and fast mode through Dec 31",
+        "summary": "OpenAI is offering ChatGPT Business teams a banked usage reset and fast mode at no extra charge through the end of December 2026. This is a tactical move to drive enterprise adoption and usage over the holiday period, relevant for teams evaluating or scaling ChatGPT Business deployments.",
+        "url": "https://x.com/thsottiaux/status/2125299248782778588",
+        "source": "X (@thsottiaux)",
+        "published": "2026-11-24T18:43:21.000Z"
+      },
+      {
+        "title": "Ep 98: China Expert on Jensen's Return (Unsupervised Learning Podcast)",
+        "summary": "This emergency podcast episode with China Talk's Jordan Schneider dissects the geopolitical dimensions of Jensen Huang's firing and reinstatement at NVIDIA, including the actors involved and implications for US-China AI competition. For AI practitioners, NVIDIA's leadership stability is directly relevant to GPU supply chains and the infrastructure underpinning model training and deployment globally.",
+        "url": "https://www.youtube.com/watch?v=gkd5eOQGASU",
+        "source": "Unsupervised Learning",
+        "published": "2026-11-24T13:05:03.000Z"
+      }
+    ]
+  }
+}
