@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-26",
+  "tldr": [
+    "OpenAI corrects a billing error that now makes GPT-6.2 Astra and Sol consume usage limits 40% and 25% faster respectively, a significant change for teams budgeting API access",
+    "Google's MCP server rollout for Workspace AI agents has notable capability gaps (e.g. Gmail cannot send email), signaling that enterprise AI integrations still require careful scoping",
+    "A new agent memory framework (MGMem) offers deterministic, provenance-preserving long-horizon memory without expensive generative LLM rewriting calls"
+  ],
+  "sections": {
+    "Research": [
+      {
+        "title": "MGMem: An Efficient, Deterministic, and Provenance-Preserving Framework for Long-Horizon Agent Memory",
+        "summary": "MGMem addresses key pain points in production agent memory systems: excessive generative LLM calls for indexing, non-deterministic outputs across runs, and loss of source provenance. The framework claims to surface relevant past interactions across thousands of turns without rewriting history, making it practically appealing for reproducible, auditable agentic pipelines.",
+        "url": "https://arxiv.org/abs/2611.33174",
+        "source": "arXiv",
+        "published": "2026-11-26T05:00:00.000Z",
+        "keywords": [
+          "Agents",
+          "RAG",
+          "Framework"
+        ],
+        "affiliations": [
+          "The Hong Kong University of Science and Technology (Guangzhou)",
+          "The Hong Kong University of Science and Technology"
+        ]
+      },
+      {
+        "title": "Extraneous Cognitive Load in Large Language Models",
+        "summary": "Stanford researchers introduce CogLoadBench to isolate how information presentation format (extraneous load) affects LLM performance independently of task difficulty, mirroring Cognitive Load Theory from human psychology. Findings suggest that prompt formatting choices can meaningfully degrade model accuracy, giving AI product builders a concrete framework for optimizing prompts beyond just content.",
+        "url": "https://arxiv.org/abs/2611.33197",
+        "source": "arXiv",
+        "published": "2026-11-26T05:00:00.000Z",
+        "keywords": [
+          "Benchmarks",
+          "Evaluation",
+          "Reasoning"
+        ],
+        "affiliations": [
+          "Stanford University"
+        ]
+      },
+      {
+        "title": "Lost in Translation, Not in Confidence: Benchmarking and Calibrating Multilingual Decision Models",
+        "summary": "An evaluation of 25 open-weight decision models across 17 tasks in 14 languages finds that every model loses accuracy in every non-English language, with low-resource languages suffering drops of up to 20+ points. This has direct implications for teams deploying routers or guardrails in multilingual products, as thresholds calibrated on English data will be systematically miscalibrated elsewhere.",
+        "url": "https://arxiv.org/abs/2611.33307",
+        "source": "arXiv",
+        "published": "2026-11-26T05:00:00.000Z",
+        "keywords": [
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "Nanyang Technological University",
+          "National University of Singapore",
+          "VinUniversity"
+        ]
+      },
+      {
+        "title": "Focus On Facts: Stylistically Invariant and Factually Sensitive Text Embeddings",
+        "summary": "Current text embedding models tend to prefer surface-form similarity over factual identity, meaning a document with one corrupted fact scores closer to the original than a correctly paraphrased version. The FOF-Bench (83K triplets across five domains) and hard-negative contrastive training approach presented here are directly relevant to teams building RAG pipelines where factual retrieval precision matters.",
+        "url": "https://arxiv.org/abs/2611.33250",
+        "source": "arXiv",
+        "published": "2026-11-26T05:00:00.000Z",
+        "keywords": [
+          "RAG",
+          "Evaluation",
+          "Benchmarks"
+        ],
+        "affiliations": [
+          "University of Maryland, Baltimore County"
+        ]
+      }
+    ],
+    "Tools": [
+      {
+        "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+        "summary": "The ggml team has launched a dedicated benchmark dashboard tracking llama.cpp inference performance across AMD Ryzen CPUs and Radeon GPUs, filling a gap previously dominated by Nvidia-focused benchmarks. This gives developers concrete hardware guidance when selecting on-premise or edge inference hardware outside the Nvidia ecosystem.",
+        "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+        "source": "Hugging Face",
+        "published": "2026-11-26T11:37:17.000Z"
+      },
+      {
+        "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+        "summary": "NVIDIA details how to build on Nemotron 3.5 Parse using open datasets, fine-tuning recipes, and optimized inference, lowering the barrier to deploying structured document parsing in production. The release of training data and tuning guidance makes this particularly useful for teams with domain-specific document extraction needs.",
+        "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+        "source": "Hugging Face",
+        "published": "2026-11-26T05:05:36.000Z"
+      },
+      {
+        "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+        "summary": "Hugging Face publishes a practical guide covering the full lifecycle of multi-agent systems—architecture patterns, training strategies, and evaluation methods. This is a timely resource for teams moving from single-agent prototypes to coordinated multi-agent production deployments.",
+        "url": "https://huggingface.co/blog/training-swarms",
+        "source": "Hugging Face",
+        "published": "2026-11-26T00:00:00.000Z"
+      },
+      {
+        "title": "Moat: Your OpenRouter Replacement",
+        "summary": "Moat positions itself as a drop-in alternative to OpenRouter for routing requests across multiple LLM providers, with apparent improvements in reliability or pricing. High HN engagement (157 points, 99 comments) suggests meaningful developer interest in routing infrastructure alternatives.",
+        "url": "https://commandcode.ai/moat",
+        "source": "Hacker News",
+        "published": "2026-11-26T06:32:48.000Z"
+      }
+    ],
+    "Industry News": [
+      {
+        "title": "OpenAI cuts GPT-6.2 usage: Astra hits limits 40% faster, Sol 25% faster",
+        "summary": "OpenAI disclosed a billing error at the GPT-6.2 launch that under-counted usage for Astra and Sol tiers; the fix means users will exhaust their plan allowances significantly faster starting now. Teams that have built cost models or SLA assumptions around last week's observed consumption rates will need to recalibrate immediately.",
+        "url": "https://x.com/thsottiaux/status/2125784147889393806",
+        "source": "X (@thsottiaux)",
+        "published": "2026-11-26T02:50:10.000Z"
+      },
+      {
+        "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+        "summary": "Google is rolling out MCP servers for Workspace services to enable AI agent integrations, but the Gmail MCP server is currently read-only—agents cannot send email through it. This highlights a recurring pattern in enterprise AI integrations where security or policy constraints limit agent capabilities in ways that must be explicitly accounted for in product design.",
+        "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+        "source": "Hacker News",
+        "published": "2026-11-26T09:44:23.000Z"
+      },
+      {
+        "title": "An Anthropic researcher joins OpenAI",
+        "summary": "A researcher publicly announced departing Anthropic to join OpenAI, citing belief they could contribute most to AI development there. The move continues a trend of talent movement between frontier AI labs and signals ongoing competitive dynamics in recruiting at the top of the field.",
+        "url": "https://x.com/trq212/status/2125675533761671405",
+        "source": "X (@trq212)",
+        "published": "2026-11-25T19:38:35.000Z"
+      },
+      {
+        "title": "[AINews] Math Proofs Are Landing Faster Than We Can Read Them",
+        "summary": "AI systems are now producing formal mathematical proofs on hard open problems—including Erdős-class problems and new bounds for matrix multiplication and Fourier transforms—faster than the research community can review them. This signals that AI-assisted mathematical reasoning is crossing a threshold from tool to autonomous contributor, with implications for how scientific output will be validated.",
+        "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/",
+        "source": "Latent Space",
+        "published": "2026-11-25T22:23:41.000Z"
+      }
+    ]
+  }
+}
